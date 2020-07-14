@@ -20,3 +20,22 @@ VotosValidos int not null,
 VotosNulos int,
 Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido)
 )
+--A donde ira a Votar o desde donde esta votando
+create table CentroDeVotacion(
+idCentroDeVotacion int not null primary key,
+Nombre varchar(45),
+Departamento varchar(30),
+Municipio varchar(30),
+Dirrecion varchar(50)
+)
+--almacenara todos los departamentos
+create table Departamento(
+idDepartamento int not null primary key,
+nombreDepartamento varchar(50)
+)
+--almacenara todos los municipios
+create table Municipio(
+idMunicipio int not null primary key,
+nombreMunicipio varchar(50),
+idDepartamento varchar(2)
+)
