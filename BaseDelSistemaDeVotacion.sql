@@ -115,3 +115,23 @@ else
 		insert into Alcalde( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,EstadoVotacion,Partido,Municipio)
 		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@EstadoVotacion,@Partido,@Municipio)
 end
+
+----------insertar Diputado--------
+
+create procedure ingrasarDiputado
+(
+	@PrimerNombre varchar(25),
+	@SegundoNombre varchar(25),
+	@PrimerApellido varchar(25),
+	@SegundoApellido varchar(25),
+	@EstadoVotacion varchar(25),
+	@Partido int ,
+	@Departamento varchar(20)
+)
+	as begin
+		if exists(select PrimerNombre from Diputado where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
+			raiserror('El Diputado ya existe, Ingrese otro',16,1)
+		else 
+			insert into Diputado( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,EstadoVotacion,Partido,Departamento)
+			values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@EstadoVotacion,@Partido,@Departamento)
+	end 
