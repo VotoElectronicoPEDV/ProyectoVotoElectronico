@@ -74,3 +74,44 @@ sexo varchar(10) not null,
 estadoVotante varchar(25) not null,
 CodMunicipio varchar(2) FOREIGN KEY REFERENCES Municipio(idMunicipio)
 )
+
+---------------Procedimien-Almacenado----
+
+---------Insertar-Presidente----
+create procedure ingresarPresidente 
+(
+@PrimerNombre varchar(25),
+@segundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@EstadoVotacion varchar(25),
+@Partido int 
+)
+as
+begin
+if exists(select PrimerNombre from Presidente where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
+		raiserror('El Presidente ya existe, Ingrese otro',16,1)
+else 
+		insert into Presidente( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,EstadoVotacion,Partido)
+		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@EstadoVotacion,@Partido)
+end
+
+-------Insertar--Alcalde--
+create procedure ingresarAlcalde
+(
+@PrimerNombre varchar(25) ,
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25) ,
+@SegundoApellido varchar(25),
+@EstadoVotacion varchar(25) not null,
+@Partido int ,
+@Municipio varchar(2)
+)
+as
+begin
+if exists(select PrimerNombre from Alcalde where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
+		raiserror('El Alcalde ya existe, Ingrese otro',16,1)
+else 
+		insert into Alcalde( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,EstadoVotacion,Partido,Municipio)
+		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@EstadoVotacion,@Partido,@Municipio)
+end
