@@ -135,3 +135,24 @@ create procedure ingrasarDiputado
 			insert into Diputado( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,EstadoVotacion,Partido,Departamento)
 			values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@EstadoVotacion,@Partido,@Departamento)
 	end 
+	
+-------	insertar votante-----
+	create procedure IngresarVotante(
+		@IdentidadVotante varchar(13),
+		@PrimerNombre varchar(25) ,
+		@SegundoNombre varchar(25),
+		@PrimerApellido varchar(25),
+		@SegundoApellido varchar(25) ,
+		@edad int,
+		@sexo varchar(10),
+		@estadoVotante varchar(25),
+		@CodMunicipio varchar(2)
+		)
+
+		as begin
+			if exists(select PrimerNombre from votante where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
+				raiserror('El votante ya existe, Ingrese otro',16,1)
+			else 
+				insert into votante( PrimerNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante,codMunicipio)
+				values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante,@CodMunicipio)
+		end
