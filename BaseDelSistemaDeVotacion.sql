@@ -50,7 +50,7 @@ Municipio varchar(2) FOREIGN KEY REFERENCES Municipio(idMunicipio)
 )
 
 create table Diputado(
-idAlcalde int identity primary key not null,
+idDiputado int identity primary key not null,
 PrimerNombre varchar(25) not null,
 SegundoNombre varchar(25),
 PrimerApellido varchar(25) not null,
@@ -173,7 +173,47 @@ else
 	insert into Diputado( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,EstadoVotacion,Partido,Departamento)
 	values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@EstadoVotacion,@Partido,@Departamento)
 end 
-	
+
+---------Actualizar-Diputado----
+create procedure actualizarDiputado(
+@idDiputado int,
+@PrimerNombre varchar(25),
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@Estado varchar(25),
+@partido int,
+@Departamento varchar(2)
+)
+as 
+begin
+	update Diputado
+	set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Estado = @Estado, Partido = @partido, Departamento = @Departamento 
+where idDiputado =@idDiputado
+end
+
+---------Eliminar-Diputado----
+create procedure eliminarDiputado(
+@idDiputado int
+)
+as
+begin
+if exists(select estado,idDiputado from Diputado where idDiputado = @idDiputado and Estado='eliminado')
+	raiserror ('El Diputado no existe en la base de datos',16,1)
+else
+	update Diputado
+	set Estado = 'eliminado'
+end
+exec eliminarDiputado 1
+
+---------consultar-Diputado----
+create procedure consultarDiputado
+as
+begin
+select idDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Diputado
+inner join PartidoPolitico p on Partido= p.idPartido
+end
+
 -------	insertar votante-----
 create procedure IngresarVotante(
 @IdentidadVotante varchar(13),
@@ -192,4 +232,45 @@ if exists(select PrimerNombre from votante where PrimerNombre=@PrimerNombre and 
 else 
 	insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante,codMunicipio)
 values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante,@CodMunicipio)
+end
+
+---------Actualizar-Votante----
+create procedure actualizarVotante(
+@IdentidadVotante varchar(13),
+@PrimerNombre varchar(25) ,
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25) ,
+@edad int,
+@sexo varchar(10),
+@estadoVotante varchar(25),
+@CodMunicipio varchar(2)
+)
+as 
+begin
+	update votante
+	set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Edad = @edad, sexo = @sexo, estadoVotante = @estadoVotante, CodMunicipio = @CodMunicipio 
+where IdentidadVotante =@IdentidadVotante
+end
+
+---------Eliminar-Votante----
+create procedure eliminarVotante(
+@IdentidadVotante int
+)
+as
+begin
+if exists(select estadoVotante,IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante and estadoVotante='eliminado')
+	raiserror ('El Votante no existe en la base de datos',16,1)
+else
+	update votante
+	set estadoVotante = 'eliminado'
+end
+exec eliminarVotante 1
+
+---------consultar-Votante----
+create procedure consultarVotante
+as
+begin
+select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.idMunicipio as 'Municipio' from votante
+inner join Municipio p on CodMunicipio= idMunicipio
 end
