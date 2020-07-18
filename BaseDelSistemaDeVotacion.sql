@@ -30,10 +30,11 @@ nombreDepartamento varchar(50)
 )
 
 create table Municipio(
-idMunicipio varchar(2) not null primary key,
+idMunicipio varchar(4) not null primary key,
 nombreMunicipio varchar(50),
 idDepartamento varchar(2) FOREIGN KEY REFERENCES Departamento(idDepartamento)
 )
+
 
 create table Alcalde(
 idAlcalde int identity primary key not null,
@@ -342,3 +343,18 @@ begin
 select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.idMunicipio as 'Municipio' from votante
 inner join Municipio p on CodMunicipio= idMunicipio
 end
+
+
+
+-----Ingreso Departamentos y municipios------
+insert into Departamento(idDepartamento,nombreDepartamento)
+values
+('01','Atlántida')
+
+
+
+
+insert into Municipio(idMunicipio,nombreMunicipio,idDepartamento)
+values
+('0101','La Ceiba','01'),
+('0102','El Porvenir','01')
