@@ -124,6 +124,7 @@ if exists(select estado,idPresidente from Presidente where idPresidente = @idPre
 else
 	update Presidente
 	set Estado = 'eliminado'
+	where idPresidente = @idPresidente
 end
 exec eliminarPresidente 1
 
@@ -135,15 +136,20 @@ select idPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerAp
 inner join PartidoPolitico p on Partido= p.idPartido
 end
 
+
+
+
+
 -------Insertar--Alcalde--
 create procedure ingresarAlcalde
 (
-@PrimerNombre varchar(25) ,
+@PrimerNombre varchar(25),
 @SegundoNombre varchar(25),
-@PrimerApellido varchar(25) ,
+@PrimerApellido varchar(25),
 @SegundoApellido varchar(25),
-@EstadoVotacion varchar(25),
-@Partido int ,
+@DescripcionVotacion varchar(25),
+@Estado varchar(25),
+@Partido int,
 @Municipio varchar(2)
 )
 as
@@ -151,27 +157,80 @@ begin
 if exists(select PrimerNombre from Alcalde where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
 	raiserror('El Alcalde ya existe, Ingrese otro',16,1)
 else 
-	insert into Alcalde( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,EstadoVotacion,Partido,Municipio)
-	values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@EstadoVotacion,@Partido,@Municipio)
+	insert into Alcalde( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,DescripcionVotacion,Estado,Partido,Municipio)
+	values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@DescripcionVotacion,@Estado,@Partido,@Municipio)
 end
+
+---------Actualizar-Alcalde----
+create procedure actualizarAlcalde(
+@idAlcalde int,
+@PrimerNombre varchar(25),
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@Estado varchar(25),
+@Partido int,
+@Municipio varchar(2)
+)
+as 
+begin
+update Alcalde 
+set PrimerNombre = @PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido,Estado = @Estado, Partido = @partido, Municipio = @Municipio
+where idAlcalde =@idAlcalde
+end
+
+---------Eliminar-Alcalde----
+create procedure eliminarAlcalde(
+@idAlcalde int
+)
+as
+begin
+if exists(select estado,idAlcalde from Alcalde where idAlcalde = @idAlcalde and Estado='eliminado')
+	raiserror ('el Alcalde no existe en la base de datos',16,1)
+else
+	update Alcalde
+	set Estado = 'eliminado'
+	where idAlcalde=@idAlcalde
+
+end
+exec eliminarPresidente 1
+
+
+---------consultar-Alcalde----
+create procedure consultarAlcalde
+as
+begin
+select idAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
+inner join PartidoPolitico p on Partido= p.idPartido
+inner join Municipio M on Municipio = M.idMunicipio
+inner join Departamento D on M.idDepartamento = D.idDepartamento
+end
+
+
+
+
+
+
+
+
 
 ----------insertar Diputado--------
 
 create procedure ingresarDiputado(
 @PrimerNombre varchar(25),
 @SegundoNombre varchar(25),
-@PrimerApellido varchar(25),	
+@PrimerApellido varchar(25),
 @SegundoApellido varchar(25),
-@EstadoVotacion varchar(25),
-@Partido int,
-@Departamento varchar(20)
+@Estado varchar(25),
+@partido int,
+@Departamento varchar(2)
 )
 as begin
 if exists(select PrimerNombre from Diputado where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
 	raiserror('El Diputado ya existe, Ingrese otro',16,1)
 else 
-	insert into Diputado( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,EstadoVotacion,Partido,Departamento)
-	values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@EstadoVotacion,@Partido,@Departamento)
+	insert into Diputado( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido,Departamento)
+	values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@Partido,@Departamento)
 end 
 
 ---------Actualizar-Diputado----
@@ -210,9 +269,18 @@ exec eliminarDiputado 1
 create procedure consultarDiputado
 as
 begin
-select idDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Diputado
+select idDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
 inner join PartidoPolitico p on Partido= p.idPartido
+inner join Departamento D on Departamento = D.idDepartamento
 end
+
+
+
+
+
+
+
+
 
 -------	insertar votante-----
 create procedure IngresarVotante(
