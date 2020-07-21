@@ -90,7 +90,7 @@
 	@PrimerApellido varchar(25),
 	@SegundoApellido varchar(25),
 	@Estado varchar(25),
-	@idPartido char(1)
+	@Partido char(1)
 	)
 	as
 	begin
@@ -98,13 +98,14 @@
 		raiserror('El Presidente ya existe, Ingrese otro',16,1)
 	else 
 		insert into Presidente( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido)
-		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@idPartido)
+		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@Partido)
 	end
 
 		exec ingresarPresidente 'Juan','Orlando','Hernandez','Alvarado','activo',1
-		exec ingresarPresidente 'Luis','Orlando','Zelaya','Medrano ','activo',5 
-		exec ingresarPresidente 'Jose','Manuel','Zelaya','Rosales','activo',6
-		exec ingresarPresidente 'Salvador','Alejandro','Nasralla','Salum ','activo',8 
+		exec ingresarPresidente 'Luis','Orlando','Zelaya','Medrano ','activo',2 
+		exec ingresarPresidente 'Salvador','Alejandro','Nasralla','Salum ','activo',3
+		exec ingresarPresidente 'Jose','Manuel','Zelaya','Rosales','activo',4
+		
 
                   select * from Presidente
 
@@ -169,6 +170,20 @@
 		insert into Alcalde( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,DescripcionVotacion,Estado,Partido,Municipio)
 		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@DescripcionVotacion,@Estado,@Partido,@Municipio)
 	end
+	
+	--------Municipio de Comayagua----------
+	--Partido Nacional
+	execute ingresarAlcalde 'Carlos', 'Josue', 'Miranda', 'Canales', 'interna', 'activo', 1, 0301
+	execute ingresarAlcalde 'Trinidad', 'Jose ', 'cecilio', 'del Valle', 'interna', 'activo', 1, 0301
+	--Partido liberal
+	execute ingresarAlcalde 'Juan', 'Carlos', 'Juarez', 'Gutierrez', 'interna', 'activo', 2, 0301
+	execute ingresarAlcalde 'Pedro', 'Rafael ', 'Valladarez', 'Giron', 'interna', 'activo', 2, 0301
+	--Partido Anticorrupcion
+	execute ingresarAlcalde 'Jose', 'Francisco', 'Hernandez', 'Canales', 'interna', 'activo', 3, 0301
+	execute ingresarAlcalde 'Joseph', 'Josias ', 'Caceres', 'Rivas', 'interna', 'activo', 3, 0301
+	--Partido Libre
+	execute ingresarAlcalde 'Edgar', 'Orlando', 'Gutierrez', 'Guzman', 'interna', 'activo', 4, 0301
+	execute ingresarAlcalde 'Ever', 'Jose ', 'Morazan', 'Dominguez', 'interna', 'activo', 4, 0301
 
 	-------Procedimientos Almacenados-----
 	---------Actualizar-Alcalde----
