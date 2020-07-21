@@ -237,25 +237,24 @@
 		insert into Diputado( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido,Departamento)
 		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@Partido,@Departamento)
 	end 
-
-		exec ingresarDiputado 'Oscar','Aturo','Alvarez','Guerrero','activo','Partido Nacional','Francisco Morazan' -----------1
-		exec ingresarDiputado 'HECTOR ','GUILLERMO',' GUILLEN ','GOMEZ','activo','Partido Nacional','Cortes'------------------2
-		exec ingresarDiputado 'JOSE ','TOMAS ','PONCE ','POSAS','activo','Partido liberal','Yoro '----------------------------3
-		exec ingresarDiputado 'MARTHA ','CONCEPCION ','FIGUEROA',' TORREZ','activo','Partido Nacional','Santa Barbara'--------4
-		exec ingresarDiputado 'JUAN ','FRANCISCO ','ARGEÑAL',' ESPINAL','activo','Partido Nacional','Choluteca'---------------5
-		exec ingresarDiputado 'RAMON ','ANTONIO ','LEVA ','BULNES','activo','Partido Nacional','Atlantida'--------------------6
-		exec ingresarDiputado 'JOSE',' MARIA ','MARTINEZ ','VALENZUELA','activo','Partido Nacional','Comayagua'---------------7
-		exec ingresarDiputado 'JOSE ','VICENTE',' LEON ','ROJAS','activo','Partido Nacional','Copan'--------------------------8
-		exec ingresarDiputado 'REINALDO ','ANTONIO ','SANCHEZ',' RIVERA','activo','Partido Nacional','Olancho'----------------9
-		exec ingresarDiputado 'JOSE ','CELIN',' DISCUA ','ELVIR','activo','Partido Nacional','El Paraiso'---------------------10
-		exec ingresarDiputado 'JUAN','CARLOS',' VALENZUELA ','MOLINA','activo','Partido Nacional','Lempira'-------------------11
-		exec ingresarDiputado 'MIDENCE ','OQUELY',' MARTINEZ ','TURCIOS','activo','Partido Libre','Colon'---------------------12
-		exec ingresarDiputado 'ANA',' JULIA ','GARCIA ','VILLALOBOS','activo','Partido Nacional','Valle'----------------------13
-		exec ingresarDiputado 'FELIPE ','ZUNIGA ','DEL ','CID','activo','Partido liberal','Intibuca'--------------------------14
-		exec ingresarDiputado 'GLADIS',' AURORA ','LOPEZ',' CALDERON','activo','Partido Nacional','La paz' -------------------15
-		exec ingresarDiputado 'LUIS ','RIGOBERTO ','SANTOS ','PORTILLO','activo','Partido libre','Ocotepeque'-----------------16
-		exec ingresarDiputado 'GEORGE ','ROMEO ','SILVESTRI ','FEREZ','activo','Partido Nacional','Islas de la bahia'---------17
-		exec ingresarDiputado 'MAYLO','WOOD',' GRANWELL',' ','activo','Partido Nacional','Gracias a Dios'---------------------18
+		exec ingresarDiputado 'Oscar','Aturo','Alvarez','Guerrero','activo',1,'08' 
+		exec ingresarDiputado 'HECTOR ','GUILLERMO',' GUILLEN ','GOMEZ','activo',1,'05'
+		exec ingresarDiputado 'JOSE ','TOMAS ','PONCE ','POSAS','activo',2,'18 '
+		exec ingresarDiputado 'MARTHA ','CONCEPCION ','FIGUEROA',' TORREZ','activo',1,'16'
+		exec ingresarDiputado 'JUAN ','FRANCISCO ','ARGEÑAL',' ESPINAL','activo',1,'06'
+		exec ingresarDiputado 'RAMON ','ANTONIO ','LEVA ','BULNES','activo',4,'01'
+		exec ingresarDiputado 'JOSE',' MARIA ','MARTINEZ ','VALENZUELA','activo',1,'03'
+		exec ingresarDiputado 'JOSE ','VICENTE',' LEON ','ROJAS','activo',1,'04'
+		exec ingresarDiputado 'REINALDO ','ANTONIO ','SANCHEZ',' RIVERA','activo',1,'15'
+		exec ingresarDiputado 'JOSE ','CELIN',' DISCUA ','ELVIR','activo',1,'07'
+		exec ingresarDiputado 'JUAN','CARLOS',' VALENZUELA ','MOLINA','activo',4,'13'
+		exec ingresarDiputado 'MIDENCE ','OQUELY',' MARTINEZ ','TURCIOS','activo',3,'02'
+		exec ingresarDiputado 'ANA',' JULIA ','GARCIA ','VILLALOBOS','activo',1,'17'
+		exec ingresarDiputado 'FELIPE ','ZUNIGA ','DEL ','CID','activo',2,'10'
+		exec ingresarDiputado 'GLADIS',' AURORA ','LOPEZ',' CALDERON','activo',1,'12' 
+		exec ingresarDiputado 'LUIS ','RIGOBERTO ','SANTOS ','PORTILLO','activo',3,'14'
+		exec ingresarDiputado 'GEORGE ','ROMEO ','SILVESTRI ','FEREZ','activo',1,'11'
+		exec ingresarDiputado 'MAYLO','WOOD',' GRANWELL',' ','activo',4,'09'
 
 		select * from Diputado
 
