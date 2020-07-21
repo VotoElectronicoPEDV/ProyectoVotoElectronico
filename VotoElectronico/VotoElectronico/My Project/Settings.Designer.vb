@@ -64,6 +64,42 @@ Namespace My
                 Return CType(Me("conexion"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Usuario() As String
+            Get
+                Return CType(Me("Usuario"),String)
+            End Get
+            Set
+                Me("Usuario") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Clave() As String
+            Get
+                Return CType(Me("Clave"),String)
+            End Get
+            Set
+                Me("Clave") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Email() As String
+            Get
+                Return CType(Me("Email"),String)
+            End Get
+            Set
+                Me("Email") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
