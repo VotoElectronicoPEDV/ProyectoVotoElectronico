@@ -26,55 +26,64 @@ Partial Class VotacionInterna
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAcceder = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtidentidad
         '
-        Me.txtidentidad.Location = New System.Drawing.Point(101, 48)
-        Me.txtidentidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtidentidad.Location = New System.Drawing.Point(76, 39)
         Me.txtidentidad.Name = "txtidentidad"
-        Me.txtidentidad.Size = New System.Drawing.Size(132, 22)
+        Me.txtidentidad.Size = New System.Drawing.Size(100, 20)
         Me.txtidentidad.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 52)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(19, 42)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 17)
+        Me.Label1.Size = New System.Drawing.Size(51, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Identidad"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 11)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(21, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 17)
+        Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Votante"
         '
         'btnAcceder
         '
-        Me.btnAcceder.Location = New System.Drawing.Point(130, 120)
+        Me.btnAcceder.Location = New System.Drawing.Point(98, 98)
+        Me.btnAcceder.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAcceder.Name = "btnAcceder"
-        Me.btnAcceder.Size = New System.Drawing.Size(78, 37)
+        Me.btnAcceder.Size = New System.Drawing.Size(78, 30)
         Me.btnAcceder.TabIndex = 3
-        Me.btnAcceder.Text = "Acceder"
+        Me.btnAcceder.Text = "ACCEDER"
         Me.btnAcceder.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(180, 98)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(78, 30)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "ACCEDER"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'VotacionInterna
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(396, 194)
+        Me.ClientSize = New System.Drawing.Size(297, 158)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnAcceder)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtidentidad)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "VotacionInterna"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -86,4 +95,5 @@ Partial Class VotacionInterna
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents btnAcceder As Button
+    Friend WithEvents Button1 As Button
 End Class
