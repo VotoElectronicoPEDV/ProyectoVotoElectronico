@@ -1,9 +1,5 @@
 ﻿Public Class VotacionInterna
-    Private Sub txtidentidad_TextChanged(sender As Object, e As EventArgs) Handles txtidentidad.TextChanged
-
-    End Sub
-
-    Private Sub VotacionInterna_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub btnAcceder_Click(sender As Object, e As EventArgs) Handles btnAcceder.Click
 
     End Sub
 End Class
