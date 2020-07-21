@@ -184,6 +184,34 @@
 	--Partido Libre
 	execute ingresarAlcalde 'Edgar', 'Orlando', 'Gutierrez', 'Guzman', 'interna', 'activo', 4, 0301
 	execute ingresarAlcalde 'Ever', 'Jose ', 'Morazan', 'Dominguez', 'interna', 'activo', 4, 0301
+	
+	--------Municipio de Ajuterique----------
+	--Partido Nacional
+	execute ingresarAlcalde 'Pedro', 'Alonso', 'Mosku', 'Canales', 'interna', 'activo', 1, 0302
+	execute ingresarAlcalde 'Rey', 'Alonso ', 'Vasquez', 'Juarez', 'interna', 'activo', 1, 0302
+	--Partido liberal
+	execute ingresarAlcalde 'Alberto', 'Jacob', 'Perez', 'Sambrano', 'interna', 'activo', 2, 0302
+	execute ingresarAlcalde 'Feliciano', 'Roberto ', 'Pineda', 'Garcia', 'interna', 'activo', 2, 0302
+	--Partido Anticorrupcion
+	execute ingresarAlcalde 'Ricardo', 'Alfonso', 'Guerra', 'Guerra', 'interna', 'activo', 3, 0302
+	execute ingresarAlcalde 'Edgardo', 'Butin ', 'Prada', 'Rodriguez', 'interna', 'activo', 3, 0302
+	--Partido Libre
+	execute ingresarAlcalde 'Kevin', 'Leonel', 'Lopez', 'Lopez', 'interna', 'activo', 4, 0302
+	execute ingresarAlcalde 'Oscar', 'Rafael ', 'Llamazares', 'Caceres', 'interna', 'activo', 4, 0302
+
+	--------Municipio El Rosario----------
+	--Partido Nacional
+	execute ingresarAlcalde 'Miguel', 'Fernando', 'Mosku', 'Canales', 'interna', 'activo', 1, 0303
+	execute ingresarAlcalde 'Juan', 'Alonso ', 'Hernadez', 'Hernadez', 'interna', 'activo', 1, 0303
+	--Partido liberal
+	execute ingresarAlcalde 'Alberto', 'Josias', 'Pacheco', 'Sambrano', 'interna', 'activo', 2, 0303
+	execute ingresarAlcalde 'Celio', 'Roberto ', 'Pineda', 'Manzanares', 'interna', 'activo', 2, 0303
+	--Partido Anticorrupcion
+	execute ingresarAlcalde 'Mercedes', 'Maria', 'Aranda', 'Gomez', 'interna', 'activo', 3, 0303
+	execute ingresarAlcalde 'Mario', 'Arturo ', 'Espinoza', 'Cruz', 'interna', 'activo', 3, 0303
+	--Partido Libre
+	execute ingresarAlcalde 'Francisco', 'Javier', 'Varela', 'Rosa', 'interna', 'activo', 4, 0303
+	execute ingresarAlcalde 'Miguel', 'Angel ', 'Rodriguez', 'Funez', 'interna', 'activo', 4, 0303
 
 	-------Procedimientos Almacenados-----
 	---------Actualizar-Alcalde----
