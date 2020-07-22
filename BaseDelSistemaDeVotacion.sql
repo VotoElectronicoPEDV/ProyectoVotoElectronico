@@ -289,6 +289,15 @@
 		exec ingresarDiputado 'REINALDO ','ANTONIO ','SANCHEZ',' RIVERA','activo',1,'03'
 		exec ingresarDiputado 'JOSE ','CELIN',' DISCUA ','ELVIR','activo',1,'03'
 		exec ingresarDiputado 'JOSE ','TOMAS ','PONCE ','POSAS','activo',1,'03 '
+		
+				-------------Partido Libre----
+		exec ingresarDiputado 'RAMON ','ANTONIO ','LEVA ','BULNES','activo',2,'03'
+		exec ingresarDiputado 'JUAN','CARLOS',' VALENZUELA ','MOLINA','activo',2,'03'
+		exec ingresarDiputado 'MIDENCE ','OQUELY',' MARTINEZ ','TURCIOS','activo',2,'03'
+		exec ingresarDiputado 'ANA',' JULIA ','GARCIA ','VILLALOBOS','activo',2,'03'
+		exec ingresarDiputado 'FELIPE ','ZUNIGA ','DEL ','CID','activo',2,'03'
+		exec ingresarDiputado 'GLADIS',' AURORA ','LOPEZ',' CALDERON','activo',2,'03' 
+		exec ingresarDiputado 'LUIS ','RIGOBERTO ','SANTOS ','PORTILLO','activo',2,'03'
 
 		select * from Diputado
 
