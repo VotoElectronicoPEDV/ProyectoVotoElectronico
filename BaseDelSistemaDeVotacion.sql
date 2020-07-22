@@ -1,4 +1,4 @@
-	create database SistemaNacionalDeElecciones
+create database SistemaNacionalDeElecciones
 	go
 
 	use SistemaNacionalDeElecciones
@@ -90,7 +90,7 @@
 	@PrimerApellido varchar(25),
 	@SegundoApellido varchar(25),
 	@Estado varchar(25),
-	@Partido char(1)
+	@idPartido char(1)
 	)
 	as
 	begin
@@ -98,14 +98,13 @@
 		raiserror('El Presidente ya existe, Ingrese otro',16,1)
 	else 
 		insert into Presidente( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido)
-		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@Partido)
+		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@idPartido)
 	end
 
 		exec ingresarPresidente 'Juan','Orlando','Hernandez','Alvarado','activo',1
-		exec ingresarPresidente 'Luis','Orlando','Zelaya','Medrano ','activo',2 
-		exec ingresarPresidente 'Salvador','Alejandro','Nasralla','Salum ','activo',3
-		exec ingresarPresidente 'Jose','Manuel','Zelaya','Rosales','activo',4
-		
+		exec ingresarPresidente 'Luis','Orlando','Zelaya','Medrano ','activo',5 
+		exec ingresarPresidente 'Jose','Manuel','Zelaya','Rosales','activo',6
+		exec ingresarPresidente 'Salvador','Alejandro','Nasralla','Salum ','activo',8 
 
                   select * from Presidente
 
@@ -151,7 +150,7 @@
 
 	-------Procedimientos Almacenados-----
 	-------Insertar--Alcalde--
-	create procedure ingresarAlcalde
+	Create procedure ingresarAlcalde
 	(
 	@PrimerNombre varchar(25),
 	@SegundoNombre varchar(25),
@@ -160,7 +159,7 @@
 	@DescripcionVotacion varchar(25),
 	@Estado varchar(25),
 	@Partido int,
-	@Municipio varchar(2)
+	@Municipio varchar(4)
 	)
 	as
 	begin
@@ -184,7 +183,7 @@
 	--Partido Libre
 	execute ingresarAlcalde 'Edgar', 'Orlando', 'Gutierrez', 'Guzman', 'interna', 'activo', 4, 0301
 	execute ingresarAlcalde 'Ever', 'Jose ', 'Morazan', 'Dominguez', 'interna', 'activo', 4, 0301
-	
+
 	--------Municipio de Ajuterique----------
 	--Partido Nacional
 	execute ingresarAlcalde 'Pedro', 'Alonso', 'Mosku', 'Canales', 'interna', 'activo', 1, 0302
@@ -212,6 +211,35 @@
 	--Partido Libre
 	execute ingresarAlcalde 'Francisco', 'Javier', 'Varela', 'Rosa', 'interna', 'activo', 4, 0303
 	execute ingresarAlcalde 'Miguel', 'Angel ', 'Rodriguez', 'Funez', 'interna', 'activo', 4, 0303
+
+	--------Municipio Esquias----------
+	--Partido Nacional
+	execute ingresarAlcalde 'Jose', 'Manuel', 'Sanchez', 'Campos', 'interna', 'activo', 1, 0304
+	execute ingresarAlcalde 'Carlos', 'Hernan ', 'Vanegas', 'Bueso', 'interna', 'activo', 1, 0304
+	--Partido liberal
+	execute ingresarAlcalde 'Carlos', 'Daniel', 'Cerrano', 'Ortiz', 'interna', 'activo', 2, 0304
+	execute ingresarAlcalde 'Celio', 'Roberto ', 'Pineda', 'Manzanares', 'interna', 'activo', 2, 0304
+	--Partido Anticorrupcion
+	execute ingresarAlcalde 'Mariano', 'Enrrique', 'Garcia', 'Lopez', 'interna', 'activo', 3, 0304
+	execute ingresarAlcalde 'Raul', 'Fernando ', 'Peralda', 'Mendoza', 'interna', 'activo', 3, 0304
+	--Partido Libre
+	execute ingresarAlcalde 'Alejandro', 'Rafael', 'Quintana', 'Diaz', 'interna', 'activo', 4, 0304
+	execute ingresarAlcalde 'Daniel', 'Emilio ', 'De la Peña', 'Campos', 'interna', 'activo', 4, 0304
+
+		--------Municipio Humuya----------
+	--Partido Nacional
+	execute ingresarAlcalde 'Sergio', 'Antonio', 'Ortiz', 'Osorio', 'interna', 'activo', 1, 0305
+	execute ingresarAlcalde 'Eduardo', 'Antonio ', 'Meza', 'Saravia', 'interna', 'activo', 1, 0305
+	--Partido liberal
+	execute ingresarAlcalde 'Juan', 'Gabriel', 'Ramos', 'Martinez', 'interna', 'activo', 2, 0305
+	execute ingresarAlcalde 'Gabriela', 'Aurora', 'Molina', 'Horosco', 'interna', 'activo', 2, 0305
+	--Partido Anticorrupcion
+	execute ingresarAlcalde 'Felix', 'Eduardo', 'Mencia', 'Perez', 'interna', 'activo', 3, 0305
+	execute ingresarAlcalde 'Feliciano', 'Ramon', 'Romero', 'Juarez', 'interna', 'activo', 3, 0305
+	--Partido Libre
+	execute ingresarAlcalde 'Pedro', 'ALfonso', 'Ramos', 'Montoya', 'interna', 'activo', 4, 0305
+	execute ingresarAlcalde 'Cristian', 'Jose', 'Jimenez', 'Peralda', 'interna', 'activo', 4, 0305
+
 
 	-------Procedimientos Almacenados-----
 	---------Actualizar-Alcalde----
@@ -281,43 +309,24 @@
 		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@Partido,@Departamento)
 	end 
 
-			-------------Partido Nacional----
-		exec ingresarDiputado 'Oscar','Aturo','Alvarez','Guerrero','activo',1,'03' 
-		exec ingresarDiputado 'HECTOR ','GUILLERMO',' GUILLEN ','GOMEZ','activo',1,'03'
-		exec ingresarDiputado 'JOSE',' MARIA ','MARTINEZ ','VALENZUELA','activo',1,'03'
-		exec ingresarDiputado 'JOSE ','VICENTE',' LEON ','ROJAS','activo',1,'03'
-		exec ingresarDiputado 'REINALDO ','ANTONIO ','SANCHEZ',' RIVERA','activo',1,'03'
-		exec ingresarDiputado 'JOSE ','CELIN',' DISCUA ','ELVIR','activo',1,'03'
-		exec ingresarDiputado 'JOSE ','TOMAS ','PONCE ','POSAS','activo',1,'03 '
-		
-				-------------Partido Libre----
-		exec ingresarDiputado 'RAMON ','ANTONIO ','LEVA ','BULNES','activo',2,'03'
-		exec ingresarDiputado 'JUAN','CARLOS',' VALENZUELA ','MOLINA','activo',2,'03'
-		exec ingresarDiputado 'MIDENCE ','OQUELY',' MARTINEZ ','TURCIOS','activo',2,'03'
-		exec ingresarDiputado 'ANA',' JULIA ','GARCIA ','VILLALOBOS','activo',2,'03'
-		exec ingresarDiputado 'FELIPE ','ZUNIGA ','DEL ','CID','activo',2,'03'
-		exec ingresarDiputado 'GLADIS',' AURORA ','LOPEZ',' CALDERON','activo',2,'03' 
-		exec ingresarDiputado 'LUIS ','RIGOBERTO ','SANTOS ','PORTILLO','activo',2,'03'
-		
-					-------------Partido anticorrupcion----
-
-		exec ingresarDiputado 'JOSUE ','WILMER ','RIVAS ','MORENO','activo',3,'03'
-		exec ingresarDiputado 'MARIO','JOS',' GAMALIEL','RIVERA ','activo',3,'03'
-		exec ingresarDiputado 'CELENA ','SOFIA ','LEVY ','LEVY','activo',3,'03'
-		exec ingresarDiputado 'RAUL','JOSUE',' MENDEZ ','CASTRO','activo',3,'03'
-		exec ingresarDiputado 'PEDRO ','ANTONIA',' MEZA ','PONCE','activo',3,'03'
-		exec ingresarDiputado 'KEREN',' MARIA ','ARANDA ','QUINTANA','activo',3,'03'
-		exec ingresarDiputado 'MARIO ','ANTONIO ','GUERRA ','DEL CID','activo',3,'03'
-
-
-			-------------Partido ALiberal----
-		exec ingresarDiputado 'ANA ','MARIA ','PEREZ ','LOPEZ','activo',4,'03'
-		exec ingresarDiputado 'GERARDO','ANTONIO',' VILLANUEVA ','CORTES','activo',4,'03'
-		exec ingresarDiputado 'JUAN ','CARLOS',' VILLALOBOS ','ANDINO','activo',4,'03'
-		exec ingresarDiputado 'LETICA',' MACARENA ','RAMOS ','CACERES','activo',4,'03'
-		exec ingresarDiputado 'GENESIS ','NAHOMI ','CASTRO ','MORENO','activo',4,'03'
-		exec ingresarDiputado 'RAMON',' ENRIQUE ','MARTINEZ',' MARTINEZ','activo',4,'03' 
-		exec ingresarDiputado 'JAIRO ','PATRICIO ','GOMEZ ','CORTEZ','activo',4,'03'
+		exec ingresarDiputado 'Oscar','Aturo','Alvarez','Guerrero','activo','Partido Nacional','Francisco Morazan' -----------1
+		exec ingresarDiputado 'HECTOR ','GUILLERMO',' GUILLEN ','GOMEZ','activo','Partido Nacional','Cortes'------------------2
+		exec ingresarDiputado 'JOSE ','TOMAS ','PONCE ','POSAS','activo','Partido liberal','Yoro '----------------------------3
+		exec ingresarDiputado 'MARTHA ','CONCEPCION ','FIGUEROA',' TORREZ','activo','Partido Nacional','Santa Barbara'--------4
+		exec ingresarDiputado 'JUAN ','FRANCISCO ','ARGEÑAL',' ESPINAL','activo','Partido Nacional','Choluteca'---------------5
+		exec ingresarDiputado 'RAMON ','ANTONIO ','LEVA ','BULNES','activo','Partido Nacional','Atlantida'--------------------6
+		exec ingresarDiputado 'JOSE',' MARIA ','MARTINEZ ','VALENZUELA','activo','Partido Nacional','Comayagua'---------------7
+		exec ingresarDiputado 'JOSE ','VICENTE',' LEON ','ROJAS','activo','Partido Nacional','Copan'--------------------------8
+		exec ingresarDiputado 'REINALDO ','ANTONIO ','SANCHEZ',' RIVERA','activo','Partido Nacional','Olancho'----------------9
+		exec ingresarDiputado 'JOSE ','CELIN',' DISCUA ','ELVIR','activo','Partido Nacional','El Paraiso'---------------------10
+		exec ingresarDiputado 'JUAN','CARLOS',' VALENZUELA ','MOLINA','activo','Partido Nacional','Lempira'-------------------11
+		exec ingresarDiputado 'MIDENCE ','OQUELY',' MARTINEZ ','TURCIOS','activo','Partido Libre','Colon'---------------------12
+		exec ingresarDiputado 'ANA',' JULIA ','GARCIA ','VILLALOBOS','activo','Partido Nacional','Valle'----------------------13
+		exec ingresarDiputado 'FELIPE ','ZUNIGA ','DEL ','CID','activo','Partido liberal','Intibuca'--------------------------14
+		exec ingresarDiputado 'GLADIS',' AURORA ','LOPEZ',' CALDERON','activo','Partido Nacional','La paz' -------------------15
+		exec ingresarDiputado 'LUIS ','RIGOBERTO ','SANTOS ','PORTILLO','activo','Partido libre','Ocotepeque'-----------------16
+		exec ingresarDiputado 'GEORGE ','ROMEO ','SILVESTRI ','FEREZ','activo','Partido Nacional','Islas de la bahia'---------17
+		exec ingresarDiputado 'MAYLO','WOOD',' GRANWELL',' ','activo','Partido Nacional','Gracias a Dios'---------------------18
 
 		select * from Diputado
 
@@ -363,7 +372,7 @@
 	end
 
 	-------	insertar votante-----
-	create procedure IngresarVotante(
+	Create procedure IngresarVotante(
 	@IdentidadVotante varchar(13),
 	@PrimerNombre varchar(25) ,
 	@SegundoNombre varchar(25),
@@ -371,17 +380,18 @@
 	@SegundoApellido varchar(25) ,
 	@edad int,
 	@sexo varchar(10),
-	@estadoVotante varchar(25),
-	@CodMunicipio varchar(2)
+	@estadoVotante varchar(25)
 	)
 	as begin
-	if exists(select PrimerNombre from votante where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
+	if exists(select IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante)
 		raiserror('El votante ya existe, Ingrese otro',16,1)
 	else 
-		insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante,codMunicipio)
-	values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante,@CodMunicipio)
+		insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante)
+	values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante)
 	end
 
+	execute IngresarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','Activo'
+	
 	---------Actualizar-Votante----
 	create procedure actualizarVotante(
 	@IdentidadVotante varchar(13),
@@ -401,7 +411,7 @@
 	where IdentidadVotante =@IdentidadVotante
 	end
 
-	---------Eliminar-Votante----
+	---------EliminarVotante----
 	create procedure eliminarVotante(
 	@IdentidadVotante int
 	)
@@ -423,36 +433,43 @@
 	inner join Municipio p on CodMunicipio= idMunicipio
 	end
 
+	------Procedimiento almacenado-----
+	------Buscar por identidad--------
+	Create procedure validarVotante(@IdentidadVotante varchar(13))
+	as
+	begin
+	select estadoVotante from votante where IdentidadVotante = @IdentidadVotante
+	end
+
+	execute validarVotante '0318200201281'
+
+	select * from votante
 
 -----Ingreso Departamentos ------
 insert into Departamento(idDepartamento,nombreDepartamento)
 values
+('01','Atlántida')
+('02','Colón')
 ('03','Comayagua')
-
+('04','Copán')
+('05','Cortés')
+('06','Choluteca')
+('07','Paraíso')
+('08','Francisco Morazán')
+('09','Gracias a Dios')
+('10','Intibucá')
+('11','Islas de La Bahía')
+('12','La Paz')
+('13','Lempira')
+('14','Ocotepeque')
+('15','Olancho')
+('16','Santa Bárbara')
+('17','Valle')
+('18','Yoro')
 
 ----Ingreso Muicipios
 insert into Municipio(idMunicipio,nombreMunicipio,idDepartamento)
 values
---Atlántida
-('0101','La Ceiba','01'),
-('0102','El Porvenir','01')
-('0103','El Porvenir','01')
-('0104','Jutiapa ','01')
-('0105','La Masica','01')
-('0106','San Francisco','01')
-('0107','Tela','01')
-('0108','Arizona','01')
---Colón
-('0201','Trujillo ','02')
-('0202','Balfate  ','02')
-('0203','Iriona ','02')
-('0204','Limón ','02')
-('0205','Sabá ','02')
-('0206','Santa Fe ','02')
-('0207','Santa Rosa de Aguán','02')
-('0208','Sonaguera ','02')
-('0209','Tocoa ','02')
-('0210','Bonito Oriental ','02')
 --Comayagua
 ('0301','Comayagua','03')
 ('0302','Ajuterique','03')
