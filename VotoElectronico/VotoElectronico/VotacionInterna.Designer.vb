@@ -22,78 +22,83 @@ Partial Class VotacionInterna
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtidentidad = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAcceder = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'txtidentidad
-        '
-        Me.txtidentidad.Location = New System.Drawing.Point(76, 39)
-        Me.txtidentidad.Name = "txtidentidad"
-        Me.txtidentidad.Size = New System.Drawing.Size(100, 20)
-        Me.txtidentidad.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(19, 42)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Identidad"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(21, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(0, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Votante"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Thistle
+        Me.GroupBox1.Controls.Add(Me.txtidentidad)
+        Me.GroupBox1.Controls.Add(Me.btnAcceder)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(24, 23)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(233, 124)
+        Me.GroupBox1.TabIndex = 5
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Verificar Votante"
+        '
+        'txtidentidad
+        '
+        Me.txtidentidad.Location = New System.Drawing.Point(88, 30)
+        Me.txtidentidad.Name = "txtidentidad"
+        Me.txtidentidad.Size = New System.Drawing.Size(100, 21)
+        Me.txtidentidad.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(31, 33)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(56, 15)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Identidad"
         '
         'btnAcceder
         '
-        Me.btnAcceder.Location = New System.Drawing.Point(98, 98)
-        Me.btnAcceder.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAcceder.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAcceder.Location = New System.Drawing.Point(132, 67)
+        Me.btnAcceder.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAcceder.Name = "btnAcceder"
         Me.btnAcceder.Size = New System.Drawing.Size(78, 30)
-        Me.btnAcceder.TabIndex = 3
+        Me.btnAcceder.TabIndex = 4
         Me.btnAcceder.Text = "ACCEDER"
         Me.btnAcceder.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(180, 98)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(78, 30)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "ACCEDER"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'VotacionInterna
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(297, 158)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnAcceder)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(282, 173)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtidentidad)
         Me.Name = "VotacionInterna"
-        Me.Text = "Form1"
+        Me.Text = "Verificar Votante"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents txtidentidad As TextBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents txtidentidad As TextBox
     Friend WithEvents btnAcceder As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
 End Class
