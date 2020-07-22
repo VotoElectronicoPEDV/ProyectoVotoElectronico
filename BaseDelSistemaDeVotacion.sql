@@ -212,6 +212,34 @@
 	--Partido Libre
 	execute ingresarAlcalde 'Francisco', 'Javier', 'Varela', 'Rosa', 'interna', 'activo', 4, 0303
 	execute ingresarAlcalde 'Miguel', 'Angel ', 'Rodriguez', 'Funez', 'interna', 'activo', 4, 0303
+	
+	--------Municipio Esquias----------
+	--Partido Nacional
+	execute ingresarAlcalde 'Jose', 'Manuel', 'Sanchez', 'Campos', 'interna', 'activo', 1, 0304
+	execute ingresarAlcalde 'Carlos', 'Hernan ', 'Vanegas', 'Bueso', 'interna', 'activo', 1, 0304
+	--Partido liberal
+	execute ingresarAlcalde 'Carlos', 'Daniel', 'Cerrano', 'Ortiz', 'interna', 'activo', 2, 0304
+	execute ingresarAlcalde 'Celio', 'Roberto ', 'Pineda', 'Manzanares', 'interna', 'activo', 2, 0304
+	--Partido Anticorrupcion
+	execute ingresarAlcalde 'Mariano', 'Enrrique', 'Garcia', 'Lopez', 'interna', 'activo', 3, 0304
+	execute ingresarAlcalde 'Raul', 'Fernando ', 'Peralda', 'Mendoza', 'interna', 'activo', 3, 0304
+	--Partido Libre
+	execute ingresarAlcalde 'Alejandro', 'Rafael', 'Quintana', 'Diaz', 'interna', 'activo', 4, 0304
+	execute ingresarAlcalde 'Daniel', 'Emilio ', 'De la Peña', 'Campos', 'interna', 'activo', 4, 0304
+
+		--------Municipio Humuya----------
+	--Partido Nacional
+	execute ingresarAlcalde 'Sergio', 'Antonio', 'Ortiz', 'Osorio', 'interna', 'activo', 1, 0305
+	execute ingresarAlcalde 'Eduardo', 'Antonio ', 'Meza', 'Saravia', 'interna', 'activo', 1, 0305
+	--Partido liberal
+	execute ingresarAlcalde 'Juan', 'Gabriel', 'Ramos', 'Martinez', 'interna', 'activo', 2, 0305
+	execute ingresarAlcalde 'Gabriela', 'Aurora', 'Molina', 'Horosco', 'interna', 'activo', 2, 0305
+	--Partido Anticorrupcion
+	execute ingresarAlcalde 'Felix', 'Eduardo', 'Mencia', 'Perez', 'interna', 'activo', 3, 0305
+	execute ingresarAlcalde 'Feliciano', 'Ramon', 'Romero', 'Juarez', 'interna', 'activo', 3, 0305
+	--Partido Libre
+	execute ingresarAlcalde 'Pedro', 'ALfonso', 'Ramos', 'Montoya', 'interna', 'activo', 4, 0305
+	execute ingresarAlcalde 'Cristian', 'Jose', 'Jimenez', 'Peralda', 'interna', 'activo', 4, 0305
 
 	-------Procedimientos Almacenados-----
 	---------Actualizar-Alcalde----
