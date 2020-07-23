@@ -1,790 +1,519 @@
 create database SistemaNacionalDeElecciones
-	go
+go
 
-	use SistemaNacionalDeElecciones
-	go
+use SistemaNacionalDeElecciones
+go
 
-	create table PartidoPolitico(
-	idPartido int identity primary key not null,
-	NombrePartido varchar(50) not null,
-	Lema varchar(100)
-	)
+create table PartidoPolitico(
+idPartido int identity primary key not null,
+NombrePartido varchar(50) not null,
+Lema varchar(100)
+)
 
-	----------Insertar Partido Politico------------
-	insert into PartidoPolitico (idPartido,NombrePartido,lema)
-	values 
-	(1,'Partido Nacional','Vamos hacer lo que tengamos que hacer'),
-	(2,'Partido Libre','Por una Honduras mejor'),
-	(3,'Partido AntiCorrupcion','Para Combatir la corrupcion'),
-	(4,'Partido Liberal','Por un futuro mejor')
+----------Insertar Partido Politico------------
+insert into PartidoPolitico (NombrePartido,lema) values 
+('Partido Nacional','Vamos hacer lo que tengamos que hacer'),
+('Partido Libre','Por una Honduras mejor'),
+('Partido AntiCorrupcion','Para Combatir la corrupcion'),
+('Partido Liberal','Por un futuro mejor')
+select *from PartidoPolitico
 
-	create table Presidente(
-	idPresidente int identity primary key not null,
-	PrimerNombre varchar(25) not null,
-	SegundoNombre varchar(25),
-	PrimerApellido varchar(25) not null,
-	SegundoApellido varchar(25),
-	VotosValidos int not null,
-	VotosNulos int,
-	Estado varchar(25) not null,
-	Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido)
-	)
+create table Presidente(
+IdentidadPresidente varchar(13) primary key not null,
+PrimerNombre varchar(25) not null,
+SegundoNombre varchar(25),
+PrimerApellido varchar(25) not null,
+SegundoApellido varchar(25),
+VotosValidos int not null,
+VotosNulos int,
+Estado varchar(25) not null,
+Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido)
+)
 
-	create table Departamento(
-	idDepartamento varchar(2) not null primary key,
-	nombreDepartamento varchar(50)
-	)
+create table Departamento(
+idDepartamento varchar(2) not null primary key,
+nombreDepartamento varchar(50)
+)
+insert into Departamento(idDepartamento,nombreDepartamento) values
+('03','Comayagua')
+select *from Departamento
 
-	create table Municipio(
-	idMunicipio varchar(4) not null primary key,
-	nombreMunicipio varchar(50),
-	idDepartamento varchar(2) FOREIGN KEY REFERENCES Departamento(idDepartamento)
-	)
+create table Municipio(
+idMunicipio varchar(2) not null primary key,
+nombreMunicipio varchar(50),
+idDepartamento varchar(2) FOREIGN KEY REFERENCES Departamento(idDepartamento)
+)
+insert into Municipio(idMunicipio,nombreMunicipio,idDepartamento) values
+('01','Comayagua','03'),
+('02','Ajuterique','03'),
+('03','El Rosario','03'),
+('04','Esquías','03'),
+('05','Humuya','03'),
+('06','La Libertad','03'),
+('07','Lamaní','03'),
+('08','La Trinidad','03'),
+('09','Lejamaní','03'),
+('10','Meámbar','03'),
+('11','Minas de Oro','03'),
+('12','Ojos de Agua','03'),
+('13','San Jerónimo','03'),
+('14','San José de Comayagua','03'),
+('15','San José del Potrero','03'),
+('16','San Luis ','03'),
+('17','San Sebastián','03'),
+('18','Siguatepeque','03'),
+('19','Villa de San Antonio','03'),
+('20','Las Lajas','03'),
+('21','Taulabé','03')
+select *from Municipio;
 
+create table Alcalde (
+IdentidadAlcalde varchar(13) primary key not null,
+PrimerNombre varchar(25) not null,
+SegundoNombre varchar(25),
+PrimerApellido varchar(25) not null,
+SegundoApellido varchar(25),
+VotosValidos int not null,
+VotosNulos int,
+DescripcionVotacion varchar(25) not null,
+Estado varchar(25) not null,
+Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido),
+Municipio varchar(2) FOREIGN KEY REFERENCES Municipio(idMunicipio)
+)
 
-	create table Alcalde(
-	idAlcalde int identity primary key not null,
-	PrimerNombre varchar(25) not null,
-	SegundoNombre varchar(25),
-	PrimerApellido varchar(25) not null,
-	SegundoApellido varchar(25),
-	VotosValidos int not null,
-	VotosNulos int,
-	DescripcionVotacion varchar(25) not null,
-	Estado varchar(25) not null,
-	Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido),
-	Municipio varchar(4) FOREIGN KEY REFERENCES Municipio(idMunicipio)
-	)
+create table Diputado(
+IdentidadDiputado varchar(13) primary key not null,
+PrimerNombre varchar(25) not null,
+SegundoNombre varchar(25),
+PrimerApellido varchar(25) not null,
+SegundoApellido varchar(25),
+VotosValidos int not null,
+VotosNulos int,
+Estado varchar(25) not null,
+Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido),
+Departamento varchar(2) FOREIGN KEY REFERENCES Departamento(idDepartamento)
+)
 
-	create table Diputado(
-	idDiputado int identity primary key not null,
-	PrimerNombre varchar(25) not null,
-	SegundoNombre varchar(25),
-	PrimerApellido varchar(25) not null,
-	SegundoApellido varchar(25),
-	VotosValidos int not null,
-	VotosNulos int,
-	Estado varchar(25) not null,
-	Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido),
-	Departamento varchar(2) FOREIGN KEY REFERENCES Departamento(idDepartamento)
-	)
+create table votante(
+IdentidadVotante varchar(13) primary key not null,
+PrimerNombre varchar(25) not null,
+SegundoNombre varchar(25) not null,	
+PrimerApellido varchar(25) not null,
+SegundoApellido varchar(25) not null,
+edad int not null,
+sexo varchar(10) not null,
+estadoVotante varchar(10) not null
+)
+------------------------------------------------------------------Procedimientos-Almacenados---------------------------------------------------------------
 
-	create table votante(
-	IdentidadVotante varchar(13) primary key not null,
-	PrimerNombre varchar(25) not null,
-	SegundoNombre varchar(25) not null,
-	PrimerApellido varchar(25) not null,
-	SegundoApellido varchar(25) not null,
-	edad int not null,
-	sexo varchar(10) not null,
-	estadoVotante varchar(25) not null,
-	CodMunicipio varchar(4) FOREIGN KEY REFERENCES Municipio(idMunicipio)
-	)
+-----------------------------------------------------------------------PRESIDENTE---------------------------------------------------------------
 
-	---------------Procedimientos-Almacenados----
+---------Insertar-Presidente----
+create procedure ingresarPresidente(
+@IdentidadPresidente varchar(13),
+@PrimerNombre varchar(25),
+@segundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@Estado varchar(25),
+@idPartido int
+)
+as
+begin
+if exists(select IdentidadPresidente from Presidente where IdentidadPresidente=@IdentidadPresidente)
+	raiserror('Esta persona ya desempeña el cargo de presidente',16,1)
 
-	---------Insertar-Presidente----
-	create procedure ingresarPresidente(
-	@PrimerNombre varchar(25),
-	@segundoNombre varchar(25),
-	@PrimerApellido varchar(25),
-	@SegundoApellido varchar(25),
-	@Estado varchar(25),
-	@idPartido char(1)
-	)
-	as
-	begin
-	if exists(select PrimerNombre from Presidente where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
-		raiserror('El Presidente ya existe, Ingrese otro',16,1)
-	else 
-		insert into Presidente( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido)
-		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@idPartido)
-	end
-
-		exec ingresarPresidente 'Juan','Orlando','Hernandez','Alvarado','activo',1
-		exec ingresarPresidente 'Luis','Orlando','Zelaya','Medrano ','activo',5 
-		exec ingresarPresidente 'Jose','Manuel','Zelaya','Rosales','activo',6
-		exec ingresarPresidente 'Salvador','Alejandro','Nasralla','Salum ','activo',8 
-
-                  select * from Presidente
-
-	---------Actualizar-Presidente----
-	create procedure actualizarPresidente(
-	@idPresidente int,
-	@PrimerNombre varchar(25),
-	@SegundoNombre varchar(25),
-	@PrimerApellido varchar(25),
-	@SegundoApellido varchar(25),
-	@partido int
-	)
-	as 
-	begin
-	update Presidente 
-	set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Partido = @partido
-	where idPresidente =@idPresidente
-	end
-
-	---------Eliminar-Presidente----
-	create procedure eliminarPresidente(
-	@idPresidente int
-	)
-	as
-	begin
-	if exists(select estado,idPresidente from Presidente where idPresidente = @idPresidente and Estado='eliminado')
-		raiserror ('el Presidente no existe en la base de datos',16,1)
-	else
-		update Presidente
-		set Estado = 'eliminado'
-		where idPresidente = @idPresidente
-	end
-	exec eliminarPresidente 1
-
-	---------consultar-Presidente----
-	create procedure consultarPresidente
-	as
-	begin
-	select idPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Presidente
-	inner join PartidoPolitico p on Partido= p.idPartido
-	end
-
-
-	-------Procedimientos Almacenados-----
-	-------Insertar--Alcalde--
-	Create procedure ingresarAlcalde
-	(
-	@PrimerNombre varchar(25),
-	@SegundoNombre varchar(25),
-	@PrimerApellido varchar(25),
-	@SegundoApellido varchar(25),
-	@DescripcionVotacion varchar(25),
-	@Estado varchar(25),
-	@Partido int,
-	@Municipio varchar(4)
-	)
-	as
-	begin
-	if exists(select PrimerNombre from Alcalde where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
-		raiserror('El Alcalde ya existe, Ingrese otro',16,1)
-	else 
-		insert into Alcalde( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,DescripcionVotacion,Estado,Partido,Municipio)
-		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@DescripcionVotacion,@Estado,@Partido,@Municipio)
-	end
+else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado=@IdentidadPresidente)
+	raiserror('Esta persona ya desempeña un cargo de diputado',16,1)
 	
-	--------Municipio de Comayagua----------
-	--Partido Nacional
-	execute ingresarAlcalde 'Carlos', 'Josue', 'Miranda', 'Canales', 'interna', 'activo', 1, 0301
-	execute ingresarAlcalde 'Trinidad', 'Jose ', 'cecilio', 'del Valle', 'interna', 'activo', 1, 0301
-	--Partido liberal
-	execute ingresarAlcalde 'Juan', 'Carlos', 'Juarez', 'Gutierrez', 'interna', 'activo', 2, 0301
-	execute ingresarAlcalde 'Pedro', 'Rafael ', 'Valladarez', 'Giron', 'interna', 'activo', 2, 0301
-	--Partido Anticorrupcion
-	execute ingresarAlcalde 'Jose', 'Francisco', 'Hernandez', 'Canales', 'interna', 'activo', 3, 0301
-	execute ingresarAlcalde 'Joseph', 'Josias ', 'Caceres', 'Rivas', 'interna', 'activo', 3, 0301
-	--Partido Libre
-	execute ingresarAlcalde 'Edgar', 'Orlando', 'Gutierrez', 'Guzman', 'interna', 'activo', 4, 0301
-	execute ingresarAlcalde 'Ever', 'Jose ', 'Morazan', 'Dominguez', 'interna', 'activo', 4, 0301
+else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde=@IdentidadPresidente)
+	raiserror('Esta persona ya desempeña un cargo de alcalde',16,1)
+else
+	insert into Presidente(IdentidadPresidente,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido)
+	values(@IdentidadPresidente,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@idPartido)
+end
+exec ingresarPresidente '0101197000188','Juan','Orlando','Hernandez','Alvarado','activo',1
+exec ingresarPresidente '0101197000187','Luis','Orlando','Zelaya','Medrano ','activo',2 
+exec ingresarPresidente '0101197000186','Jose','Manuel','Zelaya','Rosales','activo',3
+exec ingresarPresidente '0101197000185','Salvador','Alejandro','Nasralla','Salum ','activo',4
+select * from Presidente
 
-	--------Municipio de Ajuterique----------
-	--Partido Nacional
-	execute ingresarAlcalde 'Pedro', 'Alonso', 'Mosku', 'Canales', 'interna', 'activo', 1, 0302
-	execute ingresarAlcalde 'Rey', 'Alonso ', 'Vasquez', 'Juarez', 'interna', 'activo', 1, 0302
-	--Partido liberal
-	execute ingresarAlcalde 'Alberto', 'Jacob', 'Perez', 'Sambrano', 'interna', 'activo', 2, 0302
-	execute ingresarAlcalde 'Feliciano', 'Roberto ', 'Pineda', 'Garcia', 'interna', 'activo', 2, 0302
-	--Partido Anticorrupcion
-	execute ingresarAlcalde 'Ricardo', 'Alfonso', 'Guerra', 'Guerra', 'interna', 'activo', 3, 0302
-	execute ingresarAlcalde 'Edgardo', 'Butin ', 'Prada', 'Rodriguez', 'interna', 'activo', 3, 0302
-	--Partido Libre
-	execute ingresarAlcalde 'Kevin', 'Leonel', 'Lopez', 'Lopez', 'interna', 'activo', 4, 0302
-	execute ingresarAlcalde 'Oscar', 'Rafael ', 'Llamazares', 'Caceres', 'interna', 'activo', 4, 0302
+---------Actualizar-Presidente----
+create procedure actualizarPresidente(
+@IdentidadPresidente varchar(13),
+@PrimerNombre varchar(25),
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@partido int
+)
+as 
+begin
+if exists(select IdentidadPresidente, Estado from Presidente where IdentidadPresidente = @IdentidadPresidente and estado = 'activo')
+update Presidente 
+set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Partido = @partido
+where IdentidadPresidente = @IdentidadPresidente
+else
+	raiserror('el Presidente no existe en la base de datos',16,1)
+end
+exec actualizarPresidente '0102197000188','Juan','Orlando','Hernandez','Alvarado',1
 
-	--------Municipio El Rosario----------
-	--Partido Nacional
-	execute ingresarAlcalde 'Miguel', 'Fernando', 'Mosku', 'Canales', 'interna', 'activo', 1, 0303
-	execute ingresarAlcalde 'Juan', 'Alonso ', 'Hernadez', 'Hernadez', 'interna', 'activo', 1, 0303
-	--Partido liberal
-	execute ingresarAlcalde 'Alberto', 'Josias', 'Pacheco', 'Sambrano', 'interna', 'activo', 2, 0303
-	execute ingresarAlcalde 'Celio', 'Roberto ', 'Pineda', 'Manzanares', 'interna', 'activo', 2, 0303
-	--Partido Anticorrupcion
-	execute ingresarAlcalde 'Mercedes', 'Maria', 'Aranda', 'Gomez', 'interna', 'activo', 3, 0303
-	execute ingresarAlcalde 'Mario', 'Arturo ', 'Espinoza', 'Cruz', 'interna', 'activo', 3, 0303
-	--Partido Libre
-	execute ingresarAlcalde 'Francisco', 'Javier', 'Varela', 'Rosa', 'interna', 'activo', 4, 0303
-	execute ingresarAlcalde 'Miguel', 'Angel ', 'Rodriguez', 'Funez', 'interna', 'activo', 4, 0303
+---------Eliminar-Presidente----
+create procedure eliminarPresidente(@identidadPresidente varchar(13))
+as
+begin
+if exists(select estado,IdentidadPresidente from Presidente where IdentidadPresidente = @IdentidadPresidente  and Estado='activo')
+		update Presidente
+	set Estado = 'eliminado'
+	where IdentidadPresidente = @IdentidadPresidente
+	
+else
+	raiserror ('el Presidente no existe en la base de datos',16,1)
+end
+exec eliminarPresidente '0101197000186'
 
-	--------Municipio Esquias----------
-	--Partido Nacional
-	execute ingresarAlcalde 'Jose', 'Manuel', 'Sanchez', 'Campos', 'interna', 'activo', 1, 0304
-	execute ingresarAlcalde 'Carlos', 'Hernan ', 'Vanegas', 'Bueso', 'interna', 'activo', 1, 0304
-	--Partido liberal
-	execute ingresarAlcalde 'Carlos', 'Daniel', 'Cerrano', 'Ortiz', 'interna', 'activo', 2, 0304
-	execute ingresarAlcalde 'Celio', 'Roberto ', 'Pineda', 'Manzanares', 'interna', 'activo', 2, 0304
-	--Partido Anticorrupcion
-	execute ingresarAlcalde 'Mariano', 'Enrrique', 'Garcia', 'Lopez', 'interna', 'activo', 3, 0304
-	execute ingresarAlcalde 'Raul', 'Fernando ', 'Peralda', 'Mendoza', 'interna', 'activo', 3, 0304
-	--Partido Libre
-	execute ingresarAlcalde 'Alejandro', 'Rafael', 'Quintana', 'Diaz', 'interna', 'activo', 4, 0304
-	execute ingresarAlcalde 'Daniel', 'Emilio ', 'De la Peña', 'Campos', 'interna', 'activo', 4, 0304
+---------consultar-Presidente----
+create procedure consultarPresidente
+as
+begin
+select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Presidente
+inner join PartidoPolitico p on Partido= p.idPartido
+end
+exec consultarPresidente
 
-		--------Municipio Humuya----------
-	--Partido Nacional
-	execute ingresarAlcalde 'Sergio', 'Antonio', 'Ortiz', 'Osorio', 'interna', 'activo', 1, 0305
-	execute ingresarAlcalde 'Eduardo', 'Antonio ', 'Meza', 'Saravia', 'interna', 'activo', 1, 0305
-	--Partido liberal
-	execute ingresarAlcalde 'Juan', 'Gabriel', 'Ramos', 'Martinez', 'interna', 'activo', 2, 0305
-	execute ingresarAlcalde 'Gabriela', 'Aurora', 'Molina', 'Horosco', 'interna', 'activo', 2, 0305
-	--Partido Anticorrupcion
-	execute ingresarAlcalde 'Felix', 'Eduardo', 'Mencia', 'Perez', 'interna', 'activo', 3, 0305
-	execute ingresarAlcalde 'Feliciano', 'Ramon', 'Romero', 'Juarez', 'interna', 'activo', 3, 0305
-	--Partido Libre
-	execute ingresarAlcalde 'Pedro', 'ALfonso', 'Ramos', 'Montoya', 'interna', 'activo', 4, 0305
-	execute ingresarAlcalde 'Cristian', 'Jose', 'Jimenez', 'Peralda', 'interna', 'activo', 4, 0305
+-----------------------------------------------------------------------------------ALCALDE---------------------------------------------------------------------
+	-------Insertar--Alcalde--
+Create procedure ingresarAlcalde
+(
+@identidadAlcalde varchar(13),
+@PrimerNombre varchar(25),
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@DescripcionVotacion varchar(25),
+@Estado varchar(25),
+@Partido int,
+@Municipio varchar(2)
+)
+as
+begin
+if exists(select IdentidadPresidente from Presidente where IdentidadPresidente=@identidadAlcalde)
+	raiserror('Esta persona ya desempeña el cargo de presidente',16,1)
 
+else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado=@identidadAlcalde)
+	raiserror('Esta persona ya desempeña un cargo de diputado',16,1)
+	
+else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde=@identidadAlcalde)
+	raiserror('Esta persona ya desempeña un cargo de alcalde',16,1)
+else
+	insert into Alcalde(IdentidadAlcalde,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,DescripcionVotacion,Estado,Partido,Municipio)
+	values(@identidadAlcalde,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@DescripcionVotacion,@Estado,@Partido,@Municipio)
+end
+	
+--------Municipio de Comayagua----------
+--Partido Nacional
+execute ingresarAlcalde '0301196000140','Carlos','Josue','Miranda', 'Canales','interna','activo',1,'01'
+execute ingresarAlcalde '0301196000141','Trinidad', 'Jose ','cecilio', 'del Valle', 'interna', 'activo', 1, '01'
+--Partido liberal
+execute ingresarAlcalde '0301196000142','Juan', 'Carlos', 'Juarez', 'Gutierrez', 'interna', 'activo', 2, '01'
+execute ingresarAlcalde '0301196000143','Pedro', 'Rafael ', 'Valladarez', 'Giron', 'interna', 'activo', 2,'01'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0301196000144','Jose', 'Francisco', 'Hernandez', 'Canales', 'interna', 'activo', 3, '01'
+execute ingresarAlcalde '0301196000145','Joseph', 'Josias ', 'Caceres', 'Rivas', 'interna', 'activo', 3, '01'
+--Partido Libre
+execute ingresarAlcalde '0301196000146','Edgar', 'Orlando', 'Gutierrez', 'Guzman', 'interna', 'activo', 4, '01'
+execute ingresarAlcalde '0301196000147','Ever', 'Jose ', 'Morazan', 'Dominguez', 'interna', 'activo', 4, '01'
+
+--------Municipio de Ajuterique----------
+--Partido Nacional
+execute ingresarAlcalde '0302196000140','Pedro', 'Alonso', 'Mosku', 'Canales', 'interna', 'activo', 1, '02'
+execute ingresarAlcalde '0302196000141','Rey', 'Alonso ', 'Vasquez', 'Juarez', 'interna', 'activo', 1,'02'
+--Partido liberal
+execute ingresarAlcalde '0302196000142','Alberto', 'Jacob', 'Perez', 'Sambrano', 'interna', 'activo', 2,'02'
+execute ingresarAlcalde '0302196000143','Feliciano', 'Roberto ', 'Pineda', 'Garcia', 'interna', 'activo', 2, '02'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0302196000144','Ricardo', 'Alfonso', 'Guerra', 'Guerra', 'interna', 'activo', 3,'02'
+execute ingresarAlcalde '0302196000145','Edgardo', 'Butin ', 'Prada', 'Rodriguez', 'interna', 'activo', 3, '02'
+--Partido Libre
+execute ingresarAlcalde '0302196000146','Kevin', 'Leonel', 'Lopez', 'Lopez', 'interna', 'activo', 4, '02'
+execute ingresarAlcalde '0302196000147','Oscar', 'Rafael ', 'Llamazares', 'Caceres', 'interna', 'activo', 4,'02'
+
+--------Municipio El Rosario----------
+--Partido Nacional
+execute ingresarAlcalde '0303196000140','Miguel', 'Fernando', 'Mosku', 'Canales', 'interna', 'activo', 1, '03'
+execute ingresarAlcalde '0303196000141','Juan', 'Alonso ', 'Hernadez', 'Hernadez', 'interna', 'activo', 1, '03'
+--Partido liberal
+execute ingresarAlcalde '0303196000142','Alberto', 'Josias', 'Pacheco', 'Sambrano', 'interna', 'activo', 2, '03'
+execute ingresarAlcalde '0303196000143','Celio', 'Roberto ', 'Pineda', 'Manzanares', 'interna', 'activo', 2, '03'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0303196000144','Mercedes', 'Maria', 'Aranda', 'Gomez', 'interna', 'activo', 3, '03'
+execute ingresarAlcalde '0303196000145','Mario', 'Arturo ', 'Espinoza', 'Cruz', 'interna', 'activo', 3, '03'
+--Partido Libre
+execute ingresarAlcalde '0303196000146','Francisco', 'Javier', 'Varela', 'Rosa', 'interna', 'activo', 4, '03'
+execute ingresarAlcalde '0303196000147','Miguel', 'Angel ', 'Rodriguez', 'Funez', 'interna', 'activo', 4, '03'
+
+--------Municipio Esquias----------
+--Partido Nacional
+execute ingresarAlcalde '0304196000140','Jose', 'Manuel', 'Sanchez', 'Campos', 'interna', 'activo', 1, '04'
+execute ingresarAlcalde '0304196000141','Carlos', 'Hernan ', 'Vanegas', 'Bueso', 'interna', 'activo', 1, '04'
+--Partido liberal
+execute ingresarAlcalde '0304196000142','Carlos', 'Daniel', 'Cerrano', 'Ortiz', 'interna', 'activo', 2, '04'
+execute ingresarAlcalde '0304196000143','Celio', 'Roberto ', 'Pineda', 'Manzanares', 'interna', 'activo', 2, '04'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0304196000144','Mariano', 'Enrrique', 'Garcia', 'Lopez', 'interna', 'activo', 3, '04'
+execute ingresarAlcalde '0304196000145','Raul', 'Fernando ', 'Peralda', 'Mendoza', 'interna', 'activo', 3,'04'
+--Partido Libre
+execute ingresarAlcalde '0304196000146','Alejandro', 'Rafael', 'Quintana', 'Diaz', 'interna', 'activo', 4, '04'
+execute ingresarAlcalde '0304196000147','Daniel', 'Emilio ', 'De la Peña', 'Campos', 'interna', 'activo', 4, '04'
+
+--------Municipio Humuya----------
+--Partido Nacional
+execute ingresarAlcalde '0305196000140','Sergio', 'Antonio', 'Ortiz', 'Osorio', 'interna', 'activo', 1, '05'
+execute ingresarAlcalde '0305196000141','Eduardo', 'Antonio ', 'Meza', 'Saravia', 'interna', 'activo', 1, '05'
+--Partido liberal
+execute ingresarAlcalde '0301596000142','Juan', 'Gabriel', 'Ramos', 'Martinez', 'interna', 'activo', 2, '05'
+execute ingresarAlcalde '0305196000143','Gabriela', 'Aurora', 'Molina', 'Horosco', 'interna', 'activo', 2, '05'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0305196000144','Felix', 'Eduardo', 'Mencia', 'Perez', 'interna', 'activo', 3, '05'
+execute ingresarAlcalde '0305196000145','Feliciano', 'Ramon', 'Romero', 'Juarez', 'interna', 'activo', 3, '05'
+--Partido Libre
+execute ingresarAlcalde '0305196000146','Pedro', 'ALfonso', 'Ramos', 'Montoya', 'interna', 'activo', 4, '05'
+execute ingresarAlcalde '0305196000147','Cristian', 'Jose', 'Jimenez', 'Peralda', 'interna', 'activo', 4, '05'
+select *from Alcalde
 
 	-------Procedimientos Almacenados-----
 	---------Actualizar-Alcalde----
-	create procedure actualizarAlcalde(
-	@idAlcalde int,
-	@PrimerNombre varchar(25),
-	@SegundoNombre varchar(25),
-	@PrimerApellido varchar(25),
-	@SegundoApellido varchar(25),
-	@Estado varchar(25),
-	@Partido int,
-	@Municipio varchar(2)
-	)
-	as 
-	begin
-	update Alcalde 
-	set PrimerNombre = @PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido,Estado = @Estado, Partido = @partido, Municipio = @Municipio
-	where idAlcalde =@idAlcalde
-	end
+create procedure actualizarAlcalde(
+@identidadAlcalde varchar(13),
+@PrimerNombre varchar(25),
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@Partido int
+)
+as 
+begin
+if exists(select identidadAlcalde, Estado from Alcalde where IdentidadAlcalde = @identidadAlcalde and estado = 'activo')
+update Alcalde 
+set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Partido = @partido
+where identidadAlcalde = @identidadAlcalde
+else
+	raiserror('el alcande no existe en la base de datos',16,1)
+end
+exec actualizarAlcalde '0305196000147','Cristian', 'Joel', 'Jimenez', 'Peralda',4
 
-	---------Eliminar-Alcalde----
-	create procedure eliminarAlcalde(
-	@idAlcalde int
-	)
-	as
-	begin
-	if exists(select estado,idAlcalde from Alcalde where idAlcalde = @idAlcalde and Estado='eliminado')
-		raiserror ('el Alcalde no existe en la base de datos',16,1)
-	else
+---------Eliminar-Alcalde----
+create procedure eliminarAlcalde(@identidadAlcalde varchar(13))
+as
+begin
+if exists(select estado,IdentidadAlcalde from Alcalde where IdentidadAlcalde = @identidadAlcalde  and Estado ='activo')
 		update Alcalde
-		set Estado = 'eliminado'
-		where idAlcalde=@idAlcalde
-
-	end
-	exec eliminarPresidente 1
-
-
-
-	---------consultar-Alcalde----
-	create procedure consultarAlcalde
-	as
-	begin
-	select idAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
-	inner join PartidoPolitico p on Partido= p.idPartido
-	inner join Municipio M on Municipio = M.idMunicipio
-	inner join Departamento D on M.idDepartamento = D.idDepartamento
-	end
+	set Estado = 'eliminado'
+	where IdentidadAlcalde = @identidadAlcalde
+	
+else
+	raiserror ('el Alcalde no existe en la base de datos',16,1)
+end
+exec eliminarAlcalde '0305196000147'
 
 
-	-------Procedimientos Almacenados-----
+
+---------consultar-Alcalde----
+create procedure consultarAlcalde
+as
+begin
+select IdentidadAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
+inner join PartidoPolitico p on Partido= p.idPartido
+inner join Municipio M on Municipio = M.idMunicipio
+inner join Departamento D on M.idDepartamento = D.idDepartamento
+end
+exec consultarAlcalde
+
+----------------------------------------------------------------------Diputados-----------------------------------------------------------------------------------
 	----------insertar Diputado--------
 
-	create procedure ingresarDiputado(
-	@PrimerNombre varchar(25),
-	@SegundoNombre varchar(25),
-	@PrimerApellido varchar(25),
-	@SegundoApellido varchar(25),
-	@Estado varchar(25),
-	@partido int,
-	@Departamento varchar(2)
-	)
-	as begin
-	if exists(select PrimerNombre from Diputado where PrimerNombre=@PrimerNombre and PrimerApellido=@PrimerApellido)
-		raiserror('El Diputado ya existe, Ingrese otro',16,1)
-	else 
-		insert into Diputado( PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido,Departamento)
-		values(@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@Partido,@Departamento)
-	end 
+create procedure ingresarDiputado(
+@identidadDiputado varchar(13),
+@PrimerNombre varchar(25),
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@Estado varchar(25),
+@partido int,
+@Departamento varchar(2)
+)
+as 
+begin
+if exists(select IdentidadPresidente from Presidente where IdentidadPresidente = @identidadDiputado)
+	raiserror('Esta persona ya desempeña el cargo de presidente',16,1)
 
+else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado = @identidadDiputado)
+	raiserror('Esta persona ya desempeña un cargo de diputado',16,1)
+	
+else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @identidadDiputado)
+	raiserror('Esta persona ya desempeña un cargo de alcalde',16,1)
+else
+
+	insert into Diputado(IdentidadDiputado,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido,Departamento)
+	values(@identidadDiputado,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@Partido,@Departamento)
+end 
 
 			-------------Partido Nacional----
-		exec ingresarDiputado 'Oscar','Aturo','Alvarez','Guerrero','activo',1,'03' 
-		exec ingresarDiputado 'HECTOR ','GUILLERMO',' GUILLEN ','GOMEZ','activo',1,'03'
-		exec ingresarDiputado 'JOSE',' MARIA ','MARTINEZ ','VALENZUELA','activo',1,'03'
-		exec ingresarDiputado 'JOSE ','VICENTE',' LEON ','ROJAS','activo',1,'03'
-		exec ingresarDiputado 'REINALDO ','ANTONIO ','SANCHEZ',' RIVERA','activo',1,'03'
-		exec ingresarDiputado 'JOSE ','CELIN',' DISCUA ','ELVIR','activo',1,'03'
-		exec ingresarDiputado 'JOSE ','TOMAS ','PONCE ','POSAS','activo',1,'03 '
+exec ingresarDiputado '0301197000130','Oscar','Aturo','Alvarez','Guerrero','activo',1,'03' 
+exec ingresarDiputado '0302197000131','HECTOR ','GUILLERMO',' GUILLEN ','GOMEZ','activo',1,'03'
+exec ingresarDiputado '0303197000132','JOSE',' MARIA ','MARTINEZ ','VALENZUELA','activo',1,'03'
+exec ingresarDiputado '0304197000133','JOSE ','VICENTE',' LEON ','ROJAS','activo',1,'03'
+exec ingresarDiputado '0305197000134','REINALDO ','ANTONIO ','SANCHEZ',' RIVERA','activo',1,'03'
+exec ingresarDiputado '0306197000135','JOSE ','CELIN',' DISCUA ','ELVIR','activo',1,'03'
+exec ingresarDiputado '0307197000136','JOSE ','TOMAS ','PONCE ','POSAS','activo',1,'03 '
 
-		-------------Partido Libre----
-		exec ingresarDiputado 'RAMON ','ANTONIO ','LEVA ','BULNES','activo',2,'03'
-		exec ingresarDiputado 'JUAN','CARLOS',' VALENZUELA ','MOLINA','activo',2,'03'
-		exec ingresarDiputado 'MIDENCE ','OQUELY',' MARTINEZ ','TURCIOS','activo',2,'03'
-		exec ingresarDiputado 'ANA',' JULIA ','GARCIA ','VILLALOBOS','activo',2,'03'
-		exec ingresarDiputado 'FELIPE ','ZUNIGA ','DEL ','CID','activo',2,'03'
-		exec ingresarDiputado 'GLADIS',' AURORA ','LOPEZ',' CALDERON','activo',2,'03' 
-		exec ingresarDiputado 'LUIS ','RIGOBERTO ','SANTOS ','PORTILLO','activo',2,'03'
+-------------Partido Libre----
+exec ingresarDiputado '0308197000137','RAMON ','ANTONIO ','LEVA ','BULNES','activo',2,'03'
+exec ingresarDiputado '0309197000138','JUAN','CARLOS',' VALENZUELA ','MOLINA','activo',2,'03'
+exec ingresarDiputado '0310197000139','MIDENCE ','OQUELY',' MARTINEZ ','TURCIOS','activo',2,'03'
+exec ingresarDiputado '0311197000140','ANA',' JULIA ','GARCIA ','VILLALOBOS','activo',2,'03'
+exec ingresarDiputado '0312197000141','FELIPE ','ZUNIGA ','DEL ','CID','activo',2,'03'
+exec ingresarDiputado '0313197000142','GLADIS',' AURORA ','LOPEZ',' CALDERON','activo',2,'03' 
+exec ingresarDiputado '0314197000143','LUIS ','RIGOBERTO ','SANTOS ','PORTILLO','activo',2,'03'
 
+-------------Partido anticorrupcion----
 
-			-------------Partido anticorrupcion----
+exec ingresarDiputado '0315197000144','JOSUE ','WILMER ','RIVAS ','MORENO','activo',3,'03'
+exec ingresarDiputado '0316197000145','MARIO','JOS',' GAMALIEL','RIVERA ','activo',3,'03'
+exec ingresarDiputado '0317197000146','CELENA ','SOFIA ','LEVY ','LEVY','activo',3,'03'
+exec ingresarDiputado '0318197000147','RAUL','JOSUE',' MENDEZ ','CASTRO','activo',3,'03'
+exec ingresarDiputado '0317197000148','PEDRO ','ANTONIA',' MEZA ','PONCE','activo',3,'03'
+exec ingresarDiputado '0316197000149','KEREN',' MARIA ','ARANDA ','QUINTANA','activo',3,'03'
+exec ingresarDiputado '0315197000150','MARIO ','ANTONIO ','GUERRA ','DEL CID','activo',3,'03'
 
-		exec ingresarDiputado 'JOSUE ','WILMER ','RIVAS ','MORENO','activo',3,'03'
-		exec ingresarDiputado 'MARIO','JOS',' GAMALIEL','RIVERA ','activo',3,'03'
-		exec ingresarDiputado 'CELENA ','SOFIA ','LEVY ','LEVY','activo',3,'03'
-		exec ingresarDiputado 'RAUL','JOSUE',' MENDEZ ','CASTRO','activo',3,'03'
-		exec ingresarDiputado 'PEDRO ','ANTONIA',' MEZA ','PONCE','activo',3,'03'
-		exec ingresarDiputado 'KEREN',' MARIA ','ARANDA ','QUINTANA','activo',3,'03'
-		exec ingresarDiputado 'MARIO ','ANTONIO ','GUERRA ','DEL CID','activo',3,'03'
+-------------Partido ALiberal----
+exec ingresarDiputado '0314197000151','ANA ','MARIA ','PEREZ ','LOPEZ','activo',4,'03'
+exec ingresarDiputado '0313197000152','GERARDO','ANTONIO',' VILLANUEVA ','CORTES','activo',4,'03'
+exec ingresarDiputado '0312197000153','JUAN ','CARLOS',' VILLALOBOS ','ANDINO','activo',4,'03'
+exec ingresarDiputado '0311197000154','LETICA',' MACARENA ','RAMOS ','CACERES','activo',4,'03'
+exec ingresarDiputado '0310197000155','GENESIS ','NAHOMI ','CASTRO ','MORENO','activo',4,'03'
+exec ingresarDiputado '0309197000156','RAMON',' ENRIQUE ','MARTINEZ',' MARTINEZ','activo',4,'03' 
+exec ingresarDiputado '0308197000157','JAIRO ','PATRICIO ','GOMEZ ','CORTEZ','activo',4,'03'
 
+select * from Diputado
 
-			-------------Partido ALiberal----
-		exec ingresarDiputado 'ANA ','MARIA ','PEREZ ','LOPEZ','activo',4,'03'
-		exec ingresarDiputado 'GERARDO','ANTONIO',' VILLANUEVA ','CORTES','activo',4,'03'
-		exec ingresarDiputado 'JUAN ','CARLOS',' VILLALOBOS ','ANDINO','activo',4,'03'
-		exec ingresarDiputado 'LETICA',' MACARENA ','RAMOS ','CACERES','activo',4,'03'
-		exec ingresarDiputado 'GENESIS ','NAHOMI ','CASTRO ','MORENO','activo',4,'03'
-		exec ingresarDiputado 'RAMON',' ENRIQUE ','MARTINEZ',' MARTINEZ','activo',4,'03' 
-		exec ingresarDiputado 'JAIRO ','PATRICIO ','GOMEZ ','CORTEZ','activo',4,'03'
+---------Actualizar-Diputado----
+create procedure actualizarDiputado(
+@identidadDiputado varchar(13),
+@PrimerNombre varchar(25),
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@partido int
+)
+as 
+begin
+if exists(select IdentidadDiputado, Estado from Diputado where IdentidadDiputado = @identidadDiputado and estado = 'activo')
+	update Diputado 
+	set PrimerNombre = @PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Partido = @partido
+	where IdentidadDiputado = @identidadDiputado
+else
+	raiserror('el Diputado no existe en la base de datos',16,1)
+end
+exec actualizarDiputado '0308197000157','JAIRO ','PATRICIO ','GOMEZ ','CORTEZ',4
 
+---------Eliminar-Diputado----
 
-		select * from Diputado
-
-	---------Actualizar-Diputado----
-	create procedure actualizarDiputado(
-	@idDiputado int,
-	@PrimerNombre varchar(25),
-	@SegundoNombre varchar(25),
-	@PrimerApellido varchar(25),
-	@SegundoApellido varchar(25),
-	@Estado varchar(25),
-	@partido int,
-	@Departamento varchar(2)
-	)
-	as 
-	begin
+create procedure eliminarDiputado(@identidadDiputado varchar(13))
+as
+begin
+if exists(select estado,identidadDiputado from Diputado where identidadDiputado = @identidadDiputado  and Estado ='activo')
 		update Diputado
-		set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Estado = @Estado, Partido = @partido, Departamento = @Departamento 
-	where idDiputado =@idDiputado
-	end
-
-	---------Eliminar-Diputado----
-	create procedure eliminarDiputado(
-	@idDiputado int
-	)
-	as
-	begin
-	if exists(select estado,idDiputado from Diputado where idDiputado = @idDiputado and Estado='eliminado')
-		raiserror ('El Diputado no existe en la base de datos',16,1)
-	else
-		update Diputado
-		set Estado = 'eliminado'
-	end
-	exec eliminarDiputado 1
+	set Estado = 'eliminado'
+	where identidadDiputado = @identidadDiputado
+	
+else
+	raiserror ('el Diputado no existe en la base de datos',16,1)
+end
+exec eliminarDiputado '0308197000157'
 
 	---------consultar-Diputado----
-	create procedure consultarDiputado
-	as
-	begin
-	select idDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
-	inner join PartidoPolitico p on Partido= p.idPartido
-	inner join Departamento D on Departamento = D.idDepartamento
-	end
-
+create procedure consultarDiputado
+as
+begin
+select IdentidadDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
+inner join PartidoPolitico p on Partido= p.idPartido
+inner join Departamento D on Departamento = D.idDepartamento
+end
+exec consultarDiputado
+----------------------------------------------------------------------VOTANTE-----------------------------------------------------------------------------------
 	-------	insertar votante-----
-	Create procedure IngresarVotante(
-	@IdentidadVotante varchar(13),
-	@PrimerNombre varchar(25) ,
-	@SegundoNombre varchar(25),
-	@PrimerApellido varchar(25),
-	@SegundoApellido varchar(25) ,
-	@edad int,
-	@sexo varchar(10),
-	@estadoVotante varchar(25)
-	)
-	as begin
-	if exists(select IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante)
-		raiserror('El votante ya existe, Ingrese otro',16,1)
-	else 
-		insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante)
-	values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante)
-	end
+create procedure IngresarVotante(
+@IdentidadVotante varchar(13),
+@PrimerNombre varchar(25) ,
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25) ,
+@edad int,
+@sexo varchar(10),
+@estadoVotante varchar(25)
+)
+as begin
+if exists(select IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante)
+	raiserror('El votante ya existe, Ingrese otro',16,1)
+else 
+	insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante)
+values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante)
+end
+execute IngresarVotante '0319200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','Activo'
+select * from votante
 
-	execute IngresarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','Activo'
-	
 	---------Actualizar-Votante----
-	create procedure actualizarVotante(
-	@IdentidadVotante varchar(13),
-	@PrimerNombre varchar(25) ,
-	@SegundoNombre varchar(25),
-	@PrimerApellido varchar(25),
-	@SegundoApellido varchar(25) ,
-	@edad int,
-	@sexo varchar(10),
-	@estadoVotante varchar(25),
-	@CodMunicipio varchar(2)
-	)
-	as 
-	begin
-		update votante
-		set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Edad = @edad, sexo = @sexo, estadoVotante = @estadoVotante, CodMunicipio = @CodMunicipio 
-	where IdentidadVotante =@IdentidadVotante
-	end
+create procedure actualizarVotante(
+@IdentidadVotante varchar(13),
+@PrimerNombre varchar(25) ,
+@SegundoNombre varchar(25),
+@PrimerApellido varchar(25),
+@SegundoApellido varchar(25),
+@edad int,
+@sexo varchar(10)
+)
+as 
+begin
+if exists(select IdentidadVotante, estadoVotante from votante where IdentidadVotante = @IdentidadVotante and estadoVotante = 'activo')
+	update votante 
+	set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Edad = @edad, sexo = @sexo
+    where IdentidadVotante =@IdentidadVotante
+else
+	raiserror('el votante no existe en la base de datos',16,1)
+end
+exec actualizarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino'
 
 	---------EliminarVotante----
-	create procedure eliminarVotante(
-	@IdentidadVotante int
-	)
-	as
-	begin
-	if exists(select estadoVotante,IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante and estadoVotante='eliminado')
-		raiserror ('El Votante no existe en la base de datos',16,1)
-	else
-		update votante
-		set estadoVotante = 'eliminado'
-	end
-	exec eliminarVotante 1
+create procedure eliminarVotante(
+@IdentidadVotante varchar(13)
+)
+as
+begin
+if exists(select estadoVotante,IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante and estadoVotante='activo')
+	update votante
+	set estadoVotante = 'eliminado'
+else
+ raiserror ('El Votante no existe en la base de datos',16,1)
+end
+exec eliminarVotante '0318200301323'
 
-	---------consultar-Votante----
-	create procedure consultarVotante
-	as
-	begin
-	select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.idMunicipio as 'Municipio' from votante
-	inner join Municipio p on CodMunicipio= idMunicipio
-	end
+---------consultar-Votante----
+create procedure consultarVotante
+as
+begin
+select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', estadoVotante as 'Estado' from votante
+end
+exec consultarVotante
 
 	------Procedimiento almacenado-----
 	------Buscar por identidad--------
-	Create procedure validarVotante(@IdentidadVotante varchar(13))
-	as
-	begin
-	select estadoVotante from votante where IdentidadVotante = @IdentidadVotante
-	end
+Create procedure validarVotante(@IdentidadVotante varchar(13))
+as
+begin
+select estadoVotante from votante where IdentidadVotante = @IdentidadVotante
+end
+execute validarVotante '0319200301323'
 
-	execute validarVotante '0318200201281'
 
-	select * from votante
 
------Ingreso Departamentos ------
-insert into Departamento(idDepartamento,nombreDepartamento)
-values
-('01','Atlántida')
-('02','Colón')
-('03','Comayagua')
-('04','Copán')
-('05','Cortés')
-('06','Choluteca')
-('07','Paraíso')
-('08','Francisco Morazán')
-('09','Gracias a Dios')
-('10','Intibucá')
-('11','Islas de La Bahía')
-('12','La Paz')
-('13','Lempira')
-('14','Ocotepeque')
-('15','Olancho')
-('16','Santa Bárbara')
-('17','Valle')
-('18','Yoro')
-
-----Ingreso Muicipios
-insert into Municipio(idMunicipio,nombreMunicipio,idDepartamento)
-values
---Comayagua
-('0301','Comayagua','03')
-('0302','Ajuterique','03')
-('0303','El Rosario','03')
-('0304','Esquías','03')
-('0305','Humuya','03')
-('0306','La Libertad','03')
-('0307','Lamaní','03')
-('0308','La Trinidad','03')
-('0309','Lejamaní','03')
-('0310','Meámbar','03')
-('0311','Minas de Oro','03')
-('0312','Ojos de Agua','03')
-('0313','San Jerónimo','03')
-('0314','San José de Comayagua','03')
-('0315','San José del Potrero','03')
-('0316','San Luis ','03')
-('0317','San Sebastián','03')
-('0318','Siguatepeque','03')
-('0319','Villa de San Antonio','03')
-('0320','Las Lajas','03')
-('0321','Taulabé','03')
---Copán
-('0401','Santa Rosa de Copán','04')
-('0402','Cabañas','04')
-('0403','Concepción','04')
-('0404','Copán Ruinas','04')
-('0405','Corquín ','04')
-('0406','Cucuyagua ','04')
-('0407','Dolores','04')
-('0408','Dulce Nombre','04')
-('0409','El Paraíso ','04')
-('0410','Florida','04')
-('0412','La Jigua ','04')
-('0412','La Unión','04')
-('0413','Nueva Arcadia','04')
-('0414','San Agustín ','04')
-('0415','San Antonio ','04')
-('0416','San Jerónimo','04')
-('0417','San José ','04')
-('0418','San Juan de Opoa','04')
-('0419','San Nicolás','04')
-('0420','San Pedro ','04')
-('0421','Santa Rita','04')
-('0422','Trinidad de Copán','04')
-('0423','Veracruz ','04')
---Cortés
-('0501''San PedroSula' '05')
-('0502''Choloma''05')
-('0503''Omoa' '05')
-('0504''Pimienta''05' )
-('0505''Potrerillos''05') 
-('0506''Puerto Cortés''05') 
-('0507''San Antonio de Cortés''05') 
-('0508''San Francisco de Yojoa''05') 
-('0509''San Manuel''05') 
-('0510''Santa Cruz de Yojoa''05')
-('0511''Villanueva''05')
-('0512''La Lima''05') 
---Choluteca
-('0601' 'Choluteca''06')
-('0602' 'Apacilagua''06') 
-('0603' 'Concepción de María''06') 
-('0604' 'Duyure' '06')
-('0605' 'El Corpus''06') 
-('0606' 'El Triunfo''06') 
-('0607' 'Marcovia''06') 
-('0608' 'Morolica''06') 
-('0609' 'Namasigüe''06') 
-('0610' 'Orocuina''06') 
-('0611' 'Pespire')'06' 
-('0612' 'San Antonio de Flores''06') 
-('0613' 'San Isidro''06' )
-('0614' 'San José''06') 
-('0615' 'San Marcos de Colón''06') 
-('0616' 'Santa Ana de Yusguare''06')
---Paraíso
-('0701' 'Yuscarán ''07')
-('0702' 'Alauca ''07')
-('0703' 'Danlí ''07')
-('0704' 'El Paraíso''07')
-('0705' 'Güinope ''07')
-('0706' 'Jacaleapa ''07')
-('0707' 'Liure ''07')
-('0708' 'Morocelí''07')
-('0709' 'Oropolí ''07')
-('0710' 'Potrerillos ''07')
-('0711' 'San Antonio de Flores ''07')
-('0712' 'San Lucas''07')
-('0713' 'San Matías ''07')
-('0714' 'Soledad''07')
-('0715' 'Teupasenti''07')
-('0716' 'Texiguat''07')
-('0717' 'Vado Ancho''07')
-('0718' 'Yauyupe''07')
-('0719' 'Trojes''07')
---Francisco Morazán
-('0801' 'Distrito Central''08')
-('0802' 'Alubarén ''08')
-('0803' 'Cedros ''08')
-('0804' 'Curarén ''08')
-('0805' 'El Porvenir''08')
-('0806' 'Guaimaca''08')
-('0807' 'La Libertad''08')
-('0808' 'La Venta ''08')
-('0809' 'Lepaterique''08')
-('0810' 'Maraita ''08')
-('0811' 'Marale ''08')
-('0812' 'Nueva Armenia''08')
-('0813' 'Ojojona''08')
-('0814' 'Orica''08')
-('0815' 'Reitoca''08')
-('0816' 'Sabanagrande''08')
-('0817' 'San Antonio de Oriente ''08')
-('0818' 'San Buenaventura ''08')
-('0819' 'San Ignacio''08')
-('0820' 'San Juan de Flores''08')
-('0821' 'San Miguelito ''08')
-('0822' 'Santa Ana''08')
-('0823' 'Santa Lucía ''08')
-('0824' 'Talanga ''08')
-('0825' 'Tatumbla ''08')
-('0826' 'Valle de Ángeles ''08')
-('0827' 'Villa de San Francisco''08')
-('0828' 'Vallecillo ''08')
---Gracias a Dios
-('0901' 'Puerto Lempira''09')
-('0902' 'Brus Laguna''09')
-('0903' 'Ahuas''09')
-('0904' 'Juan Francisco Bulnes''09')
-('0905' 'Ramón Villeda Morales''09')
-('0906' 'Wampusirpe''09')
---Intibucá
-('1001','La Esperanza''10')
-('1002','Camasca ''10')
-('1003','Colomoncagua''10')
-('1004','Concepción ''10')
-('1005','Dolores''10')
-('1006','Intibucá ''10')
-('1007','Jesús de Otoro ''10')
-('1008','Magdalena''10')
-('1009','Masaguara''10')
-('1010','San Antonio''10')
-('1011','San Isidro ''10')
-('1012','San Juan''10')
-('1013','San Marcos de la Sierra''10')
-('1014','San Miguel Guancapla ''10')
-('1015','Santa Lucía ''10')
-('1016','Yamaranguila ''10')
-('1017','San Francisco de Opalaca''10')
---Islas de La Bahía
-('1101' 'Roatán''11')
-('1102' 'Guanaja ''11')
-('1103' 'José Santos Guardiola ''11')
-('1104' 'Utila''11')
---La Paz
-('1201' 'La Paz ''12')
-('1202' 'Aguanqueterique''12')
-('1203' 'Cabañas''12')
-('1204' 'Cane ''12')
-('1205' 'Chinacla''12')
-('1206' 'Guajiquiro ''12')
-('1207' 'Lauterique ''12')
-('1208' 'Marcala''12')
-('1209' 'Mercedes de Oriente''12')
-('1210' 'Opatoro''12')
-('1211' 'San Antonio del Norte ''12')
-('1212' 'San José''12')
-('1213' 'San Juan''12')
-('1214' 'San Pedro de Tutule ''12')
-('1215' 'Santa Ana''12')
-('1216' 'Santa Elena ''12')
-('1217' 'Santa María''12')
-('1218' 'Santiago de Puringla ''12')
-('1219' 'Yarula ''12')
---Lempira
-('1301' 'Gracias''13')
-('1302' 'Belén ''13')
-('1303' 'Candelaria''13')
-('1304' 'Cololaca ''13')
-('1305' 'Erandique ''13')
-('1306' 'Gualcince ''13')
-('1307' 'Guarita ''13')
-('1308' 'La Campa ''13')
-('1309' 'La Iguala ''13')
-('1310' 'Las Flores ''13')
-('1311' 'La Unión''13')
-('1312' 'La Virtud ''13')
-('1313' 'Lepaera ''13')
-('1314' 'Mapulaca ''13')
-('1315' 'Piraera ''13')
-('1316' 'San Andrés ''13')
-('1317' 'San Francisco ''13')
-('1318' 'San Juan Guarita''13')
-('1319' 'San Manuel Colohete ''13')
-('1320' 'San Rafael ''13')
-('1321' 'San Sebastián ''13')
-('1322' 'Santa Cruz ''13')
-('1323' 'Talgua''13')
-('1324' 'Tambla ''13')
-('1325' 'Tomalá ''13')
-('1326' 'Valladolid''13')
-('1327' 'Virginia ''13')
-('1328' 'San Marcos de Caiquín ''13')
---Ocotepeque
-('1401' 'Nueva Ocotepeque''14')
-('1402' 'Belén Gualcho ''14')
-('1403' 'Concepción ''14')
-('1404' 'Dolores Merendón ''14')
-('1405' 'Fraternidad ''14')
-('1406' 'La Encarnación ''14')
-('1407' 'La Labor''14')
-('1408' 'Lucerna''14')
-('1409' 'Mercedes ''14')
-('1410' 'San Fernando ''14')
-('1411' 'San Francisco del Valle''14')
-('1412' 'San Jorge''14')
-('1413' 'San Marcos''14')
-('1414' 'Santa Fe ''14')
-('1415' 'Sensenti ''14')
-('1416' 'Sinuapa ''14')
---Olancho
-('1501' 'Juticalpa  ''15')
-('1502' 'Campamento ''15')
-('1503' 'Catacamas  ''15')
-('1504' 'Concordia  ''15')
-('1505' 'Dulce Nombre de Culmí   ''15')
-('1506' 'El Rosario  ''15')
-('1507' 'Esquipulas del Norte  ''15')
-('1508' 'Gualaco   ''15')
-('1509' 'Guarizama   ''15')
-('1510' 'Guata   ''15')
-('1511' 'Guayape  ''15')
-('1512' 'Jano   ''15')
-('1513' 'La Unión  ''15')
-('1514' 'Mangulile  ''15')
-('1515' 'Manto   ''15')
-('1516' 'Salamá   ''15')
-('1517' 'San Esteban  ''15')
-('1518' 'San Francisco de Becerra  ''15')
-('1519' 'San Francisco de la Paz  ''15')
-('1520' 'Santa María del Real   ''15')
-('1521' 'Silca''15')
-('1522' 'Yocón ''15')
-('1523' 'Patuca ''15')
---Santa Bárbara
-('1601' 'Santa Bárbara''16')
-('1602' 'Arada  ''16')
-('1603' 'Atima ''16')
-('1604' 'Azacualpa  ''16')
-('1605' 'Ceguaca ''16')
-('1606' 'San José de las Colinas ''16')
-('1607' 'Concepción del Norte  ''16')
-('1608' 'Concepción del Sur  ''16')
-('1609' 'Chinda  ''16')
-('1610' 'El Níspero''16')
-('1611' 'Gualala ''16')
-('1612' 'Ilama ''16')
-('1613' 'Macuelizo ''16')
-('1614' 'Naranjito  ''16')
-('1615' 'Nuevo Celilac ''16')
-('1616' 'Petoa  ''16')
-('1617' 'Protección ''16')
-('1618' 'Quimistán  ''16')
-('1619' 'San Francisco de Ojuera  ''16')
-('1620' 'San Luis  ''16')
-('1621' 'San Marcos  ''16')
-('1622' 'San Nicolás  ''16')
-('1623' 'San Pedro Zacapa  ''16')
-('1624' 'Santa Rita  ''16')
-('1625' 'San Vicente Centenario ''16')
-('1626' 'Trinidad ''16')
-('1627' 'Las Vegas ''16')
-('1628' 'Nueva Frontera  ''16')
---Valle
-('1701' 'Alianza  ''17')
-('1701' 'Amapala  ''17')
-('1701' 'Aramecina  ''17')
-('1701' 'Caridad  ''17')
-('1701' 'Goascorán ''17')
-('1701' 'Langue ''17')
-('1701' 'Nacaome  ''17')
-('1701' 'San Francisco de Coray ''17')
-('1701' 'San Lorenzo  ''17')
---Yoro
-('1801' 'Yoro ''18')
-('1802' 'Arenal ''18')
-('1803' 'El Negrito ''18')
-('1804' 'El Progreso''18')
-('1805' 'Jocón ''18')
-('1806' 'Morazán ''18')
-('1807' 'Olanchito ''18')
-('1808' 'Santa Rita ''18')
-('1809' 'Sulaco''18')
-('1810' 'Victoria''18')
-('1811' 'Yorito ''18')
