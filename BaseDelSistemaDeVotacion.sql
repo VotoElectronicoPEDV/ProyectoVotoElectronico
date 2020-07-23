@@ -24,11 +24,14 @@ PrimerNombre varchar(25) not null,
 SegundoNombre varchar(25),
 PrimerApellido varchar(25) not null,
 SegundoApellido varchar(25),
-VotosValidos int not null,
-VotosNulos int,
+VotosValidos int not null default 0,
+VotosNulos int default 0,
 Estado varchar(25) not null,
+Foto image,
+Voto varchar(1) not null,
 Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido)
 )
+select * from presidente
 
 create table Departamento(
 idDepartamento varchar(2) not null primary key,
@@ -67,16 +70,18 @@ insert into Municipio(idMunicipio,nombreMunicipio,idDepartamento) values
 ('21','Taulabé','03')
 select *from Municipio;
 
-create table Alcalde (
+create table Alcalde(
 IdentidadAlcalde varchar(13) primary key not null,
 PrimerNombre varchar(25) not null,
 SegundoNombre varchar(25),
 PrimerApellido varchar(25) not null,
 SegundoApellido varchar(25),
-VotosValidos int not null,
-VotosNulos int,
+VotosValidos int not null default 0,
+VotosNulos int not null default 0,
 DescripcionVotacion varchar(25) not null,
 Estado varchar(25) not null,
+Foto image,
+Voto varchar(1) not null,
 Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido),
 Municipio varchar(2) FOREIGN KEY REFERENCES Municipio(idMunicipio)
 )
@@ -87,9 +92,11 @@ PrimerNombre varchar(25) not null,
 SegundoNombre varchar(25),
 PrimerApellido varchar(25) not null,
 SegundoApellido varchar(25),
-VotosValidos int not null,
-VotosNulos int,
+VotosValidos int not null default 0,
+VotosNulos int not null default 0,
 Estado varchar(25) not null,
+Foto image,
+Voto varchar(1) not null,
 Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido),
 Departamento varchar(2) FOREIGN KEY REFERENCES Departamento(idDepartamento)
 )
@@ -102,8 +109,18 @@ PrimerApellido varchar(25) not null,
 SegundoApellido varchar(25) not null,
 edad int not null,
 sexo varchar(10) not null,
+foto image,
+voto varchar(1) not null,
 estadoVotante varchar(10) not null
 )
+create table administrador(
+identidad varchar(13) not null,
+contraseña varchar(15) not null,
+estado varchar(25) not null,
+voto varchar(1) not null,
+foto image
+)
+select *from administrador
 ------------------------------------------------------------------Procedimientos-Almacenados---------------------------------------------------------------
 
 -----------------------------------------------------------------------PRESIDENTE---------------------------------------------------------------
@@ -129,8 +146,8 @@ else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado=@I
 else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde=@IdentidadPresidente)
 	raiserror('Esta persona ya desempeña un cargo de alcalde',16,1)
 else
-	insert into Presidente(IdentidadPresidente,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido)
-	values(@IdentidadPresidente,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@idPartido)
+	insert into Presidente(IdentidadPresidente,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,Estado,Voto,Partido)
+	values(@IdentidadPresidente,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@Estado,'F',@idPartido)
 end
 exec ingresarPresidente '0101197000188','Juan','Orlando','Hernandez','Alvarado','activo',1
 exec ingresarPresidente '0101197000187','Luis','Orlando','Zelaya','Medrano ','activo',2 
@@ -173,13 +190,15 @@ end
 exec eliminarPresidente '0101197000186'
 
 ---------consultar-Presidente----
-create procedure consultarPresidente
+alter procedure consultarPresidente
 as
 begin
-select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Presidente
+select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,VotosNulos,voto,foto,p.NombrePartido as 'Partido Politico' from Presidente 
 inner join PartidoPolitico p on Partido= p.idPartido
+where estado='activo'
 end
 exec consultarPresidente
+select *from Presidente
 
 -----------------------------------------------------------------------------------ALCALDE---------------------------------------------------------------------
 	-------Insertar--Alcalde--
@@ -206,8 +225,8 @@ else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado=@i
 else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde=@identidadAlcalde)
 	raiserror('Esta persona ya desempeña un cargo de alcalde',16,1)
 else
-	insert into Alcalde(IdentidadAlcalde,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,DescripcionVotacion,Estado,Partido,Municipio)
-	values(@identidadAlcalde,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@DescripcionVotacion,@Estado,@Partido,@Municipio)
+	insert into Alcalde(IdentidadAlcalde,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,DescripcionVotacion,Estado,Voto,Partido,Municipio)
+	values(@identidadAlcalde,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@DescripcionVotacion,@Estado,'F',@Partido,@Municipio)
 end
 	
 --------Municipio de Comayagua----------
@@ -322,10 +341,11 @@ exec eliminarAlcalde '0305196000147'
 create procedure consultarAlcalde
 as
 begin
-select IdentidadAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
+select IdentidadAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,VotosNulos,voto,foto,M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
 inner join PartidoPolitico p on Partido= p.idPartido
 inner join Municipio M on Municipio = M.idMunicipio
 inner join Departamento D on M.idDepartamento = D.idDepartamento
+where estado='activo'
 end
 exec consultarAlcalde
 
@@ -354,8 +374,8 @@ else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @id
 	raiserror('Esta persona ya desempeña un cargo de alcalde',16,1)
 else
 
-	insert into Diputado(IdentidadDiputado,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Partido,Departamento)
-	values(@identidadDiputado,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,'0','0',@Estado,@Partido,@Departamento)
+	insert into Diputado(IdentidadDiputado,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Voto,Partido,Departamento)
+	values(@identidadDiputado,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@Estado,'F',@Partido,@Departamento)
 end 
 
 			-------------Partido Nacional----
@@ -436,9 +456,10 @@ exec eliminarDiputado '0308197000157'
 create procedure consultarDiputado
 as
 begin
-select IdentidadDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
+select IdentidadDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,VotosNulos,voto,foto, D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
 inner join PartidoPolitico p on Partido= p.idPartido
 inner join Departamento D on Departamento = D.idDepartamento
+where estado='activo'
 end
 exec consultarDiputado
 ----------------------------------------------------------------------VOTANTE-----------------------------------------------------------------------------------
@@ -457,8 +478,8 @@ as begin
 if exists(select IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante)
 	raiserror('El votante ya existe, Ingrese otro',16,1)
 else 
-	insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante)
-values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante)
+	insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante,voto)
+values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante,'F')
 end
 execute IngresarVotante '0319200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','Activo'
 select * from votante
@@ -502,9 +523,43 @@ exec eliminarVotante '0318200301323'
 create procedure consultarVotante
 as
 begin
-select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', estadoVotante as 'Estado' from votante
+select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', edad,sexo,voto,foto from votante
+where estadoVotante='activo'
 end
 exec consultarVotante
+
+----------------------------------------------------------------------ADMIN-----------------------------------------------------------------------------------
+
+---------Buscar Individualmente----
+create procedure buscarIndividual(
+@Identidad varchar(13)
+)
+as
+begin
+if exists(select IdentidadPresidente from Presidente where IdentidadPresidente = @Identidad and estado='activo')
+	select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico', 
+	VotosValidos, VotosNulos,voto, foto from Presidente
+	inner join PartidoPolitico p on Partido= p.idPartido
+
+else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado = @Identidad and estado='activo')
+	select IdentidadDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',
+	VotosValidos, VotosNulos,voto,foto,D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
+    inner join PartidoPolitico p on Partido= p.idPartido
+    inner join Departamento D on Departamento = D.idDepartamento
+	
+else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @Identidad and estado='activo')
+	select IdentidadAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',
+	VotosValidos, VotosNulos,voto, foto,M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
+	inner join PartidoPolitico p on Partido= p.idPartido
+	inner join Municipio M on Municipio = M.idMunicipio
+	inner join Departamento D on M.idDepartamento = D.idDepartamento
+
+else if exists(select IdentidadVotante from votante where IdentidadVotante = @Identidad and estadoVotante='activo')
+	select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',edad, sexo, foto, estadoVotante as 'Estado',voto from votante
+else
+	raiserror('Esta persona no existe en la base de datos',16,1)
+end
+exec buscarIndividual '0319200301323'
 
 	------Procedimiento almacenado-----
 	------Buscar por identidad--------
@@ -514,21 +569,39 @@ begin
 select estadoVotante from votante where IdentidadVotante = @IdentidadVotante
 end
 execute validarVotante '0319200301323'
+----------------------------------------------------agregar foto------------------------------
+create procedure ingresarFoto(
+@imagen image, 
+@identidad varchar(13)
+)
+as 
+begin
+if exists(select IdentidadPresidente from Presidente where IdentidadPresidente = @identidad)
+	update presidente set foto = @imagen
 
+else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado = @identidad)
+	update Diputado set foto = @imagen
+	
+else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @identidad)
+	update Alcalde set foto = @imagen
 
--------------------------------------validar usuario-------------------------------------
-------------------------------------Procedimiento almacenado validar usuario-------------
- create procedure validarUusario(
- @usuername varchar (25),
- @pws varchar (40)
- )
+else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @identidad)
+	update administrador set foto = @imagen
+else
+	raiserror('Esta persona no existe en la base de datos',16,1)
 
-
- as begin
- if exists (select estado from usuario where NombreUsuario = @usuername and Pws = @pws and estado = 'activo')
- select * from usuario
- else
- raiserror('No encontrado',16,1)
- end
+end
+-------------------------------------------------validar usuario-------------------------------------
+------------------------------------Procedimiento almacenado validar administrador-------------
+create procedure validaradministrador(
+@identidad varchar (13),
+@contraseña varchar (15)
+)
+as begin
+if exists (select estado from administrador where identidad = @identidad and contraseña = @contraseña and estado = 'activo')
+	raiserror('encontrado',16,1)
+else
+	raiserror('No encontrado',16,1)
+end
 
 
