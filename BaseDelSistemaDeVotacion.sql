@@ -449,8 +449,7 @@ else
 	insert into Diputado(IdentidadDiputado,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Voto,Partido,Departamento)
 	values(@identidadDiputado,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@Estado,'F',@Partido,@Departamento)
 end 
-
-			-------------Partido Nacional----
+		-------------Partido Nacional----
 exec ingresarDiputado '0301197000130','Oscar','Aturo','Alvarez','Guerrero','activo',1,'03' 
 exec ingresarDiputado '0302197000131','HECTOR ','GUILLERMO',' GUILLEN ','GOMEZ','activo',1,'03'
 exec ingresarDiputado '0303197000132','JOSE',' MARIA ','MARTINEZ ','VALENZUELA','activo',1,'03'
@@ -458,34 +457,40 @@ exec ingresarDiputado '0304197000133','JOSE ','VICENTE',' LEON ','ROJAS','activo
 exec ingresarDiputado '0305197000134','REINALDO ','ANTONIO ','SANCHEZ',' RIVERA','activo',1,'03'
 exec ingresarDiputado '0306197000135','JOSE ','CELIN',' DISCUA ','ELVIR','activo',1,'03'
 exec ingresarDiputado '0307197000136','JOSE ','TOMAS ','PONCE ','POSAS','activo',1,'03 '
+exec ingresarDiputado '0308197000137','RAMON ','ANTONIO ','LEVA ','BULNES','activo',1,'03'
+exec ingresarDiputado '0309197000138','JUAN','CARLOS',' VALENZUELA ','MOLINA','activo',1,'03'
 
 -------------Partido Libre----
-exec ingresarDiputado '0308197000137','RAMON ','ANTONIO ','LEVA ','BULNES','activo',2,'03'
-exec ingresarDiputado '0309197000138','JUAN','CARLOS',' VALENZUELA ','MOLINA','activo',2,'03'
 exec ingresarDiputado '0310197000139','MIDENCE ','OQUELY',' MARTINEZ ','TURCIOS','activo',2,'03'
 exec ingresarDiputado '0311197000140','ANA',' JULIA ','GARCIA ','VILLALOBOS','activo',2,'03'
 exec ingresarDiputado '0312197000141','FELIPE ','ZUNIGA ','DEL ','CID','activo',2,'03'
 exec ingresarDiputado '0313197000142','GLADIS',' AURORA ','LOPEZ',' CALDERON','activo',2,'03' 
 exec ingresarDiputado '0314197000143','LUIS ','RIGOBERTO ','SANTOS ','PORTILLO','activo',2,'03'
-
+exec ingresarDiputado '0315197000144','JOSUE ','WILMER ','RIVAS ','MORENO','activo',2,'03'
+exec ingresarDiputado '0316197000145','MARIO','JOS',' GAMALIEL','RIVERA ','activo',2,'03'
+exec ingresarDiputado '0317197000146','CELENA ','SOFIA ','LEVY ','LEVY','activo',2,'03'
+exec ingresarDiputado '0318197000147','RAUL','JOSUE',' MENDEZ ','CASTRO','activo',2,'03'
 -------------Partido anticorrupcion----
-
-exec ingresarDiputado '0315197000144','JOSUE ','WILMER ','RIVAS ','MORENO','activo',3,'03'
-exec ingresarDiputado '0316197000145','MARIO','JOS',' GAMALIEL','RIVERA ','activo',3,'03'
-exec ingresarDiputado '0317197000146','CELENA ','SOFIA ','LEVY ','LEVY','activo',3,'03'
-exec ingresarDiputado '0318197000147','RAUL','JOSUE',' MENDEZ ','CASTRO','activo',3,'03'
 exec ingresarDiputado '0317197000148','PEDRO ','ANTONIA',' MEZA ','PONCE','activo',3,'03'
 exec ingresarDiputado '0316197000149','KEREN',' MARIA ','ARANDA ','QUINTANA','activo',3,'03'
 exec ingresarDiputado '0315197000150','MARIO ','ANTONIO ','GUERRA ','DEL CID','activo',3,'03'
-
+exec ingresarDiputado '0314197000151','ANA ','MARIA ','PEREZ ','LOPEZ','activo',3,'03'
+exec ingresarDiputado '0313197000152','GERARDO','ANTONIO',' VILLANUEVA ','CORTES','activo',3,'03'
+exec ingresarDiputado '0312197000153','JUAN ','CARLOS',' VILLALOBOS ','ANDINO','activo',3,'03'
+exec ingresarDiputado '0311197000154','LETICA',' MACARENA ','RAMOS ','CACERES','activo',3,'03'
+exec ingresarDiputado '0310197000155','GENESIS ','NAHOMI ','CASTRO ','MORENO','activo',3,'03'
+exec ingresarDiputado '0309197000156','RAMON',' ENRIQUE ','MARTINEZ',' MARTINEZ','activo',3,'03' 
 -------------Partido ALiberal----
-exec ingresarDiputado '0314197000151','ANA ','MARIA ','PEREZ ','LOPEZ','activo',4,'03'
-exec ingresarDiputado '0313197000152','GERARDO','ANTONIO',' VILLANUEVA ','CORTES','activo',4,'03'
-exec ingresarDiputado '0312197000153','JUAN ','CARLOS',' VILLALOBOS ','ANDINO','activo',4,'03'
-exec ingresarDiputado '0311197000154','LETICA',' MACARENA ','RAMOS ','CACERES','activo',4,'03'
-exec ingresarDiputado '0310197000155','GENESIS ','NAHOMI ','CASTRO ','MORENO','activo',4,'03'
-exec ingresarDiputado '0309197000156','RAMON',' ENRIQUE ','MARTINEZ',' MARTINEZ','activo',4,'03' 
-exec ingresarDiputado '0308197000157','JAIRO ','PATRICIO ','GOMEZ ','CORTEZ','activo',4,'03'
+exec ingresarDiputado '0318197000157','YAFET ','CARLOS ','GOMEZ ','SABILLON','activo',4,'03'
+exec ingresarDiputado '0309197000158','MARIA ','EUGENIA ','RAMOS ','LOPEZ','activo',4,'03'
+exec ingresarDiputado '0308197000159','DENIA ','JOSEFA ','LOPEZ ','CACERES','activo',4,'03'
+exec ingresarDiputado '0307197000160','WILMER ','ALEJANDRO ','FERNANDEZ ','CORTEZ','activo',4,'03'
+exec ingresarDiputado '0306197000161','WALTER ','ERACIO ','RIVERA ','MENDEZ','activo',4,'03'
+exec ingresarDiputado '0305197000162','EMERSON ','JOSUE ','LOPEZ ','GIRON','activo',4,'03'
+exec ingresarDiputado '0304197000163','HECTOR ','ORLANDO ','PEREZ ','URIBE','activo',4,'03'
+exec ingresarDiputado '0303197000164','ALEX ','ENRIQUE ','REYES ','MARTINEZ','activo',4,'03'
+exec ingresarDiputado '0302197000165','JIMENA ','ALEXANDRA ','ELISONDO ','URIBE','activo',4,'03'
+				
 
 select * from Diputado
 
@@ -522,7 +527,12 @@ if exists(select estado,identidadDiputado from Diputado where identidadDiputado 
 else
 	raiserror ('el Diputado no existe en la base de datos',16,1)
 end
-exec eliminarDiputado '0308197000157'
+execute eliminarDiputado '0308197000157'
+execute eliminarDiputado '0301197000130'
+execute eliminarDiputado '0302197000131'
+execute eliminarDiputado '0303197000132'
+---------No existe Por lo tanto mostrara mensaje-----
+exec eliminarDiputado '0311198000139'
 
 	---------consultar-Diputado----
 create procedure consultarDiputado
@@ -553,7 +563,12 @@ else
 	insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante,voto)
 values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante,'F')
 end
-execute IngresarVotante '0319200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','Activo'
+execute IngresarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','Activo'
+execute IngresarVotante '0318200201281', 'Denia', 'Julissa', 'Chavarria', 'Lopez',20,'Femenino','Activo'
+execute IngresarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Femenino','Activo'
+execute IngresarVotante '0318200301368', 'Hector', 'Eduardo', 'Osorio', 'Castellanos',20,'Femenino','Activo'
+execute IngresarVotante '0318200301030', 'ken', 'Jonathan', 'Gomez', 'Barrientos',21,'Femenino','Activo'
+
 select * from votante
 
 	---------Actualizar-Votante----
@@ -575,7 +590,13 @@ if exists(select IdentidadVotante, estadoVotante from votante where IdentidadVot
 else
 	raiserror('el votante no existe en la base de datos',16,1)
 end
-exec actualizarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino'
+
+exec actualizarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Femenino'
+------------No existe-----
+exec actualizarVotante '0318200401323', 'Mario', 'Antonio', 'Guerra', 'Del cid',21,'Femenino'
+
+select * from votante
+
 
 	---------EliminarVotante----
 create procedure eliminarVotante(
@@ -590,6 +611,7 @@ else
  raiserror ('El Votante no existe en la base de datos',16,1)
 end
 exec eliminarVotante '0318200301323'
+exec eliminarVotante '0318200301030'
 
 ---------consultar-Votante----
 create procedure consultarVotante
@@ -631,7 +653,9 @@ else if exists(select IdentidadVotante from votante where IdentidadVotante = @Id
 else
 	raiserror('Esta persona no existe en la base de datos',16,1)
 end
-exec buscarIndividual '0319200301323'
+
+exec buscarIndividual '0318200301323'
+
 
 	------Procedimiento almacenado-----
 	------Buscar por identidad--------
@@ -640,7 +664,7 @@ as
 begin
 select estadoVotante from votante where IdentidadVotante = @IdentidadVotante
 end
-execute validarVotante '0319200301323'
+execute validarVotante '0318200301323'
 ----------------------------------------------------agregar foto------------------------------
 create procedure ingresarFoto(
 @imagen image, 
@@ -675,5 +699,3 @@ if exists (select estado from administrador where identidad = @identidad and con
 else
 	raiserror('No encontrado',16,1)
 end
-
-
