@@ -516,4 +516,19 @@ end
 execute validarVotante '0319200301323'
 
 
+-------------------------------------validar usuario-------------------------------------
+------------------------------------Procedimiento almacenado validar usuario-------------
+ create procedure validarUusario(
+ @usuername varchar (25),
+ @pws varchar (40)
+ )
+
+
+ as begin
+ if exists (select estado from usuario where NombreUsuario = @usuername and Pws = @pws and estado = 'activo')
+ select * from usuario
+ else
+ raiserror('No encontrado',16,1)
+ end
+
 
