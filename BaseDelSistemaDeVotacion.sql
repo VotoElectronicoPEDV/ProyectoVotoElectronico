@@ -495,7 +495,33 @@ execute ingresarAlcalde '031919464775','Alberto', 'Daniel', 'Mencia', 'Garcia', 
 execute ingresarAlcalde '0319196081173','Pedro', 'Denis', 'Mendoza', 'Perez', 'interna', 'activo', 4, '19'
 execute ingresarAlcalde '0319199880781','Juan', 'Pablo', 'Caceres', 'Lopez', 'interna', 'activo', 4, '19'
 
+--------Municipio Las Lajas----------
+--Partido Nacional
+execute ingresarAlcalde '0320194967583','Perla', 'Nayeli', 'Perez', 'Jimenez', 'interna', 'activo', 1, '20'
+execute ingresarAlcalde '0320196274557','Pedro', 'Jonas ', 'Carranza', 'Lopez', 'interna', 'activo', 1, '20'
+--Partido liberal
+execute ingresarAlcalde '0320196703965','Miguel', 'Alberto', 'Mendoza', 'Marquez', 'interna', 'activo', 2, '20'
+execute ingresarAlcalde '0320196017783','David', 'Fabricio', 'Almendarez', 'Paz', 'interna', 'activo', 2, '20'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0320196754454','Fabiel', 'Jose', 'Mejia', 'Paz', 'interna', 'activo', 3, '20'
+execute ingresarAlcalde '032019464775','Efrain', 'Alberto', 'Castillo', 'Garcia', 'interna', 'activo', 3, '20'
+--Partido Libre
+execute ingresarAlcalde '0320196781173','Sandra', 'Danely', 'Caceres', 'Perez', 'interna', 'activo', 4, '20'
+execute ingresarAlcalde '0320199880781','Denis', 'Miguel', 'Perez', 'Lopez', 'interna', 'activo', 4, '20'
 
+--------Municipio Taulabe----------
+--Partido Nacional
+execute ingresarAlcalde '0321194867483','Katerin', 'Melissa', 'Juarez', 'Jimenez', 'interna', 'activo', 1, '21'
+execute ingresarAlcalde '0321196274557','Pedro', 'Alfredo ', 'Gutierrez', 'Lopez', 'interna', 'activo', 1, '21'
+--Partido liberal
+execute ingresarAlcalde '0321596003365','Miguel', 'Fabricio', 'Manzanares', 'Marquez', 'interna', 'activo', 2, '21'
+execute ingresarAlcalde '0321196017483','Jose', 'Andres', 'Mendoza', 'Mendoza', 'interna', 'activo', 2, '21'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0321196056454','Dariela', 'Yosselyn', 'Mencia', 'Paz', 'interna', 'activo', 3, '21'
+execute ingresarAlcalde '032119464875','Alberto', 'Otoniel', 'Alvarez', 'Garcia', 'interna', 'activo', 3, '21'
+--Partido Libre
+execute ingresarAlcalde '0321196081773','Pedro', 'Javier', 'Osorto', 'Perez', 'interna', 'activo', 4, '21'
+execute ingresarAlcalde '0321199880481','Diego', 'Misael', 'Caceres', 'Lopez', 'interna', 'activo', 4, '21'
 
 select *from Alcalde
 
