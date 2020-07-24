@@ -358,16 +358,30 @@ execute ingresarAlcalde '0309189880288','Gian', 'Carlos', 'Torres', 'Padilla', '
 --------Municipio Meambar----------
 --Partido Nacional
 execute ingresarAlcalde '0310604815388','Gabriela', 'Lisbet', 'Perez', 'Perez', 'interna', 'activo', 1, '10'
-execute ingresarAlcalde '0309196270256','Oscar', 'Vilnad ', 'Gutierrez', 'Jimenez', 'interna', 'activo', 1, '10'
+execute ingresarAlcalde '0310196270256','Oscar', 'Vilnad ', 'Gutierrez', 'Jimenez', 'interna', 'activo', 1, '10'
 --Partido liberal
-execute ingresarAlcalde '0309596004865','Jesica', 'Nayeli', 'Barjas', 'Lopez', 'interna', 'activo', 2, '10'
-execute ingresarAlcalde '0309196013563','Victor', 'David', 'Park', 'Peralda', 'interna', 'activo', 2, '10'
+execute ingresarAlcalde '0310596004865','Jesica', 'Nayeli', 'Barjas', 'Lopez', 'interna', 'activo', 2, '10'
+execute ingresarAlcalde '0310196013563','Victor', 'David', 'Park', 'Peralda', 'interna', 'activo', 2, '10'
 --Partido Anticorrupcion
-execute ingresarAlcalde '0309196054544','Leonel', 'Fernando', 'Valladarez', 'Perez', 'interna', 'activo', 3, '10'
-execute ingresarAlcalde '0309194605585','Cristian', 'Josue', 'Jimenez', 'Lopez', 'interna', 'activo', 3, '10'
+execute ingresarAlcalde '0310196054544','Leonel', 'Fernando', 'Valladarez', 'Perez', 'interna', 'activo', 3, '10'
+execute ingresarAlcalde '0310194605585','Cristian', 'Josue', 'Jimenez', 'Lopez', 'interna', 'activo', 3, '10'
 --Partido Libre
-execute ingresarAlcalde '0309156081159','Delia', 'Patricia', 'Jimenez', 'Jimenez', 'interna', 'activo', 4, '10'
-execute ingresarAlcalde '0309189880288','Sheldon', 'David', 'Park', 'Sevilla', 'interna', 'activo', 4, '10'
+execute ingresarAlcalde '0310156081159','Delia', 'Patricia', 'Jimenez', 'Jimenez', 'interna', 'activo', 4, '10'
+execute ingresarAlcalde '0310189880288','Sheldon', 'David', 'Park', 'Sevilla', 'interna', 'activo', 4, '10'
+
+--------Municipio Minas de Oro----------
+--Partido Nacional
+execute ingresarAlcalde '0311604817588','Julissa', 'Daneli', 'Castillo', 'Chavarria', 'interna', 'activo', 1, '11'
+execute ingresarAlcalde '0311196278256','Andres', 'Josue ', 'Castillo', 'Espinal', 'interna', 'activo', 1, '11'
+--Partido liberal
+execute ingresarAlcalde '0311596004865','Killa', 'Nayeli', 'Rojas', 'Guerra', 'interna', 'activo', 2, '11'
+execute ingresarAlcalde '0311196013763','Josue', 'Fernando', 'Hernandez', 'Muñoz', 'interna', 'activo', 2, '11'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0311196054554','Jissel', 'Gabriel', 'Perez', 'Peralta', 'interna', 'activo', 3, '11'
+execute ingresarAlcalde '0311194605575','Daniel', 'Fernando', 'Marquez', 'Lopez', 'interna', 'activo', 3, '11'
+--Partido Libre
+execute ingresarAlcalde '0311156081153','Nazareth', 'Dayana', 'Ramos', 'Perez', 'interna', 'activo', 4, '11'
+execute ingresarAlcalde '0311189880280','Katerin', 'Nicoll', 'Bardales', 'Lopez', 'interna', 'activo', 4, '11'
 
 select *from Alcalde
 
