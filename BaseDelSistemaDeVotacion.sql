@@ -725,34 +725,32 @@ execute IngresarVotante '0318200301030', 'ken', 'Jonathan', 'Gomez', 'Barrientos
 select * from votante
 
 	---------Actualizar-Votante----
-create procedure actualizarVotante(
+Create procedure actualizarVotante(
 @IdentidadVotante varchar(13),
 @PrimerNombre varchar(25) ,
 @SegundoNombre varchar(25),
 @PrimerApellido varchar(25),
-@SegundoApellido varchar(25),
-@edad int,
-@sexo varchar(10)
+@SegundoApellido varchar(25)
 )
 as 
 begin
 if exists(select IdentidadVotante, estadoVotante from votante where IdentidadVotante = @IdentidadVotante and estadoVotante = 'activo')
 	update votante 
-	set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido, Edad = @edad, sexo = @sexo
+	set PrimerNombre =@PrimerNombre, SegundoNombre = @segundoNombre, PrimerApellido = @PrimerApellido,SegundoApellido = @SegundoApellido
     where IdentidadVotante =@IdentidadVotante
 else
 	raiserror('el votante no existe en la base de datos',16,1)
 end
 
-exec actualizarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Masculino'
+exec actualizarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia'
 ------------No existe-----
-exec actualizarVotante '0318200401323', 'Mario', 'Antonio', 'Guerra', 'Del cid',21,'Masculino'
+exec actualizarVotante '0318200401323', 'Mario', 'Antonio', 'Guerra', 'Del cid'
 
 select * from votante
 
 
 	---------EliminarVotante----
-create procedure eliminarVotante(
+Create procedure eliminarVotante(
 @IdentidadVotante varchar(13)
 )
 as
@@ -760,6 +758,7 @@ begin
 if exists(select estadoVotante,IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante and estadoVotante='activo')
 	update votante
 	set estadoVotante = 'eliminado'
+	where IdentidadVotante = @IdentidadVotante
 else
  raiserror ('El Votante no existe en la base de datos',16,1)
 end
@@ -774,6 +773,7 @@ select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',Prim
 where estadoVotante='activo'
 end
 exec consultarVotante
+select * from votante
 
 ----------------------------------------------------------------------ADMIN-----------------------------------------------------------------------------------
 
@@ -787,12 +787,14 @@ if exists(select IdentidadPresidente from Presidente where IdentidadPresidente =
 	select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico', 
 	VotosValidos, VotosNulos,voto, foto from Presidente
 	inner join PartidoPolitico p on Partido= p.idPartido
+	where IdentidadPresidente = @Identidad
 
 else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado = @Identidad and estado='activo')
 	select IdentidadDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',
 	VotosValidos, VotosNulos,voto,foto,D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
     inner join PartidoPolitico p on Partido= p.idPartido
     inner join Departamento D on Departamento = D.idDepartamento
+	where IdentidadDiputado = @Identidad
 	
 else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @Identidad and estado='activo')
 	select IdentidadAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',
@@ -800,9 +802,11 @@ else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @Id
 	inner join PartidoPolitico p on Partido= p.idPartido
 	inner join Municipio M on Municipio = M.idMunicipio
 	inner join Departamento D on M.idDepartamento = D.idDepartamento
+	where IdentidadAlcalde = @Identidad 
 
 else if exists(select IdentidadVotante from votante where IdentidadVotante = @Identidad and estadoVotante='activo')
 	select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',edad, sexo, foto, estadoVotante as 'Estado',voto from votante
+	where IdentidadVotante = @Identidad
 else
 	raiserror('Esta persona no existe en la base de datos',16,1)
 end

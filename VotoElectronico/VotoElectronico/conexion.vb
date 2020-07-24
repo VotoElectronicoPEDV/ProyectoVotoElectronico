@@ -220,6 +220,203 @@ Public Class conexion
     End Function
 
     'Crud De Diputado
-    'Crud De alcalde
+    Public Function consultarDiputado()
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("consultarDiputado", conexion)
+
+            cmd.CommandType = CommandType.StoredProcedure
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+    Public Function ingresarDiputado(identidad As String, primerNombre As String, SegundoNombre As String, PrimerApellido As String,
+                                         SegundoApellido As String, estado As String, partido As Integer, Departamento As String) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("ingresarDiputado", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@identidadDiputado", identidad)
+            cmd.Parameters.AddWithValue("@PrimerNombre", primerNombre)
+            cmd.Parameters.AddWithValue("@SegundoNombre", SegundoNombre)
+            cmd.Parameters.AddWithValue("@PrimerApellido", PrimerApellido)
+            cmd.Parameters.AddWithValue("@SegundoApellido", SegundoApellido)
+            cmd.Parameters.AddWithValue("@Estado", estado)
+            cmd.Parameters.AddWithValue("@partido", partido)
+            cmd.Parameters.AddWithValue("@Departamento", Departamento)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function actualizarDiputado(identidad As String, primerNombre As String, SegundoNombre As String, PrimerApellido As String,
+                                         SegundoApellido As String, partido As Integer) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("actualizarDiputado", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@identidadDiputado", identidad)
+            cmd.Parameters.AddWithValue("@PrimerNombre", primerNombre)
+            cmd.Parameters.AddWithValue("@SegundoNombre", SegundoNombre)
+            cmd.Parameters.AddWithValue("@PrimerApellido", PrimerApellido)
+            cmd.Parameters.AddWithValue("@SegundoApellido", SegundoApellido)
+            cmd.Parameters.AddWithValue("@partido", partido)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function eliminarDiputado(identidad As String) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("eliminarDiputado", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@identidadDiputado", identidad)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    'Crud De Votante
+    Public Function consultarVotante()
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("consultarVotante", conexion)
+
+            cmd.CommandType = CommandType.StoredProcedure
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+    Public Function IngresarVotante(identidad As String, primerNombre As String, SegundoNombre As String, PrimerApellido As String,
+                                         SegundoApellido As String, edad As Integer, sexo As String, estadoVotante As String) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("IngresarVotante", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@IdentidadVotante", identidad)
+            cmd.Parameters.AddWithValue("@PrimerNombre", primerNombre)
+            cmd.Parameters.AddWithValue("@SegundoNombre", SegundoNombre)
+            cmd.Parameters.AddWithValue("@PrimerApellido", PrimerApellido)
+            cmd.Parameters.AddWithValue("@SegundoApellido", SegundoApellido)
+            cmd.Parameters.AddWithValue("@edad", edad)
+            cmd.Parameters.AddWithValue("@sexo", sexo)
+            cmd.Parameters.AddWithValue("@estadoVotante", estadoVotante)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function actualizarVotante(identidad As String, primerNombre As String, SegundoNombre As String, PrimerApellido As String,
+                                         SegundoApellido As String) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("actualizarVotante", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@IdentidadVotante", identidad)
+            cmd.Parameters.AddWithValue("@PrimerNombre", primerNombre)
+            cmd.Parameters.AddWithValue("@SegundoNombre", SegundoNombre)
+            cmd.Parameters.AddWithValue("@PrimerApellido", PrimerApellido)
+            cmd.Parameters.AddWithValue("@SegundoApellido", SegundoApellido)
+
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function eliminarVotante(identidad As String) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("eliminarVotante", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@IdentidadVotante", identidad)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
 
 End Class
