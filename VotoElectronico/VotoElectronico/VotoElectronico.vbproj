@@ -74,6 +74,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
+    <Compile Include="Crud_Alcaldes.Designer.vb">
+      <DependentUpon>Crud_Alcaldes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Crud_Alcaldes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crud_Presidente.Designer.vb">
+      <DependentUpon>Crud_Presidente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Crud_Presidente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -111,6 +123,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Crud_Alcaldes.resx">
+      <DependentUpon>Crud_Alcaldes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crud_Presidente.resx">
+      <DependentUpon>Crud_Presidente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>

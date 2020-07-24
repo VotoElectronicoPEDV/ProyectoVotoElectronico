@@ -1,9 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Public Class conexion
     Public conexion As SqlConnection = New SqlConnection("Data Source=HECTOROS\SQLEXPRESS02;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
+    Public ds As DataSet = New DataSet()
+    Public da As SqlDataAdapter
     Public lectura As SqlDataReader
     Public comando As SqlCommand
-
+    Public cmd As New SqlCommand
 
     Public Sub conectar()
         Try
@@ -15,5 +17,208 @@ Public Class conexion
             conexion.Close()
         End Try
     End Sub
+
+    'Crud de presidente
+    Public Function consultarPresidente()
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("consultarPresidente", conexion)
+
+            cmd.CommandType = CommandType.StoredProcedure
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+    Public Function ingresarPresidente(identidad As String, primerNombre As String, SegundoNombre As String, PrimerApellido As String,
+                                         SegundoApellido As String, estado As String, partido As Integer) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("ingresarPresidente", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@IdentidadPresidente", identidad)
+            cmd.Parameters.AddWithValue("@PrimerNombre", primerNombre)
+            cmd.Parameters.AddWithValue("@SegundoNombre", SegundoNombre)
+            cmd.Parameters.AddWithValue("@PrimerApellido", PrimerApellido)
+            cmd.Parameters.AddWithValue("@SegundoApellido", SegundoApellido)
+            cmd.Parameters.AddWithValue("@Estado", estado)
+            cmd.Parameters.AddWithValue("@idPartido", partido)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function actualizarPresidente(identidad As String, primerNombre As String, SegundoNombre As String, PrimerApellido As String,
+                                         SegundoApellido As String, partido As Integer) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("actualizarPresidente", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@IdentidadPresidente", identidad)
+            cmd.Parameters.AddWithValue("@PrimerNombre", primerNombre)
+            cmd.Parameters.AddWithValue("@SegundoNombre", SegundoNombre)
+            cmd.Parameters.AddWithValue("@PrimerApellido", PrimerApellido)
+            cmd.Parameters.AddWithValue("@SegundoApellido", SegundoApellido)
+            cmd.Parameters.AddWithValue("@partido", partido)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function eliminarPresidente(identidad As String) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("eliminarPresidente", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@identidadPresidente", identidad)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    'Crud de Alcalde
+
+    Public Function consultarAlcalde()
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("consultarAlcalde", conexion)
+
+            cmd.CommandType = CommandType.StoredProcedure
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+    Public Function ingresarAlcalde(identidad As String, primerNombre As String, SegundoNombre As String, PrimerApellido As String,
+                                         SegundoApellido As String, descripcionVotacion As String, estado As String, partido As Integer, municipio As String) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("ingresarAlcalde", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@identidadAlcalde", identidad)
+            cmd.Parameters.AddWithValue("@PrimerNombre", primerNombre)
+            cmd.Parameters.AddWithValue("@SegundoNombre", SegundoNombre)
+            cmd.Parameters.AddWithValue("@PrimerApellido", PrimerApellido)
+            cmd.Parameters.AddWithValue("@SegundoApellido", SegundoApellido)
+            cmd.Parameters.AddWithValue("@DescripcionVotacion", descripcionVotacion)
+            cmd.Parameters.AddWithValue("@Estado", estado)
+            cmd.Parameters.AddWithValue("@Partido", partido)
+            cmd.Parameters.AddWithValue("@Municipio", municipio)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function actualizarAlcalde(identidad As String, primerNombre As String, SegundoNombre As String, PrimerApellido As String,
+                                         SegundoApellido As String, partido As Integer) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("actualizarAlcalde", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@identidadAlcalde", identidad)
+            cmd.Parameters.AddWithValue("@PrimerNombre", primerNombre)
+            cmd.Parameters.AddWithValue("@SegundoNombre", SegundoNombre)
+            cmd.Parameters.AddWithValue("@PrimerApellido", PrimerApellido)
+            cmd.Parameters.AddWithValue("@SegundoApellido", SegundoApellido)
+            cmd.Parameters.AddWithValue("@Partido", partido)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function eliminarAlcalde(identidad As String) As Boolean
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("eliminarAlcalde", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@identidadAlcalde", identidad)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    'Crud De Diputado
 
 End Class
