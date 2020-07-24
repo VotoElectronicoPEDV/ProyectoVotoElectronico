@@ -380,4 +380,5 @@ Public Class Crud_Alcaldes
         ToolTip.ToolTipTitle = "Aviso"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
+
 End Class
