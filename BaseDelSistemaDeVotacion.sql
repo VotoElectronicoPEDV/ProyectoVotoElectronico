@@ -383,6 +383,48 @@ execute ingresarAlcalde '0311194605575','Daniel', 'Fernando', 'Marquez', 'Lopez'
 execute ingresarAlcalde '0311156081153','Nazareth', 'Dayana', 'Ramos', 'Perez', 'interna', 'activo', 4, '11'
 execute ingresarAlcalde '0311189880280','Katerin', 'Nicoll', 'Bardales', 'Lopez', 'interna', 'activo', 4, '11'
 
+--------Municipio Ojos de Agua----------
+--Partido Nacional
+execute ingresarAlcalde '0312604867587','Perla', 'Osiris', 'Juarez', 'Perez', 'interna', 'activo', 1, '12'
+execute ingresarAlcalde '0312196274556','Daniel', 'Alberto ', 'Espinal', 'jimenez', 'interna', 'activo', 1, '12'
+--Partido liberal
+execute ingresarAlcalde '0312596003865','Darwin', 'Daniel', 'Betancur', 'Garcia', 'interna', 'activo', 2, '12'
+execute ingresarAlcalde '0312196013783','Josue', 'Fernando', 'Kell', 'Hernandez', 'interna', 'activo', 2, '12'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0312196054454','Carlos', 'Gilberto', 'Molina', 'Castillo', 'interna', 'activo', 3, '12'
+execute ingresarAlcalde '0312194645575','Gabriel', 'Fernando', 'Marquez', 'Lopez', 'interna', 'activo', 3, '12'
+--Partido Libre
+execute ingresarAlcalde '0312156081173','Cartlon', 'David', 'Perez', 'Perez', 'interna', 'activo', 4, '12'
+execute ingresarAlcalde '0312189880281','Dayana', 'Nicoll', 'Bardales', 'Lopez', 'interna', 'activo', 4, '12'
+
+--------Municipio San Jeronimo----------
+--Partido Nacional
+execute ingresarAlcalde '0313604867583','Nicol', 'Darin', 'Manzanares', 'Castillo', 'interna', 'activo', 1, '13'
+execute ingresarAlcalde '0313196274557','Josue', 'Efrain ', 'Garcia', 'Lopez', 'interna', 'activo', 1, '13'
+--Partido liberal
+execute ingresarAlcalde '0313596003965','Tesla', 'Daniela', 'Perez', 'Marquez', 'interna', 'activo', 2, '13'
+execute ingresarAlcalde '0313196017783','Dariel', 'Alberto', 'Pa', 'Mendoza', 'interna', 'activo', 2, '13'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0313196054454','Samuel', 'Isac', 'Guerra', 'Castillo', 'interna', 'activo', 3, '13'
+execute ingresarAlcalde '031319464775','Daniel', 'Jeferson', 'Marquez', 'Paz', 'interna', 'activo', 3, '13'
+--Partido Libre
+execute ingresarAlcalde '0313156081173','Denisse', 'Andrea', 'Montoya', 'Perez', 'interna', 'activo', 4, '13'
+execute ingresarAlcalde '0313189880781','Denis', 'Abrhan', 'Caceres', 'Lopez', 'interna', 'activo', 4, '13'
+
+--------Municipio San Jose de Comayagua----------
+--Partido Nacional
+execute ingresarAlcalde '0314604867583','Andrea', 'Melissa', 'Caceres', 'Jimenez', 'interna', 'activo', 1, '14'
+execute ingresarAlcalde '0314196274557','Deris', 'Julissa ', 'Lopez', 'Lopez', 'interna', 'activo', 1, '14'
+--Partido liberal
+execute ingresarAlcalde '0314596003965','Darwin', 'Daniel', 'Betancur', 'Marquez', 'interna', 'activo', 2, '14'
+execute ingresarAlcalde '0313196017783','Jonatan', 'Fabiel', 'Perez', 'Mendoza', 'interna', 'activo', 2, '14'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0314196054454','Daniel', 'Josue', 'Claros', 'Paz', 'interna', 'activo', 3, '14'
+execute ingresarAlcalde '031419464775','Efrain', 'Alberto', 'Castillo', 'Garcia', 'interna', 'activo', 3, '14'
+--Partido Libre
+execute ingresarAlcalde '0314156081173','Misael', 'Alfredo', 'Juarez', 'Perez', 'interna', 'activo', 4, '14'
+execute ingresarAlcalde '0314189880781','Mario', 'Denis', 'Gutierrez', 'Lopez', 'interna', 'activo', 4, '14'
+
 select *from Alcalde
 
 	-------Procedimientos Almacenados-----
