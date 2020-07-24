@@ -1,4 +1,4 @@
-create database SistemaNacionalDeElecciones
+Create database SistemaNacionalDeElecciones
 go
 
 use SistemaNacionalDeElecciones
@@ -190,7 +190,7 @@ end
 exec eliminarPresidente '0101197000186'
 
 ---------consultar-Presidente----
-alter procedure consultarPresidente
+Create procedure consultarPresidente
 as
 begin
 select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,VotosNulos,voto,foto,p.NombrePartido as 'Partido Politico' from Presidente 
@@ -358,17 +358,72 @@ execute ingresarAlcalde '0309189880288','Gian', 'Carlos', 'Torres', 'Padilla', '
 --------Municipio Meambar----------
 --Partido Nacional
 execute ingresarAlcalde '0310604815388','Gabriela', 'Lisbet', 'Perez', 'Perez', 'interna', 'activo', 1, '10'
-execute ingresarAlcalde '0309196270256','Oscar', 'Vilnad ', 'Gutierrez', 'Jimenez', 'interna', 'activo', 1, '10'
+execute ingresarAlcalde '0310196270256','Oscar', 'Vilnad ', 'Gutierrez', 'Jimenez', 'interna', 'activo', 1, '10'
 --Partido liberal
-execute ingresarAlcalde '0309596004865','Jesica', 'Nayeli', 'Barjas', 'Lopez', 'interna', 'activo', 2, '10'
-execute ingresarAlcalde '0309196013563','Victor', 'David', 'Park', 'Peralda', 'interna', 'activo', 2, '10'
+execute ingresarAlcalde '0310596004865','Jesica', 'Nayeli', 'Barjas', 'Lopez', 'interna', 'activo', 2, '10'
+execute ingresarAlcalde '0310196013563','Victor', 'David', 'Park', 'Peralda', 'interna', 'activo', 2, '10'
 --Partido Anticorrupcion
-execute ingresarAlcalde '0309196054544','Leonel', 'Fernando', 'Valladarez', 'Perez', 'interna', 'activo', 3, '10'
-execute ingresarAlcalde '0309194605585','Cristian', 'Josue', 'Jimenez', 'Lopez', 'interna', 'activo', 3, '10'
+execute ingresarAlcalde '0310196054544','Leonel', 'Fernando', 'Valladarez', 'Perez', 'interna', 'activo', 3, '10'
+execute ingresarAlcalde '0310194605585','Cristian', 'Josue', 'Jimenez', 'Lopez', 'interna', 'activo', 3, '10'
 --Partido Libre
-execute ingresarAlcalde '0309156081159','Delia', 'Patricia', 'Jimenez', 'Jimenez', 'interna', 'activo', 4, '10'
-execute ingresarAlcalde '0309189880288','Sheldon', 'David', 'Park', 'Sevilla', 'interna', 'activo', 4, '10'
+execute ingresarAlcalde '0310156081159','Delia', 'Patricia', 'Jimenez', 'Jimenez', 'interna', 'activo', 4, '10'
+execute ingresarAlcalde '0310189880288','Sheldon', 'David', 'Park', 'Sevilla', 'interna', 'activo', 4, '10'
 
+--------Municipio Minas de Oro----------
+--Partido Nacional
+execute ingresarAlcalde '0311604817588','Julissa', 'Daneli', 'Castillo', 'Chavarria', 'interna', 'activo', 1, '11'
+execute ingresarAlcalde '0311196278256','Andres', 'Josue ', 'Castillo', 'Espinal', 'interna', 'activo', 1, '11'
+--Partido liberal
+execute ingresarAlcalde '0311596004865','Killa', 'Nayeli', 'Rojas', 'Guerra', 'interna', 'activo', 2, '11'
+execute ingresarAlcalde '0311196013763','Josue', 'Fernando', 'Hernandez', 'Muñoz', 'interna', 'activo', 2, '11'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0311196054554','Jissel', 'Gabriel', 'Perez', 'Peralta', 'interna', 'activo', 3, '11'
+execute ingresarAlcalde '0311194605575','Daniel', 'Fernando', 'Marquez', 'Lopez', 'interna', 'activo', 3, '11'
+--Partido Libre
+execute ingresarAlcalde '0311156081153','Nazareth', 'Dayana', 'Ramos', 'Perez', 'interna', 'activo', 4, '11'
+execute ingresarAlcalde '0311189880280','Katerin', 'Nicoll', 'Bardales', 'Lopez', 'interna', 'activo', 4, '11'
+
+--------Municipio Ojos de Agua----------
+--Partido Nacional
+execute ingresarAlcalde '0312604867587','Perla', 'Osiris', 'Juarez', 'Perez', 'interna', 'activo', 1, '12'
+execute ingresarAlcalde '0312196274556','Daniel', 'Alberto ', 'Espinal', 'jimenez', 'interna', 'activo', 1, '12'
+--Partido liberal
+execute ingresarAlcalde '0312596003865','Darwin', 'Daniel', 'Betancur', 'Garcia', 'interna', 'activo', 2, '12'
+execute ingresarAlcalde '0312196013783','Josue', 'Fernando', 'Kell', 'Hernandez', 'interna', 'activo', 2, '12'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0312196054454','Carlos', 'Gilberto', 'Molina', 'Castillo', 'interna', 'activo', 3, '12'
+execute ingresarAlcalde '0312194645575','Gabriel', 'Fernando', 'Marquez', 'Lopez', 'interna', 'activo', 3, '12'
+--Partido Libre
+execute ingresarAlcalde '0312156081173','Cartlon', 'David', 'Perez', 'Perez', 'interna', 'activo', 4, '12'
+execute ingresarAlcalde '0312189880281','Dayana', 'Nicoll', 'Bardales', 'Lopez', 'interna', 'activo', 4, '12'
+
+--------Municipio San Jeronimo----------
+--Partido Nacional
+execute ingresarAlcalde '0313604867583','Nicol', 'Darin', 'Manzanares', 'Castillo', 'interna', 'activo', 1, '13'
+execute ingresarAlcalde '0313196274557','Josue', 'Efrain ', 'Garcia', 'Lopez', 'interna', 'activo', 1, '13'
+--Partido liberal
+execute ingresarAlcalde '0313596003965','Tesla', 'Daniela', 'Perez', 'Marquez', 'interna', 'activo', 2, '13'
+execute ingresarAlcalde '0313196017783','Dariel', 'Alberto', 'Pa', 'Mendoza', 'interna', 'activo', 2, '13'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0313196054454','Samuel', 'Isac', 'Guerra', 'Castillo', 'interna', 'activo', 3, '13'
+execute ingresarAlcalde '031319464775','Daniel', 'Jeferson', 'Marquez', 'Paz', 'interna', 'activo', 3, '13'
+--Partido Libre
+execute ingresarAlcalde '0313156081173','Denisse', 'Andrea', 'Montoya', 'Perez', 'interna', 'activo', 4, '13'
+execute ingresarAlcalde '0313189880781','Denis', 'Abrhan', 'Caceres', 'Lopez', 'interna', 'activo', 4, '13'
+
+--------Municipio San Jose de Comayagua----------
+--Partido Nacional
+execute ingresarAlcalde '0314604867583','Andrea', 'Melissa', 'Caceres', 'Jimenez', 'interna', 'activo', 1, '14'
+execute ingresarAlcalde '0314196274557','Deris', 'Julissa ', 'Lopez', 'Lopez', 'interna', 'activo', 1, '14'
+--Partido liberal
+execute ingresarAlcalde '0314596003965','Darwin', 'Daniel', 'Betancur', 'Marquez', 'interna', 'activo', 2, '14'
+execute ingresarAlcalde '0313196017783','Jonatan', 'Fabiel', 'Perez', 'Mendoza', 'interna', 'activo', 2, '14'
+--Partido Anticorrupcion
+execute ingresarAlcalde '0314196054454','Daniel', 'Josue', 'Claros', 'Paz', 'interna', 'activo', 3, '14'
+execute ingresarAlcalde '031419464775','Efrain', 'Alberto', 'Castillo', 'Garcia', 'interna', 'activo', 3, '14'
+--Partido Libre
+execute ingresarAlcalde '0314156081173','Misael', 'Alfredo', 'Juarez', 'Perez', 'interna', 'activo', 4, '14'
+execute ingresarAlcalde '0314189880781','Mario', 'Denis', 'Gutierrez', 'Lopez', 'interna', 'activo', 4, '14'
 
 select *from Alcalde
 
@@ -446,7 +501,7 @@ else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @id
 	raiserror('Esta persona ya desempeña un cargo de alcalde',16,1)
 else
 
-	insert into Diputado(IdentidadDiputado,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,VotosValidos,VotosNulos,Estado,Voto,Partido,Departamento)
+	insert into Diputado(IdentidadDiputado,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,Estado,Voto,Partido,Departamento)
 	values(@identidadDiputado,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@Estado,'F',@Partido,@Departamento)
 end 
 		-------------Partido Nacional----
@@ -565,9 +620,9 @@ values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoAp
 end
 execute IngresarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','Activo'
 execute IngresarVotante '0318200201281', 'Denia', 'Julissa', 'Chavarria', 'Lopez',20,'Femenino','Activo'
-execute IngresarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Femenino','Activo'
-execute IngresarVotante '0318200301368', 'Hector', 'Eduardo', 'Osorio', 'Castellanos',20,'Femenino','Activo'
-execute IngresarVotante '0318200301030', 'ken', 'Jonathan', 'Gomez', 'Barrientos',21,'Femenino','Activo'
+execute IngresarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Masculino','Activo'
+execute IngresarVotante '0318200301368', 'Hector', 'Eduardo', 'Osorio', 'Castellanos',20,'Masculino','Activo'
+execute IngresarVotante '0318200301030', 'ken', 'Jonathan', 'Gomez', 'Barrientos',21,'Masculino','Activo'
 
 select * from votante
 
@@ -591,9 +646,9 @@ else
 	raiserror('el votante no existe en la base de datos',16,1)
 end
 
-exec actualizarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Femenino'
+exec actualizarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Masculino'
 ------------No existe-----
-exec actualizarVotante '0318200401323', 'Mario', 'Antonio', 'Guerra', 'Del cid',21,'Femenino'
+exec actualizarVotante '0318200401323', 'Mario', 'Antonio', 'Guerra', 'Del cid',21,'Masculino'
 
 select * from votante
 
@@ -614,7 +669,7 @@ exec eliminarVotante '0318200301323'
 exec eliminarVotante '0318200301030'
 
 ---------consultar-Votante----
-create procedure consultarVotante
+Create procedure consultarVotante
 as
 begin
 select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', edad,sexo,voto,foto from votante
