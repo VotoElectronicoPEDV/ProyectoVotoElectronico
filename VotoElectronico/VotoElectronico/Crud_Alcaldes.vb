@@ -1,4 +1,6 @@
-﻿Public Class Crud_Alcaldes
+﻿Imports System.ComponentModel
+
+Public Class Crud_Alcaldes
     Dim conexion As conexion = New conexion()
     Dim DataT As New DataTable
     Private Sub btnEjecutar_Click(sender As Object, e As EventArgs) Handles btnEjecutar.Click
@@ -203,7 +205,7 @@
                 txtSegundoApellido.Enabled = True
                 cmbPartido.Enabled = True
                 cmbEstado.Enabled = False
-                cmbMunicipio.Enabled = False 
+                cmbMunicipio.Enabled = False
             Case 2
                 txtIdentidad.Enabled = True
                 txtPrimerNombre.Enabled = False
@@ -296,6 +298,87 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+
+
+    Private Sub txtIdentidad_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentidad.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+
+    Private Sub txtPrimerNombre_Validating(sender As Object, e As CancelEventArgs) Handles txtPrimerNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+
+    Private Sub txtSegundoNombre_Validating(sender As Object, e As CancelEventArgs) Handles txtSegundoNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+
+    Private Sub txtPrimerApellido_Validating(sender As Object, e As CancelEventArgs) Handles txtPrimerApellido.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+
+
+    Private Sub txtSegundoApellido_Validating(sender As Object, e As CancelEventArgs) Handles txtSegundoApellido.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+
+    Private Sub txtIdentidad_MouseHover(sender As Object, e As EventArgs) Handles txtIdentidad.MouseHover
+        ToolTip.SetToolTip(txtIdentidad, "Identidad ")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+
+    Private Sub txtPrimerNombre_MouseHover(sender As Object, e As EventArgs) Handles txtPrimerNombre.MouseHover
+        ToolTip.SetToolTip(txtPrimerNombre, "Primer nombre")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+
+    Private Sub txtSegundoNombre_MouseHover(sender As Object, e As EventArgs) Handles txtSegundoNombre.MouseHover
+        ToolTip.SetToolTip(txtSegundoNombre, "segundo Nombre")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+
+    Private Sub txtPrimerApellido_MouseHover(sender As Object, e As EventArgs) Handles txtPrimerApellido.MouseHover
+        ToolTip.SetToolTip(txtPrimerApellido, "primer apellido")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub txtSegundoApellido_MouseHover(sender As Object, e As EventArgs) Handles txtSegundoApellido.MouseHover
+        ToolTip.SetToolTip(txtSegundoApellido, "segundo Apellido")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
 End Class

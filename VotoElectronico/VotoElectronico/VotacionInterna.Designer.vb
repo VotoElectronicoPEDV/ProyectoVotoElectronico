@@ -22,12 +22,16 @@ Partial Class VotacionInterna
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtidentidad = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAcceder = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1.SuspendLayout()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -59,16 +63,6 @@ Partial Class VotacionInterna
         Me.txtidentidad.Size = New System.Drawing.Size(100, 21)
         Me.txtidentidad.TabIndex = 0
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(31, 33)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(56, 15)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Identidad"
-        '
         'btnAcceder
         '
         Me.btnAcceder.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -79,6 +73,20 @@ Partial Class VotacionInterna
         Me.btnAcceder.TabIndex = 4
         Me.btnAcceder.Text = "ACCEDER"
         Me.btnAcceder.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(31, 33)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(56, 15)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Identidad"
+        '
+        'ErrorValidacion
+        '
+        Me.ErrorValidacion.ContainerControl = Me
         '
         'VotacionInterna
         '
@@ -92,6 +100,7 @@ Partial Class VotacionInterna
         Me.Text = "Verificar Votante"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -101,4 +110,6 @@ Partial Class VotacionInterna
     Friend WithEvents txtidentidad As TextBox
     Friend WithEvents btnAcceder As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents ErrorValidacion As ErrorProvider
+    Friend WithEvents ToolTip As ToolTip
 End Class

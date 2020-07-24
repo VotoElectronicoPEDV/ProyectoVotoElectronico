@@ -220,5 +220,6 @@ Public Class conexion
     End Function
 
     'Crud De Diputado
+    'Crud De alcalde
 
 End Class
