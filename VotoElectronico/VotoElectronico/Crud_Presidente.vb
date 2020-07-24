@@ -274,19 +274,11 @@ Public Class Crud_Presidente
     End Sub
 
     Private Sub txtPrimerApellido_TextChanged(sender As Object, e As EventArgs) Handles txtPrimerApellido.TextChanged
-        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
-            Me.ErrorValidacion.SetError(sender, "")
-        Else
-            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
-        End If
+
     End Sub
 
     Private Sub txtSegundoApellido_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoApellido.TextChanged
-        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
-            Me.ErrorValidacion.SetError(sender, "")
-        Else
-            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
-        End If
+
     End Sub
 
     Private Sub txtIdentidad_MouseHover(sender As Object, e As EventArgs) Handles txtIdentidad.MouseHover
@@ -322,4 +314,39 @@ Public Class Crud_Presidente
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
+    Private Sub txtIdentidad_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidad.TextChanged
+
+    End Sub
+
+    Private Sub txtPrimerNombre_TextChanged(sender As Object, e As EventArgs) Handles txtPrimerNombre.TextChanged
+
+    End Sub
+
+    Private Sub txtSegundoNombre_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoNombre.TextChanged
+
+    End Sub
+
+    Private Sub txtPrimerApellido_Validating(sender As Object, e As CancelEventArgs) Handles txtPrimerApellido.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+    Private Sub txtSegundoApellido_Validating(sender As Object, e As CancelEventArgs) Handles txtSegundoApellido.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+    Private Sub cmbPartido_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPartido.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub cmbEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEstado.SelectedIndexChanged
+
+    End Sub
 End Class
