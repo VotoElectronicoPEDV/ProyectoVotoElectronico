@@ -311,7 +311,7 @@ execute ingresarAlcalde '0306196000544','Juan', 'Jose', 'Caceres', 'Perez', 'int
 execute ingresarAlcalde '0306194600145','Isais', 'Otoniel', 'Lopez', 'Lopez', 'interna', 'activo', 3, '06'
 --Partido Libre
 execute ingresarAlcalde '0306196000148','Kesler', 'Alberto', 'Mencias', 'Guerra', 'interna', 'activo', 4, '06'
-execute ingresarAlcalde '0305196000187','Oscar', 'Daniel', 'Gutierrez', 'Vazques', 'interna', 'activo', 4, '06'
+execute ingresarAlcalde '0306196000187','Oscar', 'Daniel', 'Gutierrez', 'Vazques', 'interna', 'activo', 4, '06'
 
 --------Municipio Lamani----------
 --Partido Nacional
@@ -417,7 +417,7 @@ execute ingresarAlcalde '0314604867583','Andrea', 'Melissa', 'Caceres', 'Jimenez
 execute ingresarAlcalde '0314196274557','Deris', 'Julissa ', 'Lopez', 'Lopez', 'interna', 'activo', 1, '14'
 --Partido liberal
 execute ingresarAlcalde '0314596003965','Darwin', 'Daniel', 'Betancur', 'Marquez', 'interna', 'activo', 2, '14'
-execute ingresarAlcalde '0313196017783','Jonatan', 'Fabiel', 'Perez', 'Mendoza', 'interna', 'activo', 2, '14'
+execute ingresarAlcalde '0314196017783','Jonatan', 'Fabiel', 'Perez', 'Mendoza', 'interna', 'activo', 2, '14'
 --Partido Anticorrupcion
 execute ingresarAlcalde '0314196054454','Daniel', 'Josue', 'Claros', 'Paz', 'interna', 'activo', 3, '14'
 execute ingresarAlcalde '031419464775','Efrain', 'Alberto', 'Castillo', 'Garcia', 'interna', 'activo', 3, '14'
@@ -476,7 +476,7 @@ execute ingresarAlcalde '0318196003965','Darwin', 'Daniel', 'Betancur', 'Marquez
 execute ingresarAlcalde '0318196017783','Jonatan', 'Fabiel', 'Perez', 'Mendoza', 'interna', 'activo', 2, '18'
 --Partido Anticorrupcion
 execute ingresarAlcalde '0318196054454','Daniel', 'Josue', 'Claros', 'Paz', 'interna', 'activo', 3, '18'
-execute ingresarAlcalde '031419464775','Efrain', 'Alberto', 'Castillo', 'Garcia', 'interna', 'activo', 3, '18'
+execute ingresarAlcalde '031819464775','Efrain', 'Alberto', 'Castillo', 'Garcia', 'interna', 'activo', 3, '18'
 --Partido Libre
 execute ingresarAlcalde '0318196081173','Misael', 'Alfredo', 'Juarez', 'Perez', 'interna', 'activo', 4, '18'
 execute ingresarAlcalde '0318199880781','Mario', 'Denis', 'Gutierrez', 'Lopez', 'interna', 'activo', 4, '18'
