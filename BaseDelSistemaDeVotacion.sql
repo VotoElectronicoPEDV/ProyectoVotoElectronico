@@ -1,4 +1,4 @@
-Create database SistemaNacionalDeElecciones
+create database SistemaNacionalDeElecciones
 go
 
 use SistemaNacionalDeElecciones
@@ -831,15 +831,17 @@ as
 begin
 if exists(select IdentidadPresidente from Presidente where IdentidadPresidente = @identidad)
 	update presidente set foto = @imagen
+	where IdentidadPresidente = @identidad
 
 else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado = @identidad)
 	update Diputado set foto = @imagen
+	where IdentidadDiputado = @identidad
 	
 else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @identidad)
 	update Alcalde set foto = @imagen
+	where IdentidadAlcalde = @identidad
 
-else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @identidad)
-	update administrador set foto = @imagen
+
 else
 	raiserror('Esta persona no existe en la base de datos',16,1)
 

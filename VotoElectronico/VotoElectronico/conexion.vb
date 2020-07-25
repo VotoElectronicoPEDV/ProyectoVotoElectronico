@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source=HECTOROS\SQLEXPRESS02;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=localhost\SQLEXPRESS;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
     Public lectura As SqlDataReader
@@ -17,7 +17,25 @@ Public Class conexion
             conexion.Close()
         End Try
     End Sub
-
+    Public Function ingresarFoto(identidad As String, imagen As Image) As Boolean
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("ingresarFoto", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@imagen", ImagenToByte(imagen))
+            cmd.Parameters.AddWithValue("@identidad", identidad)
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
     'Crud de presidente
     Public Function consultarPresidente()
         Try

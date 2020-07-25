@@ -73,7 +73,14 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarImagenCandidato.Designer.vb">
+      <DependentUpon>AgregarImagenCandidato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarImagenCandidato.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="conexion.vb" />
+    <Compile Include="ConversionDeImagen.vb" />
     <Compile Include="Crud_Alcaldes.Designer.vb">
       <DependentUpon>Crud_Alcaldes.vb</DependentUpon>
     </Compile>
@@ -135,6 +142,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AgregarImagenCandidato.resx">
+      <DependentUpon>AgregarImagenCandidato.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Crud_Alcaldes.resx">
       <DependentUpon>Crud_Alcaldes.vb</DependentUpon>
     </EmbeddedResource>
