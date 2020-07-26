@@ -246,20 +246,12 @@ Public Class Crud_Votantes
         End If
     End Sub
 
-    Private Sub txtSegundoApellido_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoApellido.TextChanged
-
-    End Sub
-
     Private Sub txtSegundoApellido_Validating(sender As Object, e As CancelEventArgs) Handles txtSegundoApellido.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
             Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
         End If
-    End Sub
-
-    Private Sub txtPrimerApellido_TextChanged(sender As Object, e As EventArgs) Handles txtPrimerApellido.TextChanged
-
     End Sub
 
     Private Sub txtPrimerApellido_Validating(sender As Object, e As CancelEventArgs) Handles txtPrimerApellido.Validating
@@ -270,10 +262,6 @@ Public Class Crud_Votantes
         End If
     End Sub
 
-    Private Sub txtIdentidad_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidad.TextChanged
-
-    End Sub
-
     Private Sub txtIdentidad_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentidad.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
             Me.ErrorValidacion.SetError(sender, "")
@@ -281,25 +269,12 @@ Public Class Crud_Votantes
             Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
         End If
     End Sub
-
-    Private Sub txtPrimerNombre_TextChanged(sender As Object, e As EventArgs) Handles txtPrimerNombre.TextChanged
-
-    End Sub
-
     Private Sub txtPrimerNombre_Validating(sender As Object, e As CancelEventArgs) Handles txtPrimerNombre.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
             Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
         End If
-    End Sub
-
-    Private Sub txtSegundoNombre_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoNombre.TextChanged
-
-    End Sub
-
-    Private Sub txtEdad_TextChanged(sender As Object, e As EventArgs) Handles txtEdad.TextChanged
-
     End Sub
 
     Private Sub txtEdad_Validating(sender As Object, e As CancelEventArgs) Handles txtEdad.Validating
@@ -354,19 +329,12 @@ Public Class Crud_Votantes
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub cmbSexo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSexo.SelectedIndexChanged
-
-    End Sub
-
     Private Sub cmbSexo_MouseHover(sender As Object, e As EventArgs) Handles cmbSexo.MouseHover
         ToolTip.SetToolTip(cmbSexo, "Sexo")
         ToolTip.ToolTipTitle = "Aviso"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub cmbEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEstado.SelectedIndexChanged
-
-    End Sub
 
     Private Sub cmbEstado_MouseHover(sender As Object, e As EventArgs) Handles cmbEstado.MouseHover
         ToolTip.SetToolTip(cmbEstado, "Estado")
@@ -396,7 +364,6 @@ Public Class Crud_Votantes
 
     Private Sub Crud_Votantes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         consultarVotante()
-
     End Sub
 
     Private Sub dgvVotantes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVotantes.CellContentClick
