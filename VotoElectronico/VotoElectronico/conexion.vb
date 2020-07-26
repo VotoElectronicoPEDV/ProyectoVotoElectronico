@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source=localhost\SQLEXPRESS;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=HECTOROS\SQLEXPRESS02;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
     Public lectura As SqlDataReader
@@ -348,6 +348,7 @@ Public Class conexion
                 Dim dt As New DataTable
                 Dim da As New SqlDataAdapter(cmd)
                 da.Fill(dt)
+
                 Return dt
                 conexion.Close()
             Else

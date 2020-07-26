@@ -38,9 +38,10 @@ Partial Class AgregarImagenCandidato
         'imgFoto
         '
         Me.imgFoto.BackColor = System.Drawing.Color.Black
-        Me.imgFoto.Location = New System.Drawing.Point(431, 12)
+        Me.imgFoto.Location = New System.Drawing.Point(575, 15)
+        Me.imgFoto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.imgFoto.Name = "imgFoto"
-        Me.imgFoto.Size = New System.Drawing.Size(141, 124)
+        Me.imgFoto.Size = New System.Drawing.Size(188, 153)
         Me.imgFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgFoto.TabIndex = 21
         Me.imgFoto.TabStop = False
@@ -48,43 +49,49 @@ Partial Class AgregarImagenCandidato
         'dgvCandidatos
         '
         Me.dgvCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCandidatos.Location = New System.Drawing.Point(12, 165)
+        Me.dgvCandidatos.Location = New System.Drawing.Point(16, 203)
+        Me.dgvCandidatos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvCandidatos.Name = "dgvCandidatos"
-        Me.dgvCandidatos.Size = New System.Drawing.Size(560, 150)
+        Me.dgvCandidatos.RowHeadersWidth = 51
+        Me.dgvCandidatos.Size = New System.Drawing.Size(747, 185)
         Me.dgvCandidatos.TabIndex = 22
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(291, 74)
+        Me.btnAgregar.Location = New System.Drawing.Point(388, 91)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(100, 32)
+        Me.btnAgregar.Size = New System.Drawing.Size(133, 39)
         Me.btnAgregar.TabIndex = 23
         Me.btnAgregar.Text = "Agregar Imagen"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'TxtIdentidad
         '
-        Me.TxtIdentidad.Location = New System.Drawing.Point(97, 39)
+        Me.TxtIdentidad.Location = New System.Drawing.Point(129, 48)
+        Me.TxtIdentidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxtIdentidad.MaxLength = 13
         Me.TxtIdentidad.Name = "TxtIdentidad"
-        Me.TxtIdentidad.Size = New System.Drawing.Size(100, 20)
+        Me.TxtIdentidad.Size = New System.Drawing.Size(132, 22)
         Me.TxtIdentidad.TabIndex = 24
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(26, 42)
+        Me.Label1.Location = New System.Drawing.Point(35, 52)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 13)
+        Me.Label1.Size = New System.Drawing.Size(66, 17)
         Me.Label1.TabIndex = 25
         Me.Label1.Text = "Identidad"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(26, 140)
+        Me.Label2.Location = New System.Drawing.Point(35, 172)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(152, 13)
+        Me.Label2.Size = New System.Drawing.Size(199, 17)
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "Debe dar click en el candidato"
         '
@@ -92,35 +99,38 @@ Partial Class AgregarImagenCandidato
         '
         Me.cmbCandidatura.FormattingEnabled = True
         Me.cmbCandidatura.Items.AddRange(New Object() {"Presidentes", "Alcaldes ", "Diputados"})
-        Me.cmbCandidatura.Location = New System.Drawing.Point(97, 87)
+        Me.cmbCandidatura.Location = New System.Drawing.Point(129, 107)
+        Me.cmbCandidatura.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbCandidatura.Name = "cmbCandidatura"
-        Me.cmbCandidatura.Size = New System.Drawing.Size(121, 21)
+        Me.cmbCandidatura.Size = New System.Drawing.Size(160, 24)
         Me.cmbCandidatura.TabIndex = 27
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(27, 90)
+        Me.Label3.Location = New System.Drawing.Point(36, 111)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 13)
+        Me.Label3.Size = New System.Drawing.Size(85, 17)
         Me.Label3.TabIndex = 28
         Me.Label3.Text = "Candidatura"
         '
         'btnExplorar
         '
-        Me.btnExplorar.Location = New System.Drawing.Point(291, 42)
+        Me.btnExplorar.Location = New System.Drawing.Point(388, 52)
+        Me.btnExplorar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnExplorar.Name = "btnExplorar"
-        Me.btnExplorar.Size = New System.Drawing.Size(98, 26)
+        Me.btnExplorar.Size = New System.Drawing.Size(131, 32)
         Me.btnExplorar.TabIndex = 29
-        Me.btnExplorar.Text = "EXPLORAR"
+        Me.btnExplorar.Text = "Explorar"
         Me.btnExplorar.UseVisualStyleBackColor = True
         '
         'AgregarImagenCandidato
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.ClientSize = New System.Drawing.Size(584, 327)
+        Me.ClientSize = New System.Drawing.Size(779, 402)
         Me.Controls.Add(Me.btnExplorar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cmbCandidatura)
@@ -131,6 +141,7 @@ Partial Class AgregarImagenCandidato
         Me.Controls.Add(Me.dgvCandidatos)
         Me.Controls.Add(Me.imgFoto)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "AgregarImagenCandidato"
         Me.Text = "AgregarImagenCandidato"
         CType(Me.imgFoto, System.ComponentModel.ISupportInitialize).EndInit()

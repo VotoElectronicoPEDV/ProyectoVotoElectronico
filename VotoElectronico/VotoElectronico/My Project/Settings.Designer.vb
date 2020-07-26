@@ -54,17 +54,6 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=HECTOROS\SQLEXPRESS02;Initial Catalog=SistemaNacionalDeElecciones;Int"& _ 
-            "egrated Security=True")>  _
-        Public ReadOnly Property conexion() As String
-            Get
-                Return CType(Me("conexion"),String)
-            End Get
-        End Property
-        
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
@@ -99,6 +88,17 @@ Namespace My
             Set
                 Me("Email") = value
             End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=HECTOROS\SQLEXPRESS02;Initial Catalog=SistemaNacionalDeElecciones;Int"& _ 
+            "egrated Security=True")>  _
+        Public ReadOnly Property conexion() As String
+            Get
+                Return CType(Me("conexion"),String)
+            End Get
         End Property
     End Class
 End Namespace

@@ -35,10 +35,12 @@ Public Class Crud_Presidente
         End Select
     End Sub
     Private Sub consultarPresidente()
+        Dim foto As New DataGridViewImageColumn()
         Try
             DataT = conexion.consultarPresidente
             If DataT.Rows.Count <> 0 Then
                 dgvPresidente.DataSource = DataT
+
             Else
                 dgvPresidente.DataSource = Nothing
                 MessageBox.Show("Error al consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

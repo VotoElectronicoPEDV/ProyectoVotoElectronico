@@ -35,6 +35,8 @@ Public Class Crud_Alcaldes
         End Select
     End Sub
     Private Sub consultarAlcalde()
+        Dim foto As New DataGridViewImageColumn()
+
         Try
             DataT = conexion.consultarAlcalde
             If DataT.Rows.Count <> 0 Then
@@ -381,5 +383,9 @@ Public Class Crud_Alcaldes
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
+    Private Sub Crud_Alcaldes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'SistemaNacionalDeEleccionesDataSet.consultarAlcalde' Puede moverla o quitarla según sea necesario.
+        Me.ConsultarAlcaldeTableAdapter.Fill(Me.SistemaNacionalDeEleccionesDataSet.consultarAlcalde)
 
+    End Sub
 End Class
