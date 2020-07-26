@@ -4,35 +4,39 @@ Public Class Crud_Votantes
     Dim conexion As conexion = New conexion()
     Dim DataT As New DataTable
     Private Sub btnEjecutar_Click(sender As Object, e As EventArgs) Handles btnEjecutar.Click
-        Select Case cmbOperacion.SelectedIndex
-            Case 0
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" And txtEdad.Text <> "" Then
-                    IngresarVotante()
-                    consultarVotante()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If txtIdentidad.Text.Length = 13 Then
+            Select Case cmbOperacion.SelectedIndex
+                Case 0
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" And txtEdad.Text <> "" Then
+                        IngresarVotante()
+                        consultarVotante()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
+                    End If
 
-            Case 1
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
-                    actualizarVotante()
-                    consultarVotante()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case 1
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
+                        actualizarVotante()
+                        consultarVotante()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
-            Case 2
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" Then
-                    eliminarVotante()
-                    consultarVotante()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                Case 2
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" Then
+                        eliminarVotante()
+                        consultarVotante()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
-            Case Else
-                MessageBox.Show("Debe seleccionar una opcion de la operacion que desea realizar", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Select
+                    End If
+                Case Else
+                    MessageBox.Show("Debe seleccionar una opcion de la operacion que desea realizar", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        Else
+            MessageBox.Show("Debe ingresar un numero de identidad valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
     Private Sub consultarVotante()
         Try
@@ -388,5 +392,21 @@ Public Class Crud_Votantes
         Else
             Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
         End If
+    End Sub
+
+    Private Sub Crud_Votantes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        consultarVotante()
+
+    End Sub
+
+    Private Sub dgvVotantes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVotantes.CellContentClick
+        txtIdentidad.Text = dgvVotantes.CurrentRow.Cells(0).Value.ToString
+        txtPrimerNombre.Text = dgvVotantes.CurrentRow.Cells(1).Value.ToString
+        txtSegundoNombre.Text = dgvVotantes.CurrentRow.Cells(1).Value.ToString
+        txtPrimerApellido.Text = dgvVotantes.CurrentRow.Cells(1).Value.ToString
+        txtSegundoApellido.Text = dgvVotantes.CurrentRow.Cells(1).Value.ToString
+        txtEdad.Text = dgvVotantes.CurrentRow.Cells(2).Value.ToString
+        cmbSexo.SelectedItem = dgvVotantes.CurrentRow.Cells(3).Value.ToString
+        cmbEstado.SelectedItem = "activo"
     End Sub
 End Class

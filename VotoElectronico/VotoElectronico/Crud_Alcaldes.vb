@@ -4,35 +4,41 @@ Public Class Crud_Alcaldes
     Dim conexion As conexion = New conexion()
     Dim DataT As New DataTable
     Private Sub btnEjecutar_Click(sender As Object, e As EventArgs) Handles btnEjecutar.Click
-        Select Case cmbOperacion.SelectedIndex
-            Case 0
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
-                    ingresarAlcalde()
-                    consultarAlcalde()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If txtIdentidad.Text.Length = 13 Then
+            Select Case cmbOperacion.SelectedIndex
+                Case 0
 
-                End If
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
+                        ingresarAlcalde()
+                        consultarAlcalde()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-            Case 1
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
-                    actualizarAlcalde()
-                    consultarAlcalde()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
 
-                End If
-            Case 2
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" Then
-                    eliminarAlcalde()
-                    consultarAlcalde()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case 1
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
+                        actualizarAlcalde()
+                        consultarAlcalde()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
-            Case Else
-                MessageBox.Show("Debe seleccionar una opcion de la operacion que desea realizar", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Select
+                    End If
+                Case 2
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" Then
+                        eliminarAlcalde()
+                        consultarAlcalde()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                    End If
+                Case Else
+                    MessageBox.Show("Debe seleccionar una opcion de la operacion que desea realizar", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        Else
+            MessageBox.Show("Debe ingresar un numero de identidad valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
     End Sub
     Private Sub consultarAlcalde()
         Dim foto As New DataGridViewImageColumn()
@@ -383,9 +389,18 @@ Public Class Crud_Alcaldes
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub Crud_Alcaldes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'SistemaNacionalDeEleccionesDataSet.consultarAlcalde' Puede moverla o quitarla según sea necesario.
-        Me.ConsultarAlcaldeTableAdapter.Fill(Me.SistemaNacionalDeEleccionesDataSet.consultarAlcalde)
+    Private Sub dgvAlcaldes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAlcaldes.CellContentClick
+        txtIdentidad.Text = dgvAlcaldes.CurrentRow.Cells(0).Value.ToString
+        txtPrimerNombre.Text = dgvAlcaldes.CurrentRow.Cells(1).Value.ToString
+        txtSegundoNombre.Text = dgvAlcaldes.CurrentRow.Cells(1).Value.ToString
+        txtPrimerApellido.Text = dgvAlcaldes.CurrentRow.Cells(1).Value.ToString
+        txtSegundoApellido.Text = dgvAlcaldes.CurrentRow.Cells(1).Value.ToString
+        cmbPartido.SelectedItem = dgvAlcaldes.CurrentRow.Cells(8).Value.ToString
+        cmbEstado.SelectedItem = "activo"
+        cmbMunicipio.SelectedItem = dgvAlcaldes.CurrentRow.Cells(6).Value.ToString
+    End Sub
 
+    Private Sub Crud_Alcaldes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        consultarAlcalde()
     End Sub
 End Class

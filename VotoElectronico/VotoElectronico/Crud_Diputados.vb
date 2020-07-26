@@ -4,36 +4,41 @@ Public Class Crud_Diputados
     Dim conexion As conexion = New conexion()
     Dim DataT As New DataTable
     Private Sub btnEjecutar_Click(sender As Object, e As EventArgs) Handles btnEjecutar.Click
-        Select Case cmbOperacion.SelectedIndex
-            Case 0
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
-                    ingresarDiputado()
-                    consultarDiputado()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If txtIdentidad.Text.Length = 13 Then
+            Select Case cmbOperacion.SelectedIndex
+                Case 0
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
+                        ingresarDiputado()
+                        consultarDiputado()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
+                    End If
 
-            Case 1
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
-                    actualizarDiputado()
-                    consultarDiputado()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case 1
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
+                        actualizarDiputado()
+                        consultarDiputado()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
-            Case 2
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" Then
-                    eliminarDiputado()
-                    consultarDiputado()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                Case 2
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" Then
+                        eliminarDiputado()
+                        consultarDiputado()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
-            Case Else
-                MessageBox.Show("Debe seleccionar una opcion de la operacion que desea realizar", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Select
+                    End If
+                Case Else
+                    MessageBox.Show("Debe seleccionar una opcion de la operacion que desea realizar", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        Else
+            MessageBox.Show("Debe ingresar un numero de identidad valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
+
     Private Sub consultarDiputado()
         Try
             DataT = conexion.consultarDiputado
@@ -267,10 +272,6 @@ Public Class Crud_Diputados
         End If
     End Sub
 
-    Private Sub txtPrimerNombre_TextChanged(sender As Object, e As EventArgs) Handles txtPrimerNombre.TextChanged
-
-    End Sub
-
     Private Sub txtPrimerNombre_Validating(sender As Object, e As CancelEventArgs) Handles txtPrimerNombre.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
             Me.ErrorValidacion.SetError(sender, "")
@@ -279,9 +280,6 @@ Public Class Crud_Diputados
         End If
     End Sub
 
-    Private Sub txtSegundoNombre_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoNombre.TextChanged
-
-    End Sub
 
     Private Sub txtSegundoNombre_Validating(sender As Object, e As CancelEventArgs) Handles txtSegundoNombre.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
@@ -291,9 +289,6 @@ Public Class Crud_Diputados
         End If
     End Sub
 
-    Private Sub txtPrimerApellido_TextChanged(sender As Object, e As EventArgs) Handles txtPrimerApellido.TextChanged
-
-    End Sub
 
     Private Sub txtPrimerApellido_Validating(sender As Object, e As CancelEventArgs) Handles txtPrimerApellido.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
@@ -303,9 +298,6 @@ Public Class Crud_Diputados
         End If
     End Sub
 
-    Private Sub txtSegundoApellido_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoApellido.TextChanged
-
-    End Sub
 
     Private Sub txtSegundoApellido_Validating(sender As Object, e As CancelEventArgs) Handles txtSegundoApellido.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
@@ -313,14 +305,6 @@ Public Class Crud_Diputados
         Else
             Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
         End If
-    End Sub
-
-    Private Sub cmbPartido_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPartido.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub cmbEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEstado.SelectedIndexChanged
-
     End Sub
 
     Private Sub txtPrimerNombre_MouseHover(sender As Object, e As EventArgs) Handles txtPrimerNombre.MouseHover
@@ -371,9 +355,6 @@ Public Class Crud_Diputados
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub cmbOperacion_Validating(sender As Object, e As CancelEventArgs) Handles cmbOperacion.Validating
-
-    End Sub
 
     Private Sub cmbPartido_Validating(sender As Object, e As CancelEventArgs) Handles cmbPartido.Validating
         If DirectCast(sender, ComboBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
@@ -389,5 +370,19 @@ Public Class Crud_Diputados
         Else
             Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
         End If
+    End Sub
+
+    Private Sub Crud_Diputados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        consultarDiputado()
+    End Sub
+
+    Private Sub dgvDiputados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDiputados.CellContentClick
+        txtIdentidad.Text = dgvDiputados.CurrentRow.Cells(0).Value.ToString
+        txtPrimerNombre.Text = dgvDiputados.CurrentRow.Cells(1).Value.ToString
+        txtSegundoNombre.Text = dgvDiputados.CurrentRow.Cells(1).Value.ToString
+        txtPrimerApellido.Text = dgvDiputados.CurrentRow.Cells(1).Value.ToString
+        txtSegundoApellido.Text = dgvDiputados.CurrentRow.Cells(1).Value.ToString
+        cmbPartido.SelectedItem = dgvDiputados.CurrentRow.Cells(7).Value.ToString
+        cmbEstado.SelectedItem = "activo"
     End Sub
 End Class

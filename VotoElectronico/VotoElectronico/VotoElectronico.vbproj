@@ -122,11 +122,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemaNacionalDeEleccionesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="VotacionInterna.vb">
+    <Compile Include="IngresaVotante.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VotacionInterna.Designer.vb">
-      <DependentUpon>VotacionInterna.vb</DependentUpon>
+    <Compile Include="IngresaVotante.Designer.vb">
+      <DependentUpon>IngresaVotante.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -168,8 +168,8 @@
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VotacionInterna.resx">
-      <DependentUpon>VotacionInterna.vb</DependentUpon>
+    <EmbeddedResource Include="IngresaVotante.resx">
+      <DependentUpon>IngresaVotante.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

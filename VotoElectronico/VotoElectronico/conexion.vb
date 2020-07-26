@@ -438,4 +438,31 @@ Public Class conexion
         End Try
     End Function
 
+    'Funcion para recuperar y validar los datos del Votante
+    Public Function RecuperarDatos(ByVal identidad As String, ByVal columna As Integer)
+        Dim texto As String
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("validarVotante", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@IdentidadVotante", identidad)
+            lectura = cmd.ExecuteReader()
+
+            If lectura.Read() Then
+                texto = lectura(columna).ToString()
+                Return texto
+            Else
+                Return Nothing
+            End If
+            lectura.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+
 End Class

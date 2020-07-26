@@ -3,7 +3,7 @@
         If txtUsuario.Text = My.Settings.Usuario And txtContrasena.Text = My.Settings.Clave Then
             MsgBox("Usuario y contrasena correctos")
             Me.Hide()
-            VotacionInterna.Show()
+            IngresaVotante.Show()
         Else
             MsgBox("Usuario y contrasena incorrecto")
         End If

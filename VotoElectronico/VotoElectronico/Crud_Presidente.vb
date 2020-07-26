@@ -4,35 +4,39 @@ Public Class Crud_Presidente
     Dim conexion As conexion = New conexion()
     Dim DataT As New DataTable
     Private Sub btnEjecutar_Click(sender As Object, e As EventArgs) Handles btnEjecutar.Click
-        Select Case cmbOperacion.SelectedIndex
-            Case 0
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
-                    ingresarPresidente()
-                    consultarPresidente()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If txtIdentidad.Text.Length = 13 Then
+            Select Case cmbOperacion.SelectedIndex
+                Case 0
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
+                        ingresarPresidente()
+                        consultarPresidente()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
+                    End If
 
-            Case 1
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
-                    actualizarPresidente()
-                    consultarPresidente()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Case 1
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" And txtPrimerNombre.Text <> "" And txtSegundoNombre.Text <> "" And txtPrimerApellido.Text <> "" And txtSegundoApellido.Text <> "" Then
+                        actualizarPresidente()
+                        consultarPresidente()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
-            Case 2
-                If Me.ValidateChildren = True And txtIdentidad.Text <> "" Then
-                    eliminarPresidente()
-                    consultarPresidente()
-                Else
-                    MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                Case 2
+                    If Me.ValidateChildren = True And txtIdentidad.Text <> "" Then
+                        eliminarPresidente()
+                        consultarPresidente()
+                    Else
+                        MessageBox.Show("Debe asegurarse de que todos los campos esten completos", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-                End If
-            Case Else
-                MessageBox.Show("Debe seleccionar una opcion de la operacion que desea realizar", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Select
+                    End If
+                Case Else
+                    MessageBox.Show("Debe seleccionar una opcion de la operacion que desea realizar", "Error al realizar operación", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Select
+        Else
+            MessageBox.Show("Debe ingresar un numero de identidad valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
     Private Sub consultarPresidente()
         Dim foto As New DataGridViewImageColumn()
@@ -275,13 +279,6 @@ Public Class Crud_Presidente
         End If
     End Sub
 
-    Private Sub txtPrimerApellido_TextChanged(sender As Object, e As EventArgs) Handles txtPrimerApellido.TextChanged
-
-    End Sub
-
-    Private Sub txtSegundoApellido_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoApellido.TextChanged
-
-    End Sub
 
     Private Sub txtIdentidad_MouseHover(sender As Object, e As EventArgs) Handles txtIdentidad.MouseHover
         ToolTip.SetToolTip(txtIdentidad, "Identidad ")
@@ -316,18 +313,6 @@ Public Class Crud_Presidente
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub txtIdentidad_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidad.TextChanged
-
-    End Sub
-
-    Private Sub txtPrimerNombre_TextChanged(sender As Object, e As EventArgs) Handles txtPrimerNombre.TextChanged
-
-    End Sub
-
-    Private Sub txtSegundoNombre_TextChanged(sender As Object, e As EventArgs) Handles txtSegundoNombre.TextChanged
-
-    End Sub
-
     Private Sub txtPrimerApellido_Validating(sender As Object, e As CancelEventArgs) Handles txtPrimerApellido.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
             Me.ErrorValidacion.SetError(sender, "")
@@ -344,11 +329,19 @@ Public Class Crud_Presidente
         End If
     End Sub
 
-    Private Sub cmbPartido_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbPartido.SelectedIndexChanged
+
+    Private Sub Crud_Presidente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        consultarPresidente()
 
     End Sub
 
-    Private Sub cmbEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEstado.SelectedIndexChanged
-
+    Private Sub dgvPresidente_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPresidente.CellContentClick
+        txtIdentidad.Text = dgvPresidente.CurrentRow.Cells(0).Value.ToString
+        txtPrimerNombre.Text = dgvPresidente.CurrentRow.Cells(1).Value.ToString
+        txtSegundoNombre.Text = dgvPresidente.CurrentRow.Cells(1).Value.ToString
+        txtPrimerApellido.Text = dgvPresidente.CurrentRow.Cells(1).Value.ToString
+        txtSegundoApellido.Text = dgvPresidente.CurrentRow.Cells(1).Value.ToString
+        cmbPartido.SelectedItem = dgvPresidente.CurrentRow.Cells(6).Value.ToString
+        cmbEstado.SelectedItem = "activo"
     End Sub
 End Class
