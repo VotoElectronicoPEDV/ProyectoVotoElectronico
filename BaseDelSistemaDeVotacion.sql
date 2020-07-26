@@ -109,16 +109,14 @@ PrimerApellido varchar(25) not null,
 SegundoApellido varchar(25) not null,
 edad int not null,
 sexo varchar(10) not null,
-foto image,
 voto varchar(1) not null,
 estadoVotante varchar(10) not null
 )
+
 create table administrador(
 identidad varchar(13) not null,
 contraseña varchar(15) not null,
 estado varchar(25) not null,
-voto varchar(1) not null,
-foto image
 )
 select *from administrador
 ------------------------------------------------------------------Procedimientos-Almacenados---------------------------------------------------------------
@@ -766,10 +764,10 @@ exec eliminarVotante '0318200301323'
 exec eliminarVotante '0318200301030'
 
 ---------consultar-Votante----
-Create procedure consultarVotante
+create procedure consultarVotante
 as
 begin
-select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', edad,sexo,voto,foto from votante
+select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', edad,sexo,voto from votante
 where estadoVotante='activo'
 end
 exec consultarVotante
@@ -805,7 +803,7 @@ else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @Id
 	where IdentidadAlcalde = @Identidad 
 
 else if exists(select IdentidadVotante from votante where IdentidadVotante = @Identidad and estadoVotante='activo')
-	select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',edad, sexo, foto, estadoVotante as 'Estado',voto from votante
+	select IdentidadVotante as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',edad, sexo, estadoVotante as 'Estado',voto from votante
 	where IdentidadVotante = @Identidad
 else
 	raiserror('Esta persona no existe en la base de datos',16,1)
@@ -816,10 +814,12 @@ exec buscarIndividual '0318200301323'
 
 	------Procedimiento almacenado-----
 	------Buscar por identidad--------
-Create procedure validarVotante(@IdentidadVotante varchar(13))
+create procedure validarVotante(
+@IdentidadVotante varchar(13)
+)
 as
 begin
-select estadoVotante from votante where IdentidadVotante = @IdentidadVotante
+select estadoVotante,voto,IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante
 end
 execute validarVotante '0318200301323'
 ----------------------------------------------------agregar foto------------------------------
@@ -840,11 +840,8 @@ else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado = 
 else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @identidad)
 	update Alcalde set foto = @imagen
 	where IdentidadAlcalde = @identidad
-
-
 else
 	raiserror('Esta persona no existe en la base de datos',16,1)
-
 end
 -------------------------------------------------validar usuario-------------------------------------
 ------------------------------------Procedimiento almacenado validar administrador-------------
@@ -858,3 +855,84 @@ if exists (select estado from administrador where identidad = @identidad and con
 else
 	raiserror('No encontrado',16,1)
 end
+execute consultarAlcalde 
+select * from Alcalde
+
+create procedure cambioVotacion
+as
+begin
+update votante set voto = 'F'
+DECLARE @i INT
+DECLARE @municipio varchar(2)
+SET @i = 1
+WHILE (@i <= 21)
+BEGIN
+ SET @municipio = CONCAT('0', @i)
+ if @i>=10
+ begin
+	SET @municipio =  @i
+end 
+	PRINT @municipio
+
+	DECLARE @partido INT
+	SET @partido = 1
+	WHILE (@partido <=4)
+	BEGIN
+	update Alcalde set DescripcionVotacion ='Externa' where Partido = @partido and Municipio = @municipio and  VotosValidos =(select max(votosvalidos)from Alcalde)
+	SET @partido = @partido + 1
+	END
+SET @i = @i + 1
+END
+update Alcalde set VotosValidos = 0
+end 
+
+
+create procedure votacionInterna(
+@identidad varchar(13),
+@candidatoAlcalde varchar(13)
+)
+as
+begin
+	update Alcalde set VotosValidos= VotosValidos + 1 where IdentidadAlcalde = @candidatoAlcalde
+	update votante set voto = 'V' where IdentidadVotante = @identidad
+end
+exec votacionInterna '0318200301367','0301196000142'
+
+create procedure votacionExterna(
+@identidad varchar(13),
+@candidatoAlcalde varchar(13),
+@candidatodiputado1 varchar(13),
+@candidatodiputado2 varchar(13),
+@candidatodiputado3 varchar(13),
+@candidatodiputado4 varchar(13),
+@candidatodiputado5 varchar(13),
+@candidatodiputado6 varchar(13),
+@candidatodiputado7 varchar(13),
+@candidatodiputado8 varchar(13),
+@candidatodiputado9 varchar(13),
+@candidatopresidente varchar(13)
+)
+as
+begin
+	update Alcalde set VotosValidos= VotosValidos + 1 where IdentidadAlcalde = @candidatoAlcalde
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = @candidatodiputado1
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = @candidatodiputado2
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = @candidatodiputado3
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = @candidatodiputado4
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = @candidatodiputado5
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = @candidatodiputado6
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = @candidatodiputado7
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = @candidatodiputado8
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = @candidatodiputado9
+	update Presidente set VotosValidos= VotosValidos + 1 where IdentidadPresidente = @candidatopresidente
+	update votante set voto = 'V' where IdentidadVotante = @identidad
+end
+
+create procedure alcaldesExterna
+as
+begin
+select CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',foto , p.NombrePartido as 'Partido Politico' from Alcalde
+inner join PartidoPolitico p on Partido= p.idPartido
+where DescripcionVotacion = 'Externa'
+end
+exec alcaldesExterna
