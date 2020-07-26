@@ -714,14 +714,13 @@ else
 	insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante,voto)
 values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante,'F')
 end
-execute IngresarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','Activo'
-execute IngresarVotante '0318200201281', 'Denia', 'Julissa', 'Chavarria', 'Lopez',20,'Femenino','Activo'
-execute IngresarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Masculino','Activo'
-execute IngresarVotante '0318200301368', 'Hector', 'Eduardo', 'Osorio', 'Castellanos',20,'Masculino','Activo'
-execute IngresarVotante '0318200301030', 'ken', 'Jonathan', 'Gomez', 'Barrientos',21,'Masculino','Activo'
+execute IngresarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','activo'
+execute IngresarVotante '0318200201281', 'Denia', 'Julissa', 'Chavarria', 'Lopez',20,'Femenino','activo'
+execute IngresarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Masculino','activo'
+execute IngresarVotante '0318200301368', 'Hector', 'Eduardo', 'Osorio', 'Castellanos',20,'Masculino','activo'
+execute IngresarVotante '0318200301030', 'ken', 'Jonathan', 'Gomez', 'Barrientos',21,'Masculino','activo'
 
 select * from votante
-
 	---------Actualizar-Votante----
 Create procedure actualizarVotante(
 @IdentidadVotante varchar(13),
@@ -760,7 +759,7 @@ if exists(select estadoVotante,IdentidadVotante from votante where IdentidadVota
 else
  raiserror ('El Votante no existe en la base de datos',16,1)
 end
-exec eliminarVotante '0318200301323'
+exec eliminarVotante '0318200301367'
 exec eliminarVotante '0318200301030'
 
 ---------consultar-Votante----
@@ -855,8 +854,11 @@ if exists (select estado from administrador where identidad = @identidad and con
 else
 	raiserror('No encontrado',16,1)
 end
+
 execute consultarAlcalde 
 select * from Alcalde
+
+
 
 create procedure cambioVotacion
 as
@@ -936,3 +938,5 @@ inner join PartidoPolitico p on Partido= p.idPartido
 where DescripcionVotacion = 'Externa'
 end
 exec alcaldesExterna
+
+exec consultarVotante
