@@ -67,7 +67,7 @@ Partial Class IngresaVotante
         'btnAcceder
         '
         Me.btnAcceder.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAcceder.Location = New System.Drawing.Point(136, 56)
+        Me.btnAcceder.Location = New System.Drawing.Point(136, 67)
         Me.btnAcceder.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAcceder.Name = "btnAcceder"
         Me.btnAcceder.Size = New System.Drawing.Size(78, 30)

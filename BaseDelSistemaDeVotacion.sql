@@ -939,7 +939,7 @@ select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',Segundo
 inner join PartidoPolitico p on Partido= p.idPartido
 where DescripcionVotacion = 'Externa' and Municipio = @municipio
 end
-exec alcaldesExterna
+exec alcaldesExterna 
 
 create procedure alcaldesInterna(
 @municipio varchar(2)
@@ -948,10 +948,10 @@ as
 begin
 select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Alcalde
 inner join PartidoPolitico p on Partido= p.idPartido
-where DescripcionVotacion = 'Interna'
+where DescripcionVotacion = 'Interna'  and Municipio = @municipio
 end
-exec alcaldesInterna
-
+exec alcaldesInterna 18
+select * from alcalde where Municipio='18'
 create procedure diputadoExterna
 as
 begin
