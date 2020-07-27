@@ -66,7 +66,7 @@ Public Class Crud_Alcaldes
             PrimerApellido = txtPrimerApellido.Text
             SegundoApellido = txtSegundoApellido.Text
             estado = cmbEstado.SelectedItem
-            descripcionVotacion = "interna"
+            descripcionVotacion = "Interna"
             Select Case cmbMunicipio.SelectedIndex
                 Case 0
                     municipio = "01"

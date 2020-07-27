@@ -820,7 +820,7 @@ as
 begin
 select estadoVotante,voto,IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante
 end
-execute validarVotante '0318200301323'
+execute validarVotante '031420000189'
 ----------------------------------------------------agregar foto------------------------------
 create procedure ingresarFoto(
 @imagen image, 
@@ -930,13 +930,40 @@ begin
 	update votante set voto = 'V' where IdentidadVotante = @identidad
 end
 
-create procedure alcaldesExterna
+create procedure alcaldesExterna(
+@municipio varchar(2)
+)
 as
 begin
-select CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',foto , p.NombrePartido as 'Partido Politico' from Alcalde
+select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Alcalde
 inner join PartidoPolitico p on Partido= p.idPartido
-where DescripcionVotacion = 'Externa'
+where DescripcionVotacion = 'Externa' and Municipio = @municipio
 end
 exec alcaldesExterna
 
-exec consultarVotante
+create procedure alcaldesInterna(
+@municipio varchar(2)
+)
+as
+begin
+select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Alcalde
+inner join PartidoPolitico p on Partido= p.idPartido
+where DescripcionVotacion = 'Interna'
+end
+exec alcaldesInterna
+
+create procedure diputadoExterna
+as
+begin
+select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Diputado
+inner join PartidoPolitico p on Partido= p.idPartido
+end
+exec diputadoExterna
+
+create procedure PresidenteExterna
+as
+begin
+select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Presidente
+inner join PartidoPolitico p on Partido= p.idPartido
+end
+exec PresidenteExterna

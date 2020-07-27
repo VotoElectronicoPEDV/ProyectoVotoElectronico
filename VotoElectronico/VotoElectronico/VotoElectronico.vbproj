@@ -105,6 +105,7 @@
     <Compile Include="Crud_Votantes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="eleccionVotante.vb" />
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -145,6 +146,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="votacionInterna.Designer.vb">
+      <DependentUpon>votacionInterna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="votacionInterna.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AgregarImagenCandidato.resx">
@@ -176,6 +183,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="votacionInterna.resx">
+      <DependentUpon>votacionInterna.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

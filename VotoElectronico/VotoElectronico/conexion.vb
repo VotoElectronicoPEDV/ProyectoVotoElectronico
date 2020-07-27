@@ -59,6 +59,7 @@ Public Class conexion
             conexion.Close()
         End Try
     End Function
+
     Public Function ingresarPresidente(identidad As String, primerNombre As String, SegundoNombre As String, PrimerApellido As String,
                                          SegundoApellido As String, estado As String, partido As Integer) As Boolean
         Try
@@ -456,6 +457,31 @@ Public Class conexion
                 Return Nothing
             End If
             lectura.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function alcaldesInterna(municipio As String)
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("alcaldesInterna", conexion)
+
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@municipio", municipio)
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
             Return Nothing

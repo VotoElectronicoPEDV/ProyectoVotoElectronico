@@ -6,13 +6,17 @@ Public Class IngresaVotante
         Dim estado, Voto As String
         Dim identidad As String
         If txtidentidad.Text.Length = 13 Then
+            Dim municipio As String
+            municipio = txtidentidad.Text.Substring(2, 2)
             identidad = txtidentidad.Text
             estado = conexion.RecuperarDatos(identidad, 0)
             Voto = conexion.RecuperarDatos(identidad, 1)
-            MsgBox(estado)
-            MsgBox(Voto)
+            eleccionVotante.idVotante = identidad
+            eleccionVotante.idmunicipio = municipio
+
             If estado = "activo" And Voto = "F" Then
-                'accederia al siguiente formulario aca
+                Me.Hide()
+                votacionInterna.Show()
 
             ElseIf estado <> "eliminado" And Voto = "V" Then
                 MessageBox.Show("La persona ya ha realizado la votación. Debera acceder otra persona", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -20,7 +24,11 @@ Public Class IngresaVotante
             ElseIf estado = "eliminado" And Voto <> "F" Then
                 MessageBox.Show("La persona no se encuentra activa para realizar la votacion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
+            ElseIf estado = "" And Voto = "" Then
+                MessageBox.Show("Esta persona no existe en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
             End If
+
         Else
             MessageBox.Show("Debe ingresar un numero de identidad valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -60,4 +68,6 @@ Public Class IngresaVotante
             e.Handled = True
         End If
     End Sub
+
+
 End Class

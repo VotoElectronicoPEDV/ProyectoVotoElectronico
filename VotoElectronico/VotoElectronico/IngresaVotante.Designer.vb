@@ -37,10 +37,9 @@ Partial Class IngresaVotante
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 11)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(21, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 17)
+        Me.Label2.Size = New System.Drawing.Size(0, 13)
         Me.Label2.TabIndex = 2
         '
         'GroupBox1
@@ -50,31 +49,28 @@ Partial Class IngresaVotante
         Me.GroupBox1.Controls.Add(Me.btnAcceder)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(32, 28)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(24, 23)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(311, 153)
+        Me.GroupBox1.Size = New System.Drawing.Size(233, 124)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Verificar Votante"
         '
         'txtidentidad
         '
-        Me.txtidentidad.Location = New System.Drawing.Point(117, 37)
-        Me.txtidentidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtidentidad.Location = New System.Drawing.Point(88, 30)
         Me.txtidentidad.MaxLength = 13
         Me.txtidentidad.Name = "txtidentidad"
-        Me.txtidentidad.Size = New System.Drawing.Size(132, 25)
+        Me.txtidentidad.Size = New System.Drawing.Size(100, 21)
         Me.txtidentidad.TabIndex = 0
         '
         'btnAcceder
         '
         Me.btnAcceder.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAcceder.Location = New System.Drawing.Point(176, 82)
-        Me.btnAcceder.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAcceder.Location = New System.Drawing.Point(136, 56)
+        Me.btnAcceder.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAcceder.Name = "btnAcceder"
-        Me.btnAcceder.Size = New System.Drawing.Size(104, 37)
+        Me.btnAcceder.Size = New System.Drawing.Size(78, 30)
         Me.btnAcceder.TabIndex = 4
         Me.btnAcceder.Text = "ACCEDER"
         Me.btnAcceder.UseVisualStyleBackColor = True
@@ -83,10 +79,9 @@ Partial Class IngresaVotante
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(41, 41)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(31, 33)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 17)
+        Me.Label1.Size = New System.Drawing.Size(56, 15)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Identidad"
         '
@@ -96,13 +91,12 @@ Partial Class IngresaVotante
         '
         'IngresaVotante
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(376, 213)
+        Me.ClientSize = New System.Drawing.Size(274, 167)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "IngresaVotante"
         Me.Text = "Verificar Votante"
         Me.GroupBox1.ResumeLayout(False)
