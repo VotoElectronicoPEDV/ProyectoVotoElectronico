@@ -1,4 +1,4 @@
-	create database SistemaNacionalDeElecciones
+	Create database SistemaNacionalDeElecciones
 	go
 
 	use SistemaNacionalDeElecciones
@@ -25,12 +25,12 @@
 	PrimerApellido varchar(25) not null,
 	SegundoApellido varchar(25),
 	VotosValidos int not null default 0,
-	VotosNulos int default 0,
 	Estado varchar(25) not null,
 	Foto image,
 	Voto varchar(1) not null,
 	Partido int FOREIGN KEY REFERENCES PartidoPolitico(idPartido)
 	)
+
 	select * from presidente
 
 	create table Departamento(
@@ -77,7 +77,6 @@
 	PrimerApellido varchar(25) not null,
 	SegundoApellido varchar(25),
 	VotosValidos int not null default 0,
-	VotosNulos int not null default 0,
 	DescripcionVotacion varchar(25) not null,
 	Estado varchar(25) not null,
 	Foto image,
@@ -94,7 +93,6 @@
 	PrimerApellido varchar(25) not null,
 	SegundoApellido varchar(25),
 	VotosValidos int not null default 0,
-	VotosNulos int not null default 0,
 	Estado varchar(25) not null,
 	Foto image,
 	Voto varchar(1) not null,
@@ -203,7 +201,7 @@
 	Create procedure consultarPresidente--
 	as
 	begin
-	select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,VotosNulos,voto,foto,p.NombrePartido as 'Partido Politico' from Presidente 
+	select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,voto,foto,p.NombrePartido as 'Partido Politico' from Presidente 
 	inner join PartidoPolitico p on Partido= p.idPartido
 	where estado='activo'
 	end
@@ -586,7 +584,7 @@
 	create procedure consultarAlcalde
 	as
 	begin
-	select IdentidadAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,VotosNulos,voto,foto,M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
+	select IdentidadAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,voto,foto,M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
 	inner join PartidoPolitico p on Partido= p.idPartido
 	inner join Municipio M on Municipio = M.idMunicipio
 	inner join Departamento D on M.idDepartamento = D.idDepartamento
@@ -719,7 +717,7 @@
 	create procedure consultarDiputado
 	as
 	begin
-	select IdentidadDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,VotosNulos,voto,foto, D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
+	select IdentidadDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,voto,foto, D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
 	inner join PartidoPolitico p on Partido= p.idPartido
 	inner join Departamento D on Departamento = D.idDepartamento
 	where estado='activo'
@@ -942,20 +940,20 @@
 	begin
 	if exists(select IdentidadPresidente from Presidente where IdentidadPresidente = @Identidad and estado='activo')
 		select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico', 
-		VotosValidos, VotosNulos,voto, foto from Presidente
+		VotosValidos,voto, foto from Presidente
 		inner join PartidoPolitico p on Partido= p.idPartido
 		where IdentidadPresidente = @Identidad
 
 	else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado = @Identidad and estado='activo')
 		select IdentidadDiputado as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',
-		VotosValidos, VotosNulos,voto,foto,D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
+		VotosValidos, voto,foto,D.nombreDepartamento as Departamento, p.NombrePartido as 'Partido Politico' from Diputado
 		inner join PartidoPolitico p on Partido= p.idPartido
 		inner join Departamento D on Departamento = D.idDepartamento
 		where IdentidadDiputado = @Identidad
 	
 	else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @Identidad and estado='activo')
 		select IdentidadAlcalde as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',
-		VotosValidos, VotosNulos,voto, foto,M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
+		VotosValidos,voto, foto,M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento , p.NombrePartido as 'Partido Politico' from Alcalde
 		inner join PartidoPolitico p on Partido= p.idPartido
 		inner join Municipio M on Municipio = M.idMunicipio
 		inner join Departamento D on M.idDepartamento = D.idDepartamento
@@ -1008,14 +1006,13 @@
 	/*========================================================================================================================================*/
 	--------------------------------------------------Procedimiento almacenado validar administrador---------------------------------------------
 	create procedure validaradministrador(
-	@identidad varchar (13),
-	@contraseña varchar (15)
+	@identidad varchar (13)
 	)
 	as begin
-	if exists (select estado from administrador where identidad = @identidad and contraseña = @contraseña and estado = 'activo')
-		raiserror('encontrado',16,1)
+	if exists (select identidad,estado from administrador where identidad = @identidad and estado = 'activo')
+	    select estado, identidad, contraseña from administrador where identidad = @identidad 
 	else
-		raiserror('No encontrado',16,1)
+		raiserror('Este Administrador no existe',16,1)
 	end
 
 	execute consultarAlcalde 
@@ -1026,31 +1023,44 @@
 	create procedure cambioVotacion
 	as
 	begin
+	---Se actualiza el estado de los votantes nuevamente a Falso(No han votado)---
 	update votante set voto = 'F'
+	---Se declara una variable para contar(I)los municipios---
+	---y municipio servira para almacenar los(0) en los municipios del(01->09)---
 	DECLARE @i INT
 	DECLARE @municipio varchar(2)
 	SET @i = 1
+	--Se inicia el ciclo anidado que validara los ganadores en el municipio y por partido--
 	WHILE (@i <= 21)
 	BEGIN
-	 SET @municipio = CONCAT('0', @i)
+	--Se concatena el(0) de municipio al contador(i este ira del 1->21)
+	SET @municipio = CONCAT('0', @i)
+	 --Si i es mayor a 9 ya no se almacenara el (0) al inicio del numero
 	 if @i>=10
 	 begin
 		SET @municipio =  @i
 	end 
-		PRINT @municipio
-
+	---Segundo ciclo para ir contado los ganadores por partido en el municipio---
+	---Se declara la variable partido que sera la que cuenta de partido 1->4---
+	---Para poder recuperar los ganadores de la votacion interna---
 		DECLARE @partido INT
 		SET @partido = 1
 		WHILE (@partido <=4)
-		BEGIN        /*La función MAX sirve para obtener el mayor valor para una columna determinada.*/
+		BEGIN        
+		/*La función MAX nos sirve para obtener el ganador del partido en el municipio*/
+		/*Al ganador se le actualiza su descripcion a externa ya que sera el que pasa
+		a la siguiente votacion(externa)*/
 		update Alcalde set DescripcionVotacion ='Externa' where Partido = @partido and Municipio = @municipio and  VotosValidos =(select max(votosvalidos)from Alcalde)
-		SET @partido = @partido + 1
+		SET @partido = @partido + 1 /*aumenta el contador de partido*/
 		END
-	SET @i = @i + 1
+	SET @i = @i + 1 /*aumenta el contador*/
 	END
+	----al Finalizar el ciclo se reinicia a 0 la cantidad de votos para todos los alcaldes---
 	update Alcalde set VotosValidos = 0
 	end 
 	exec cambioVotacion
+
+	----Prueba regresar alcaldes a interna----
 	update Alcalde set DescripcionVotacion ='Interna'
 
 	/*========================================================================================================================================*/
@@ -1152,7 +1162,7 @@
 
 
 	/*========================================================================================================================================*/
-	--------------------------------------------PROCEDIMIENTO ALMACENADO RECUPERAR MUNICIPIO---------------------------------------------------
+	--------------------------------------------PROCEDIMIENTO ALMACENADO RECUPERAR MUNICIPIO,DEPARTAMENTO---------------------------------------------------
 	create procedure recuperarMunicipio(
 	 @municipio varchar(2)
 	)

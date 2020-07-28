@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministradorVotaciones.Designer.vb">
+      <DependentUpon>AdministradorVotaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdministradorVotaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AgregarImagenCandidato.Designer.vb">
       <DependentUpon>AgregarImagenCandidato.vb</DependentUpon>
     </Compile>
