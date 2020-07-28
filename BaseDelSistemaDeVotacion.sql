@@ -832,6 +832,31 @@
 	execute IngresarVotante '0314200000130', 'Edgar', 'Danilo', 'Mendoza', 'Miranda',20,'Masculino','activo'
 	execute IngresarVotante '0314199800132', 'Reyna', 'Alicia', 'Perez', 'Juarez',22,'Femenino','activo'
 	execute IngresarVotante '0314199807132', 'Osiris', 'Mirian', 'Reyes', 'Perez',22,'Femenino','activo'
+	
+		-------------------------------------Votantes San Jose del Potrero-----------------------------------------------------------------------------
+	execute IngresarVotante '0315199700189', 'Carlos', 'David', 'Montoya', 'Caceres',21,'Masculino','activo'
+	execute IngresarVotante '0315199500130', 'Edgar', 'Otoniel', 'Mendoza', 'Manzanarez',21,'Masculino','activo'
+	execute IngresarVotante '0315199500132', 'Mirla', 'Alicia', 'Juarez', 'Juarez',25,'Femenino','activo'
+	execute IngresarVotante '0315199107132', 'Katerin', 'Nayeli', 'Reyes', 'Paz',30,'Femenino','activo'
+
+	-------------------------------------Votantes San Luis-----------------------------------------------------------------------------
+	execute IngresarVotante '0316199800189', 'Orlando', 'Javier', 'Montoya', 'Lopez',22,'Masculino','activo'
+	execute IngresarVotante '0316199800130', 'Daniel', 'Osbin', 'Caceres', 'Manzanarez',22,'Masculino','activo'
+	execute IngresarVotante '0316199000132', 'Lilian', 'Daniela', 'Juarez', 'Juarez',30,'Femenino','activo'
+	execute IngresarVotante '0316199107132', 'Sandra', 'Andira', 'Perez', 'Paz',29,'Femenino','activo'
+
+	-------------------------------------Votantes San Sebastian-----------------------------------------------------------------------------
+	execute IngresarVotante '0317200000189', 'Javier', 'Orlando', 'Sambrano', 'Caceres',20,'Masculino','activo'
+	execute IngresarVotante '0317200000130', 'Edgar', 'Danilo', 'Mendoza', 'Miranda',20,'Masculino','activo'
+	execute IngresarVotante '0317199800132', 'Reyna', 'Alicia', 'Perez', 'Juarez',22,'Femenino','activo'
+	execute IngresarVotante '0317199807132', 'Osiris', 'Mirian', 'Reyes', 'Perez',22,'Femenino','activo'
+
+	----------------------------------------Votantes siguatepeque---------------------------------------------------------------------------
+	execute IngresarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','activo'
+	execute IngresarVotante '0318200201281', 'Denia', 'Julissa', 'Chavarria', 'Lopez',20,'Femenino','activo'
+	execute IngresarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Masculino','activo'
+	execute IngresarVotante '0318200301368', 'Hector', 'Eduardo', 'Osorio', 'Castellanos',20,'Masculino','activo'
+	execute IngresarVotante '0318200301030', 'ken', 'Jonathan', 'Gomez', 'Barrientos',21,'Masculino','activo'
 
 	select * from votante
 
