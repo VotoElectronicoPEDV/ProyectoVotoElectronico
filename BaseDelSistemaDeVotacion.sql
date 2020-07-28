@@ -815,6 +815,23 @@
 	execute IngresarVotante '0311199500132', 'Daniela', 'Biyit', 'Juarez', 'Paz',25,'Femenino','activo'
 	execute IngresarVotante '0311199107132', 'Francis', 'Nayeli', 'Perez', 'Paz',39,'Femenino','activo'
 
+	-------------------------------------Votantes Ojos de Agua-----------------------------------------------------------------------------
+	execute IngresarVotante '0312199700189', 'Osdiel', 'David', 'Montoya', 'Caceres',23,'Masculino','activo'
+	execute IngresarVotante '0312199500130', 'Edgar', 'Josue', 'Mendoza', 'Manzanarez',25,'Masculino','activo'
+	execute IngresarVotante '0312199500132', 'Perla', 'Alicia', 'Juarez', 'Juarez',25,'Femenino','activo'
+	execute IngresarVotante '0312199107132', 'Gabriela', 'Nayeli', 'Reyes', 'Paz',39,'Femenino','activo'
+
+	-------------------------------------Votantes San Jeronimo-----------------------------------------------------------------------------
+	execute IngresarVotante '0313199800189', 'Otoniel', 'Javier', 'Montoya', 'Lopez',22,'Masculino','activo'
+	execute IngresarVotante '0313199800130', 'Daniel', 'Osbin', 'Manzanarez', 'Manzanarez',22,'Masculino','activo'
+	execute IngresarVotante '0313199000132', 'Grisel', 'Daniela', 'Juarez', 'Juarez',30,'Femenino','activo'
+	execute IngresarVotante '0313199107132', 'Sandra', 'Nayeli', 'Perez', 'Paz',29,'Femenino','activo'
+
+	-------------------------------------Votantes San Jose de Comayagua-----------------------------------------------------------------------------
+	execute IngresarVotante '0314200000189', 'Javier', 'Orlando', 'Sambrano', 'Caceres',20,'Masculino','activo'
+	execute IngresarVotante '0314200000130', 'Edgar', 'Danilo', 'Mendoza', 'Miranda',20,'Masculino','activo'
+	execute IngresarVotante '0314199800132', 'Reyna', 'Alicia', 'Perez', 'Juarez',22,'Femenino','activo'
+	execute IngresarVotante '0314199807132', 'Osiris', 'Mirian', 'Reyes', 'Perez',22,'Femenino','activo'
 
 	select * from votante
 
