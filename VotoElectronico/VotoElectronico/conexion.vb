@@ -465,6 +465,30 @@ Public Class conexion
         End Try
     End Function
 
+    Public Function recuperarMunicipio(ByVal municipio As String, ByVal columna As Integer)
+        Dim texto As String
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("recuperarMunicipio", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@municipio", municipio)
+            lectura = cmd.ExecuteReader()
+
+            If lectura.Read() Then
+                texto = lectura(columna).ToString()
+                Return texto
+            Else
+                Return Nothing
+            End If
+            lectura.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
     Public Function alcaldesInterna(municipio As String)
         Try
             conexion.Open()
@@ -490,5 +514,48 @@ Public Class conexion
         End Try
     End Function
 
+    Public Function votacionInterna(identidadVotante As String, identidadAlcalde As String) As Boolean
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("votacionInterna", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@identidad", identidadVotante)
+            cmd.Parameters.AddWithValue("@candidatoAlcalde", identidadAlcalde)
+            If cmd.ExecuteNonQuery Then
+                Return True
+                conexion.Close()
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+    Public Function diputadoExterna()
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("diputadoExterna", conexion)
+
+            cmd.CommandType = CommandType.StoredProcedure
+
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
 
 End Class

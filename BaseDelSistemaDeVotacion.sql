@@ -887,6 +887,8 @@ SET @i = @i + 1
 END
 update Alcalde set VotosValidos = 0
 end 
+exec cambioVotacion
+update Alcalde set DescripcionVotacion ='Interna'
 
 
 create procedure votacionInterna(
@@ -935,7 +937,7 @@ create procedure alcaldesExterna(
 )
 as
 begin
-select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Alcalde
+select IdentidadAlcalde,foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Alcalde
 inner join PartidoPolitico p on Partido= p.idPartido
 where DescripcionVotacion = 'Externa' and Municipio = @municipio
 end
@@ -946,16 +948,17 @@ create procedure alcaldesInterna(
 )
 as
 begin
-select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Alcalde
+select IdentidadAlcalde,foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Alcalde
 inner join PartidoPolitico p on Partido= p.idPartido
 where DescripcionVotacion = 'Interna'  and Municipio = @municipio
 end
 exec alcaldesInterna 18
 select * from alcalde where Municipio='18'
+
 create procedure diputadoExterna
 as
 begin
-select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Diputado
+select IdentidadDiputado,foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Diputado
 inner join PartidoPolitico p on Partido= p.idPartido
 end
 exec diputadoExterna
@@ -963,7 +966,20 @@ exec diputadoExterna
 create procedure PresidenteExterna
 as
 begin
-select foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Presidente
+select IdentidadPresidente,foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Presidente
 inner join PartidoPolitico p on Partido= p.idPartido
 end
 exec PresidenteExterna
+
+select *from Alcalde
+ create procedure recuperarMunicipio(
+ @municipio varchar(2)
+)
+as
+begin
+select M.nombreMunicipio,  dep.nombreDepartamento from Municipio M
+inner join Departamento dep on dep.idDepartamento = '03'
+where idMunicipio = @municipio
+end
+exec recuperarMunicipio '18'
+select * from votante

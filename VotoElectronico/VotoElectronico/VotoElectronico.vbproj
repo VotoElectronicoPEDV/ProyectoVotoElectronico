@@ -146,6 +146,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="votacionDiputado.Designer.vb">
+      <DependentUpon>votacionDiputado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="votacionDiputado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="votacionInterna.Designer.vb">
       <DependentUpon>votacionInterna.vb</DependentUpon>
     </Compile>
@@ -184,6 +190,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="votacionDiputado.resx">
+      <DependentUpon>votacionDiputado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="votacionInterna.resx">
       <DependentUpon>votacionInterna.vb</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +219,21 @@
     <None Include="SistemaNacionalDeEleccionesDataSet.xss">
       <DependentUpon>SistemaNacionalDeEleccionesDataSet.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elections_200px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoTSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WgCTLh1R_400x400.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rpnTPCkr_400x400-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
