@@ -748,12 +748,6 @@
 		insert into votante(IdentidadVotante,PrimerNombre,SegundoNombre,PrimerApellido,SegundoApellido,edad,sexo,estadoVotante,voto)
 	values(@IdentidadVotante,@PrimerNombre,@segundoNombre,@PrimerApellido,@SegundoApellido,@edad,@sexo,@estadoVotante,'F')
 	end
-	----------------------------------------Votantes siguatepeque---------------------------------------------------------------------------
-	execute IngresarVotante '0318200301323', 'Karla', 'Gissel', 'Lopez', 'Caceres',21,'Femenino','activo'
-	execute IngresarVotante '0318200201281', 'Denia', 'Julissa', 'Chavarria', 'Lopez',20,'Femenino','activo'
-	execute IngresarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Masculino','activo'
-	execute IngresarVotante '0318200301368', 'Hector', 'Eduardo', 'Osorio', 'Castellanos',20,'Masculino','activo'
-	execute IngresarVotante '0318200301030', 'ken', 'Jonathan', 'Gomez', 'Barrientos',21,'Masculino','activo'
 
 	----------------------------------------Votantes de comayagua-----------------------------------------------------------------------------
 	execute IngresarVotante '0301198000100', 'Maria', 'Eugenia', 'Gomez', 'Barrientos',40,'Femenino','activo'
@@ -785,23 +779,42 @@
 	execute IngresarVotante '0305198000119', 'Jose', 'Manuel', 'Martinez', 'Garcia',43,'Masculino','activo'
 	execute IngresarVotante '0305198000120', 'Jorge', 'Marco', 'Sanchez', 'Sanchez',33,'Masculino','activo'
 
-	----------------------------------------Votantes de lamani-----------------------------------------------------------------------------
+	----------------------------------------Votantes la Libertad-----------------------------------------------------------------------------
 	execute IngresarVotante '0306198000121', 'Karen', 'Gissel', 'Elisondo', 'Elisondo',23,'Femenino','activo'
 	execute IngresarVotante '0306198000122', 'Katerine', 'Nicolle', 'Lopez', 'Ramos',24,'Femenino','activo'
 	execute IngresarVotante '0306198000123', 'Nicolle', 'Elisa', 'Gomez', 'Manzanaro',25,'Femenino','activo'
 	execute IngresarVotante '0306198000124', 'Stefany', 'Maria', 'Valle', 'Valle',26,'Femenino','activo'
 
-	----------------------------------------Votantes de Trinidad-----------------------------------------------------------------------------
+	----------------------------------------Votantes Lamani-----------------------------------------------------------------------------
 	execute IngresarVotante '0307198000125', 'Hector', 'Marciano', 'Tinoco', 'Gomez',27,'Masculino','activo'
 	execute IngresarVotante '0307198000126', 'Kevin', 'Josue', 'Guitiereez', 'Lopez',28,'Masculino','activo'
 	execute IngresarVotante '0307198000127', 'Ericka', 'Maria', 'Gomez', 'Del valle',29,'Femenino','activo'
 	execute IngresarVotante '0307198000128', 'Abigail', 'Melissa', 'Fernandez', 'Martinez',55,'Femenino','activo'
 
-	---------------------------------------Votantes de Lejamani-----------------------------------------------------------------------------
+	---------------------------------------Votantes la Trinidad-----------------------------------------------------------------------------
 	execute IngresarVotante '0308198000129', 'Jose', 'edgardo', 'Osorio', 'Villanueva',23,'Masculino','activo'
 	execute IngresarVotante '0308198000130', 'David', 'Josue', 'Lopez', 'Juarez',21,'Masculino','activo'
 	execute IngresarVotante '0308198000131', 'Eugenia', 'Maria', 'Hernandez', 'Lopez',22,'Femenino','activo'
 	execute IngresarVotante '0308198000132', 'Denia', 'Josefa', 'Joya', 'Joya',23,'Femenino','activo'
+
+	---------------------------------------Votantes de Lejamani-----------------------------------------------------------------------------
+	execute IngresarVotante '0309199500189', 'Pedro', 'Moises', 'Perez', 'Montes',25,'Masculino','activo'
+	execute IngresarVotante '0309200000130', 'Josue', 'Andres', 'Lopez', 'Manzanares',20,'Masculino','activo'
+	execute IngresarVotante '0309199700132', 'Daniela', 'Andrea', 'Herrera', 'Lopez',23,'Femenino','activo'
+	execute IngresarVotante '0309198007132', 'Kendy', 'Ariela', 'Montesino', 'Joya',35,'Femenino','activo'
+
+	---------------------------------------Votantes Meambar-----------------------------------------------------------------------------
+	execute IngresarVotante '0310199900189', 'Andres', 'Javier', 'Paz', 'Paz',21,'Masculino','activo'
+	execute IngresarVotante '0310199800130', 'Miguel', 'Andres', 'Medrano', 'Juarez',22,'Masculino','activo'
+	execute IngresarVotante '0310199500132', 'Angelica', 'Danely', 'Herrera', 'Paz',25,'Femenino','activo'
+	execute IngresarVotante '0310199007132', 'Denia', 'Lisbet', 'Lopez', 'Joya',30,'Femenino','activo'
+
+	-------------------------------------Votantes Minas de Oro-----------------------------------------------------------------------------
+	execute IngresarVotante '0311199700189', 'Olban', 'Javier', 'Miranda', 'Caceres',23,'Masculino','activo'
+	execute IngresarVotante '0311199500130', 'David', 'Alberto', 'Mendoza', 'Perez',25,'Masculino','activo'
+	execute IngresarVotante '0311199500132', 'Daniela', 'Biyit', 'Juarez', 'Paz',25,'Femenino','activo'
+	execute IngresarVotante '0311199107132', 'Francis', 'Nayeli', 'Perez', 'Paz',39,'Femenino','activo'
+
 
 	select * from votante
 
