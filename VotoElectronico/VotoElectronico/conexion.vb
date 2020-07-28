@@ -534,6 +534,7 @@ Public Class conexion
             conexion.Close()
         End Try
     End Function
+
     Public Function diputadoExterna()
         Try
             conexion.Open()
@@ -553,6 +554,62 @@ Public Class conexion
         Catch ex As Exception
             MsgBox(ex.Message)
             Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function PresidenteExterna()
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("PresidenteExterna", conexion)
+
+            cmd.CommandType = CommandType.StoredProcedure
+
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+                conexion.Close()
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+    Public Function votacionExterna(idVotante As String, idAlcalde As String, idDiputado1 As String, idDiputado2 As String,
+                                     idDiputado3 As String, idDiputado4 As String, idDiputado5 As String, idDiputado6 As String,
+                                     idDiputado7 As String, idDiputado8 As String, idDiputado9 As String, idPresidente As String) As Boolean
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("votacionExterna", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@identidad", idVotante)
+            cmd.Parameters.AddWithValue("@candidatoAlcalde", idAlcalde)
+            cmd.Parameters.AddWithValue("@candidatodiputado1", idDiputado1)
+            cmd.Parameters.AddWithValue("@candidatodiputado2", idDiputado2)
+            cmd.Parameters.AddWithValue("@candidatodiputado3", idDiputado3)
+            cmd.Parameters.AddWithValue("@candidatodiputado4", idDiputado4)
+            cmd.Parameters.AddWithValue("@candidatodiputado5", idDiputado5)
+            cmd.Parameters.AddWithValue("@candidatodiputado6", idDiputado6)
+            cmd.Parameters.AddWithValue("@candidatodiputado7", idDiputado7)
+            cmd.Parameters.AddWithValue("@candidatodiputado8", idDiputado8)
+            cmd.Parameters.AddWithValue("@candidatodiputado9", idDiputado9)
+            cmd.Parameters.AddWithValue("@candidatopresidente", idPresidente)
+            If cmd.ExecuteNonQuery Then
+                Return True
+                conexion.Close()
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
         Finally
             conexion.Close()
         End Try

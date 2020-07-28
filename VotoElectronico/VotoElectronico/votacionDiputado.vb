@@ -137,7 +137,7 @@
                                     inicio = 0
                                     MessageBox.Show("Ha elegido los 9 diputados satisfactoriamente", "Votacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                     Me.Hide()
-                                    'formularioPresidente
+                                    votacionPresidente.Show()
                                 End If
                             End If
                     End Select
@@ -148,43 +148,5 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
-
-        '    If Me.dgvDiputado.CurrentCell.GetType.ToString Like "*Button*" Then
-        '        eleccionVotante.idDiputado1 = Me.dgvDiputado.CurrentRow.Cells(0).Value.ToString
-
-        '        If eleccionVotante.idAlcalde = String.Empty Then
-        '            MessageBox.Show("La fila no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '        Else
-        '            Dim confirmacion As DialogResult
-        '            confirmacion = MessageBox.Show("¿Esta seguro de su eleccion?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
-        '            If confirmacion = DialogResult.Yes Then
-
-        '                Try
-        '                    If eleccionVotante.descripcionVotacion = 1 Then
-
-        '                        If conexion.votacionInterna(eleccionVotante.idVotante, eleccionVotante.idAlcalde) Then
-        '                            MessageBox.Show("Ha votado Satisfactoriamente", "Votacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '                            Me.Hide()
-        '                            IngresaVotante.Show()
-        '                        Else
-        '                            MessageBox.Show("Error al votar", "Votacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '                        End If
-        '                    Else
-        '                        MessageBox.Show("Ha votado Satisfactoriamente", "Votacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        '                        Me.Hide()
-        '                        'IngresaVotante.Show()
-        '                    End If
-        '                Catch ex As Exception
-        '                    MsgBox(ex.Message)
-        '                End Try
-        '            End If
-        '        End If
-        '    End If
-        'End Sub
-        'Private Sub validarDiputado()
-
     End Sub
-
 End Class

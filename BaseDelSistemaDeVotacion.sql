@@ -982,4 +982,4 @@ inner join Departamento dep on dep.idDepartamento = '03'
 where idMunicipio = @municipio
 end
 exec recuperarMunicipio '18'
-select * from votante
+select * from Presidente

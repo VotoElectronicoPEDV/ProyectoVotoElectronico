@@ -158,6 +158,12 @@
     <Compile Include="votacionInterna.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="votacionPresidente.Designer.vb">
+      <DependentUpon>votacionPresidente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="votacionPresidente.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AgregarImagenCandidato.resx">
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="votacionInterna.resx">
       <DependentUpon>votacionInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="votacionPresidente.resx">
+      <DependentUpon>votacionPresidente.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
