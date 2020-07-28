@@ -857,6 +857,24 @@
 	execute IngresarVotante '0318200301367', 'Abdiel', 'Jesus', 'Giron', 'Garcia',20,'Masculino','activo'
 	execute IngresarVotante '0318200301368', 'Hector', 'Eduardo', 'Osorio', 'Castellanos',20,'Masculino','activo'
 	execute IngresarVotante '0318200301030', 'ken', 'Jonathan', 'Gomez', 'Barrientos',21,'Masculino','activo'
+	
+	-------------------------------------Votantes Villa de san Antonio-----------------------------------------------------------------------------
+	execute IngresarVotante '0319200000189', 'Javier', 'Miguel', 'Sambrano', 'Caceres',20,'Masculino','activo'
+	execute IngresarVotante '0319200000130', 'Edgar', 'Daniel', 'Mendoza', 'Miranda',20,'Masculino','activo'
+	execute IngresarVotante '0319199800132', 'Marilyn', 'Alicia', 'Perez', 'Juarez',22,'Femenino','activo'
+	execute IngresarVotante '0319199807132', 'Danely', 'Mirian', 'Reyes', 'Perez',22,'Femenino','activo'
+
+	----------------------------------------Votantes Las Lajas---------------------------------------------------------------------------
+	execute IngresarVotante '0320199300125', 'Olvin', 'Marciano', 'Tinoco', 'Gomez',27,'Masculino','activo'
+	execute IngresarVotante '0320199200126', 'Kevin', 'Daniel', 'Guitiereez', 'Lopez',28,'Masculino','activo'
+	execute IngresarVotante '0320199100127', 'Idalia', 'Maria', 'Gomez', 'Del valle',29,'Femenino','activo'
+	execute IngresarVotante '0320199000128', 'Jaely', 'Melissa', 'Fernandez', 'Martinez',30,'Femenino','activo'
+
+	----------------------------------------Votantes Taulabe---------------------------------------------------------------------------
+	execute IngresarVotante '0321199800189', 'Orlando', 'Abdiel', 'Montoya', 'Lopez',22,'Masculino','activo'
+	execute IngresarVotante '0321199800130', 'Daniel', 'Miguel', 'Caceres', 'Manzanarez',22,'Masculino','activo'
+	execute IngresarVotante '0321199000132', 'Lilian', 'Azucena', 'Juarez', 'Juarez',30,'Femenino','activo'
+	execute IngresarVotante '0321199107132', 'Mariam', 'Andira', 'Perez', 'Paz',29,'Femenino','activo'
 
 	select * from votante
 
