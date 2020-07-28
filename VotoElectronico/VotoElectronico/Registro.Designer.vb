@@ -42,74 +42,78 @@ Partial Class Registro
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(6, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 15)
+        Me.Label1.Size = New System.Drawing.Size(59, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Usuario"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(6, 46)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(37, 15)
+        Me.Label2.Size = New System.Drawing.Size(41, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "email"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(5, 79)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 15)
+        Me.Label3.Size = New System.Drawing.Size(78, 17)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "contrasena"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(5, 107)
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(5, 108)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(123, 15)
+        Me.Label4.Size = New System.Drawing.Size(147, 17)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Confirmar contrasena"
         '
         'txtUsuario
         '
-        Me.txtUsuario.Location = New System.Drawing.Point(136, 17)
+        Me.txtUsuario.Location = New System.Drawing.Point(157, 14)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(115, 21)
         Me.txtUsuario.TabIndex = 4
         '
         'txtemail
         '
-        Me.txtemail.Location = New System.Drawing.Point(136, 45)
+        Me.txtemail.Location = New System.Drawing.Point(157, 42)
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(115, 21)
         Me.txtemail.TabIndex = 5
         '
         'txtcontrasena
         '
-        Me.txtcontrasena.Location = New System.Drawing.Point(136, 78)
+        Me.txtcontrasena.Location = New System.Drawing.Point(157, 75)
         Me.txtcontrasena.Name = "txtcontrasena"
         Me.txtcontrasena.Size = New System.Drawing.Size(115, 21)
         Me.txtcontrasena.TabIndex = 6
         '
         'txtconfirmar
         '
-        Me.txtconfirmar.Location = New System.Drawing.Point(136, 106)
+        Me.txtconfirmar.Location = New System.Drawing.Point(157, 103)
         Me.txtconfirmar.Name = "txtconfirmar"
         Me.txtconfirmar.Size = New System.Drawing.Size(115, 21)
         Me.txtconfirmar.TabIndex = 7
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GroupBox1.BackColor = System.Drawing.Color.PeachPuff
         Me.GroupBox1.Controls.Add(Me.btnIngresar)
         Me.GroupBox1.Controls.Add(Me.txtemail)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -122,7 +126,7 @@ Partial Class Registro
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(269, 170)
+        Me.GroupBox1.Size = New System.Drawing.Size(281, 170)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registro"
@@ -146,8 +150,8 @@ Partial Class Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(296, 194)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(309, 194)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Registro"

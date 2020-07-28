@@ -244,5 +244,17 @@
   <ItemGroup>
     <None Include="Resources\rpnTPCkr_400x400-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ilustracion-vector-concepto-personaje-gente-pequena-votacion-linea_128320-14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\isometric-flat-concept-online-voting-and-vector-25611952.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sistema-de-votación-del-concepto-la-bandera-caja-estilo-plano-124508424.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -63,9 +63,39 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property descarga() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("descarga", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property elections_200px() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("elections_200px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ilustracion_vector_concepto_personaje_gente_pequena_votacion_linea_128320_14() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ilustracion-vector-concepto-personaje-gente-pequena-votacion-linea_128320-14", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property isometric_flat_concept_online_voting_and_vector_25611952() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("isometric-flat-concept-online-voting-and-vector-25611952", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -86,6 +116,16 @@ Namespace My.Resources
         Friend ReadOnly Property rpnTPCkr_400x400_removebg_preview() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("rpnTPCkr_400x400-removebg-preview", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property sistema_de_votación_del_concepto_la_bandera_caja_estilo_plano_124508424() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("sistema-de-votación-del-concepto-la-bandera-caja-estilo-plano-124508424", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
