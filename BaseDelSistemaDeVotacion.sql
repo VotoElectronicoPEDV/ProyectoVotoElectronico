@@ -1217,9 +1217,9 @@
 
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0301197000130'
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000131'
-	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000131'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000165'
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0303197000132'
-	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0303197000132'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0303197000164'
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0304197000133'
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0304197000163'
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0305197000134'
