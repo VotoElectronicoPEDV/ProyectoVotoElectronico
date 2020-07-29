@@ -2,7 +2,10 @@
 
 Public Class Login
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        If txtUsuario.Text = My.Settings.Usuario And txtContrasena.Text = My.Settings.Clave Then
+
+        If txtUsuario.Text = "" And txtContrasena.Text = "" Then
+            MsgBox("debe de llenar los campos")
+        ElseIf txtUsuario.Text = My.Settings.Usuario And txtContrasena.Text = My.Settings.Clave Then
             MsgBox("Usuario y contrasena correctos")
             Me.Hide()
             IngresaVotante.Show()

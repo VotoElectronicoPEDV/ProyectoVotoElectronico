@@ -27,7 +27,9 @@ Public Class Registro
 
         'My.setting expone cada configuración como una propiedad. El nombre de la propiedad es el mismo 
         'que el nombre de la configuración, y el tipo de propiedad es el mismo
-        If txtconfirmar.Text = txtcontrasena.Text Then
+        If txtcontrasena.Text = "" And txtconfirmar.Text = "" Then
+            MsgBox("debe de llenar los campos solicitados")
+        ElseIf txtconfirmar.Text = txtcontrasena.Text Then
             MsgBox("correctos")
 
 
