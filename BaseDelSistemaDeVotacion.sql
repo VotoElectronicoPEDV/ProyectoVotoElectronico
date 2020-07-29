@@ -1195,6 +1195,8 @@
 	select * from Presidente
 
 	/*========================================================================================================================================*/
+	/*========================================================================================================================================*/
+	-----------------------------Procedimiento almacenado diputados ganadores--------------------------------------------------------------------
 	create procedure diputadosGanadores
 	as 
 	begin
@@ -1214,18 +1216,21 @@
 	exec diputadosGanadores
 
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0301197000130'
-		update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000131'
-			update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000165'
-				update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0303197000132'
-					update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0303197000164'
-						update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0304197000133'
-							update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0304197000163'
-								update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0305197000134'
-									update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0305197000162'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000131'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000165'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0303197000132'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0303197000164'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0304197000133'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0304197000163'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0305197000134'
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0305197000162'
 									
-									update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0306197000135'
-									update Diputado set estado='activo' , VotosValidos = 0
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0306197000135'
+	update Diputado set estado='activo' , VotosValidos = 0
 	
+
+	/*========================================================================================================================================*/
+	-----------------------------Procedimiento almacenado Ganador presidente--------------------------------------------------------------------
 
 			create Procedure GanadorPresidente
 			AS
@@ -1233,6 +1238,8 @@
 				update Presidente set Estado ='Ganador' where VotosValidos =(select max(votosvalidos)from Diputado where Estado ='activo') and VotosValidos <> 0
 			END
 
+	/*========================================================================================================================================*/
+	-----------------------------Procedimiento almacenado  Ganador alcalde--------------------------------------------------------------------
 	Create Procedure GanadorAlcalde
 	AS
 	BEGIN
@@ -1251,21 +1258,26 @@
 	END
 	END
 
-	update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0301196000140'
+		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0301196000140'
 		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0301196000141'
 		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0302196000141'
 		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0302196000142'
 
-exec consultarAlcalde
-exec GanadorAlcalde
+	exec consultarAlcalde
+	exec GanadorAlcalde
 
-create Procedure ReiniciarVotacion
-AS 
-BEGIN
-update votante set voto = 'F'
-update alcalde set VotosValidos = 0 , DescripcionVotacion = 'Interna', voto = 'F', estado = 'activo' where Estado <> 'eliminado' 
-update diputado set VotosValidos = 0 ,  voto = 'F', estado = 'activo' where Estado <> 'eliminado' 
-update Presidente  set VotosValidos = 0 , voto = 'F', estado = 'activo' where Estado <> 'eliminado' 
-END
+	/*========================================================================================================================================*/
+	-----------------------------Procedimiento almacenado Reiniciar votacion--------------------------------------------------------------------
 
-exec ReiniciarVotacion
+	create Procedure ReiniciarVotacion
+	AS 
+	BEGIN
+	update votante set voto = 'F'
+	update alcalde set VotosValidos = 0 , DescripcionVotacion = 'Interna', voto = 'F', estado = 'activo' where Estado <> 'eliminado' 
+	update diputado set VotosValidos = 0 ,  voto = 'F', estado = 'activo' where Estado <> 'eliminado' 
+	update Presidente  set VotosValidos = 0 , voto = 'F', estado = 'activo' where Estado <> 'eliminado' 
+	END
+
+	exec ReiniciarVotacion
+	/*========================================================================================================================================*/
+	/*========================================================================================================================================*/
