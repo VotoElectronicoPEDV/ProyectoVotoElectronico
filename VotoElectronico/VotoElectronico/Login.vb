@@ -11,15 +11,6 @@ Public Class Login
         End If
     End Sub
 
-
-    Private Sub txtUsuario_Validating(sender As Object, e As CancelEventArgs) Handles txtUsuario.Validating
-        If DirectCast(sender, TextBox).Text.Length > 0 And txtUsuario.Text = "" Then
-            Me.ErrorValidacion.SetError(sender, "")
-        Else
-            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
-        End If
-    End Sub
-
     Private Sub txtContrasena_Validating(sender As Object, e As CancelEventArgs) Handles txtContrasena.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And txtContrasena.Text = "" Then
             Me.ErrorValidacion.SetError(sender, "")
@@ -32,6 +23,14 @@ Public Class Login
         ToolTip.SetToolTip(txtContrasena, "Ingrese su contrasena")
         ToolTip.ToolTipTitle = "Aviso"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub txtUsuario_Validating(sender As Object, e As CancelEventArgs) Handles txtUsuario.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 And txtUsuario.Text = "" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
     End Sub
 
     Private Sub txtUsuario_MouseHover(sender As Object, e As EventArgs) Handles txtUsuario.MouseHover

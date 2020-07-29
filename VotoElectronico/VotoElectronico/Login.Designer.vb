@@ -59,7 +59,7 @@ Partial Class Login
         '
         'txtUsuario
         '
-        Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUsuario.ForeColor = System.Drawing.Color.White
         Me.txtUsuario.Location = New System.Drawing.Point(108, 26)
@@ -69,7 +69,7 @@ Partial Class Login
         '
         'txtContrasena
         '
-        Me.txtContrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtContrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtContrasena.ForeColor = System.Drawing.Color.White
         Me.txtContrasena.Location = New System.Drawing.Point(105, 64)
@@ -115,7 +115,7 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(295, 162)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

@@ -262,13 +262,7 @@ Public Class Crud_Votantes
         End If
     End Sub
 
-    Private Sub txtIdentidad_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentidad.Validating
-        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
-            Me.ErrorValidacion.SetError(sender, "")
-        Else
-            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
-        End If
-    End Sub
+
     Private Sub txtPrimerNombre_Validating(sender As Object, e As CancelEventArgs) Handles txtPrimerNombre.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
             Me.ErrorValidacion.SetError(sender, "")
@@ -376,4 +370,15 @@ Public Class Crud_Votantes
         cmbSexo.SelectedItem = dgvVotantes.CurrentRow.Cells(3).Value.ToString
         cmbEstado.SelectedItem = "activo"
     End Sub
+
+
+
+    Private Sub txtIdentidad_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentidad.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
 End Class

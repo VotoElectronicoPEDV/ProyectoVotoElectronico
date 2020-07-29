@@ -377,7 +377,7 @@ Partial Class Crud_Diputados
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Crud_Diputados"
         Me.Text = "Crud_Diputados"
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()

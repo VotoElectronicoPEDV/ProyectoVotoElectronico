@@ -3,6 +3,9 @@
 Public Class Crud_Diputados
     Dim conexion As conexion = New conexion()
     Dim DataT As New DataTable
+    Private Sub Crud_Diputados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        consultarDiputado()
+    End Sub
     Private Sub btnEjecutar_Click(sender As Object, e As EventArgs) Handles btnEjecutar.Click
         If txtIdentidad.Text.Length = 13 Then
             Select Case cmbOperacion.SelectedIndex
@@ -335,17 +338,7 @@ Public Class Crud_Diputados
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub cmbPartido_MouseHover(sender As Object, e As EventArgs) Handles cmbPartido.MouseHover
-        ToolTip.SetToolTip(cmbPartido, "Partido")
-        ToolTip.ToolTipTitle = "Aviso"
-        ToolTip.ToolTipIcon = ToolTipIcon.Info
-    End Sub
 
-    Private Sub cmbEstado_MouseHover(sender As Object, e As EventArgs) Handles cmbEstado.MouseHover
-        ToolTip.SetToolTip(cmbEstado, "Estado")
-        ToolTip.ToolTipTitle = "Aviso"
-        ToolTip.ToolTipIcon = ToolTipIcon.Info
-    End Sub
 
     Private Sub cmbOperacion_MouseHover(sender As Object, e As EventArgs) Handles cmbOperacion.MouseHover
         ToolTip.SetToolTip(cmbOperacion, "Operacion a realizar")
@@ -360,25 +353,6 @@ Public Class Crud_Diputados
     End Sub
 
 
-    Private Sub cmbPartido_Validating(sender As Object, e As CancelEventArgs) Handles cmbPartido.Validating
-        If DirectCast(sender, ComboBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
-            Me.ErrorValidacion.SetError(sender, "")
-        Else
-            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
-        End If
-    End Sub
-
-    Private Sub cmbEstado_Validating(sender As Object, e As CancelEventArgs) Handles cmbEstado.Validating
-        If DirectCast(sender, ComboBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
-            Me.ErrorValidacion.SetError(sender, "")
-        Else
-            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
-        End If
-    End Sub
-
-    Private Sub Crud_Diputados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        consultarDiputado()
-    End Sub
 
     Private Sub dgvDiputados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDiputados.CellContentClick
         txtIdentidad.Text = dgvDiputados.CurrentRow.Cells(0).Value.ToString
@@ -388,5 +362,35 @@ Public Class Crud_Diputados
         txtSegundoApellido.Text = dgvDiputados.CurrentRow.Cells(1).Value.ToString
         cmbPartido.SelectedItem = dgvDiputados.CurrentRow.Cells(6).Value.ToString
         cmbEstado.SelectedItem = "activo"
+    End Sub
+
+
+    Private Sub cmbPartido_Validating(sender As Object, e As CancelEventArgs) Handles cmbPartido.Validating
+        If DirectCast(sender, ComboBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+
+    Private Sub cmbEstado_Validating(sender As Object, e As CancelEventArgs) Handles cmbEstado.Validating
+        If DirectCast(sender, ComboBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+    Private Sub cmbEstado_MouseHover(sender As Object, e As EventArgs) Handles cmbEstado.MouseHover
+        ToolTip.SetToolTip(cmbEstado, "Estado")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub cmbPartido_MouseHover(sender As Object, e As EventArgs) Handles cmbPartido.MouseHover
+        ToolTip.SetToolTip(cmbEstado, "Partido")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 End Class

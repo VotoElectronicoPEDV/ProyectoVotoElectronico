@@ -348,4 +348,22 @@ Public Class Crud_Presidente
         cmbPartido.SelectedItem = dgvPresidente.CurrentRow.Cells(5).Value.ToString
         cmbEstado.SelectedItem = "activo"
     End Sub
+
+
+    Private Sub cmbPartido_Validating(sender As Object, e As CancelEventArgs) Handles cmbPartido.Validating
+        If DirectCast(sender, ComboBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
+
+
+    Private Sub cmbEstado_Validating(sender As Object, e As CancelEventArgs) Handles cmbEstado.Validating
+        If DirectCast(sender, ComboBox).Text.Length > 0 And cmbOperacion.SelectedItem <> "Actualizar" Then
+            Me.ErrorValidacion.SetError(sender, "")
+        Else
+            Me.ErrorValidacion.SetError(sender, " Campo es obligatorio ")
+        End If
+    End Sub
 End Class

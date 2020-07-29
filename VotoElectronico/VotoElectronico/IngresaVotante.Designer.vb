@@ -123,7 +123,7 @@ Partial Class IngresaVotante
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.DarkSlateGray
         Me.ClientSize = New System.Drawing.Size(258, 155)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)

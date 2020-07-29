@@ -89,7 +89,7 @@ Partial Class Registro
         '
         'txtUsuario
         '
-        Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.ForeColor = System.Drawing.Color.White
@@ -100,7 +100,7 @@ Partial Class Registro
         '
         'txtemail
         '
-        Me.txtemail.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtemail.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtemail.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtemail.ForeColor = System.Drawing.Color.White
@@ -111,7 +111,7 @@ Partial Class Registro
         '
         'txtcontrasena
         '
-        Me.txtcontrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtcontrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtcontrasena.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcontrasena.ForeColor = System.Drawing.Color.White
@@ -122,7 +122,7 @@ Partial Class Registro
         '
         'txtconfirmar
         '
-        Me.txtconfirmar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtconfirmar.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.txtconfirmar.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtconfirmar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtconfirmar.ForeColor = System.Drawing.Color.White
@@ -172,7 +172,7 @@ Partial Class Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(309, 194)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
