@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
 Public Class AdministradorVotaciones
+    Dim conexion As conexion = New conexion()
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
     End Sub
@@ -59,4 +60,47 @@ Public Class AdministradorVotaciones
         abrirFormularios(AgregarImagenCandidato)
     End Sub
 
+
+    Private Sub btnVotacionExterna_Click(sender As Object, e As EventArgs) Handles btnVotacionExterna.Click
+        Try
+            If conexion.cambioVotacion And eleccionVotante.descripcionVotacion = 1 Then
+                MessageBox.Show("¡Se ha realizado el cambio De votacion a externa exitosamente!", "Cambiando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                eleccionVotante.descripcionVotacion = 2
+
+            ElseIf eleccionVotante.descripcionVotacion = 0 Then
+                MessageBox.Show("Debe realizarse la votacion interna", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            Else
+                MessageBox.Show("Ha ocurrido un error al realizar el cambio de tipo votación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub btnReiniciarVotacion_Click(sender As Object, e As EventArgs) Handles btnReiniciarVotacion.Click
+
+    End Sub
+
+    Private Sub btnSalir_Click_1(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Dim confirmacion As DialogResult
+        confirmacion = MessageBox.Show("¿Esta seguro que desea salir?", "Cerrando", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If confirmacion = DialogResult.Yes Then
+            End
+        End If
+    End Sub
+
+    Private Sub btnRegresar_Click(sender As Object, e As EventArgs) Handles btnRegresar.Click
+
+        Dim confirmacion As DialogResult
+        confirmacion = MessageBox.Show("¿Esta seguro que desea regresar?", "Regresando", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If confirmacion = DialogResult.Yes Then
+            Me.Hide()
+            IngresaVotante.Show()
+        End If
+    End Sub
 End Class

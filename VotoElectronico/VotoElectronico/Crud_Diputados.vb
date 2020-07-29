@@ -44,6 +44,10 @@ Public Class Crud_Diputados
             DataT = conexion.consultarDiputado
             If DataT.Rows.Count <> 0 Then
                 dgvDiputados.DataSource = DataT
+                dgvDiputados.RowTemplate.MinimumHeight = 105
+                dgvDiputados.Columns(4).MinimumWidth = 40
+                dgvDiputados.Columns(4).Width = 40
+                CType(dgvDiputados.Columns(4), DataGridViewImageColumn).ImageLayout = DataGridViewImageCellLayout.Stretch
             Else
                 dgvDiputados.DataSource = Nothing
                 MessageBox.Show("Error al consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -382,7 +386,7 @@ Public Class Crud_Diputados
         txtSegundoNombre.Text = dgvDiputados.CurrentRow.Cells(1).Value.ToString
         txtPrimerApellido.Text = dgvDiputados.CurrentRow.Cells(1).Value.ToString
         txtSegundoApellido.Text = dgvDiputados.CurrentRow.Cells(1).Value.ToString
-        cmbPartido.SelectedItem = dgvDiputados.CurrentRow.Cells(7).Value.ToString
+        cmbPartido.SelectedItem = dgvDiputados.CurrentRow.Cells(6).Value.ToString
         cmbEstado.SelectedItem = "activo"
     End Sub
 End Class

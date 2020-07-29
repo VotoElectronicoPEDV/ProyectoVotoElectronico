@@ -3,7 +3,7 @@
 Public Class IngresaVotante
     Dim conexion As conexion = New conexion()
     Private Sub btnAcceder_Click(sender As Object, e As EventArgs) Handles btnAcceder.Click
-        Dim estado, Voto As String
+        Dim estado, Voto, Nombre As String
         Dim identidad As String
         If txtidentidad.Text.Length = 13 Then
             Dim municipio As String
@@ -11,10 +11,16 @@ Public Class IngresaVotante
             identidad = txtidentidad.Text
             estado = conexion.RecuperarDatos(identidad, 0)
             Voto = conexion.RecuperarDatos(identidad, 1)
+            Nombre = conexion.RecuperarDatos(identidad, 2)
             eleccionVotante.idVotante = identidad
             eleccionVotante.idmunicipio = municipio
 
+            If eleccionVotante.descripcionVotacion = 0 Then
+                eleccionVotante.descripcionVotacion = 1
+            End If
+
             If estado = "activo" And Voto = "F" Then
+                MessageBox.Show("Bienvenido " + Nombre, "Ingresando", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Hide()
                 votacionInterna.Show()
 
@@ -69,5 +75,9 @@ Public Class IngresaVotante
         End If
     End Sub
 
+    Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
+        Me.Hide()
+        AdministradorVotaciones.Show() 'al menu del administrador para pruebas
+    End Sub
 
 End Class

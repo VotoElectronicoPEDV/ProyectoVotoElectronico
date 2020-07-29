@@ -68,30 +68,33 @@ Partial Class votacionInterna
         Me.dgvAlcaldeInterna.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvAlcaldeInterna.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvAlcaldeInterna.Location = New System.Drawing.Point(0, 0)
+        Me.dgvAlcaldeInterna.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvAlcaldeInterna.Name = "dgvAlcaldeInterna"
         Me.dgvAlcaldeInterna.ReadOnly = True
         Me.dgvAlcaldeInterna.RowHeadersWidth = 25
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvAlcaldeInterna.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvAlcaldeInterna.RowTemplate.Height = 60
-        Me.dgvAlcaldeInterna.Size = New System.Drawing.Size(1067, 587)
+        Me.dgvAlcaldeInterna.Size = New System.Drawing.Size(1423, 722)
         Me.dgvAlcaldeInterna.TabIndex = 0
         '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.dgvAlcaldeInterna)
-        Me.Panel1.Location = New System.Drawing.Point(59, 73)
+        Me.Panel1.Location = New System.Drawing.Point(79, 90)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1067, 587)
+        Me.Panel1.Size = New System.Drawing.Size(1423, 722)
         Me.Panel1.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(56, 30)
+        Me.Label1.Location = New System.Drawing.Point(75, 37)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(120, 40)
+        Me.Label1.Size = New System.Drawing.Size(151, 51)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Label1"
         '
@@ -99,9 +102,10 @@ Partial Class votacionInterna
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(173, 52)
+        Me.Label2.Location = New System.Drawing.Point(231, 64)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 19)
+        Me.Label2.Size = New System.Drawing.Size(73, 25)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Label2"
         '
@@ -109,18 +113,20 @@ Partial Class votacionInterna
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(558, 52)
+        Me.Label3.Location = New System.Drawing.Point(744, 64)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(306, 19)
+        Me.Label3.Size = New System.Drawing.Size(382, 23)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "PLANILLA CORPORACION MUNICIPAL"
         '
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.VotoElectronico.My.Resources.Resources.rpnTPCkr_400x400_removebg_preview
-        Me.PictureBox3.Location = New System.Drawing.Point(1042, 0)
+        Me.PictureBox3.Location = New System.Drawing.Point(1389, 0)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(85, 71)
+        Me.PictureBox3.Size = New System.Drawing.Size(113, 87)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 7
         Me.PictureBox3.TabStop = False
@@ -128,9 +134,10 @@ Partial Class votacionInterna
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.VotoElectronico.My.Resources.Resources.tSE
-        Me.PictureBox2.Location = New System.Drawing.Point(957, 0)
+        Me.PictureBox2.Location = New System.Drawing.Point(1276, 0)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(85, 71)
+        Me.PictureBox2.Size = New System.Drawing.Size(113, 87)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 6
         Me.PictureBox2.TabStop = False
@@ -138,19 +145,20 @@ Partial Class votacionInterna
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.VotoElectronico.My.Resources.Resources.elections_200px
-        Me.PictureBox1.Location = New System.Drawing.Point(870, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(1160, 0)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(85, 70)
+        Me.PictureBox1.Size = New System.Drawing.Size(113, 86)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
         'votacionInterna
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1191, 696)
+        Me.ClientSize = New System.Drawing.Size(1588, 857)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -159,7 +167,10 @@ Partial Class votacionInterna
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "votacionInterna"
+        Me.Opacity = 0.95R
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "votacionInterna"
         CType(Me.dgvAlcaldeInterna, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

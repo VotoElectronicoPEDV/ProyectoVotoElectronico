@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AdministradorVotaciones
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AdministradorVotaciones
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelMenu = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnAlcaldes = New System.Windows.Forms.Button()
@@ -28,9 +28,15 @@ Partial Class AdministradorVotaciones
         Me.btnPresidentes = New System.Windows.Forms.Button()
         Me.btnVotantes = New System.Windows.Forms.Button()
         Me.btnAgregarImagenCandidatos = New System.Windows.Forms.Button()
+        Me.btnVotacionExterna = New System.Windows.Forms.Button()
+        Me.btnReiniciarVotacion = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
         Me.PanelMenu.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelMenu
@@ -41,118 +47,227 @@ Partial Class AdministradorVotaciones
         Me.PanelMenu.Controls.Add(Me.btnPresidentes)
         Me.PanelMenu.Controls.Add(Me.btnVotantes)
         Me.PanelMenu.Controls.Add(Me.btnAgregarImagenCandidatos)
+        Me.PanelMenu.Controls.Add(Me.btnVotacionExterna)
+        Me.PanelMenu.Controls.Add(Me.btnReiniciarVotacion)
+        Me.PanelMenu.Controls.Add(Me.PictureBox1)
+        Me.PanelMenu.Controls.Add(Me.btnSalir)
+        Me.PanelMenu.Controls.Add(Me.btnRegresar)
         Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PanelMenu.Location = New System.Drawing.Point(0, 68)
+        Me.PanelMenu.Location = New System.Drawing.Point(0, 54)
         Me.PanelMenu.Name = "PanelMenu"
-        Me.PanelMenu.Size = New System.Drawing.Size(240, 742)
+        Me.PanelMenu.Size = New System.Drawing.Size(240, 756)
         Me.PanelMenu.TabIndex = 3
         '
         'btnAlcaldes
         '
         Me.btnAlcaldes.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnAlcaldes.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnAlcaldes.FlatAppearance.BorderSize = 0
         Me.btnAlcaldes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnAlcaldes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.btnAlcaldes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnAlcaldes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAlcaldes.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAlcaldes.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAlcaldes.Image = Global.VotoElectronico.My.Resources.Resources.people_40px
         Me.btnAlcaldes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAlcaldes.Location = New System.Drawing.Point(3, 3)
         Me.btnAlcaldes.Name = "btnAlcaldes"
-        Me.btnAlcaldes.Size = New System.Drawing.Size(231, 71)
+        Me.btnAlcaldes.Size = New System.Drawing.Size(240, 78)
         Me.btnAlcaldes.TabIndex = 0
         Me.btnAlcaldes.Text = "Alcaldes"
+        Me.btnAlcaldes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAlcaldes.UseVisualStyleBackColor = True
         '
         'btnDiputados
         '
         Me.btnDiputados.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnDiputados.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnDiputados.FlatAppearance.BorderSize = 0
         Me.btnDiputados.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnDiputados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.btnDiputados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnDiputados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDiputados.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDiputados.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnDiputados.Image = Global.VotoElectronico.My.Resources.Resources.Diputados
         Me.btnDiputados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDiputados.Location = New System.Drawing.Point(3, 80)
+        Me.btnDiputados.Location = New System.Drawing.Point(3, 87)
         Me.btnDiputados.Name = "btnDiputados"
-        Me.btnDiputados.Size = New System.Drawing.Size(231, 77)
+        Me.btnDiputados.Size = New System.Drawing.Size(240, 78)
         Me.btnDiputados.TabIndex = 1
         Me.btnDiputados.Text = "Diputados"
+        Me.btnDiputados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnDiputados.UseVisualStyleBackColor = True
         '
         'btnPresidentes
         '
         Me.btnPresidentes.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnPresidentes.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnPresidentes.FlatAppearance.BorderSize = 0
         Me.btnPresidentes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnPresidentes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.btnPresidentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnPresidentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPresidentes.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPresidentes.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnPresidentes.Image = Global.VotoElectronico.My.Resources.Resources.user_account_40px
         Me.btnPresidentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPresidentes.Location = New System.Drawing.Point(3, 163)
+        Me.btnPresidentes.Location = New System.Drawing.Point(3, 171)
         Me.btnPresidentes.Name = "btnPresidentes"
-        Me.btnPresidentes.Size = New System.Drawing.Size(231, 78)
+        Me.btnPresidentes.Size = New System.Drawing.Size(240, 78)
         Me.btnPresidentes.TabIndex = 2
         Me.btnPresidentes.Text = "Presidentes"
+        Me.btnPresidentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnPresidentes.UseVisualStyleBackColor = True
         '
         'btnVotantes
         '
         Me.btnVotantes.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnVotantes.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnVotantes.FlatAppearance.BorderSize = 0
         Me.btnVotantes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnVotantes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.btnVotantes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnVotantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVotantes.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVotantes.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnVotantes.Image = Global.VotoElectronico.My.Resources.Resources.user_groups_48px
         Me.btnVotantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnVotantes.Location = New System.Drawing.Point(3, 247)
+        Me.btnVotantes.Location = New System.Drawing.Point(3, 255)
         Me.btnVotantes.Name = "btnVotantes"
-        Me.btnVotantes.Size = New System.Drawing.Size(231, 78)
+        Me.btnVotantes.Size = New System.Drawing.Size(240, 78)
         Me.btnVotantes.TabIndex = 3
         Me.btnVotantes.Text = "Votantes"
+        Me.btnVotantes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnVotantes.UseVisualStyleBackColor = True
         '
         'btnAgregarImagenCandidatos
         '
         Me.btnAgregarImagenCandidatos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnAgregarImagenCandidatos.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnAgregarImagenCandidatos.FlatAppearance.BorderSize = 0
         Me.btnAgregarImagenCandidatos.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnAgregarImagenCandidatos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.btnAgregarImagenCandidatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnAgregarImagenCandidatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregarImagenCandidatos.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarImagenCandidatos.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnAgregarImagenCandidatos.Image = Global.VotoElectronico.My.Resources.Resources.photo_gallery_40px
         Me.btnAgregarImagenCandidatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgregarImagenCandidatos.Location = New System.Drawing.Point(3, 331)
+        Me.btnAgregarImagenCandidatos.Location = New System.Drawing.Point(3, 339)
         Me.btnAgregarImagenCandidatos.Name = "btnAgregarImagenCandidatos"
-        Me.btnAgregarImagenCandidatos.Size = New System.Drawing.Size(231, 78)
+        Me.btnAgregarImagenCandidatos.Size = New System.Drawing.Size(240, 78)
         Me.btnAgregarImagenCandidatos.TabIndex = 5
-        Me.btnAgregarImagenCandidatos.Text = "Imagen Candidatos"
+        Me.btnAgregarImagenCandidatos.Text = "Imagen Cand"
+        Me.btnAgregarImagenCandidatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAgregarImagenCandidatos.UseVisualStyleBackColor = True
+        '
+        'btnVotacionExterna
+        '
+        Me.btnVotacionExterna.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnVotacionExterna.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnVotacionExterna.FlatAppearance.BorderSize = 0
+        Me.btnVotacionExterna.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnVotacionExterna.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnVotacionExterna.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnVotacionExterna.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVotacionExterna.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVotacionExterna.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnVotacionExterna.Image = Global.VotoElectronico.My.Resources.Resources.open_in_browser_40px
+        Me.btnVotacionExterna.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnVotacionExterna.Location = New System.Drawing.Point(3, 423)
+        Me.btnVotacionExterna.Name = "btnVotacionExterna"
+        Me.btnVotacionExterna.Size = New System.Drawing.Size(240, 78)
+        Me.btnVotacionExterna.TabIndex = 6
+        Me.btnVotacionExterna.Text = "Votación Ext."
+        Me.btnVotacionExterna.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnVotacionExterna.UseVisualStyleBackColor = True
+        '
+        'btnReiniciarVotacion
+        '
+        Me.btnReiniciarVotacion.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnReiniciarVotacion.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnReiniciarVotacion.FlatAppearance.BorderSize = 0
+        Me.btnReiniciarVotacion.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnReiniciarVotacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnReiniciarVotacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnReiniciarVotacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReiniciarVotacion.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReiniciarVotacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnReiniciarVotacion.Image = Global.VotoElectronico.My.Resources.Resources.reset_48px
+        Me.btnReiniciarVotacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReiniciarVotacion.Location = New System.Drawing.Point(3, 507)
+        Me.btnReiniciarVotacion.Name = "btnReiniciarVotacion"
+        Me.btnReiniciarVotacion.Size = New System.Drawing.Size(240, 78)
+        Me.btnReiniciarVotacion.TabIndex = 7
+        Me.btnReiniciarVotacion.Text = "Reiniciar Vot."
+        Me.btnReiniciarVotacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnReiniciarVotacion.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 591)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(231, 77)
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSalir.Image = Global.VotoElectronico.My.Resources.Resources.shutdown_100px
+        Me.btnSalir.Location = New System.Drawing.Point(3, 674)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(100, 81)
+        Me.btnSalir.TabIndex = 9
+        Me.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
+        'btnRegresar
+        '
+        Me.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnRegresar.FlatAppearance.BorderSize = 0
+        Me.btnRegresar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnRegresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegresar.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnRegresar.Image = Global.VotoElectronico.My.Resources.Resources.exit_100px
+        Me.btnRegresar.Location = New System.Drawing.Point(109, 674)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(109, 81)
+        Me.btnRegresar.TabIndex = 10
+        Me.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRegresar.UseVisualStyleBackColor = True
         '
         'PanelSuperior
         '
-        Me.PanelSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.PanelSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
         Me.PanelSuperior.Name = "PanelSuperior"
-        Me.PanelSuperior.Size = New System.Drawing.Size(1301, 68)
+        Me.PanelSuperior.Size = New System.Drawing.Size(1301, 54)
         Me.PanelSuperior.TabIndex = 2
         '
         'PanelFormularios
         '
         Me.PanelFormularios.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelFormularios.Location = New System.Drawing.Point(240, 68)
+        Me.PanelFormularios.Location = New System.Drawing.Point(240, 54)
         Me.PanelFormularios.Name = "PanelFormularios"
-        Me.PanelFormularios.Size = New System.Drawing.Size(1061, 742)
+        Me.PanelFormularios.Size = New System.Drawing.Size(1061, 756)
         Me.PanelFormularios.TabIndex = 4
         '
         'AdministradorVotaciones
@@ -167,8 +282,10 @@ Partial Class AdministradorVotaciones
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AdministradorVotaciones"
         Me.Opacity = 0.9R
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AdministradorVotaciones"
         Me.PanelMenu.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -181,4 +298,9 @@ Partial Class AdministradorVotaciones
     Friend WithEvents PanelFormularios As Panel
     Friend WithEvents btnVotantes As Button
     Friend WithEvents btnAgregarImagenCandidatos As Button
+    Friend WithEvents btnVotacionExterna As Button
+    Friend WithEvents btnReiniciarVotacion As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents btnRegresar As Button
 End Class

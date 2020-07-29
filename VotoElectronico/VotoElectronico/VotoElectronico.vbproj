@@ -268,5 +268,35 @@
   <ItemGroup>
     <None Include="Resources\Menu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VotacionExterna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_in_browser_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diputados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_account_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_groups_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_gallery_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown_100px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

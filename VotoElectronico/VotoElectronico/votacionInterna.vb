@@ -66,7 +66,7 @@
                             Else
                                 MessageBox.Show("Error al votar", "Votacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             End If
-                        Else
+                        ElseIf eleccionVotante.descripcionVotacion = 2 Then
                             MessageBox.Show("Ha votado Satisfactoriamente", "Votacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Me.Hide()
                             votacionDiputado.Show()

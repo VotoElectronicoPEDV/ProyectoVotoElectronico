@@ -366,7 +366,7 @@ Public Class Crud_Votantes
         consultarVotante()
     End Sub
 
-    Private Sub dgvVotantes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVotantes.CellContentClick
+    Private Sub dgvVotantes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVotantes.CellClick
         txtIdentidad.Text = dgvVotantes.CurrentRow.Cells(0).Value.ToString
         txtPrimerNombre.Text = dgvVotantes.CurrentRow.Cells(1).Value.ToString
         txtSegundoNombre.Text = dgvVotantes.CurrentRow.Cells(1).Value.ToString

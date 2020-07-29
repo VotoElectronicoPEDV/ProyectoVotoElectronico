@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-TSL1SID;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=HECTOROS\SQLEXPRESS02;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
     Public lectura As SqlDataReader
@@ -601,6 +601,26 @@ Public Class conexion
             cmd.Parameters.AddWithValue("@candidatodiputado8", idDiputado8)
             cmd.Parameters.AddWithValue("@candidatodiputado9", idDiputado9)
             cmd.Parameters.AddWithValue("@candidatopresidente", idPresidente)
+            If cmd.ExecuteNonQuery Then
+                Return True
+                conexion.Close()
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function cambioVotacion() As Boolean
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("cambioVotacion", conexion)
+
+            cmd.CommandType = CommandType.StoredProcedure
             If cmd.ExecuteNonQuery Then
                 Return True
                 conexion.Close()

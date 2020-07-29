@@ -970,14 +970,33 @@
 
 	/*========================================================================================================================================*/
 		-------------------------------------Procedimiento almacenado Buscar por identidad-----------------------------------------------------
-	create procedure validarVotante(
+	Create procedure validarVotante(
 	@IdentidadVotante varchar(13)
 	)
 	as
 	begin
-	select estadoVotante,voto,IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante
+	if exists(select IdentidadPresidente from Presidente where IdentidadPresidente = @IdentidadVotante)
+		BEGIN
+		select Estado,voto, CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as NombreCompleto, IdentidadPresidente from Presidente where IdentidadPresidente = @IdentidadVotante
+		END
+	else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado = @IdentidadVotante)
+		BEGIN
+		select Estado,voto, CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as NombreCompleto, IdentidadDiputado from Diputado where IdentidadDiputado = @IdentidadVotante
+
+		END
+	else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @IdentidadVotante)
+		BEGIN
+		select Estado,voto, CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as NombreCompleto, IdentidadAlcalde from Alcalde where IdentidadAlcalde = @IdentidadVotante
+		END
+	else if exists(select IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante)
+		BEGIN
+		select estadoVotante,voto, CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as NombreCompleto, IdentidadVotante from votante where IdentidadVotante = @IdentidadVotante
+		END
+		else
+		raiserror('No existe el votante en la base de datos',16,1)
 	end
-	execute validarVotante '031420000189'
+	execute validarVotante '0301198000101'
+	select * from Presidente   
 
 	
 	/*========================================================================================================================================*/
@@ -1020,7 +1039,7 @@
 
 /*========================================================================================================================================*/
 ---------------------------------Procedimiento almacenado cambio de Votacion----------------------------------------------------------------
-	create procedure cambioVotacion
+	Create procedure cambioVotacion
 	as
 	begin
 	---Se actualiza el estado de los votantes nuevamente a Falso(No han votado)---
@@ -1050,7 +1069,7 @@
 		/*La función MAX nos sirve para obtener el ganador del partido en el municipio*/
 		/*Al ganador se le actualiza su descripcion a externa ya que sera el que pasa
 		a la siguiente votacion(externa)*/
-		update Alcalde set DescripcionVotacion ='Externa' where Partido = @partido and Municipio = @municipio and  VotosValidos =(select max(votosvalidos)from Alcalde)
+		update Alcalde set DescripcionVotacion ='Externa' where Partido = @partido and Municipio = @municipio and  VotosValidos =(select max(votosvalidos)from Alcalde) and VotosValidos <> 0
 		SET @partido = @partido + 1 /*aumenta el contador de partido*/
 		END
 	SET @i = @i + 1 /*aumenta el contador*/
@@ -1176,4 +1195,77 @@
 	select * from Presidente
 
 	/*========================================================================================================================================*/
+	create procedure diputadosGanadores
+	as 
+	begin
+	Declare @FilasAfectadas INT
+	DECLARE @i INT
+	set  @FilasAfectadas = 0
+	SET @i = 1
+	WHILE (@FilasAfectadas < 9 )
+	BEGIN
+
+		update Diputado set Estado ='Ganador' where VotosValidos =(select max(votosvalidos)from Diputado where Estado ='activo') and VotosValidos <> 0
+			set @FilasAfectadas = @FilasAfectadas + @@ROWCOUNT
+			print @FilasAfectadas
+	END
+	end 
+
+	exec diputadosGanadores
+
+	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0301197000130'
+		update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000131'
+			update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000165'
+				update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0303197000132'
+					update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0303197000164'
+						update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0304197000133'
+							update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0304197000163'
+								update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0305197000134'
+									update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0305197000162'
+									
+									update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0306197000135'
+									update Diputado set estado='activo' , VotosValidos = 0
 	
+
+			create Procedure GanadorPresidente
+			AS
+			BEGIN
+				update Presidente set Estado ='Ganador' where VotosValidos =(select max(votosvalidos)from Diputado where Estado ='activo') and VotosValidos <> 0
+			END
+
+	Create Procedure GanadorAlcalde
+	AS
+	BEGIN
+	    DECLARE @i INT
+		DECLARE @municipio varchar(2)
+		SET @i = 1
+		WHILE (@i <= 21)
+		BEGIN
+			SET @municipio = CONCAT('0', @i)
+				if @i>=10
+					begin
+					SET @municipio =  @i
+				end 
+			update Alcalde set Estado ='Ganador' where Municipio = @municipio and VotosValidos =(select max(votosvalidos)from alcalde where Estado ='activo') and VotosValidos <> 0 
+			SET @i = @i + 1 
+	END
+	END
+
+	update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0301196000140'
+		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0301196000141'
+		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0302196000141'
+		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0302196000142'
+
+exec consultarAlcalde
+exec GanadorAlcalde
+
+create Procedure ReiniciarVotacion
+AS 
+BEGIN
+update votante set voto = 'F'
+update alcalde set VotosValidos = 0 , DescripcionVotacion = 'Interna', voto = 'F', estado = 'activo' where Estado <> 'eliminado' 
+update diputado set VotosValidos = 0 ,  voto = 'F', estado = 'activo' where Estado <> 'eliminado' 
+update Presidente  set VotosValidos = 0 , voto = 'F', estado = 'activo' where Estado <> 'eliminado' 
+END
+
+exec ReiniciarVotacion

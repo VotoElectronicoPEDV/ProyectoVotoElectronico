@@ -44,6 +44,11 @@ Public Class Crud_Presidente
             DataT = conexion.consultarPresidente
             If DataT.Rows.Count <> 0 Then
                 dgvPresidente.DataSource = DataT
+                dgvPresidente.DataSource = DataT
+                dgvPresidente.RowTemplate.MinimumHeight = 105
+                dgvPresidente.Columns(4).MinimumWidth = 40
+                dgvPresidente.Columns(4).Width = 40
+                CType(dgvPresidente.Columns(4), DataGridViewImageColumn).ImageLayout = DataGridViewImageCellLayout.Stretch
 
             Else
                 dgvPresidente.DataSource = Nothing
@@ -332,16 +337,15 @@ Public Class Crud_Presidente
 
     Private Sub Crud_Presidente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         consultarPresidente()
-
     End Sub
 
-    Private Sub dgvPresidente_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPresidente.CellContentClick
+    Private Sub dgvPresidente_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPresidente.CellClick
         txtIdentidad.Text = dgvPresidente.CurrentRow.Cells(0).Value.ToString
         txtPrimerNombre.Text = dgvPresidente.CurrentRow.Cells(1).Value.ToString
         txtSegundoNombre.Text = dgvPresidente.CurrentRow.Cells(1).Value.ToString
         txtPrimerApellido.Text = dgvPresidente.CurrentRow.Cells(1).Value.ToString
         txtSegundoApellido.Text = dgvPresidente.CurrentRow.Cells(1).Value.ToString
-        cmbPartido.SelectedItem = dgvPresidente.CurrentRow.Cells(6).Value.ToString
+        cmbPartido.SelectedItem = dgvPresidente.CurrentRow.Cells(5).Value.ToString
         cmbEstado.SelectedItem = "activo"
     End Sub
 End Class

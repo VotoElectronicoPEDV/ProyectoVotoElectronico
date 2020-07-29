@@ -110,7 +110,7 @@ Public Class AgregarImagenCandidato
         End Select
     End Sub
 
-    Private Sub dgvCandidatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub dgvCandidatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCandidatos.CellContentClick
         TxtIdentidad.Text = dgvCandidatos.CurrentRow.Cells(0).Value.ToString
     End Sub
 
