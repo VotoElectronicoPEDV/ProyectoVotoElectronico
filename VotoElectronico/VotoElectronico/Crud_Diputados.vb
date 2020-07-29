@@ -258,7 +258,7 @@ Public Class Crud_Diputados
         End If
     End Sub
 
-    Private Sub txtIdentidad_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidad.TextChanged
+    Private Sub txtIdentidad_MouseHover(sender As Object, e As EventArgs) Handles txtIdentidad.MouseHover
         ToolTip.SetToolTip(txtIdentidad, "Identidad")
         ToolTip.ToolTipTitle = "Aviso"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
