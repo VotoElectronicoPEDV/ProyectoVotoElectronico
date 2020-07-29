@@ -172,6 +172,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AdministradorVotaciones.resx">
+      <DependentUpon>AdministradorVotaciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarImagenCandidato.resx">
       <DependentUpon>AgregarImagenCandidato.vb</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\descarga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

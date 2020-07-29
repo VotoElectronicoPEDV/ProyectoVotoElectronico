@@ -47,6 +47,11 @@ Public Class Crud_Alcaldes
             DataT = conexion.consultarAlcalde
             If DataT.Rows.Count <> 0 Then
                 dgvAlcaldes.DataSource = DataT
+                dgvAlcaldes.RowTemplate.MinimumHeight = 105
+                dgvAlcaldes.Columns(4).MinimumWidth = 40
+                dgvAlcaldes.Columns(4).Width = 40
+                CType(dgvAlcaldes.Columns(4), DataGridViewImageColumn).ImageLayout = DataGridViewImageCellLayout.Stretch
+
             Else
                 dgvAlcaldes.DataSource = Nothing
                 MessageBox.Show("Error al consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -395,7 +400,7 @@ Public Class Crud_Alcaldes
         txtSegundoNombre.Text = dgvAlcaldes.CurrentRow.Cells(1).Value.ToString
         txtPrimerApellido.Text = dgvAlcaldes.CurrentRow.Cells(1).Value.ToString
         txtSegundoApellido.Text = dgvAlcaldes.CurrentRow.Cells(1).Value.ToString
-        cmbPartido.SelectedItem = dgvAlcaldes.CurrentRow.Cells(8).Value.ToString
+        cmbPartido.SelectedItem = dgvAlcaldes.CurrentRow.Cells(7).Value.ToString
         cmbEstado.SelectedItem = "activo"
         cmbMunicipio.SelectedItem = dgvAlcaldes.CurrentRow.Cells(6).Value.ToString
     End Sub

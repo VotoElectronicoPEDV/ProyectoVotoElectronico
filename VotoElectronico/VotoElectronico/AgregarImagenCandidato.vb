@@ -46,6 +46,12 @@ Public Class AgregarImagenCandidato
             DataT = conexion.consultarAlcalde
             If DataT.Rows.Count <> 0 Then
                 dgvCandidatos.DataSource = DataT
+                dgvCandidatos.DataSource = DataT
+                dgvCandidatos.RowTemplate.MinimumHeight = 105
+                dgvCandidatos.Columns(4).MinimumWidth = 40
+                dgvCandidatos.Columns(4).Width = 40
+                CType(dgvCandidatos.Columns(4), DataGridViewImageColumn).ImageLayout = DataGridViewImageCellLayout.Stretch
+
             Else
                 dgvCandidatos.DataSource = Nothing
                 MessageBox.Show("Error al consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -59,6 +65,12 @@ Public Class AgregarImagenCandidato
             DataT = conexion.consultarPresidente
             If DataT.Rows.Count <> 0 Then
                 dgvCandidatos.DataSource = DataT
+                dgvCandidatos.DataSource = DataT
+                dgvCandidatos.RowTemplate.MinimumHeight = 105
+                dgvCandidatos.Columns(4).MinimumWidth = 40
+                dgvCandidatos.Columns(4).Width = 40
+                CType(dgvCandidatos.Columns(4), DataGridViewImageColumn).ImageLayout = DataGridViewImageCellLayout.Stretch
+
             Else
                 dgvCandidatos.DataSource = Nothing
                 MessageBox.Show("Error al consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -72,6 +84,11 @@ Public Class AgregarImagenCandidato
             DataT = conexion.consultarDiputado
             If DataT.Rows.Count <> 0 Then
                 dgvCandidatos.DataSource = DataT
+                dgvCandidatos.DataSource = DataT
+                dgvCandidatos.RowTemplate.MinimumHeight = 105
+                dgvCandidatos.Columns(4).MinimumWidth = 40
+                dgvCandidatos.Columns(4).Width = 40
+                CType(dgvCandidatos.Columns(4), DataGridViewImageColumn).ImageLayout = DataGridViewImageCellLayout.Stretch
             Else
                 dgvCandidatos.DataSource = Nothing
                 MessageBox.Show("Error al consultar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -93,7 +110,11 @@ Public Class AgregarImagenCandidato
         End Select
     End Sub
 
-    Private Sub dgvCandidatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCandidatos.CellContentClick
+    Private Sub dgvCandidatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         TxtIdentidad.Text = dgvCandidatos.CurrentRow.Cells(0).Value.ToString
+    End Sub
+
+    Private Sub AgregarImagenCandidato_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MessageBox.Show("Debe Dar click en el candidato", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class
