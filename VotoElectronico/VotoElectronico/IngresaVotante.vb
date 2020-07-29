@@ -61,6 +61,14 @@ Public Class IngresaVotante
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
+
+
+    Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
+        Me.Hide()
+        AdministradorVotaciones.Show() 'al menu del administrador para pruebas
+    End Sub
+
+
     Private Sub txtidentidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtidentidad.KeyPress
         If Char.IsLetter(e.KeyChar) Then
             e.Handled = True
@@ -75,9 +83,5 @@ Public Class IngresaVotante
         End If
     End Sub
 
-    Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
-        Me.Hide()
-        AdministradorVotaciones.Show() 'al menu del administrador para pruebas
-    End Sub
 
 End Class

@@ -42,8 +42,9 @@ Partial Class Registro
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(6, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(59, 17)
@@ -53,8 +54,9 @@ Partial Class Registro
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(6, 46)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 17)
@@ -64,8 +66,9 @@ Partial Class Registro
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(5, 79)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(78, 17)
@@ -75,8 +78,9 @@ Partial Class Registro
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(5, 108)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(147, 17)
@@ -85,35 +89,51 @@ Partial Class Registro
         '
         'txtUsuario
         '
+        Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.ForeColor = System.Drawing.Color.White
         Me.txtUsuario.Location = New System.Drawing.Point(157, 14)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(115, 21)
+        Me.txtUsuario.Size = New System.Drawing.Size(115, 15)
         Me.txtUsuario.TabIndex = 4
         '
         'txtemail
         '
+        Me.txtemail.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtemail.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtemail.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtemail.ForeColor = System.Drawing.Color.White
         Me.txtemail.Location = New System.Drawing.Point(157, 42)
         Me.txtemail.Name = "txtemail"
-        Me.txtemail.Size = New System.Drawing.Size(115, 21)
+        Me.txtemail.Size = New System.Drawing.Size(115, 15)
         Me.txtemail.TabIndex = 5
         '
         'txtcontrasena
         '
+        Me.txtcontrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtcontrasena.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcontrasena.ForeColor = System.Drawing.Color.White
         Me.txtcontrasena.Location = New System.Drawing.Point(157, 75)
         Me.txtcontrasena.Name = "txtcontrasena"
-        Me.txtcontrasena.Size = New System.Drawing.Size(115, 21)
+        Me.txtcontrasena.Size = New System.Drawing.Size(115, 15)
         Me.txtcontrasena.TabIndex = 6
         '
         'txtconfirmar
         '
+        Me.txtconfirmar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtconfirmar.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtconfirmar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtconfirmar.ForeColor = System.Drawing.Color.White
         Me.txtconfirmar.Location = New System.Drawing.Point(157, 103)
         Me.txtconfirmar.Name = "txtconfirmar"
-        Me.txtconfirmar.Size = New System.Drawing.Size(115, 21)
+        Me.txtconfirmar.Size = New System.Drawing.Size(115, 15)
         Me.txtconfirmar.TabIndex = 7
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.PeachPuff
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.btnIngresar)
         Me.GroupBox1.Controls.Add(Me.txtemail)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -124,6 +144,7 @@ Partial Class Registro
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtUsuario)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(281, 170)
@@ -133,13 +154,14 @@ Partial Class Registro
         '
         'btnIngresar
         '
-        Me.btnIngresar.BackColor = System.Drawing.Color.White
+        Me.btnIngresar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnIngresar.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnIngresar.Location = New System.Drawing.Point(176, 132)
+        Me.btnIngresar.Location = New System.Drawing.Point(178, 132)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.Size = New System.Drawing.Size(75, 23)
+        Me.btnIngresar.Size = New System.Drawing.Size(94, 32)
         Me.btnIngresar.TabIndex = 9
-        Me.btnIngresar.Text = "Ingresar"
+        Me.btnIngresar.Text = "INGRESAR"
         Me.btnIngresar.UseVisualStyleBackColor = False
         '
         'ErrorValidacion
@@ -150,7 +172,7 @@ Partial Class Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(309, 194)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
