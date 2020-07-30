@@ -29,14 +29,14 @@ Partial Class Login
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtnMinimizar = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.txtContrasena = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BtnMinimizar = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,12 +44,12 @@ Partial Class Login
         '
         'btnREGRESAR
         '
-        Me.btnREGRESAR.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(97, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.btnREGRESAR.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.btnREGRESAR.FlatAppearance.BorderSize = 0
         Me.btnREGRESAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnREGRESAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnREGRESAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnREGRESAR.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnREGRESAR.Font = New System.Drawing.Font("Times New Roman", 8.25!)
         Me.btnREGRESAR.ForeColor = System.Drawing.Color.White
         Me.btnREGRESAR.Location = New System.Drawing.Point(65, 323)
         Me.btnREGRESAR.Name = "btnREGRESAR"
@@ -60,18 +60,18 @@ Partial Class Login
         '
         'btnAceptar
         '
-        Me.btnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.btnAceptar.FlatAppearance.BorderSize = 0
         Me.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime
         Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAceptar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.White
-        Me.btnAceptar.Location = New System.Drawing.Point(244, 323)
+        Me.btnAceptar.Location = New System.Drawing.Point(257, 322)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(92, 29)
         Me.btnAceptar.TabIndex = 5
-        Me.btnAceptar.Text = "Aceptar"
+        Me.btnAceptar.Text = "ACEPTAR"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'ErrorValidacion
@@ -82,7 +82,7 @@ Partial Class Login
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 523)
+        Me.Panel1.Location = New System.Drawing.Point(0, 536)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(402, 18)
         Me.Panel1.TabIndex = 13
@@ -98,6 +98,46 @@ Partial Class Login
         Me.PanelSuperior.Name = "PanelSuperior"
         Me.PanelSuperior.Size = New System.Drawing.Size(402, 41)
         Me.PanelSuperior.TabIndex = 14
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.VotoElectronico.My.Resources.Resources.kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_removebg_preview
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(65, 35)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
+        '
+        'BtnMinimizar
+        '
+        Me.BtnMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnMinimizar.FlatAppearance.BorderSize = 0
+        Me.BtnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.BtnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMinimizar.Image = Global.VotoElectronico.My.Resources.Resources.Icono_Minimizar
+        Me.BtnMinimizar.Location = New System.Drawing.Point(322, 0)
+        Me.BtnMinimizar.Name = "BtnMinimizar"
+        Me.BtnMinimizar.Size = New System.Drawing.Size(40, 40)
+        Me.BtnMinimizar.TabIndex = 4
+        Me.BtnMinimizar.UseVisualStyleBackColor = True
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
+        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Image = Global.VotoElectronico.My.Resources.Resources.Icono_cerrar_FN
+        Me.btnSalir.Location = New System.Drawing.Point(358, 0)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(40, 40)
+        Me.btnSalir.TabIndex = 3
+        Me.btnSalir.UseVisualStyleBackColor = True
         '
         'txtUsuario
         '
@@ -150,52 +190,12 @@ Partial Class Login
         Me.Panel2.Size = New System.Drawing.Size(271, 10)
         Me.Panel2.TabIndex = 19
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.VotoElectronico.My.Resources.Resources.kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_removebg_preview
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(65, 35)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
-        '
-        'BtnMinimizar
-        '
-        Me.BtnMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnMinimizar.FlatAppearance.BorderSize = 0
-        Me.BtnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.BtnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
-        Me.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMinimizar.Image = Global.VotoElectronico.My.Resources.Resources.Icono_Minimizar
-        Me.BtnMinimizar.Location = New System.Drawing.Point(322, 0)
-        Me.BtnMinimizar.Name = "BtnMinimizar"
-        Me.BtnMinimizar.Size = New System.Drawing.Size(40, 40)
-        Me.BtnMinimizar.TabIndex = 4
-        Me.BtnMinimizar.UseVisualStyleBackColor = True
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalir.FlatAppearance.BorderSize = 0
-        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
-        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Image = Global.VotoElectronico.My.Resources.Resources.Icono_cerrar_FN
-        Me.btnSalir.Location = New System.Drawing.Point(358, 0)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(40, 40)
-        Me.btnSalir.TabIndex = 3
-        Me.btnSalir.UseVisualStyleBackColor = True
-        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(402, 541)
+        Me.ClientSize = New System.Drawing.Size(402, 554)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.txtContrasena)

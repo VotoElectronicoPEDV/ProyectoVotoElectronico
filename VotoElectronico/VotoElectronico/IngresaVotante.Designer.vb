@@ -53,7 +53,7 @@ Partial Class IngresaVotante
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 8)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 8)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(233, 135)
         Me.GroupBox1.TabIndex = 5
@@ -62,7 +62,7 @@ Partial Class IngresaVotante
         '
         'btnAdmin
         '
-        Me.btnAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnAdmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnAdmin.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -80,7 +80,7 @@ Partial Class IngresaVotante
         '
         'txtidentidad
         '
-        Me.txtidentidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtidentidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.txtidentidad.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtidentidad.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtidentidad.Location = New System.Drawing.Point(93, 34)
@@ -91,7 +91,7 @@ Partial Class IngresaVotante
         '
         'btnAcceder
         '
-        Me.btnAcceder.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.btnAcceder.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.btnAcceder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnAcceder.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -123,7 +123,7 @@ Partial Class IngresaVotante
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(258, 155)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
