@@ -31,6 +31,7 @@ Partial Class Login
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btnREGRESAR = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -80,6 +81,7 @@ Partial Class Login
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.btnREGRESAR)
         Me.GroupBox1.Controls.Add(Me.btnAceptar)
         Me.GroupBox1.Controls.Add(Me.txtUsuario)
         Me.GroupBox1.Controls.Add(Me.txtContrasena)
@@ -111,6 +113,18 @@ Partial Class Login
         '
         Me.ErrorValidacion.ContainerControl = Me
         '
+        'btnREGRESAR
+        '
+        Me.btnREGRESAR.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnREGRESAR.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnREGRESAR.ForeColor = System.Drawing.Color.White
+        Me.btnREGRESAR.Location = New System.Drawing.Point(9, 103)
+        Me.btnREGRESAR.Name = "btnREGRESAR"
+        Me.btnREGRESAR.Size = New System.Drawing.Size(96, 28)
+        Me.btnREGRESAR.TabIndex = 6
+        Me.btnREGRESAR.Text = "REGRESAR"
+        Me.btnREGRESAR.UseVisualStyleBackColor = True
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -136,4 +150,5 @@ Partial Class Login
     Friend WithEvents btnAceptar As Button
     Friend WithEvents ErrorValidacion As ErrorProvider
     Friend WithEvents ToolTip As ToolTip
+    Friend WithEvents btnREGRESAR As Button
 End Class

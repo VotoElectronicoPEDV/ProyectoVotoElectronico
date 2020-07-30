@@ -65,7 +65,7 @@ Public Class IngresaVotante
 
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
         Me.Hide()
-        AdministradorVotaciones.Show() 'al menu del administrador para pruebas
+        Login.Show() 'al menu del administrador para pruebas
     End Sub
 
 

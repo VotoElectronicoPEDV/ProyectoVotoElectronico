@@ -464,6 +464,31 @@ Public Class conexion
             conexion.Close()
         End Try
     End Function
+    Public Function validaradministrador(ByVal identidad As String, ByVal columna As Integer)
+        Dim texto As String
+        Try
+            conexion.Open()
+            cmd = New SqlCommand("validaradministrador", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+
+            cmd.Parameters.AddWithValue("@identidad", identidad)
+            lectura = cmd.ExecuteReader()
+
+            If lectura.Read() Then
+                texto = lectura(columna).ToString()
+                Return texto
+            Else
+                Return Nothing
+            End If
+            lectura.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
 
     Public Function recuperarMunicipio(ByVal municipio As String, ByVal columna As Integer)
         Dim texto As String
@@ -634,5 +659,6 @@ Public Class conexion
             conexion.Close()
         End Try
     End Function
+
 
 End Class
