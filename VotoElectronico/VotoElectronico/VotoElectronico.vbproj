@@ -307,5 +307,8 @@
   <ItemGroup>
     <None Include="Resources\Icono Minimizar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-flag-of-honduras-el-salvador-national-flag-5b18fd380145f8-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

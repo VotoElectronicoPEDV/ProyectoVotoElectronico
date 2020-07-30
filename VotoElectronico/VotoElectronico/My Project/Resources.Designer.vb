@@ -154,6 +154,17 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_removebg_preview() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("kisspng-flag-of-honduras-el-salvador-national-flag-5b18fd380145f8-removebg-previe"& _ 
+                        "w", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property logoTSE() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("logoTSE", resourceCulture)

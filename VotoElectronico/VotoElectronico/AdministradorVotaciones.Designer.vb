@@ -44,7 +44,6 @@ Partial Class AdministradorVotaciones
         Me.PanelAjustes.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelFormularios.SuspendLayout()
-        Me.PanelSuperior.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelMenu
@@ -54,6 +53,8 @@ Partial Class AdministradorVotaciones
         Me.PanelMenu.Controls.Add(Me.PanelSubMenuCandidatos)
         Me.PanelMenu.Controls.Add(Me.BtnAjustes)
         Me.PanelMenu.Controls.Add(Me.PanelAjustes)
+        Me.PanelMenu.Controls.Add(Me.btnRegresar)
+        Me.PanelMenu.Controls.Add(Me.btnSalir)
         Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelMenu.Location = New System.Drawing.Point(0, 44)
         Me.PanelMenu.Margin = New System.Windows.Forms.Padding(2)
@@ -63,12 +64,14 @@ Partial Class AdministradorVotaciones
         '
         'BtnAlmacenamiento
         '
-        Me.BtnAlmacenamiento.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(97, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.BtnAlmacenamiento.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.BtnAlmacenamiento.Dock = System.Windows.Forms.DockStyle.Top
         Me.BtnAlmacenamiento.FlatAppearance.BorderSize = 0
         Me.BtnAlmacenamiento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.BtnAlmacenamiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.BtnAlmacenamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAlmacenamiento.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.BtnAlmacenamiento.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.BtnAlmacenamiento.Location = New System.Drawing.Point(3, 3)
         Me.BtnAlmacenamiento.Name = "BtnAlmacenamiento"
         Me.BtnAlmacenamiento.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
@@ -186,12 +189,14 @@ Partial Class AdministradorVotaciones
         '
         'BtnAjustes
         '
-        Me.BtnAjustes.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(97, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.BtnAjustes.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.BtnAjustes.Dock = System.Windows.Forms.DockStyle.Top
         Me.BtnAjustes.FlatAppearance.BorderSize = 0
         Me.BtnAjustes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray
         Me.BtnAjustes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan
         Me.BtnAjustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAjustes.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.BtnAjustes.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.BtnAjustes.Location = New System.Drawing.Point(3, 340)
         Me.BtnAjustes.Name = "BtnAjustes"
         Me.BtnAjustes.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
@@ -296,7 +301,6 @@ Partial Class AdministradorVotaciones
         '
         'btnSalir
         '
-        Me.btnSalir.Dock = System.Windows.Forms.DockStyle.Right
         Me.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnSalir.FlatAppearance.BorderSize = 0
         Me.btnSalir.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -306,17 +310,16 @@ Partial Class AdministradorVotaciones
         Me.btnSalir.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnSalir.Image = Global.VotoElectronico.My.Resources.Resources.shutdown_100px
-        Me.btnSalir.Location = New System.Drawing.Point(901, 0)
+        Me.btnSalir.Location = New System.Drawing.Point(86, 601)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(75, 44)
+        Me.btnSalir.Size = New System.Drawing.Size(80, 80)
         Me.btnSalir.TabIndex = 9
         Me.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSalir.UseVisualStyleBackColor = True
         '
         'btnRegresar
         '
-        Me.btnRegresar.Dock = System.Windows.Forms.DockStyle.Right
         Me.btnRegresar.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.btnRegresar.FlatAppearance.BorderSize = 0
         Me.btnRegresar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -326,10 +329,10 @@ Partial Class AdministradorVotaciones
         Me.btnRegresar.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnRegresar.Image = Global.VotoElectronico.My.Resources.Resources.exit_100px
-        Me.btnRegresar.Location = New System.Drawing.Point(839, 0)
+        Me.btnRegresar.Location = New System.Drawing.Point(2, 601)
         Me.btnRegresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(62, 44)
+        Me.btnRegresar.Size = New System.Drawing.Size(80, 80)
         Me.btnRegresar.TabIndex = 10
         Me.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRegresar.UseVisualStyleBackColor = True
@@ -349,8 +352,6 @@ Partial Class AdministradorVotaciones
         'PanelSuperior
         '
         Me.PanelSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.PanelSuperior.Controls.Add(Me.btnRegresar)
-        Me.PanelSuperior.Controls.Add(Me.btnSalir)
         Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
         Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(2)
@@ -378,7 +379,6 @@ Partial Class AdministradorVotaciones
         Me.PanelAjustes.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelFormularios.ResumeLayout(False)
-        Me.PanelSuperior.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
