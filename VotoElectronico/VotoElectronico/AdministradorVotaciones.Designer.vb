@@ -326,10 +326,10 @@ Partial Class AdministradorVotaciones
         Me.btnRegresar.Font = New System.Drawing.Font("Times New Roman", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnRegresar.Image = Global.VotoElectronico.My.Resources.Resources.exit_100px
-        Me.btnRegresar.Location = New System.Drawing.Point(819, 0)
+        Me.btnRegresar.Location = New System.Drawing.Point(839, 0)
         Me.btnRegresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(82, 44)
+        Me.btnRegresar.Size = New System.Drawing.Size(62, 44)
         Me.btnRegresar.TabIndex = 10
         Me.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRegresar.UseVisualStyleBackColor = True
