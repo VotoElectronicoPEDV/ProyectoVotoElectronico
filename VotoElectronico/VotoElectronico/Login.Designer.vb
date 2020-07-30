@@ -84,7 +84,7 @@ Partial Class Login
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 536)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(402, 18)
+        Me.Panel1.Size = New System.Drawing.Size(396, 18)
         Me.Panel1.TabIndex = 13
         '
         'PanelSuperior
@@ -96,7 +96,7 @@ Partial Class Login
         Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
         Me.PanelSuperior.Name = "PanelSuperior"
-        Me.PanelSuperior.Size = New System.Drawing.Size(402, 41)
+        Me.PanelSuperior.Size = New System.Drawing.Size(396, 41)
         Me.PanelSuperior.TabIndex = 14
         '
         'PictureBox1
@@ -118,7 +118,7 @@ Partial Class Login
         Me.BtnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMinimizar.Image = Global.VotoElectronico.My.Resources.Resources.Icono_Minimizar
-        Me.BtnMinimizar.Location = New System.Drawing.Point(322, 0)
+        Me.BtnMinimizar.Location = New System.Drawing.Point(316, 0)
         Me.BtnMinimizar.Name = "BtnMinimizar"
         Me.BtnMinimizar.Size = New System.Drawing.Size(40, 40)
         Me.BtnMinimizar.TabIndex = 4
@@ -133,7 +133,7 @@ Partial Class Login
         Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalir.Image = Global.VotoElectronico.My.Resources.Resources.Icono_cerrar_FN
-        Me.btnSalir.Location = New System.Drawing.Point(358, 0)
+        Me.btnSalir.Location = New System.Drawing.Point(352, 0)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(40, 40)
         Me.btnSalir.TabIndex = 3
@@ -195,7 +195,7 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(402, 554)
+        Me.ClientSize = New System.Drawing.Size(396, 554)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.txtContrasena)

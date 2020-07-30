@@ -381,4 +381,7 @@ Public Class Crud_Votantes
         End If
     End Sub
 
+    Private Sub txtIdentidad_TextChanged(sender As Object, e As EventArgs) Handles txtIdentidad.TextChanged
+
+    End Sub
 End Class

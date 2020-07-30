@@ -2,6 +2,18 @@
 
 Public Class Login
     Dim conexion As New conexion
+    Private Sub CustomizeComponents()
+        ' txtUsername.
+        txtUsuario.AutoSize = False
+        txtUsuario.Size = New Size(250, 30)
+        'txtPassword
+        txtContrasena.AutoSize = False
+        txtContrasena.Size = New Size(250, 30)
+        txtContrasena.UseSystemPasswordChar = True
+    End Sub
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CustomizeComponents()
+    End Sub
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Dim contrasena, identidad As String
         identidad = txtUsuario.Text
@@ -65,5 +77,18 @@ Public Class Login
 
     Private Sub BtnMinimizar_Click(sender As Object, e As EventArgs) Handles BtnMinimizar.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+
+    Private Sub txtUsuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUsuario.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 End Class
