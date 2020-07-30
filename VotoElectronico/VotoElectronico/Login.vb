@@ -21,7 +21,7 @@ Public Class Login
         End Try
     End Sub
 
-    Private Sub txtContrasena_Validating(sender As Object, e As CancelEventArgs) Handles txtContrasena.Validating
+    Private Sub txtContrasena_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, TextBox).Text.Length > 0 And txtContrasena.Text = "" Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -29,13 +29,13 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub txtContrasena_MouseHover(sender As Object, e As EventArgs) Handles txtContrasena.MouseHover
+    Private Sub txtContrasena_MouseHover(sender As Object, e As EventArgs)
         ToolTip.SetToolTip(txtContrasena, "Ingrese su contrasena")
         ToolTip.ToolTipTitle = "Aviso"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub txtUsuario_Validating(sender As Object, e As CancelEventArgs) Handles txtUsuario.Validating
+    Private Sub txtUsuario_Validating(sender As Object, e As CancelEventArgs)
         If DirectCast(sender, TextBox).Text.Length > 0 And txtUsuario.Text = "" Then
             Me.ErrorValidacion.SetError(sender, "")
         Else
@@ -43,7 +43,7 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub txtUsuario_MouseHover(sender As Object, e As EventArgs) Handles txtUsuario.MouseHover
+    Private Sub txtUsuario_MouseHover(sender As Object, e As EventArgs)
         ToolTip.SetToolTip(txtUsuario, "Ingrese su Usuario")
         ToolTip.ToolTipTitle = "Aviso"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
@@ -53,5 +53,17 @@ Public Class Login
         Me.Hide()
         IngresaVotante.Show()
 
+    End Sub
+
+    Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+    Private Sub BtnMinimizar_Click(sender As Object, e As EventArgs) Handles BtnMinimizar.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class

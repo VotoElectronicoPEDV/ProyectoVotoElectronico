@@ -1,5 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
 Public Class AdministradorVotaciones
+
     Dim conexion As conexion = New conexion()
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
@@ -80,9 +81,7 @@ Public Class AdministradorVotaciones
 
     End Sub
 
-    Private Sub btnReiniciarVotacion_Click(sender As Object, e As EventArgs) Handles btnReiniciarVotacion.Click
 
-    End Sub
 
     Private Sub btnSalir_Click_1(sender As Object, e As EventArgs) Handles btnSalir.Click
         Dim confirmacion As DialogResult
@@ -102,5 +101,31 @@ Public Class AdministradorVotaciones
             Me.Hide()
             IngresaVotante.Show()
         End If
+    End Sub
+
+    Private Sub ocultarSubMenu()
+        PanelSubMenuCandidatos.Visible = False
+        PanelAjustes.Visible = False
+    End Sub
+
+    Private Sub MostrarSubMenu(submenu As Panel)
+        If submenu.Visible = False Then
+            ocultarSubMenu()
+            submenu.Visible = True
+        Else
+            submenu.Visible = False
+        End If
+    End Sub
+
+    Private Sub AdministradorVotaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ocultarSubMenu()
+    End Sub
+
+    Private Sub BtnAlmacenamiento_Click(sender As Object, e As EventArgs) Handles BtnAlmacenamiento.Click
+        MostrarSubMenu(PanelSubMenuCandidatos)
+    End Sub
+
+    Private Sub BtnAjustes_Click(sender As Object, e As EventArgs) Handles BtnAjustes.Click
+        MostrarSubMenu(PanelAjustes)
     End Sub
 End Class

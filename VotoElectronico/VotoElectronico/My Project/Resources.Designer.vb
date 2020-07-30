@@ -103,6 +103,26 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Icono_cerrar_FN() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Icono cerrar FN", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Icono_Minimizar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Icono Minimizar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property ilustracion_vector_concepto_personaje_gente_pequena_votacion_linea_128320_14() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("ilustracion-vector-concepto-personaje-gente-pequena-votacion-linea_128320-14", resourceCulture)
@@ -116,6 +136,17 @@ Namespace My.Resources
         Friend ReadOnly Property isometric_flat_concept_online_voting_and_vector_25611952() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("isometric-flat-concept-online-voting-and-vector-25611952", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_3653255415283643440052() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("kisspng-flag-of-honduras-el-salvador-national-flag-5b18fd380145f8.365325541528364"& _ 
+                        "3440052", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

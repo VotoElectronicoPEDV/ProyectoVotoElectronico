@@ -298,5 +298,14 @@
   <ItemGroup>
     <None Include="Resources\shutdown_100px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-flag-of-honduras-el-salvador-national-flag-5b18fd380145f8.3653255415283643440052.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono cerrar FN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono Minimizar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
