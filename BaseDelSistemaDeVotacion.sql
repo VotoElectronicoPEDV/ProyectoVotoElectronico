@@ -1141,7 +1141,7 @@
 	inner join PartidoPolitico p on Partido= p.idPartido
 	where DescripcionVotacion = 'Externa' and Municipio = @municipio
 	end
-	exec alcaldesExterna 
+	exec alcaldesExterna
 
 
 	/*========================================================================================================================================*/
