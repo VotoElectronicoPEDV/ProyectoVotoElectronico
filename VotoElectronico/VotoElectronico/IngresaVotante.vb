@@ -5,39 +5,45 @@ Public Class IngresaVotante
     Private Sub btnAcceder_Click(sender As Object, e As EventArgs) Handles btnAcceder.Click
         Dim estado, Voto, Nombre As String
         Dim identidad As String
-        If txtidentidad.Text.Length = 13 Then
-            Dim municipio As String
-            municipio = txtidentidad.Text.Substring(2, 2)
-            identidad = txtidentidad.Text
-            estado = conexion.RecuperarDatos(identidad, 0)
-            Voto = conexion.RecuperarDatos(identidad, 1)
-            Nombre = conexion.RecuperarDatos(identidad, 2)
-            eleccionVotante.idVotante = identidad
-            eleccionVotante.idmunicipio = municipio
+        Try
+            If eleccionVotante.descripcionVotacion <> 0 Then
+                If txtidentidad.Text.Length = 13 Then
+                    Dim municipio As String
+                    municipio = txtidentidad.Text.Substring(2, 2)
+                    identidad = txtidentidad.Text
+                    estado = conexion.RecuperarDatos(identidad, 0)
+                    Voto = conexion.RecuperarDatos(identidad, 1)
+                    Nombre = conexion.RecuperarDatos(identidad, 2)
+                    eleccionVotante.idVotante = identidad
+                    eleccionVotante.idmunicipio = municipio
 
-            If eleccionVotante.descripcionVotacion = 0 Then
-                eleccionVotante.descripcionVotacion = 1
+
+                    If estado = "activo" And Voto = "F" Then
+                        MessageBox.Show("Bienvenido " + Nombre, "Ingresando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Me.Hide()
+                        votacionInterna.Show()
+
+                    ElseIf estado <> "eliminado" And Voto = "V" Then
+                        MessageBox.Show("La persona ya ha realizado la votación. Debera acceder otra persona", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                    ElseIf estado = "eliminado" And Voto <> "F" Then
+                        MessageBox.Show("La persona no se encuentra activa para realizar la votacion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+                    ElseIf estado = "" And Voto = "" Then
+                        MessageBox.Show("Esta persona no existe en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                    End If
+
+                Else
+                    MessageBox.Show("Debe ingresar un numero de identidad valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Else
+                MessageBox.Show("Votacion no disponible aún", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-            If estado = "activo" And Voto = "F" Then
-                MessageBox.Show("Bienvenido " + Nombre, "Ingresando", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.Hide()
-                votacionInterna.Show()
-
-            ElseIf estado <> "eliminado" And Voto = "V" Then
-                MessageBox.Show("La persona ya ha realizado la votación. Debera acceder otra persona", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-            ElseIf estado = "eliminado" And Voto <> "F" Then
-                MessageBox.Show("La persona no se encuentra activa para realizar la votacion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
-            ElseIf estado = "" And Voto = "" Then
-                MessageBox.Show("Esta persona no existe en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-            End If
-
-        Else
-            MessageBox.Show("Debe ingresar un numero de identidad valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
 
     End Sub
 

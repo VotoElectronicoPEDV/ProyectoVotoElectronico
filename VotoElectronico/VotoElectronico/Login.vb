@@ -15,17 +15,19 @@ Public Class Login
         CustomizeComponents()
     End Sub
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
-        Dim contrasena, identidad As String
+        Dim contrasenabd, identidad, contraseña As String
         identidad = txtUsuario.Text
+
+        contraseña = txtContrasena.Text
         Try
-            contrasena = conexion.validaradministrador(identidad, 2)
-            If txtContrasena.Text = contrasena Then
+            contrasenabd = conexion.validaradministrador(identidad, 2)
+            If contraseña = contrasenabd And contrasenabd <> String.Empty Then
                 Me.Hide()
                 AdministradorVotaciones.Show()
-            ElseIf contrasena = String.Empty Then
+            ElseIf contrasenabd = String.Empty Then
                 MessageBox.Show("El administrador no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                MessageBox.Show("Contrasena incorrepta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Contrasena incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
         Catch ex As Exception
@@ -67,19 +69,6 @@ Public Class Login
 
     End Sub
 
-    Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Me.Close()
-    End Sub
-
-    Private Sub BtnMinimizar_Click(sender As Object, e As EventArgs) Handles BtnMinimizar.Click
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-
     Private Sub txtUsuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUsuario.KeyPress
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
@@ -90,5 +79,9 @@ Public Class Login
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub btnBROMA_Click(sender As Object, e As EventArgs) Handles btnBROMA.Click
+        MsgBox("Juan Orlando GANO!")
     End Sub
 End Class

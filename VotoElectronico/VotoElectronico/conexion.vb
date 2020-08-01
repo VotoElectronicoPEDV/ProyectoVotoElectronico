@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-JRBU49C;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=HECTOROS\SQLEXPRESS02;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
     Public lectura As SqlDataReader
@@ -660,5 +660,24 @@ Public Class conexion
         End Try
     End Function
 
+    Public Function ReiniciarVotacion() As Boolean
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("ReiniciarVotacion", conexion)
+
+            cmd.CommandType = CommandType.StoredProcedure
+            If cmd.ExecuteNonQuery Then
+                Return True
+                conexion.Close()
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return false
+        Finally
+            conexion.Close()
+        End Try
+    End Function
 
 End Class

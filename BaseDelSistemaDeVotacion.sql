@@ -1198,23 +1198,29 @@
 
 	/*========================================================================================================================================*/
 	-----------------------------Procedimiento almacenado diputados ganadores--------------------------------------------------------------------
-	create procedure diputadosGanadores
+	alter procedure diputadosGanadores
 	as 
 	begin
 	Declare @FilasAfectadas INT
 	DECLARE @i INT
+	Declare @Max int
+	Declare @id varchar(13)
 	set  @FilasAfectadas = 0
 	SET @i = 1
 	WHILE (@FilasAfectadas < 9 )
 	BEGIN
-
-		update Diputado set Estado ='Ganador' where VotosValidos =(select max(votosvalidos)from Diputado where Estado ='activo') and VotosValidos <> 0
+		
+			set @Max = (select max(votosvalidos) from Diputado where Estado ='activo')
+			set @id = (select top 1 IdentidadDiputado from Diputado where VotosValidos = @max and VotosValidos <> 0  and Estado ='activo')
+		    update Diputado set Estado ='Ganador' where IdentidadDiputado = @id
 			set @FilasAfectadas = @FilasAfectadas + @@ROWCOUNT
 			print @FilasAfectadas
 	END
 	end 
 
 	exec diputadosGanadores
+
+	select * from Diputado
 
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0301197000130'
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0302197000131'
@@ -1227,17 +1233,31 @@
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0305197000162'
 									
 	update Diputado set VotosValidos= VotosValidos + 1 where IdentidadDiputado = '0306197000135'
+
 	update Diputado set estado='activo' , VotosValidos = 0
 	
 
 	/*========================================================================================================================================*/
 	-----------------------------Procedimiento almacenado diputados ganadores--------------------------------------------------------------------
 
-			create Procedure GanadorPresidente
+			Create Procedure GanadorPresidente
 			AS
 			BEGIN
-				update Presidente set Estado ='Ganador' where VotosValidos =(select max(votosvalidos)from Diputado where Estado ='activo') and VotosValidos <> 0
+			Declare @Max int
+			Declare @id varchar(13)
+			set @Max = (select max(votosvalidos) from Presidente)
+			set @id = (select top 1 IdentidadPresidente from Presidente where VotosValidos =@max and VotosValidos <> 0  and Estado ='activo')
+				update Presidente set Estado ='Ganador'  where  IdentidadPresidente = @id
 			END
+
+			select * from Presidente
+
+			update Presidente set Estado = 'activo'  
+
+			exec GanadorPresidente 
+
+			update Presidente set VotosValidos = VotosValidos + 1 where IdentidadPresidente = '0101197000185'
+				update Presidente set VotosValidos = VotosValidos + 1 where IdentidadPresidente = '0101197000186'
 
 	/*========================================================================================================================================*/
 	-----------------------------Procedimiento almacenado diputados ganadores--------------------------------------------------------------------
@@ -1246,19 +1266,25 @@
 	BEGIN
 	    DECLARE @i INT
 		DECLARE @municipio varchar(2)
+		Declare @Max int
+		Declare @id varchar(13)
 		SET @i = 1
 		WHILE (@i <= 21)
 		BEGIN
 			SET @municipio = CONCAT('0', @i)
 				if @i>=10
-					begin
+					begin					
 					SET @municipio =  @i
 				end 
-			update Alcalde set Estado ='Ganador' where Municipio = @municipio and VotosValidos =(select max(votosvalidos)from alcalde where Estado ='activo') and VotosValidos <> 0 
+			set @Max = (select max(votosvalidos) from Alcalde where Municipio = @municipio)
+			set @id = (select top 1 IdentidadAlcalde from Alcalde where VotosValidos =@max and VotosValidos <> 0  and Estado ='activo' and Municipio = @municipio)
+			update Alcalde set Estado ='Ganador' where Municipio = @municipio and IdentidadAlcalde = @id
 			SET @i = @i + 1 
 	END
 	END
 
+		select * from Alcalde 
+		update Alcalde set Estado = 'activo'
 		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0301196000140'
 		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0301196000141'
 		update Alcalde set VotosValidos = VotosValidos + 1 where IdentidadAlcalde = '0302196000141'
@@ -1270,7 +1296,7 @@
 	/*========================================================================================================================================*/
 	-----------------------------Procedimiento almacenado diputados ganadores--------------------------------------------------------------------
 
-	create Procedure ReiniciarVotacion
+	Create Procedure ReiniciarVotacion
 	AS 
 	BEGIN
 	update votante set voto = 'F'
@@ -1283,3 +1309,38 @@
 	/*========================================================================================================================================*/
 	/*========================================================================================================================================*/
 	
+	select * from administrador
+	select * from Alcalde
+	select * from Diputado 
+	select * from Presidente
+
+	Create Procedure PresidenteElectos
+	As
+	Begin
+	select Pres.Foto, CONCAT(Pres.PrimerNombre,' ',Pres.SegundoNombre,' ',Pres.PrimerApellido,' ',Pres.SegundoApellido) as 'Nombre Completo', P.NombrePartido as "Partido Político", Pres.VotosValidos as Votos from Presidente Pres
+	inner join PartidoPolitico P on P.idPartido = Pres.Partido
+	where Estado = 'Ganador'
+	End
+
+	Create Procedure AlcaldesElectos
+	As 
+	Begin
+		select Alc.Foto, CONCAT(Alc.PrimerNombre,' ',Alc.SegundoNombre,' ',Alc.PrimerApellido,' ',Alc.SegundoApellido) as 'Nombre Completo', M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento, P.NombrePartido as 'Partido Político', Alc.VotosValidos as Votos from Alcalde Alc
+	inner join PartidoPolitico P on P.idPartido = Alc.Partido
+	inner join Municipio M on M.idMunicipio = Alc.Municipio
+	inner join Departamento D on D.idDepartamento = M.idDepartamento
+	where Estado = 'Ganador'
+	End
+
+	Create Procedure DiputadosElectos
+	As
+	Begin
+		Select Dip.Foto, CONCAT(Dip.PrimerNombre,' ',Dip.SegundoNombre,' ',Dip.PrimerApellido,' ',Dip.SegundoApellido) as 'Nombre Completo', D.nombreDepartamento as Departamento, P.NombrePartido as 'Partido Político', Dip.VotosValidos as Votos from Diputado Dip
+	inner join Departamento D on D.idDepartamento = Dip.Departamento
+	inner join PartidoPolitico P on P.idPartido = Dip.Partido
+	where Estado = 'Ganador'
+	End
+
+	exec DiputadosElectos 
+	exec AlcaldesElectos
+	exec PresidenteElectos

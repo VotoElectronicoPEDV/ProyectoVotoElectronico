@@ -57,11 +57,6 @@ Public Class AdministradorVotaciones
         abrirFormularios(Crud_Votantes)
     End Sub
 
-    Private Sub btnAgregarImagenCandidatos_Click(sender As Object, e As EventArgs) Handles btnAgregarImagenCandidatos.Click
-        abrirFormularios(AgregarImagenCandidato)
-    End Sub
-
-
     Private Sub btnVotacionExterna_Click(sender As Object, e As EventArgs) Handles btnVotacionExterna.Click
         Try
             If conexion.cambioVotacion And eleccionVotante.descripcionVotacion = 1 Then
@@ -98,7 +93,7 @@ Public Class AdministradorVotaciones
         confirmacion = MessageBox.Show("¿Esta seguro que desea regresar?", "Regresando", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If confirmacion = DialogResult.Yes Then
-            Me.Hide()
+            Me.Close()
             IngresaVotante.Show()
         End If
     End Sub
@@ -119,6 +114,15 @@ Public Class AdministradorVotaciones
 
     Private Sub AdministradorVotaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ocultarSubMenu()
+        If eleccionVotante.descripcionVotacion = 0 Then
+            btnReiniciarVotacion.Text = "Iniciar Votación"
+        ElseIf eleccionVotante.descripcionVotacion = 1 Then
+            btnReiniciarVotacion.Text = "Reiniciar Votación"
+        ElseIf eleccionVotante.descripcionVotacion = 2 Then
+            btnReiniciarVotacion.Text = "Finalizar Votación"
+        End If
+
+        btnReiniciarVotacion.Enabled = True
     End Sub
 
     Private Sub BtnAlmacenamiento_Click(sender As Object, e As EventArgs) Handles BtnAlmacenamiento.Click
@@ -127,5 +131,46 @@ Public Class AdministradorVotaciones
 
     Private Sub BtnAjustes_Click(sender As Object, e As EventArgs) Handles BtnAjustes.Click
         MostrarSubMenu(PanelAjustes)
+    End Sub
+
+    Private Sub btnReiniciarVotacion_Click(sender As Object, e As EventArgs) Handles btnReiniciarVotacion.Click
+        If eleccionVotante.descripcionVotacion = 0 Then
+            eleccionVotante.descripcionVotacion = 1
+            MessageBox.Show("La votación se ha iniciado satisfactoriamente", "Iniciando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ElseIf eleccionVotante.descripcionVotacion = 1 Then
+            ReiniciarVotacion()
+            eleccionVotante.descripcionVotacion = 0
+        ElseIf eleccionVotante.descripcionVotacion = 2 Then
+            ReiniciarVotacion()
+            eleccionVotante.descripcionVotacion = 0
+        End If
+
+        btnReiniciarVotacion.Enabled = False
+
+    End Sub
+
+    Private Sub ReiniciarVotacion()
+        Try
+            If conexion.ReiniciarVotacion Then
+                If eleccionVotante.descripcionVotacion = 1 Then
+                    MessageBox.Show("La votación se ha reiniciado satisfactoriamente", "Reiniciando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ElseIf eleccionVotante.descripcionVotacion = 2 Then
+                    MessageBox.Show("Votacion finalizada satisfactoriamente", "finalizando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            Else
+                If eleccionVotante.descripcionVotacion = 1 Then
+                    MessageBox.Show("Ha surgido un error al reiniciar la votación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                ElseIf eleccionVotante.descripcionVotacion = 2 Then
+                    MessageBox.Show("Votacion finalizada satisfactoriamente", "finalizando", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub btnAgregarImagenCandidatos_Click_1(sender As Object, e As EventArgs) Handles btnAgregarImagenCandidatos.Click
+        abrirFormularios(AgregarImagenCandidato)
     End Sub
 End Class

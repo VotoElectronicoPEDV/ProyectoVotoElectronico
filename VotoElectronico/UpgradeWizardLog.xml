@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\VotoElectronico.vbproj" />
+  <event action="Analyze" type="Success" name="AdministradorVotaciones.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\AdministradorVotaciones.resx" />
+  <event action="Analyze" type="Success" name="AgregarImagenCandidato.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\AgregarImagenCandidato.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\App.config" />
+  <event action="Analyze" type="Success" name="Crud_Alcaldes.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\Crud_Alcaldes.resx" />
+  <event action="Analyze" type="Success" name="Crud_Diputados.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\Crud_Diputados.resx" />
+  <event action="Analyze" type="Success" name="Crud_Presidente.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\Crud_Presidente.resx" />
+  <event action="Analyze" type="Success" name="Crud_Votantes.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\Crud_Votantes.resx" />
+  <event action="Analyze" type="Success" name="IngresaVotante.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\IngresaVotante.resx" />
+  <event action="Analyze" type="Success" name="Login.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\Login.resx" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\My Project\Resources.resx" />
+  <event action="Analyze" type="Success" name="Registro.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\Registro.resx" />
+  <event action="Analyze" type="Success" name="ReporteGanadores.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\ReporteGanadores.resx" />
+  <event action="Analyze" type="Success" name="votacionDiputado.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\votacionDiputado.resx" />
+  <event action="Analyze" type="Success" name="votacionInterna.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\votacionInterna.resx" />
+  <event action="Analyze" type="Success" name="votacionPresidente.resx" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\votacionPresidente.resx" />
+  <event action="Analyze" type="Success" name="VotoElectronico" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\VotoElectronico.vbproj" />
+  <event action="Analyze" type="Success" name="VotoElectronico" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico.sln" />
+  <event action="Backup" type="Success" name="VotoElectronico" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\VotoElectronico.vbproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\VotoElectronico.vbproj" />
+  <event action="Upgrade" type="Success" name="VotoElectronico" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\VotoElectronico.vbproj" />
+  <event action="Upgrade" type="Success" name="VotoElectronico" path="C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico.sln" />
+</log>
