@@ -127,12 +127,6 @@
     <Compile Include="Registro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report1.Designer.vb">
-      <DependentUpon>Report1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Report1.vb">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="SistemaNacionalDeEleccionesDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,9 +208,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report1.resx">
-      <DependentUpon>Report1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="votacionDiputado.resx">
       <DependentUpon>votacionDiputado.vb</DependentUpon>
