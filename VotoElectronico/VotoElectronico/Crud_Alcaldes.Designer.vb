@@ -53,13 +53,15 @@ Partial Class Crud_Alcaldes
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-
+        Me.SistemaNacionalDeEleccionesDataSet = New VotoElectronico.SistemaNacionalDeEleccionesDataSet()
+        Me.ConsultarAlcaldeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ConsultarAlcaldeTableAdapter = New VotoElectronico.SistemaNacionalDeEleccionesDataSetTableAdapters.consultarAlcaldeTableAdapter()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgvAlcaldes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
-
+        CType(Me.SistemaNacionalDeEleccionesDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultarAlcaldeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -390,16 +392,17 @@ Partial Class Crud_Alcaldes
         '
         'SistemaNacionalDeEleccionesDataSet
         '
-
+        Me.SistemaNacionalDeEleccionesDataSet.DataSetName = "SistemaNacionalDeEleccionesDataSet"
+        Me.SistemaNacionalDeEleccionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ConsultarAlcaldeBindingSource
         '
         Me.ConsultarAlcaldeBindingSource.DataMember = "consultarAlcalde"
-
+        Me.ConsultarAlcaldeBindingSource.DataSource = Me.SistemaNacionalDeEleccionesDataSet
         '
         'ConsultarAlcaldeTableAdapter
         '
-
+        Me.ConsultarAlcaldeTableAdapter.ClearBeforeFill = True
         '
         'Crud_Alcaldes
         '
@@ -422,7 +425,7 @@ Partial Class Crud_Alcaldes
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
-
+        CType(Me.SistemaNacionalDeEleccionesDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultarAlcaldeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -453,7 +456,7 @@ Partial Class Crud_Alcaldes
     Friend WithEvents Label9 As Label
     Friend WithEvents ErrorValidacion As ErrorProvider
     Friend WithEvents ToolTip As ToolTip
-
+    Friend WithEvents SistemaNacionalDeEleccionesDataSet As SistemaNacionalDeEleccionesDataSet
     Friend WithEvents ConsultarAlcaldeBindingSource As BindingSource
-
+    Friend WithEvents ConsultarAlcaldeTableAdapter As SistemaNacionalDeEleccionesDataSetTableAdapters.consultarAlcaldeTableAdapter
 End Class

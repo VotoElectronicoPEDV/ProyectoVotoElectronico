@@ -3,10 +3,10 @@
 Public Class Login
     Dim conexion As New conexion
     Private Sub CustomizeComponents()
-        ' txtUsername.
+
         txtUsuario.AutoSize = False
         txtUsuario.Size = New Size(250, 30)
-        'txtPassword
+
         txtContrasena.AutoSize = False
         txtContrasena.Size = New Size(250, 30)
         txtContrasena.UseSystemPasswordChar = True

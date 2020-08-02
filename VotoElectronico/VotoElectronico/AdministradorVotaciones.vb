@@ -57,6 +57,7 @@ Public Class AdministradorVotaciones
         abrirFormularios(Crud_Votantes)
     End Sub
 
+
     Private Sub btnVotacionExterna_Click(sender As Object, e As EventArgs) Handles btnVotacionExterna.Click
         Try
             If conexion.cambioVotacion And eleccionVotante.descripcionVotacion = 1 Then
@@ -133,6 +134,10 @@ Public Class AdministradorVotaciones
         MostrarSubMenu(PanelAjustes)
     End Sub
 
+    Private Sub btnImagenCand_Click(sender As Object, e As EventArgs) Handles btnImagenCand.Click
+        abrirFormularios(AgregarImagenCandidato)
+    End Sub
+
     Private Sub btnReiniciarVotacion_Click(sender As Object, e As EventArgs) Handles btnReiniciarVotacion.Click
         If eleccionVotante.descripcionVotacion = 0 Then
             eleccionVotante.descripcionVotacion = 1
@@ -146,7 +151,6 @@ Public Class AdministradorVotaciones
         End If
 
         btnReiniciarVotacion.Enabled = False
-
     End Sub
 
     Private Sub ReiniciarVotacion()
@@ -168,9 +172,5 @@ Public Class AdministradorVotaciones
 
         End Try
 
-    End Sub
-
-    Private Sub btnAgregarImagenCandidatos_Click_1(sender As Object, e As EventArgs) Handles btnAgregarImagenCandidatos.Click
-        abrirFormularios(AgregarImagenCandidato)
     End Sub
 End Class

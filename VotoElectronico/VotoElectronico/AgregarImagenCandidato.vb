@@ -2,7 +2,6 @@
 Public Class AgregarImagenCandidato
     Dim conexion As conexion = New conexion()
     Dim DataT As New DataTable
-    Dim MensajeMolesto As Integer
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim identidad As String
         Dim imagen As Image
@@ -100,11 +99,6 @@ Public Class AgregarImagenCandidato
     End Sub
 
     Private Sub cmbCandidatura_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbCandidatura.SelectedIndexChanged
-        If MensajeMolesto = 1 Then
-            MessageBox.Show("Si desea, puede dar click en el candidato, para poner su identidad inmediatamente en la casilla ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            MensajeMolesto = 0
-        End If
-
         Select Case cmbCandidatura.SelectedIndex
             Case 0
                 consultarPresidente()
@@ -121,6 +115,6 @@ Public Class AgregarImagenCandidato
     End Sub
 
     Private Sub AgregarImagenCandidato_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MensajeMolesto = 1
+        MessageBox.Show("Debe Dar click en el candidato", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class

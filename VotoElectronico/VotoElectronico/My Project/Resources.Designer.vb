@@ -73,16 +73,6 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property administrative_tools_64px() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("administrative_tools_64px", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property database_administrator_40px() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("database_administrator_40px", resourceCulture)
@@ -116,16 +106,6 @@ Namespace My.Resources
         Friend ReadOnly Property elections_200px() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("elections_200px", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property elections_48px() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("elections_48px", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

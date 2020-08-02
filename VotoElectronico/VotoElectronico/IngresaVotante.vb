@@ -44,7 +44,6 @@ Public Class IngresaVotante
             MsgBox(ex.Message)
         End Try
 
-
     End Sub
 
     Private Sub txtidentidad_Validating(sender As Object, e As CancelEventArgs) Handles txtidentidad.Validating
@@ -71,7 +70,7 @@ Public Class IngresaVotante
 
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
         Me.Hide()
-        Login.Show() 'al menu del administrador para pruebas
+        Login.Show()
     End Sub
 
 
