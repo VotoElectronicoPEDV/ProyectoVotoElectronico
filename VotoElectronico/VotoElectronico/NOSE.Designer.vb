@@ -45,7 +45,7 @@ Partial Class NOSE
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.VotoElectronico.My.Resources.Resources.ThoseParchedDogwoodclubgall_max_1mb
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 141)
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 140)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(192, 187)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -55,7 +55,7 @@ Partial Class NOSE
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.VotoElectronico.My.Resources.Resources._15124050183387
-        Me.PictureBox1.Location = New System.Drawing.Point(600, 141)
+        Me.PictureBox1.Location = New System.Drawing.Point(600, 140)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(190, 187)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -68,7 +68,7 @@ Partial Class NOSE
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(294, 259)
+        Me.Label3.Location = New System.Drawing.Point(294, 258)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(248, 58)
         Me.Label3.TabIndex = 4
