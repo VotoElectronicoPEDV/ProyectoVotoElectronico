@@ -34,11 +34,11 @@ Partial Class Login
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBROMA = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.btnAceptar = New System.Windows.Forms.Button()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnAceptar = New System.Windows.Forms.Button()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,6 +157,22 @@ Partial Class Login
         Me.Label3.TabIndex = 25
         Me.Label3.Text = "INICIO DE SESIÓN"
         '
+        'btnAceptar
+        '
+        Me.btnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.btnAceptar.FlatAppearance.BorderSize = 0
+        Me.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime
+        Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAceptar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAceptar.ForeColor = System.Drawing.Color.White
+        Me.btnAceptar.Location = New System.Drawing.Point(356, 360)
+        Me.btnAceptar.Name = "btnAceptar"
+        Me.btnAceptar.Size = New System.Drawing.Size(92, 36)
+        Me.btnAceptar.TabIndex = 5
+        Me.btnAceptar.Text = "ACEPTAR"
+        Me.btnAceptar.UseVisualStyleBackColor = False
+        '
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.VotoElectronico.My.Resources.Resources.security
@@ -196,22 +212,6 @@ Partial Class Login
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
-        '
-        'btnAceptar
-        '
-        Me.btnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.btnAceptar.FlatAppearance.BorderSize = 0
-        Me.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime
-        Me.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAceptar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAceptar.ForeColor = System.Drawing.Color.White
-        Me.btnAceptar.Location = New System.Drawing.Point(356, 360)
-        Me.btnAceptar.Name = "btnAceptar"
-        Me.btnAceptar.Size = New System.Drawing.Size(92, 36)
-        Me.btnAceptar.TabIndex = 5
-        Me.btnAceptar.Text = "ACEPTAR"
-        Me.btnAceptar.UseVisualStyleBackColor = False
         '
         'Login
         '

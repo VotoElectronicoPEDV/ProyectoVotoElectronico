@@ -395,5 +395,26 @@
   <ItemGroup>
     <None Include="Resources\logout3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-flag-of-honduras-el-salvador-national-flag-5b18fd380145f8.36532554152836434400521.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-flag-of-honduras-el-salvador-national-flag-5b18fd380145f8-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-flag-of-honduras-el-salvador-national-flag-5b18fd380145f8-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

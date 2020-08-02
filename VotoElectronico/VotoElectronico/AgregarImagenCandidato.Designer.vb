@@ -22,11 +22,11 @@ Partial Class AgregarImagenCandidato
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.imgFoto = New System.Windows.Forms.PictureBox()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.TxtIdentidad = New System.Windows.Forms.TextBox()
@@ -50,10 +50,9 @@ Partial Class AgregarImagenCandidato
         '
         Me.imgFoto.BackColor = System.Drawing.Color.Black
         Me.imgFoto.Image = Global.VotoElectronico.My.Resources.Resources.descarga
-        Me.imgFoto.Location = New System.Drawing.Point(262, 23)
-        Me.imgFoto.Margin = New System.Windows.Forms.Padding(4)
+        Me.imgFoto.Location = New System.Drawing.Point(196, 19)
         Me.imgFoto.Name = "imgFoto"
-        Me.imgFoto.Size = New System.Drawing.Size(226, 183)
+        Me.imgFoto.Size = New System.Drawing.Size(170, 149)
         Me.imgFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgFoto.TabIndex = 21
         Me.imgFoto.TabStop = False
@@ -68,10 +67,9 @@ Partial Class AgregarImagenCandidato
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnAgregar.Location = New System.Drawing.Point(73, 99)
-        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAgregar.Location = New System.Drawing.Point(55, 80)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(138, 69)
+        Me.btnAgregar.Size = New System.Drawing.Size(104, 56)
         Me.btnAgregar.TabIndex = 23
         Me.btnAgregar.Text = "Agregar Imagen"
         Me.btnAgregar.UseVisualStyleBackColor = False
@@ -82,11 +80,10 @@ Partial Class AgregarImagenCandidato
         Me.TxtIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtIdentidad.Font = New System.Drawing.Font("Times New Roman", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtIdentidad.ForeColor = System.Drawing.Color.White
-        Me.TxtIdentidad.Location = New System.Drawing.Point(225, 53)
-        Me.TxtIdentidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdentidad.Location = New System.Drawing.Point(169, 43)
         Me.TxtIdentidad.MaxLength = 13
         Me.TxtIdentidad.Name = "TxtIdentidad"
-        Me.TxtIdentidad.Size = New System.Drawing.Size(198, 27)
+        Me.TxtIdentidad.Size = New System.Drawing.Size(148, 22)
         Me.TxtIdentidad.TabIndex = 24
         '
         'Label1
@@ -94,20 +91,18 @@ Partial Class AgregarImagenCandidato
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(37, 55)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(28, 45)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(125, 32)
+        Me.Label1.Size = New System.Drawing.Size(99, 25)
         Me.Label1.TabIndex = 25
         Me.Label1.Text = "Identidad"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 263)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(10, 214)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(199, 17)
+        Me.Label2.Size = New System.Drawing.Size(152, 13)
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "Debe dar click en el candidato"
         '
@@ -119,10 +114,9 @@ Partial Class AgregarImagenCandidato
         Me.cmbCandidatura.ForeColor = System.Drawing.Color.White
         Me.cmbCandidatura.FormattingEnabled = True
         Me.cmbCandidatura.Items.AddRange(New Object() {"Presidentes", "Alcaldes ", "Diputados"})
-        Me.cmbCandidatura.Location = New System.Drawing.Point(225, 149)
-        Me.cmbCandidatura.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbCandidatura.Location = New System.Drawing.Point(169, 121)
         Me.cmbCandidatura.Name = "cmbCandidatura"
-        Me.cmbCandidatura.Size = New System.Drawing.Size(198, 34)
+        Me.cmbCandidatura.Size = New System.Drawing.Size(150, 29)
         Me.cmbCandidatura.TabIndex = 27
         '
         'Label3
@@ -130,10 +124,9 @@ Partial Class AgregarImagenCandidato
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(37, 151)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(28, 123)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(161, 32)
+        Me.Label3.Size = New System.Drawing.Size(127, 25)
         Me.Label3.TabIndex = 28
         Me.Label3.Text = "Candidatura"
         '
@@ -147,10 +140,9 @@ Partial Class AgregarImagenCandidato
         Me.btnExplorar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExplorar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExplorar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnExplorar.Location = New System.Drawing.Point(303, 214)
-        Me.btnExplorar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnExplorar.Location = New System.Drawing.Point(227, 174)
         Me.btnExplorar.Name = "btnExplorar"
-        Me.btnExplorar.Size = New System.Drawing.Size(136, 45)
+        Me.btnExplorar.Size = New System.Drawing.Size(102, 37)
         Me.btnExplorar.TabIndex = 29
         Me.btnExplorar.Text = "Explorar"
         Me.btnExplorar.UseVisualStyleBackColor = False
@@ -162,25 +154,21 @@ Partial Class AgregarImagenCandidato
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.cmbCandidatura)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 15)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(509, 265)
+        Me.GroupBox1.Size = New System.Drawing.Size(382, 215)
         Me.GroupBox1.TabIndex = 30
         Me.GroupBox1.TabStop = False
         '
         'Funcion
         '
-        Me.Funcion.BackColor = System.Drawing.Color.Transparent
+        Me.Funcion.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.Funcion.Controls.Add(Me.imgFoto)
         Me.Funcion.Controls.Add(Me.btnAgregar)
         Me.Funcion.Controls.Add(Me.btnExplorar)
-        Me.Funcion.Location = New System.Drawing.Point(533, 13)
-        Me.Funcion.Margin = New System.Windows.Forms.Padding(4)
+        Me.Funcion.Location = New System.Drawing.Point(400, 11)
         Me.Funcion.Name = "Funcion"
-        Me.Funcion.Padding = New System.Windows.Forms.Padding(4)
-        Me.Funcion.Size = New System.Drawing.Size(515, 267)
+        Me.Funcion.Size = New System.Drawing.Size(386, 217)
         Me.Funcion.TabIndex = 31
         Me.Funcion.TabStop = False
         '
@@ -189,11 +177,11 @@ Partial Class AgregarImagenCandidato
         Me.GroupBox3.Controls.Add(Me.dgvCandidatos)
         Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 321)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 261)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox3.Size = New System.Drawing.Size(1032, 378)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Size = New System.Drawing.Size(774, 307)
         Me.GroupBox3.TabIndex = 32
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Candidatos"
@@ -202,70 +190,69 @@ Partial Class AgregarImagenCandidato
         '
         Me.dgvCandidatos.AllowUserToAddRows = False
         Me.dgvCandidatos.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray
-        Me.dgvCandidatos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray
+        Me.dgvCandidatos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvCandidatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvCandidatos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dgvCandidatos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCandidatos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCandidatos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvCandidatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCandidatos.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvCandidatos.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvCandidatos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvCandidatos.EnableHeadersVisualStyles = False
         Me.dgvCandidatos.GridColor = System.Drawing.Color.White
-        Me.dgvCandidatos.Location = New System.Drawing.Point(3, 22)
-        Me.dgvCandidatos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgvCandidatos.Location = New System.Drawing.Point(2, 18)
+        Me.dgvCandidatos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgvCandidatos.Name = "dgvCandidatos"
         Me.dgvCandidatos.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCandidatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCandidatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvCandidatos.RowHeadersWidth = 51
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray
-        Me.dgvCandidatos.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gray
+        Me.dgvCandidatos.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvCandidatos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.dgvCandidatos.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvCandidatos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White
         Me.dgvCandidatos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Gray
         Me.dgvCandidatos.RowTemplate.Height = 40
-        Me.dgvCandidatos.Size = New System.Drawing.Size(1026, 354)
+        Me.dgvCandidatos.Size = New System.Drawing.Size(770, 287)
         Me.dgvCandidatos.TabIndex = 0
         '
         'AgregarImagenCandidato
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1061, 710)
+        Me.ClientSize = New System.Drawing.Size(796, 577)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Funcion)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "AgregarImagenCandidato"
         Me.Text = "AgregarImagenCandidato"
         CType(Me.imgFoto, System.ComponentModel.ISupportInitialize).EndInit()
