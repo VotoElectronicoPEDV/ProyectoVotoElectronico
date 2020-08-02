@@ -157,7 +157,7 @@ Partial Class Crud_Diputados
         Me.btnEjecutar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnEjecutar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEjecutar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEjecutar.Location = New System.Drawing.Point(22, 125)
+        Me.btnEjecutar.Location = New System.Drawing.Point(22, 124)
         Me.btnEjecutar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEjecutar.Name = "btnEjecutar"
         Me.btnEjecutar.Size = New System.Drawing.Size(121, 43)

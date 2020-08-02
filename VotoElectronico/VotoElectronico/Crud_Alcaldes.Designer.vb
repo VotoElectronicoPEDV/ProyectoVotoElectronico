@@ -101,7 +101,7 @@ Partial Class Crud_Alcaldes
         Me.dgvAlcaldes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -160,7 +160,7 @@ Partial Class Crud_Alcaldes
         Me.btnEjecutar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnEjecutar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEjecutar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEjecutar.Location = New System.Drawing.Point(28, 152)
+        Me.btnEjecutar.Location = New System.Drawing.Point(29, 153)
         Me.btnEjecutar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnEjecutar.Name = "btnEjecutar"
         Me.btnEjecutar.Size = New System.Drawing.Size(161, 53)
