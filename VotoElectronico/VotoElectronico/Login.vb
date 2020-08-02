@@ -82,6 +82,7 @@ Public Class Login
     End Sub
 
     Private Sub btnBROMA_Click(sender As Object, e As EventArgs) Handles btnBROMA.Click
-        MsgBox("Juan Orlando GANO!")
+        Me.Hide()
+        CargandoFallo.Show()
     End Sub
 End Class

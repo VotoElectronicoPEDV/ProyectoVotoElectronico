@@ -48,6 +48,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -58,6 +61,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -83,6 +89,18 @@
       <DependentUpon>AgregarImagenCandidato.vb</DependentUpon>
     </Compile>
     <Compile Include="AgregarImagenCandidato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cargando.Designer.vb">
+      <DependentUpon>Cargando.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cargando.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargandoFallo.Designer.vb">
+      <DependentUpon>CargandoFallo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CargandoFallo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="conexion.vb" />
@@ -116,6 +134,12 @@
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
     <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NOSE.Designer.vb">
+      <DependentUpon>NOSE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NOSE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registro.Designer.vb">
@@ -178,6 +202,12 @@
     <EmbeddedResource Include="AgregarImagenCandidato.resx">
       <DependentUpon>AgregarImagenCandidato.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cargando.resx">
+      <DependentUpon>Cargando.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargandoFallo.resx">
+      <DependentUpon>CargandoFallo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Crud_Alcaldes.resx">
       <DependentUpon>Crud_Alcaldes.vb</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NOSE.resx">
+      <DependentUpon>NOSE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.vb</DependentUpon>
@@ -226,6 +259,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="SistemaNacionalDeEleccionesDataSet.xsc">
       <DependentUpon>SistemaNacionalDeEleccionesDataSet.xsd</DependentUpon>
     </None>
@@ -318,6 +352,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\elections_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elecciones-2021-default-480.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumbnail-45933.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15124050183387.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThoseParchedDogwoodclubgall-max-1mb.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %281%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
