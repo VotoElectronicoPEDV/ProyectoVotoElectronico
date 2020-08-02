@@ -316,5 +316,8 @@
   <ItemGroup>
     <None Include="Resources\administrative_tools_40px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elections_48px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
