@@ -42,10 +42,9 @@ Partial Class IngresaVotante
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 11)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(21, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 17)
+        Me.Label2.Size = New System.Drawing.Size(0, 13)
         Me.Label2.TabIndex = 2
         '
         'btnAdmin
@@ -59,10 +58,10 @@ Partial Class IngresaVotante
         Me.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdmin.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdmin.ForeColor = System.Drawing.Color.White
-        Me.btnAdmin.Location = New System.Drawing.Point(323, 251)
-        Me.btnAdmin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAdmin.Location = New System.Drawing.Point(242, 204)
+        Me.btnAdmin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAdmin.Name = "btnAdmin"
-        Me.btnAdmin.Size = New System.Drawing.Size(109, 38)
+        Me.btnAdmin.Size = New System.Drawing.Size(82, 31)
         Me.btnAdmin.TabIndex = 5
         Me.btnAdmin.Text = "ADMIN"
         Me.btnAdmin.UseVisualStyleBackColor = False
@@ -71,13 +70,12 @@ Partial Class IngresaVotante
         '
         Me.txtidentidad.BackColor = System.Drawing.Color.Gray
         Me.txtidentidad.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtidentidad.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtidentidad.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtidentidad.ForeColor = System.Drawing.Color.White
-        Me.txtidentidad.Location = New System.Drawing.Point(389, 155)
-        Me.txtidentidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtidentidad.Location = New System.Drawing.Point(292, 126)
         Me.txtidentidad.MaxLength = 13
         Me.txtidentidad.Name = "txtidentidad"
-        Me.txtidentidad.Size = New System.Drawing.Size(253, 19)
+        Me.txtidentidad.Size = New System.Drawing.Size(190, 18)
         Me.txtidentidad.TabIndex = 0
         '
         'btnAcceder
@@ -90,10 +88,10 @@ Partial Class IngresaVotante
         Me.btnAcceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAcceder.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAcceder.ForeColor = System.Drawing.Color.White
-        Me.btnAcceder.Location = New System.Drawing.Point(505, 252)
-        Me.btnAcceder.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAcceder.Location = New System.Drawing.Point(379, 205)
+        Me.btnAcceder.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAcceder.Name = "btnAcceder"
-        Me.btnAcceder.Size = New System.Drawing.Size(117, 37)
+        Me.btnAcceder.Size = New System.Drawing.Size(88, 30)
         Me.btnAcceder.TabIndex = 4
         Me.btnAcceder.Text = "ACCEDER"
         Me.btnAcceder.UseVisualStyleBackColor = False
@@ -103,10 +101,9 @@ Partial Class IngresaVotante
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(384, 98)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(288, 80)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(90, 23)
+        Me.Label1.Size = New System.Drawing.Size(73, 19)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Identidad"
         '
@@ -120,18 +117,16 @@ Partial Class IngresaVotante
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(267, 316)
+        Me.Panel1.Size = New System.Drawing.Size(200, 257)
         Me.Panel1.TabIndex = 16
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.VotoElectronico.My.Resources.Resources.kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_removebg_preview1
-        Me.PictureBox1.Location = New System.Drawing.Point(32, 60)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(24, 49)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(215, 192)
+        Me.PictureBox1.Size = New System.Drawing.Size(161, 156)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -139,20 +134,19 @@ Partial Class IngresaVotante
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.VotoElectronico.My.Resources.Resources.user2
-        Me.PictureBox2.Location = New System.Drawing.Point(289, 98)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Location = New System.Drawing.Point(217, 80)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(87, 75)
+        Me.PictureBox2.Size = New System.Drawing.Size(65, 61)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 17
         Me.PictureBox2.TabStop = False
         '
         'IngresaVotante
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(687, 316)
+        Me.ClientSize = New System.Drawing.Size(515, 257)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnAdmin)
@@ -161,7 +155,6 @@ Partial Class IngresaVotante
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "IngresaVotante"
         Me.Opacity = 0.9R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

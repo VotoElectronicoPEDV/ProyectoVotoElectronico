@@ -2,18 +2,8 @@
 
 Public Class Login
     Dim conexion As New conexion
-    Private Sub CustomizeComponents()
 
-        txtUsuario.AutoSize = False
-        txtUsuario.Size = New Size(250, 30)
 
-        txtContrasena.AutoSize = False
-        txtContrasena.Size = New Size(250, 30)
-        txtContrasena.UseSystemPasswordChar = True
-    End Sub
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CustomizeComponents()
-    End Sub
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Dim contrasenabd, identidad, contraseña As String
         identidad = txtUsuario.Text
@@ -85,4 +75,17 @@ Public Class Login
         Me.Hide()
         CargandoFallo.Show()
     End Sub
+
+    Private Sub OptVer_Click(sender As Object, e As EventArgs) Handles OptVer.Click
+        txtContrasena.PasswordChar = ""
+        optOcultar.Visible = True
+        OptVer.Visible = False
+    End Sub
+
+    Private Sub optOcultar_Click(sender As Object, e As EventArgs) Handles optOcultar.Click
+        txtContrasena.PasswordChar = "*"
+        optOcultar.Visible = False
+        OptVer.Visible = True
+    End Sub
+
 End Class
