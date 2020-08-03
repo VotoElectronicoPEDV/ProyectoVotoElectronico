@@ -1,4 +1,4 @@
-	Create database SistemaNacionalDeElecciones
+	create database SistemaNacionalDeElecciones
 	go
 
 	use SistemaNacionalDeElecciones
