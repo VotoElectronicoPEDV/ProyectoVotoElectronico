@@ -209,4 +209,22 @@ Public Class AdministradorVotaciones
         ToolTip.ToolTipTitle = "Aviso"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
+
+    Private Sub BtnAjustes_MouseHover(sender As Object, e As EventArgs) Handles BtnAjustes.MouseHover
+        ToolTip.SetToolTip(BtnAjustes, "Ajustes")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnVotacionExterna_MouseHover(sender As Object, e As EventArgs) Handles btnVotacionExterna.MouseHover
+        ToolTip.SetToolTip(btnVotacionExterna, "Iniciar Votacion Externa")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnReiniciarVotacion_MouseHover(sender As Object, e As EventArgs) Handles btnReiniciarVotacion.MouseHover
+        ToolTip.SetToolTip(btnReiniciarVotacion, "Reiniciar Votacion")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
 End Class

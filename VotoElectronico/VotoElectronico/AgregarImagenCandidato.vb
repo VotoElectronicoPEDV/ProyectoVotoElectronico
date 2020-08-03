@@ -117,4 +117,32 @@ Public Class AgregarImagenCandidato
     Private Sub AgregarImagenCandidato_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MessageBox.Show("Debe Dar click en el candidato", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+
+    Private Sub TxtIdentidad_TextChanged(sender As Object, e As EventArgs) Handles TxtIdentidad.TextChanged
+
+    End Sub
+
+    Private Sub TxtIdentidad_MouseHover(sender As Object, e As EventArgs) Handles TxtIdentidad.MouseHover
+        ToolTip.SetToolTip(TxtIdentidad, "Numero de identidad")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub cmbCandidatura_MouseHover(sender As Object, e As EventArgs) Handles cmbCandidatura.MouseHover
+        ToolTip.SetToolTip(cmbCandidatura, "Seleccione una candidatura")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnAgregar_MouseHover(sender As Object, e As EventArgs) Handles btnAgregar.MouseHover
+        ToolTip.SetToolTip(btnAgregar, "Agregar la imagen")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnExplorar_MouseHover(sender As Object, e As EventArgs) Handles btnExplorar.MouseHover
+        ToolTip.SetToolTip(btnExplorar, "Buscar imagen")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
 End Class
