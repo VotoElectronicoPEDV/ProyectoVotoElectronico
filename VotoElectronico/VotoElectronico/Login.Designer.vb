@@ -250,7 +250,7 @@ Partial Class Login
         '
         'OptVer
         '
-        Me.OptVer.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.OptVer.BackColor = System.Drawing.Color.Transparent
         Me.OptVer.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.OptVer.ForeColor = System.Drawing.Color.Black
         Me.OptVer.Image = CType(resources.GetObject("OptVer.Image"), System.Drawing.Image)
@@ -262,7 +262,7 @@ Partial Class Login
         '
         'optOcultar
         '
-        Me.optOcultar.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+        Me.optOcultar.BackColor = System.Drawing.Color.Transparent
         Me.optOcultar.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.optOcultar.ForeColor = System.Drawing.Color.Black
         Me.optOcultar.Image = CType(resources.GetObject("optOcultar.Image"), System.Drawing.Image)
