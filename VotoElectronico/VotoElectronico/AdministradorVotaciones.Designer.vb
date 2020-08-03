@@ -22,24 +22,26 @@ Partial Class AdministradorVotaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PanelMenu = New System.Windows.Forms.FlowLayoutPanel()
-        Me.PanelSubMenuCandidatos = New System.Windows.Forms.Panel()
-        Me.PanelAjustes = New System.Windows.Forms.Panel()
-        Me.PanelSuperior = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PanelFormularios = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BtnAlmacenamiento = New System.Windows.Forms.Button()
+        Me.PanelSubMenuCandidatos = New System.Windows.Forms.Panel()
         Me.btnImagenCand = New System.Windows.Forms.Button()
         Me.btnAlcaldes = New System.Windows.Forms.Button()
         Me.btnDiputados = New System.Windows.Forms.Button()
         Me.btnPresidentes = New System.Windows.Forms.Button()
         Me.btnVotantes = New System.Windows.Forms.Button()
         Me.BtnAjustes = New System.Windows.Forms.Button()
+        Me.PanelAjustes = New System.Windows.Forms.Panel()
         Me.btnReiniciarVotacion = New System.Windows.Forms.Button()
         Me.btnVotacionExterna = New System.Windows.Forms.Button()
         Me.btnRegresar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.PanelSuperior = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PanelFormularios = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanelMenu.SuspendLayout()
         Me.PanelSubMenuCandidatos.SuspendLayout()
         Me.PanelAjustes.SuspendLayout()
@@ -59,85 +61,10 @@ Partial Class AdministradorVotaciones
         Me.PanelMenu.Controls.Add(Me.btnSalir)
         Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelMenu.Location = New System.Drawing.Point(0, 44)
-        Me.PanelMenu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PanelMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelMenu.Name = "PanelMenu"
         Me.PanelMenu.Size = New System.Drawing.Size(181, 596)
         Me.PanelMenu.TabIndex = 3
-        '
-        'PanelSubMenuCandidatos
-        '
-        Me.PanelSubMenuCandidatos.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnImagenCand)
-        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnAlcaldes)
-        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnDiputados)
-        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnPresidentes)
-        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnVotantes)
-        Me.PanelSubMenuCandidatos.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelSubMenuCandidatos.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.PanelSubMenuCandidatos.Location = New System.Drawing.Point(3, 80)
-        Me.PanelSubMenuCandidatos.Name = "PanelSubMenuCandidatos"
-        Me.PanelSubMenuCandidatos.Size = New System.Drawing.Size(180, 300)
-        Me.PanelSubMenuCandidatos.TabIndex = 2
-        '
-        'PanelAjustes
-        '
-        Me.PanelAjustes.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelAjustes.Controls.Add(Me.btnReiniciarVotacion)
-        Me.PanelAjustes.Controls.Add(Me.btnVotacionExterna)
-        Me.PanelAjustes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelAjustes.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.PanelAjustes.Location = New System.Drawing.Point(3, 463)
-        Me.PanelAjustes.Name = "PanelAjustes"
-        Me.PanelAjustes.Size = New System.Drawing.Size(180, 127)
-        Me.PanelAjustes.TabIndex = 4
-        '
-        'PanelSuperior
-        '
-        Me.PanelSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.PanelSuperior.Controls.Add(Me.Label2)
-        Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
-        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.PanelSuperior.Name = "PanelSuperior"
-        Me.PanelSuperior.Size = New System.Drawing.Size(976, 44)
-        Me.PanelSuperior.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(247, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(492, 40)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Sistema de votacion Electronica"
-        '
-        'PanelFormularios
-        '
-        Me.PanelFormularios.AutoSize = True
-        Me.PanelFormularios.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
-        Me.PanelFormularios.BackgroundImage = Global.VotoElectronico.My.Resources.Resources.kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_removebg_preview2
-        Me.PanelFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PanelFormularios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelFormularios.Controls.Add(Me.PictureBox1)
-        Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelFormularios.Location = New System.Drawing.Point(181, 44)
-        Me.PanelFormularios.Margin = New System.Windows.Forms.Padding(2)
-        Me.PanelFormularios.Name = "PanelFormularios"
-        Me.PanelFormularios.Size = New System.Drawing.Size(795, 596)
-        Me.PanelFormularios.TabIndex = 4
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.PictureBox1.BackColor = System.Drawing.Color.Gray
-        Me.PictureBox1.Location = New System.Drawing.Point(231, 768)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(173, 69)
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
         '
         'BtnAlmacenamiento
         '
@@ -160,6 +87,21 @@ Partial Class AdministradorVotaciones
         Me.BtnAlmacenamiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnAlmacenamiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnAlmacenamiento.UseVisualStyleBackColor = False
+        '
+        'PanelSubMenuCandidatos
+        '
+        Me.PanelSubMenuCandidatos.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnImagenCand)
+        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnAlcaldes)
+        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnDiputados)
+        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnPresidentes)
+        Me.PanelSubMenuCandidatos.Controls.Add(Me.btnVotantes)
+        Me.PanelSubMenuCandidatos.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelSubMenuCandidatos.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelSubMenuCandidatos.Location = New System.Drawing.Point(3, 80)
+        Me.PanelSubMenuCandidatos.Name = "PanelSubMenuCandidatos"
+        Me.PanelSubMenuCandidatos.Size = New System.Drawing.Size(180, 300)
+        Me.PanelSubMenuCandidatos.TabIndex = 2
         '
         'btnImagenCand
         '
@@ -298,6 +240,18 @@ Partial Class AdministradorVotaciones
         Me.BtnAjustes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnAjustes.UseVisualStyleBackColor = False
         '
+        'PanelAjustes
+        '
+        Me.PanelAjustes.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelAjustes.Controls.Add(Me.btnReiniciarVotacion)
+        Me.PanelAjustes.Controls.Add(Me.btnVotacionExterna)
+        Me.PanelAjustes.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelAjustes.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.PanelAjustes.Location = New System.Drawing.Point(3, 463)
+        Me.PanelAjustes.Name = "PanelAjustes"
+        Me.PanelAjustes.Size = New System.Drawing.Size(180, 127)
+        Me.PanelAjustes.TabIndex = 4
+        '
         'btnReiniciarVotacion
         '
         Me.btnReiniciarVotacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(40, Byte), Integer))
@@ -382,6 +336,54 @@ Partial Class AdministradorVotaciones
         Me.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnSalir.UseVisualStyleBackColor = True
         '
+        'PanelSuperior
+        '
+        Me.PanelSuperior.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.PanelSuperior.Controls.Add(Me.Label2)
+        Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
+        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(2)
+        Me.PanelSuperior.Name = "PanelSuperior"
+        Me.PanelSuperior.Size = New System.Drawing.Size(976, 44)
+        Me.PanelSuperior.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(247, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(492, 40)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Sistema de votacion Electronica"
+        '
+        'PanelFormularios
+        '
+        Me.PanelFormularios.AutoSize = True
+        Me.PanelFormularios.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.PanelFormularios.BackgroundImage = Global.VotoElectronico.My.Resources.Resources.kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_removebg_preview2
+        Me.PanelFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PanelFormularios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelFormularios.Controls.Add(Me.PictureBox1)
+        Me.PanelFormularios.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelFormularios.Location = New System.Drawing.Point(181, 44)
+        Me.PanelFormularios.Margin = New System.Windows.Forms.Padding(2)
+        Me.PanelFormularios.Name = "PanelFormularios"
+        Me.PanelFormularios.Size = New System.Drawing.Size(795, 596)
+        Me.PanelFormularios.TabIndex = 4
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PictureBox1.BackColor = System.Drawing.Color.Gray
+        Me.PictureBox1.Location = New System.Drawing.Point(231, 768)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(173, 69)
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
+        '
         'AdministradorVotaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -392,7 +394,7 @@ Partial Class AdministradorVotaciones
         Me.Controls.Add(Me.PanelMenu)
         Me.Controls.Add(Me.PanelSuperior)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "AdministradorVotaciones"
         Me.Opacity = 0.9R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -427,4 +429,5 @@ Partial Class AdministradorVotaciones
     Friend WithEvents PanelSuperior As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents btnImagenCand As Button
+    Friend WithEvents ToolTip As ToolTip
 End Class

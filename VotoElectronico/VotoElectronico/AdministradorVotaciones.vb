@@ -173,4 +173,40 @@ Public Class AdministradorVotaciones
         End Try
 
     End Sub
+
+    Private Sub BtnAlmacenamiento_MouseHover(sender As Object, e As EventArgs) Handles BtnAlmacenamiento.MouseHover
+        ToolTip.SetToolTip(BtnAlmacenamiento, "Almacenamiento de la Base de datos")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnVotantes_MouseHover(sender As Object, e As EventArgs) Handles btnVotantes.MouseHover
+        ToolTip.SetToolTip(btnVotantes, "Votantes")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnPresidentes_MouseHover(sender As Object, e As EventArgs) Handles btnPresidentes.MouseHover
+        ToolTip.SetToolTip(btnPresidentes, "Presidentes")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnDiputados_MouseHover(sender As Object, e As EventArgs) Handles btnDiputados.MouseHover
+        ToolTip.SetToolTip(btnDiputados, "Diputados")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnAlcaldes_MouseHover(sender As Object, e As EventArgs) Handles btnAlcaldes.MouseHover
+        ToolTip.SetToolTip(btnAlcaldes, "Alcaldes")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnImagenCand_MouseHover(sender As Object, e As EventArgs) Handles btnImagenCand.MouseHover
+        ToolTip.SetToolTip(btnImagenCand, "Agregar imagen a candidato")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
 End Class
