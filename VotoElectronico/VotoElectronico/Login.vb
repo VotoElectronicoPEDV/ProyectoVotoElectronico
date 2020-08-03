@@ -85,4 +85,16 @@ Public Class Login
         Me.Hide()
         CargandoFallo.Show()
     End Sub
+
+    Private Sub btnREGRESAR_MouseHover(sender As Object, e As EventArgs) Handles btnREGRESAR.MouseHover
+        ToolTip.SetToolTip(btnREGRESAR, "Regresa a ingresar votante")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
+    Private Sub btnAceptar_MouseHover(sender As Object, e As EventArgs) Handles btnAceptar.MouseHover
+        ToolTip.SetToolTip(btnAceptar, "Iniciar sesiòn")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
 End Class

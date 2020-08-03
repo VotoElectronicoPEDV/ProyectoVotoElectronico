@@ -88,5 +88,9 @@ Public Class IngresaVotante
         End If
     End Sub
 
-
+    Private Sub btnAdmin_MouseHover(sender As Object, e As EventArgs) Handles btnAdmin.MouseHover
+        ToolTip.SetToolTip(btnAdmin, "Accede el administrador")
+        ToolTip.ToolTipTitle = "Aviso"
+        ToolTip.ToolTipIcon = ToolTipIcon.Info
+    End Sub
 End Class

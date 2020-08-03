@@ -116,5 +116,4 @@ Public Class Registro
         ToolTip.ToolTipTitle = "Aviso"
         ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
-
 End Class
