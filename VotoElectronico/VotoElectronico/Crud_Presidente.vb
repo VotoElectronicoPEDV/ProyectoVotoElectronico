@@ -39,6 +39,7 @@ Public Class Crud_Presidente
         End If
     End Sub
     Private Sub consultarPresidente()
+
         Dim foto As New DataGridViewImageColumn()
         Try
             DataT = conexion.consultarPresidente

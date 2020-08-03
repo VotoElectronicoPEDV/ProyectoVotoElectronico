@@ -174,7 +174,7 @@
 	else
 		raiserror('el Presidente no existe en la base de datos',16,1)
 	end
-	exec actualizarPresidente '0102197000188','Juan','Orlando','Hernandez','Alvarado',1
+	exec actualizarPresidente '0101197000188','Juan','Orlando','Hernandez','Alvarado',1
 	select * from Presidente
 
 	
@@ -198,7 +198,7 @@
 	/*========================================================================================================================================*/
 	----------------------------------------------Procedimiento almacenado consultar Presidente-----------------------------------------------
 
-	Create procedure consultarPresidente--
+	create procedure consultarPresidente
 	as
 	begin
 	select IdentidadPresidente as 'ID',  CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo',VotosValidos,voto,foto,p.NombrePartido as 'Partido Politico' from Presidente 
@@ -206,6 +206,7 @@
 	where estado='activo'
 	end
 	exec consultarPresidente
+	
 	select *from Presidente
 
 	
@@ -1198,7 +1199,7 @@
 
 	/*========================================================================================================================================*/
 	-----------------------------Procedimiento almacenado diputados ganadores--------------------------------------------------------------------
-	alter procedure diputadosGanadores
+	create procedure diputadosGanadores
 	as 
 	begin
 	Declare @FilasAfectadas INT
