@@ -205,6 +205,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemaNacionalDeEleccionesDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SistemaNacionalDeEleccionesDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaNacionalDeEleccionesDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SistemaNacionalDeEleccionesDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaNacionalDeEleccionesDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="votacionDiputado.Designer.vb">
       <DependentUpon>votacionDiputado.vb</DependentUpon>
     </Compile>
@@ -314,6 +324,28 @@
     </None>
     <None Include="SistemaNacionalDeEleccionesDataSet1.xss">
       <DependentUpon>SistemaNacionalDeEleccionesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaNacionalDeEleccionesDataSet2.xsc">
+      <DependentUpon>SistemaNacionalDeEleccionesDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaNacionalDeEleccionesDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaNacionalDeEleccionesDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SistemaNacionalDeEleccionesDataSet2.xss">
+      <DependentUpon>SistemaNacionalDeEleccionesDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaNacionalDeEleccionesDataSet3.xsc">
+      <DependentUpon>SistemaNacionalDeEleccionesDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaNacionalDeEleccionesDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaNacionalDeEleccionesDataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SistemaNacionalDeEleccionesDataSet3.xss">
+      <DependentUpon>SistemaNacionalDeEleccionesDataSet3.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

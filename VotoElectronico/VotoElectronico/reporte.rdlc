@@ -682,7 +682,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox22">
+                    <Textbox Name="Textbox31">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -696,7 +696,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox22</rd:DefaultName>
+                      <rd:DefaultName>Textbox31</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -712,7 +712,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox24">
+                    <Textbox Name="Textbox32">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -726,7 +726,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox24</rd:DefaultName>
+                      <rd:DefaultName>Textbox32</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1012,6 +1012,20 @@
       </ConnectionProperties>
       <rd:DataSourceID>37c193c8-1211-49cd-b342-5c9dd5c43183</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="SistemaNacionalDeEleccionesDataSet2">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>e9df9112-6c96-4721-a141-d9ea3c4c9490</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="SistemaNacionalDeEleccionesDataSet3">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>0cc34695-2314-4349-8d20-812a5524a49d</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSetAlcaldes">
@@ -1056,7 +1070,7 @@
     </DataSet>
     <DataSet Name="DataSetDiputados">
       <Query>
-        <DataSourceName>SistemaNacionalDeEleccionesDataSet1</DataSourceName>
+        <DataSourceName>SistemaNacionalDeEleccionesDataSet2</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1082,8 +1096,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>SistemaNacionalDeEleccionesDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Rene Enamorado\Source\Repos\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>SistemaNacionalDeEleccionesDataSet2</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Rene Enamorado\Source\Repos\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet2.xsd</rd:SchemaPath>
         <rd:TableName>DiputadosElectos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -1092,7 +1106,7 @@
     </DataSet>
     <DataSet Name="DataSetPresidentes">
       <Query>
-        <DataSourceName>SistemaNacionalDeEleccionesDataSet1</DataSourceName>
+        <DataSourceName>SistemaNacionalDeEleccionesDataSet3</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1114,8 +1128,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>SistemaNacionalDeEleccionesDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Rene Enamorado\Source\Repos\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>SistemaNacionalDeEleccionesDataSet3</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Rene Enamorado\Source\Repos\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet3.xsd</rd:SchemaPath>
         <rd:TableName>PresidenteElectos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

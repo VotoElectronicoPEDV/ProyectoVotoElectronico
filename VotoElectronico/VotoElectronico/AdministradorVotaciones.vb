@@ -148,6 +148,7 @@ Public Class AdministradorVotaciones
         ElseIf eleccionVotante.descripcionVotacion = 2 Then
             MessageBox.Show("Votacion finalizada satisfactoriamente", "finalizando", MessageBoxButtons.OK, MessageBoxIcon.Information)
             eleccionVotante.descripcionVotacion = 1
+            ReporteGanadores.Show()
         End If
 
         btnReiniciarVotacion.Enabled = False
