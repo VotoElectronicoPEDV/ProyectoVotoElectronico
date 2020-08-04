@@ -23,11 +23,11 @@ Partial Class Crud_Presidente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -80,30 +80,30 @@ Partial Class Crud_Presidente
         '
         Me.dgvPresidente.AllowUserToAddRows = False
         Me.dgvPresidente.AllowUserToDeleteRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray
-        Me.dgvPresidente.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray
+        Me.dgvPresidente.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvPresidente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvPresidente.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dgvPresidente.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPresidente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPresidente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvPresidente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvPresidente.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvPresidente.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvPresidente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvPresidente.EnableHeadersVisualStyles = False
         Me.dgvPresidente.GridColor = System.Drawing.Color.White
@@ -111,19 +111,19 @@ Partial Class Crud_Presidente
         Me.dgvPresidente.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvPresidente.Name = "dgvPresidente"
         Me.dgvPresidente.ReadOnly = True
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvPresidente.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvPresidente.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvPresidente.RowHeadersWidth = 51
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gray
-        Me.dgvPresidente.RowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray
+        Me.dgvPresidente.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvPresidente.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.dgvPresidente.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvPresidente.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White
@@ -245,11 +245,12 @@ Partial Class Crud_Presidente
         '
         Me.txtPrimerApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtPrimerApellido.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPrimerApellido.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.txtPrimerApellido.Location = New System.Drawing.Point(155, 157)
         Me.txtPrimerApellido.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPrimerApellido.Name = "txtPrimerApellido"
-        Me.txtPrimerApellido.Size = New System.Drawing.Size(125, 16)
+        Me.txtPrimerApellido.Size = New System.Drawing.Size(125, 18)
         Me.txtPrimerApellido.TabIndex = 4
         '
         'Label7
@@ -266,12 +267,13 @@ Partial Class Crud_Presidente
         '
         Me.txtIdentidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtIdentidad.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIdentidad.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.txtIdentidad.Location = New System.Drawing.Point(155, 24)
         Me.txtIdentidad.Margin = New System.Windows.Forms.Padding(2)
         Me.txtIdentidad.MaxLength = 13
         Me.txtIdentidad.Name = "txtIdentidad"
-        Me.txtIdentidad.Size = New System.Drawing.Size(125, 16)
+        Me.txtIdentidad.Size = New System.Drawing.Size(125, 18)
         Me.txtIdentidad.TabIndex = 0
         '
         'Label6
@@ -288,11 +290,12 @@ Partial Class Crud_Presidente
         '
         Me.txtSegundoNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtSegundoNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSegundoNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.txtSegundoNombre.Location = New System.Drawing.Point(155, 106)
         Me.txtSegundoNombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSegundoNombre.Name = "txtSegundoNombre"
-        Me.txtSegundoNombre.Size = New System.Drawing.Size(125, 16)
+        Me.txtSegundoNombre.Size = New System.Drawing.Size(125, 18)
         Me.txtSegundoNombre.TabIndex = 5
         '
         'Label5
@@ -309,22 +312,24 @@ Partial Class Crud_Presidente
         '
         Me.txtPrimerNombre.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtPrimerNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPrimerNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.txtPrimerNombre.Location = New System.Drawing.Point(155, 63)
         Me.txtPrimerNombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPrimerNombre.Name = "txtPrimerNombre"
-        Me.txtPrimerNombre.Size = New System.Drawing.Size(125, 16)
+        Me.txtPrimerNombre.Size = New System.Drawing.Size(125, 18)
         Me.txtPrimerNombre.TabIndex = 6
         '
         'txtSegundoApellido
         '
         Me.txtSegundoApellido.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtSegundoApellido.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSegundoApellido.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.txtSegundoApellido.Location = New System.Drawing.Point(431, 20)
         Me.txtSegundoApellido.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSegundoApellido.Name = "txtSegundoApellido"
-        Me.txtSegundoApellido.Size = New System.Drawing.Size(136, 16)
+        Me.txtSegundoApellido.Size = New System.Drawing.Size(136, 18)
         Me.txtSegundoApellido.TabIndex = 3
         '
         'Label4

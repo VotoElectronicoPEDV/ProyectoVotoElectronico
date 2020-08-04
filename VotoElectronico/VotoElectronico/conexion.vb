@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-JRBU49C;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source=DESKTOP-TSL1SID;Initial Catalog=SistemaNacionalDeElecciones;Integrated Security=True")
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
     Public lectura As SqlDataReader

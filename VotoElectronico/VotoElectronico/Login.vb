@@ -2,18 +2,8 @@
 
 Public Class Login
     Dim conexion As New conexion
-    Private Sub CustomizeComponents()
 
-        txtUsuario.AutoSize = False
-        txtUsuario.Size = New Size(250, 30)
 
-        txtContrasena.AutoSize = False
-        txtContrasena.Size = New Size(250, 30)
-        txtContrasena.UseSystemPasswordChar = True
-    End Sub
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CustomizeComponents()
-    End Sub
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Dim contrasenabd, identidad, contraseña As String
         identidad = txtUsuario.Text
@@ -84,17 +74,5 @@ Public Class Login
     Private Sub btnBROMA_Click(sender As Object, e As EventArgs) Handles btnBROMA.Click
         Me.Hide()
         CargandoFallo.Show()
-    End Sub
-
-    Private Sub btnREGRESAR_MouseHover(sender As Object, e As EventArgs) Handles btnREGRESAR.MouseHover
-        ToolTip.SetToolTip(btnREGRESAR, "Regresa a ingresar votante")
-        ToolTip.ToolTipTitle = "Aviso"
-        ToolTip.ToolTipIcon = ToolTipIcon.Info
-    End Sub
-
-    Private Sub btnAceptar_MouseHover(sender As Object, e As EventArgs) Handles btnAceptar.MouseHover
-        ToolTip.SetToolTip(btnAceptar, "Iniciar sesiòn")
-        ToolTip.ToolTipTitle = "Aviso"
-        ToolTip.ToolTipIcon = ToolTipIcon.Info
     End Sub
 End Class

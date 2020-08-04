@@ -23,30 +23,35 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.btnREGRESAR = New System.Windows.Forms.Button()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PanelSuperior = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.txtContrasena = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBROMA = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.MenuStrip15 = New System.Windows.Forms.MenuStrip()
+        Me.OptVer = New System.Windows.Forms.ToolStripMenuItem()
+        Me.optOcultar = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSuperior.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        Me.MenuStrip15.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnREGRESAR
@@ -75,7 +80,7 @@ Partial Class Login
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 451)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(582, 18)
+        Me.Panel1.Size = New System.Drawing.Size(587, 18)
         Me.Panel1.TabIndex = 13
         '
         'PanelSuperior
@@ -86,7 +91,7 @@ Partial Class Login
         Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
         Me.PanelSuperior.Name = "PanelSuperior"
-        Me.PanelSuperior.Size = New System.Drawing.Size(582, 41)
+        Me.PanelSuperior.Size = New System.Drawing.Size(587, 41)
         Me.PanelSuperior.TabIndex = 14
         '
         'Label3
@@ -100,36 +105,26 @@ Partial Class Login
         Me.Label3.TabIndex = 25
         Me.Label3.Text = "INICIO DE SESIÓN"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.VotoElectronico.My.Resources.Resources.kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_removebg_preview
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(65, 35)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
-        '
         'txtUsuario
         '
         Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(129, Byte), Integer))
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.ForeColor = System.Drawing.Color.White
         Me.txtUsuario.Location = New System.Drawing.Point(264, 185)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(284, 15)
+        Me.txtUsuario.Size = New System.Drawing.Size(236, 17)
         Me.txtUsuario.TabIndex = 17
         '
         'txtContrasena
         '
         Me.txtContrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(129, Byte), Integer))
         Me.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContrasena.ForeColor = System.Drawing.Color.White
         Me.txtContrasena.Location = New System.Drawing.Point(264, 261)
         Me.txtContrasena.Name = "txtContrasena"
-        Me.txtContrasena.Size = New System.Drawing.Size(284, 15)
+        Me.txtContrasena.Size = New System.Drawing.Size(236, 17)
         Me.txtContrasena.TabIndex = 18
         '
         'Label1
@@ -186,6 +181,58 @@ Partial Class Login
         Me.btnAceptar.Text = "ACEPTAR"
         Me.btnAceptar.UseVisualStyleBackColor = False
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.PictureBox4)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(0, 41)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(200, 410)
+        Me.Panel2.TabIndex = 25
+        '
+        'MenuStrip15
+        '
+        Me.MenuStrip15.AutoSize = False
+        Me.MenuStrip15.BackColor = System.Drawing.Color.Transparent
+        Me.MenuStrip15.Dock = System.Windows.Forms.DockStyle.None
+        Me.MenuStrip15.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip15.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptVer, Me.optOcultar})
+        Me.MenuStrip15.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
+        Me.MenuStrip15.Location = New System.Drawing.Point(508, 255)
+        Me.MenuStrip15.Name = "MenuStrip15"
+        Me.MenuStrip15.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip15.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.MenuStrip15.ShowItemToolTips = True
+        Me.MenuStrip15.Size = New System.Drawing.Size(74, 28)
+        Me.MenuStrip15.TabIndex = 604
+        Me.MenuStrip15.Text = "MenuStrip15"
+        '
+        'OptVer
+        '
+        Me.OptVer.BackColor = System.Drawing.Color.Transparent
+        Me.OptVer.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.OptVer.ForeColor = System.Drawing.Color.Black
+        Me.OptVer.Image = CType(resources.GetObject("OptVer.Image"), System.Drawing.Image)
+        Me.OptVer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.OptVer.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.OptVer.Name = "OptVer"
+        Me.OptVer.Size = New System.Drawing.Size(32, 24)
+        Me.OptVer.ToolTipText = "Ver contraseña"
+        '
+        'optOcultar
+        '
+        Me.optOcultar.BackColor = System.Drawing.Color.Transparent
+        Me.optOcultar.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.optOcultar.ForeColor = System.Drawing.Color.Black
+        Me.optOcultar.Image = CType(resources.GetObject("optOcultar.Image"), System.Drawing.Image)
+        Me.optOcultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.optOcultar.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.optOcultar.Name = "optOcultar"
+        Me.optOcultar.Size = New System.Drawing.Size(32, 24)
+        Me.optOcultar.ToolTipText = "Ocultar contraseña"
+        Me.optOcultar.Visible = False
+        '
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.VotoElectronico.My.Resources.Resources.security
@@ -216,22 +263,23 @@ Partial Class Login
         Me.PictureBox2.TabIndex = 22
         Me.PictureBox2.TabStop = False
         '
-        'Panel2
+        'PictureBox1
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.PictureBox4)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 41)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(200, 410)
-        Me.Panel2.TabIndex = 25
+        Me.PictureBox1.Image = Global.VotoElectronico.My.Resources.Resources.kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_removebg_preview
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(65, 35)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(26, Byte), Integer), CType(CType(32, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(582, 469)
+        Me.ClientSize = New System.Drawing.Size(587, 469)
+        Me.Controls.Add(Me.MenuStrip15)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
@@ -252,11 +300,13 @@ Partial Class Login
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSuperior.ResumeLayout(False)
         Me.PanelSuperior.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.MenuStrip15.ResumeLayout(False)
+        Me.MenuStrip15.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -278,4 +328,7 @@ Partial Class Login
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents MenuStrip15 As MenuStrip
+    Friend WithEvents OptVer As ToolStripMenuItem
+    Friend WithEvents optOcultar As ToolStripMenuItem
 End Class
