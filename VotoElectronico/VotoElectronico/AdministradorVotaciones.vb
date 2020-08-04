@@ -146,8 +146,8 @@ Public Class AdministradorVotaciones
             ReiniciarVotacion()
             eleccionVotante.descripcionVotacion = 0
         ElseIf eleccionVotante.descripcionVotacion = 2 Then
-            ReiniciarVotacion()
-            eleccionVotante.descripcionVotacion = 0
+            MessageBox.Show("Votacion finalizada satisfactoriamente", "finalizando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            eleccionVotante.descripcionVotacion = 1
         End If
 
         btnReiniciarVotacion.Enabled = False
@@ -158,14 +158,10 @@ Public Class AdministradorVotaciones
             If conexion.ReiniciarVotacion Then
                 If eleccionVotante.descripcionVotacion = 1 Then
                     MessageBox.Show("La votación se ha reiniciado satisfactoriamente", "Reiniciando", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                ElseIf eleccionVotante.descripcionVotacion = 2 Then
-                    MessageBox.Show("Votacion finalizada satisfactoriamente", "finalizando", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Else
                 If eleccionVotante.descripcionVotacion = 1 Then
                     MessageBox.Show("Ha surgido un error al reiniciar la votación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                ElseIf eleccionVotante.descripcionVotacion = 2 Then
-                    MessageBox.Show("Votacion finalizada satisfactoriamente", "finalizando", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End If
         Catch ex As Exception

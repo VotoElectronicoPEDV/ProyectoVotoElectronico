@@ -239,7 +239,7 @@ Partial Class Login
         Me.MenuStrip15.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip15.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptVer, Me.optOcultar})
         Me.MenuStrip15.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
-        Me.MenuStrip15.Location = New System.Drawing.Point(513, 250)
+        Me.MenuStrip15.Location = New System.Drawing.Point(508, 255)
         Me.MenuStrip15.Name = "MenuStrip15"
         Me.MenuStrip15.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
         Me.MenuStrip15.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
