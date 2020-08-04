@@ -1087,15 +1087,39 @@
 
 	/*========================================================================================================================================*/
 	----------------------------------Procedimiento almacenado de votacion Interna----------------------------------------------
-	create procedure votacionInterna(
+	alter procedure votacionInterna(
 	@identidad varchar(13),
 	@candidatoAlcalde varchar(13)
 	)
 	as
 	begin
+				
+	if exists(select IdentidadPresidente from Presidente where IdentidadPresidente = @identidad)
+		 begin
+		 update Presidente set voto = 'V' where IdentidadPresidente = @identidad
 		update Alcalde set VotosValidos= VotosValidos + 1 where IdentidadAlcalde = @candidatoAlcalde
-		update votante set voto = 'V' where IdentidadVotante = @identidad
+		end
+	else if exists(select IdentidadDiputado from Diputado where IdentidadDiputado = @identidad)
+	begin
+	update Diputado set voto = 'V' where IdentidadDiputado = @identidad
+		update Alcalde set VotosValidos= VotosValidos + 1 where IdentidadAlcalde = @candidatoAlcalde
+		end	
+	else if exists(select IdentidadAlcalde from Alcalde where IdentidadAlcalde = @identidad)
+	begin
+	update Alcalde set voto = 'V' where IdentidadAlcalde = @identidad
+		update Alcalde set VotosValidos= VotosValidos + 1 where IdentidadAlcalde = @candidatoAlcalde
 	end
+	else if exists(select IdentidadVotante from votante where IdentidadVotante = @identidad)
+	begin
+	update votante set voto = 'V' where IdentidadVotante = @identidad
+		update Alcalde set VotosValidos= VotosValidos + 1 where IdentidadAlcalde = @candidatoAlcalde
+	end
+	else
+
+	raiserror('Esta persona no existe en la base de datos',16,1)
+		
+	end
+
 	exec votacionInterna '0318200301367','0301196000142'
 
 	/*========================================================================================================================================*/
@@ -1315,28 +1339,28 @@
 	select * from Diputado 
 	select * from Presidente
 
-	Create Procedure PresidenteElectos
+	Alter Procedure PresidenteElectos
 	As
 	Begin
-	select Pres.Foto, CONCAT(Pres.PrimerNombre,' ',Pres.SegundoNombre,' ',Pres.PrimerApellido,' ',Pres.SegundoApellido) as 'Nombre Completo', P.NombrePartido as "Partido Político", Pres.VotosValidos as Votos from Presidente Pres
+	select Pres.Foto, CONCAT(Pres.PrimerNombre,' ',Pres.SegundoNombre,' ',Pres.PrimerApellido,' ',Pres.SegundoApellido) as NombreCompleto, P.NombrePartido as PartidoPolítico, Pres.VotosValidos as Votos from Presidente Pres
 	inner join PartidoPolitico P on P.idPartido = Pres.Partido
 	where Estado = 'Ganador'
 	End
 
-	Create Procedure AlcaldesElectos
+	Alter Procedure AlcaldesElectos
 	As 
 	Begin
-		select Alc.Foto, CONCAT(Alc.PrimerNombre,' ',Alc.SegundoNombre,' ',Alc.PrimerApellido,' ',Alc.SegundoApellido) as 'Nombre Completo', M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento, P.NombrePartido as 'Partido Político', Alc.VotosValidos as Votos from Alcalde Alc
+		select Alc.Foto, CONCAT(Alc.PrimerNombre,' ',Alc.SegundoNombre,' ',Alc.PrimerApellido,' ',Alc.SegundoApellido) as NombreCompleto, M.nombreMunicipio as Municipio, D.nombreDepartamento as Departamento, P.NombrePartido as PartidoPolítico, Alc.VotosValidos as Votos from Alcalde Alc
 	inner join PartidoPolitico P on P.idPartido = Alc.Partido
 	inner join Municipio M on M.idMunicipio = Alc.Municipio
 	inner join Departamento D on D.idDepartamento = M.idDepartamento
 	where Estado = 'Ganador'
 	End
 
-	Create Procedure DiputadosElectos
+	Alter Procedure DiputadosElectos
 	As
 	Begin
-		Select Dip.Foto, CONCAT(Dip.PrimerNombre,' ',Dip.SegundoNombre,' ',Dip.PrimerApellido,' ',Dip.SegundoApellido) as 'Nombre Completo', D.nombreDepartamento as Departamento, P.NombrePartido as 'Partido Político', Dip.VotosValidos as Votos from Diputado Dip
+		Select Dip.Foto, CONCAT(Dip.PrimerNombre,' ',Dip.SegundoNombre,' ',Dip.PrimerApellido,' ',Dip.SegundoApellido) as NombreCompleto, D.nombreDepartamento as Departamento, P.NombrePartido as PartidoPolítico, Dip.VotosValidos as Votos from Diputado Dip
 	inner join Departamento D on D.idDepartamento = Dip.Departamento
 	inner join PartidoPolitico P on P.idPartido = Dip.Partido
 	where Estado = 'Ganador'
@@ -1345,3 +1369,5 @@
 	exec DiputadosElectos 
 	exec AlcaldesElectos
 	exec PresidenteElectos
+
+	select * from Presidente

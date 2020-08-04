@@ -64,7 +64,7 @@ Partial Class Login
         Me.btnREGRESAR.Font = New System.Drawing.Font("Times New Roman", 8.25!)
         Me.btnREGRESAR.ForeColor = System.Drawing.Color.White
         Me.btnREGRESAR.Location = New System.Drawing.Point(332, 459)
-        Me.btnREGRESAR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnREGRESAR.Margin = New System.Windows.Forms.Padding(4)
         Me.btnREGRESAR.Name = "btnREGRESAR"
         Me.btnREGRESAR.Size = New System.Drawing.Size(128, 44)
         Me.btnREGRESAR.TabIndex = 6
@@ -80,7 +80,7 @@ Partial Class Login
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(27, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 555)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(783, 22)
         Me.Panel1.TabIndex = 13
@@ -92,7 +92,7 @@ Partial Class Login
         Me.PanelSuperior.Controls.Add(Me.PictureBox1)
         Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
-        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelSuperior.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelSuperior.Name = "PanelSuperior"
         Me.PanelSuperior.Size = New System.Drawing.Size(783, 50)
         Me.PanelSuperior.TabIndex = 14
@@ -113,7 +113,7 @@ Partial Class Login
         '
         Me.PictureBox1.Image = Global.VotoElectronico.My.Resources.Resources.kisspng_flag_of_honduras_el_salvador_national_flag_5b18fd380145f8_removebg_preview
         Me.PictureBox1.Location = New System.Drawing.Point(4, 4)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(87, 43)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -127,7 +127,7 @@ Partial Class Login
         Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.ForeColor = System.Drawing.Color.White
         Me.txtUsuario.Location = New System.Drawing.Point(352, 228)
-        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(315, 22)
         Me.txtUsuario.TabIndex = 17
@@ -139,7 +139,7 @@ Partial Class Login
         Me.txtContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContrasena.ForeColor = System.Drawing.Color.White
         Me.txtContrasena.Location = New System.Drawing.Point(352, 321)
-        Me.txtContrasena.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtContrasena.Margin = New System.Windows.Forms.Padding(4)
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.Size = New System.Drawing.Size(315, 22)
         Me.txtContrasena.TabIndex = 18
@@ -178,8 +178,8 @@ Partial Class Login
         Me.btnBROMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBROMA.Font = New System.Drawing.Font("Times New Roman", 8.25!)
         Me.btnBROMA.ForeColor = System.Drawing.Color.White
-        Me.btnBROMA.Location = New System.Drawing.Point(632, 511)
-        Me.btnBROMA.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBROMA.Location = New System.Drawing.Point(637, 510)
+        Me.btnBROMA.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBROMA.Name = "btnBROMA"
         Me.btnBROMA.Size = New System.Drawing.Size(128, 37)
         Me.btnBROMA.TabIndex = 21
@@ -195,7 +195,7 @@ Partial Class Login
         Me.btnAceptar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAceptar.ForeColor = System.Drawing.Color.White
         Me.btnAceptar.Location = New System.Drawing.Point(608, 459)
-        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAceptar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(123, 44)
         Me.btnAceptar.TabIndex = 5
@@ -208,7 +208,7 @@ Partial Class Login
         Me.Panel2.Controls.Add(Me.PictureBox4)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 50)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(267, 505)
         Me.Panel2.TabIndex = 25
@@ -217,7 +217,7 @@ Partial Class Login
         '
         Me.PictureBox4.Image = Global.VotoElectronico.My.Resources.Resources.security
         Me.PictureBox4.Location = New System.Drawing.Point(16, 100)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(221, 278)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -270,7 +270,7 @@ Partial Class Login
         '
         Me.PictureBox3.Image = Global.VotoElectronico.My.Resources.Resources.password
         Me.PictureBox3.Location = New System.Drawing.Point(292, 298)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(52, 42)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -281,7 +281,7 @@ Partial Class Login
         '
         Me.PictureBox2.Image = Global.VotoElectronico.My.Resources.Resources.login
         Me.PictureBox2.Location = New System.Drawing.Point(292, 204)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(52, 42)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -308,7 +308,7 @@ Partial Class Login
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnREGRESAR)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Login"
         Me.Opacity = 0.9R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
