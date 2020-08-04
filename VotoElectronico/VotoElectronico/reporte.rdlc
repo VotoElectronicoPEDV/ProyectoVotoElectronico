@@ -6,19 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>7.10375cm</Width>
+              <Width>6.28883cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.51625cm</Width>
+              <Width>4.76483cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.53729cm</Width>
+              <Width>3.516cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.77542cm</Width>
+              <Width>4.8495cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.44708cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -189,7 +189,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nombre Completo.Value</Value>
+                              <Value>=Fields!NombreCompleto.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -279,7 +279,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Partido Político.Value</Value>
+                              <Value>=Fields!PartidoPolítico.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -353,11 +353,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetAlcaldes</DataSetName>
-        <Top>6.29391cm</Top>
-        <Left>0.7112cm</Left>
+        <DataSetName>DataAlcaldesG</DataSetName>
+        <Top>7.91979cm</Top>
+        <Left>1.81778cm</Left>
         <Height>1.2cm</Height>
-        <Width>24.37979cm</Width>
+        <Width>21.91917cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -368,16 +368,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>7.10375cm</Width>
+              <Width>6.28883cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.51625cm</Width>
+              <Width>4.76483cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.53729cm</Width>
+              <Width>5.54652cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.77542cm</Width>
+              <Width>2.51969cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -386,7 +386,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox12">
+                    <Textbox Name="Textbox11">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -400,7 +400,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -416,7 +416,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox14">
+                    <Textbox Name="Textbox13">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -430,7 +430,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -446,7 +446,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox16">
+                    <Textbox Name="Textbox15">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -460,7 +460,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -476,7 +476,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox18">
+                    <Textbox Name="Textbox17">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -490,7 +490,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -518,7 +518,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nombre Completo.Value</Value>
+                              <Value>=Fields!NombreCompleto.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -578,7 +578,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Partido Político.Value</Value>
+                              <Value>=Fields!PartidoPolítico.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -651,11 +651,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetDiputados</DataSetName>
-        <Top>3.85974cm</Top>
-        <Left>1.99433cm</Left>
+        <DataSetName>DataSetDiputadosG</DataSetName>
+        <Top>4.48346cm</Top>
+        <Left>3.06662cm</Left>
         <Height>1.2cm</Height>
-        <Width>21.93271cm</Width>
+        <Width>19.11988cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -667,13 +667,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>7.10375cm</Width>
+              <Width>6.28883cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.51625cm</Width>
+              <Width>5.37867cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.65104cm</Width>
+              <Width>2.33425cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -682,7 +682,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox31">
+                    <Textbox Name="Textbox19">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -696,7 +696,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox31</rd:DefaultName>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -712,7 +712,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox32">
+                    <Textbox Name="Textbox21">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -726,7 +726,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox32</rd:DefaultName>
+                      <rd:DefaultName>Textbox21</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -742,7 +742,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox26">
+                    <Textbox Name="Textbox23">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -756,7 +756,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox26</rd:DefaultName>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -784,7 +784,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nombre Completo.Value</Value>
+                              <Value>=Fields!NombreCompleto.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -814,7 +814,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Partido Político.Value</Value>
+                              <Value>=Fields!PartidoPolítico.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -886,11 +886,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetPresidentes</DataSetName>
-        <Top>1.29328cm</Top>
-        <Left>4.99745cm</Left>
+        <DataSetName>DataSetPresidenteG</DataSetName>
+        <Top>1.29533cm</Top>
+        <Left>5.22056cm</Left>
         <Height>1.2cm</Height>
-        <Width>16.27104cm</Width>
+        <Width>14.00175cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -898,6 +898,111 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox25">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Presidente Ganador</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>13pt</FontSize>
+                  <FontWeight>Medium</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>0.40217cm</Top>
+        <Left>10.54079cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.53285cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Diputados Ganadores</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>13pt</FontSize>
+                  <FontWeight>Medium</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>3.56016cm</Top>
+        <Left>10.54079cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.53285cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Alcaldes Ganadores</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>13pt</FontSize>
+                  <FontWeight>Medium</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>6.97533cm</Top>
+        <Left>10.54079cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.53285cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>3.89583in</Height>
     <Style />
@@ -1028,7 +1133,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetAlcaldes">
+    <DataSet Name="DataAlcaldesG">
       <Query>
         <DataSourceName>SistemaNacionalDeEleccionesDataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1038,8 +1143,8 @@
           <DataField>Foto</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
         </Field>
-        <Field Name="Nombre Completo">
-          <DataField>Nombre Completo</DataField>
+        <Field Name="NombreCompleto">
+          <DataField>NombreCompleto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Municipio">
@@ -1050,8 +1155,8 @@
           <DataField>Departamento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Partido Político">
-          <DataField>Partido Político</DataField>
+        <Field Name="PartidoPolítico">
+          <DataField>PartidoPolítico</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Votos">
@@ -1061,14 +1166,14 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>SistemaNacionalDeEleccionesDataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Rene Enamorado\Source\Repos\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet1.xsd</rd:SchemaPath>
         <rd:TableName>AlcaldesElectos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>AlcaldesElectosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSetDiputados">
+    <DataSet Name="DataSetDiputadosG">
       <Query>
         <DataSourceName>SistemaNacionalDeEleccionesDataSet2</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1078,16 +1183,16 @@
           <DataField>Foto</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
         </Field>
-        <Field Name="Nombre Completo">
-          <DataField>Nombre Completo</DataField>
+        <Field Name="NombreCompleto">
+          <DataField>NombreCompleto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Departamento">
           <DataField>Departamento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Partido Político">
-          <DataField>Partido Político</DataField>
+        <Field Name="PartidoPolítico">
+          <DataField>PartidoPolítico</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Votos">
@@ -1097,14 +1202,14 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>SistemaNacionalDeEleccionesDataSet2</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Rene Enamorado\Source\Repos\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet2.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet2.xsd</rd:SchemaPath>
         <rd:TableName>DiputadosElectos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>DiputadosElectosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSetPresidentes">
+    <DataSet Name="DataSetPresidenteG">
       <Query>
         <DataSourceName>SistemaNacionalDeEleccionesDataSet3</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1114,12 +1219,12 @@
           <DataField>Foto</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
         </Field>
-        <Field Name="Nombre Completo">
-          <DataField>Nombre Completo</DataField>
+        <Field Name="NombreCompleto">
+          <DataField>NombreCompleto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Partido Político">
-          <DataField>Partido Político</DataField>
+        <Field Name="PartidoPolítico">
+          <DataField>PartidoPolítico</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Votos">
@@ -1129,7 +1234,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>SistemaNacionalDeEleccionesDataSet3</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Rene Enamorado\Source\Repos\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet3.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\osori\Source\Repos\VotoElectronicoPEDV\ProyectoVotoElectronico\VotoElectronico\VotoElectronico\SistemaNacionalDeEleccionesDataSet3.xsd</rd:SchemaPath>
         <rd:TableName>PresidenteElectos</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

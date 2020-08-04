@@ -21,7 +21,7 @@
         Me.Opacity -= 0.05
         If Me.Opacity = 0 Then
             Timer2.Stop()
-            Me.Hide()
+            Me.Close()
             Login.Show()
         End If
     End Sub

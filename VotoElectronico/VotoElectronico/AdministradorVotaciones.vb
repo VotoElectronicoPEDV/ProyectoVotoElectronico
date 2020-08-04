@@ -147,8 +147,12 @@ Public Class AdministradorVotaciones
             eleccionVotante.descripcionVotacion = 0
         ElseIf eleccionVotante.descripcionVotacion = 2 Then
             MessageBox.Show("Votacion finalizada satisfactoriamente", "finalizando", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            eleccionVotante.descripcionVotacion = 1
+            diputadosGanadores()
+            GanadorAlcalde()
+            GanadorPresidente()
+
             ReporteGanadores.Show()
+            eleccionVotante.descripcionVotacion = 1
         End If
 
         btnReiniciarVotacion.Enabled = False
@@ -170,6 +174,40 @@ Public Class AdministradorVotaciones
         End Try
 
     End Sub
+
+    Private Sub diputadosGanadores()
+        Try
+            If conexion.diputadosGanadores <> True Then
+                MessageBox.Show("Ha surgido un error al elegir los diputados ganadores", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub GanadorAlcalde()
+        Try
+            If conexion.GanadorAlcalde <> True Then
+                MessageBox.Show("Ha surgido un error al elegir los alcaldes ganadores", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub GanadorPresidente()
+        Try
+            If conexion.GanadorPresidente <> True Then
+                MessageBox.Show("Ha surgido un error al elegir el presidente ganador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
 
     Private Sub BtnAlmacenamiento_MouseHover(sender As Object, e As EventArgs) Handles BtnAlmacenamiento.MouseHover
         ToolTip.SetToolTip(BtnAlmacenamiento, "Almacenamiento de la Base de datos")

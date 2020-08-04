@@ -20,17 +20,22 @@ Public Class IngresaVotante
 
                     If estado = "activo" And Voto = "F" Then
                         MessageBox.Show("Bienvenido " + Nombre, "Ingresando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        txtidentidad.Clear()
+
                         Me.Hide()
                         votacionInterna.Show()
 
                     ElseIf estado <> "eliminado" And Voto = "V" Then
                         MessageBox.Show("La persona ya ha realizado la votación. Debera acceder otra persona", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        txtidentidad.Clear()
 
                     ElseIf estado = "eliminado" And Voto <> "F" Then
                         MessageBox.Show("La persona no se encuentra activa para realizar la votacion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        txtidentidad.Clear()
 
                     ElseIf estado = "" And Voto = "" Then
                         MessageBox.Show("Esta persona no existe en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        txtidentidad.Clear()
 
                     End If
 
@@ -69,6 +74,7 @@ Public Class IngresaVotante
 
 
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
+        txtidentidad.Clear()
         Me.Hide()
         Login.Show()
     End Sub

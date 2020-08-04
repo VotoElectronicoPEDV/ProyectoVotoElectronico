@@ -22,8 +22,8 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="Foto" DataSetColumn="Foto" />
-              <Mapping SourceColumn="Nombre Completo" DataSetColumn="Nombre Completo" />
-              <Mapping SourceColumn="Partido Político" DataSetColumn="Partido Político" />
+              <Mapping SourceColumn="NombreCompleto" DataSetColumn="NombreCompleto" />
+              <Mapping SourceColumn="PartidoPolítico" DataSetColumn="PartidoPolítico" />
               <Mapping SourceColumn="Votos" DataSetColumn="Votos" />
             </Mappings>
             <Sources />
@@ -40,14 +40,14 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Foto" msprop:Generator_ColumnVarNameInTable="columnFoto" msprop:Generator_ColumnPropNameInRow="Foto" msprop:Generator_ColumnPropNameInTable="FotoColumn" msprop:Generator_UserColumnName="Foto" type="xs:base64Binary" minOccurs="0" />
-              <xs:element name="Nombre_x0020_Completo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNombre_Completo" msprop:Generator_ColumnPropNameInRow="Nombre_Completo" msprop:Generator_ColumnPropNameInTable="Nombre_CompletoColumn" msprop:Generator_UserColumnName="Nombre Completo" minOccurs="0">
+              <xs:element name="NombreCompleto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_UserColumnName="NombreCompleto" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="103" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Partido_x0020_Político" msprop:Generator_ColumnVarNameInTable="columnPartido_Político" msprop:Generator_ColumnPropNameInRow="Partido_Político" msprop:Generator_ColumnPropNameInTable="Partido_PolíticoColumn" msprop:Generator_UserColumnName="Partido Político">
+              <xs:element name="PartidoPolítico" msprop:Generator_ColumnVarNameInTable="columnPartidoPolítico" msprop:Generator_ColumnPropNameInRow="PartidoPolítico" msprop:Generator_ColumnPropNameInTable="PartidoPolíticoColumn" msprop:Generator_UserColumnName="PartidoPolítico">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

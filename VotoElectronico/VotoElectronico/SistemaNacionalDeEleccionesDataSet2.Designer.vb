@@ -285,11 +285,11 @@ Partial Public Class SistemaNacionalDeEleccionesDataSet2
         
         Private columnFoto As Global.System.Data.DataColumn
         
-        Private columnNombre_Completo As Global.System.Data.DataColumn
+        Private columnNombreCompleto As Global.System.Data.DataColumn
         
         Private columnDepartamento As Global.System.Data.DataColumn
         
-        Private columnPartido_Político As Global.System.Data.DataColumn
+        Private columnPartidoPolítico As Global.System.Data.DataColumn
         
         Private columnVotos As Global.System.Data.DataColumn
         
@@ -338,9 +338,9 @@ Partial Public Class SistemaNacionalDeEleccionesDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Nombre_CompletoColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NombreCompletoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNombre_Completo
+                Return Me.columnNombreCompleto
             End Get
         End Property
         
@@ -354,9 +354,9 @@ Partial Public Class SistemaNacionalDeEleccionesDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Partido_PolíticoColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property PartidoPolíticoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnPartido_Político
+                Return Me.columnPartidoPolítico
             End Get
         End Property
         
@@ -405,9 +405,9 @@ Partial Public Class SistemaNacionalDeEleccionesDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddDiputadosElectosRow(ByVal Foto() As Byte, ByVal Nombre_Completo As String, ByVal Departamento As String, ByVal Partido_Político As String, ByVal Votos As Integer) As DiputadosElectosRow
+        Public Overloads Function AddDiputadosElectosRow(ByVal Foto() As Byte, ByVal NombreCompleto As String, ByVal Departamento As String, ByVal PartidoPolítico As String, ByVal Votos As Integer) As DiputadosElectosRow
             Dim rowDiputadosElectosRow As DiputadosElectosRow = CType(Me.NewRow,DiputadosElectosRow)
-            Dim columnValuesArray() As Object = New Object() {Foto, Nombre_Completo, Departamento, Partido_Político, Votos}
+            Dim columnValuesArray() As Object = New Object() {Foto, NombreCompleto, Departamento, PartidoPolítico, Votos}
             rowDiputadosElectosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDiputadosElectosRow)
             Return rowDiputadosElectosRow
@@ -431,9 +431,9 @@ Partial Public Class SistemaNacionalDeEleccionesDataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnFoto = MyBase.Columns("Foto")
-            Me.columnNombre_Completo = MyBase.Columns("Nombre Completo")
+            Me.columnNombreCompleto = MyBase.Columns("NombreCompleto")
             Me.columnDepartamento = MyBase.Columns("Departamento")
-            Me.columnPartido_Político = MyBase.Columns("Partido Político")
+            Me.columnPartidoPolítico = MyBase.Columns("PartidoPolítico")
             Me.columnVotos = MyBase.Columns("Votos")
         End Sub
         
@@ -442,19 +442,19 @@ Partial Public Class SistemaNacionalDeEleccionesDataSet2
         Private Sub InitClass()
             Me.columnFoto = New Global.System.Data.DataColumn("Foto", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFoto)
-            Me.columnNombre_Completo = New Global.System.Data.DataColumn("Nombre Completo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNombre_Completo)
+            Me.columnNombreCompleto = New Global.System.Data.DataColumn("NombreCompleto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombreCompleto)
             Me.columnDepartamento = New Global.System.Data.DataColumn("Departamento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDepartamento)
-            Me.columnPartido_Político = New Global.System.Data.DataColumn("Partido Político", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPartido_Político)
+            Me.columnPartidoPolítico = New Global.System.Data.DataColumn("PartidoPolítico", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPartidoPolítico)
             Me.columnVotos = New Global.System.Data.DataColumn("Votos", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnVotos)
-            Me.columnNombre_Completo.ReadOnly = true
-            Me.columnNombre_Completo.MaxLength = 103
+            Me.columnNombreCompleto.ReadOnly = true
+            Me.columnNombreCompleto.MaxLength = 103
             Me.columnDepartamento.MaxLength = 50
-            Me.columnPartido_Político.AllowDBNull = false
-            Me.columnPartido_Político.MaxLength = 50
+            Me.columnPartidoPolítico.AllowDBNull = false
+            Me.columnPartidoPolítico.MaxLength = 50
             Me.columnVotos.AllowDBNull = false
         End Sub
         
@@ -617,17 +617,17 @@ Partial Public Class SistemaNacionalDeEleccionesDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Nombre_Completo() As String
+        Public Property NombreCompleto() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableDiputadosElectos.Nombre_CompletoColumn),String)
+                    Return CType(Me(Me.tableDiputadosElectos.NombreCompletoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Nombre Completo' de la tabla 'DiputadosElectos' es DBNull"& _ 
-                            ".", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NombreCompleto' de la tabla 'DiputadosElectos' es DBNull."& _ 
+                            "", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDiputadosElectos.Nombre_CompletoColumn) = value
+                Me(Me.tableDiputadosElectos.NombreCompletoColumn) = value
             End Set
         End Property
         
@@ -648,12 +648,12 @@ Partial Public Class SistemaNacionalDeEleccionesDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Partido_Político() As String
+        Public Property PartidoPolítico() As String
             Get
-                Return CType(Me(Me.tableDiputadosElectos.Partido_PolíticoColumn),String)
+                Return CType(Me(Me.tableDiputadosElectos.PartidoPolíticoColumn),String)
             End Get
             Set
-                Me(Me.tableDiputadosElectos.Partido_PolíticoColumn) = value
+                Me(Me.tableDiputadosElectos.PartidoPolíticoColumn) = value
             End Set
         End Property
         
@@ -682,14 +682,14 @@ Partial Public Class SistemaNacionalDeEleccionesDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsNombre_CompletoNull() As Boolean
-            Return Me.IsNull(Me.tableDiputadosElectos.Nombre_CompletoColumn)
+        Public Function IsNombreCompletoNull() As Boolean
+            Return Me.IsNull(Me.tableDiputadosElectos.NombreCompletoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetNombre_CompletoNull()
-            Me(Me.tableDiputadosElectos.Nombre_CompletoColumn) = Global.System.Convert.DBNull
+        Public Sub SetNombreCompletoNull()
+            Me(Me.tableDiputadosElectos.NombreCompletoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -872,9 +872,9 @@ Namespace SistemaNacionalDeEleccionesDataSet2TableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "DiputadosElectos"
             tableMapping.ColumnMappings.Add("Foto", "Foto")
-            tableMapping.ColumnMappings.Add("Nombre Completo", "Nombre Completo")
+            tableMapping.ColumnMappings.Add("NombreCompleto", "NombreCompleto")
             tableMapping.ColumnMappings.Add("Departamento", "Departamento")
-            tableMapping.ColumnMappings.Add("Partido Político", "Partido Político")
+            tableMapping.ColumnMappings.Add("PartidoPolítico", "PartidoPolítico")
             tableMapping.ColumnMappings.Add("Votos", "Votos")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub

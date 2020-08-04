@@ -12,8 +12,11 @@ Public Class Login
         Try
             contrasenabd = conexion.validaradministrador(identidad, 2)
             If contraseña = contrasenabd And contrasenabd <> String.Empty Then
+                txtContrasena.Clear()
+                txtUsuario.Clear()
                 Me.Hide()
                 AdministradorVotaciones.Show()
+
             ElseIf contrasenabd = String.Empty Then
                 MessageBox.Show("El administrador no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
@@ -54,6 +57,8 @@ Public Class Login
     End Sub
 
     Private Sub btnREGRESAR_Click(sender As Object, e As EventArgs) Handles btnREGRESAR.Click
+        txtContrasena.Clear()
+        txtUsuario.Clear()
         Me.Hide()
         IngresaVotante.Show()
 
@@ -74,5 +79,23 @@ Public Class Login
     Private Sub btnBROMA_Click(sender As Object, e As EventArgs) Handles btnBROMA.Click
         Me.Hide()
         CargandoFallo.Show()
+    End Sub
+
+    Private Sub OptVer_Click(sender As Object, e As EventArgs) Handles OptVer.Click
+        txtContrasena.PasswordChar = ""
+        optOcultar.Visible = True
+        OptVer.Visible = False
+    End Sub
+
+    Private Sub optOcultar_Click(sender As Object, e As EventArgs) Handles optOcultar.Click
+        txtContrasena.PasswordChar = "*"
+        optOcultar.Visible = False
+        OptVer.Visible = True
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtContrasena.PasswordChar = "*"
+        optOcultar.Visible = False
+        OptVer.Visible = True
     End Sub
 End Class

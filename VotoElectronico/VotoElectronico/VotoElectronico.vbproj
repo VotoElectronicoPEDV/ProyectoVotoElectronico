@@ -493,6 +493,7 @@
     <None Include="Resources\logout4.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\close_window_32px.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
