@@ -88,4 +88,9 @@ Public Class Login
         OptVer.Visible = True
     End Sub
 
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtContrasena.PasswordChar = "*"
+        optOcultar.Visible = False
+        OptVer.Visible = True
+    End Sub
 End Class
