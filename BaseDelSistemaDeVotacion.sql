@@ -1166,8 +1166,8 @@
 	inner join PartidoPolitico p on Partido= p.idPartido
 	where DescripcionVotacion = 'Externa' and Municipio = @municipio
 	end
-	exec alcaldesExterna
-
+	exec alcaldesExterna '18'
+	select * from Alcalde 
 
 	/*========================================================================================================================================*/
 	-----------------------------Procedimiento almacenado de alcaldes Interna-------------------------------------------------------------------
@@ -1186,25 +1186,27 @@
 	/*========================================================================================================================================*/
 	-------------------------------Procedimiento almacenado diputado Externa-------------------------------------------------------------------
 
-	create procedure diputadoExterna
+	alter procedure diputadoExterna
 	as
 	begin
 	select IdentidadDiputado,foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Diputado
 	inner join PartidoPolitico p on Partido= p.idPartido
+	where Estado = 'activo'
 	end
 	exec diputadoExterna
 
 	/*========================================================================================================================================*/
 	------------------------------------Procedimiento almacenado Presidente Externa-------------------------------------------------------------
-	create procedure PresidenteExterna
+	Alter procedure PresidenteExterna
 	as
 	begin
 	select IdentidadPresidente,foto,CONCAT(PrimerNombre,' ',SegundoNombre,' ',PrimerApellido,' ',SegundoApellido) as 'Nombre Completo', p.NombrePartido as 'Partido Politico' from Presidente
 	inner join PartidoPolitico p on Partido= p.idPartido
+	where Estado = 'activo'
 	end
 	exec PresidenteExterna
 
-	select *from Alcalde
+	select *from Presidente
 
 
 	/*========================================================================================================================================*/
@@ -1370,4 +1372,4 @@
 	exec AlcaldesElectos
 	exec PresidenteElectos
 
-	select * from Presidente
+	select * from votante

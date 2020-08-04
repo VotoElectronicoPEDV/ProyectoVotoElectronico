@@ -9,6 +9,7 @@
         Voto.UseColumnTextForButtonValue = True
         'dgvAlcaldeInterna.Columns.Add(Voto)
 
+
         Try
             DataT = conexion.alcaldesInterna(eleccionVotante.idmunicipio)
             If DataT.Rows.Count <> 0 Then
